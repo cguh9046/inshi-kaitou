@@ -1,0 +1,160 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H26数学A}
+\fbox{1}
+(1)$(\arctan)'(y)=\frac{1}{1+y^2}$より
+$(\arctan y+\arctan (1/y))'=\frac{1}{1+y^2}+\frac{1}{1+(1/y)^2}(-1/y^2)=0$より
+$\arctan y+\arctan (1/y)$は定数関数である。
+よって$\arctan x \in F$
+
+(2)$f(x)+f(1/x)=c \in \mathbb{R}$とする．$0<a<1$に対して
+\begin{align}
+	\int_a^1 f(x)dx=\int_{1/a}^1 -\frac{f(1/t)}{t^2}dt
+	=\int_1^{1/a} \frac{f(t)-c}{t^2}dt=\int_1^{1/a} \frac{f(t)}{t^2}dt+c\qty[\frac{1}{t}]_1^{1/a}=\int_1^{1/a} \frac{f(t)}{t^2}dt+c(a-1)
+\end{align}
+したがって$\lim\limits_{a\to 0}\int_a^1 f(x)dx$の存在と$\lim\limits_{a\to 0}\int_1^{1/a} \frac{f(t)}{t^2}dt$の存在は同値である。
+
+(3)$g$が$G \in \mathbf{F}$に 拡張可能だとする．このとき$\lim\limits_{x\to 1-0}g'(x)=\lim\limits_{x\to 1-0}G'(x)$は$G$が$C^1$級であるから存在する．
+
+逆に$\lim\limits_{x\to 1-0}g'(x)=\alpha\in \mathbb{R}$とする．$1$に収束する$(0,1)$上の任意の数列$\{x_n\}_{n=1}^\infty$をとる．
+
+任意の$\varepsilon>0$に対してある$\delta>0$が存在して$1-\delta<x<1$ならば$\alpha-\varepsilon<g'(x)<\alpha+\varepsilon$である．$\varepsilon\delta$に対してある$N$が存在して$n>N$ならば$1-\varepsilon\delta<x_n<1$である．$n,m>N$について
+平均値の定理から$g(x_n)-g(x_m)=g'(\xi)(x_n-x_m)$となる$\xi\in (1-\varepsilon\delta,1)$が存在する．よって$|g(x_n)-g(x_m)|<(\alpha+\varepsilon)\delta\varepsilon\rightarrow0$となるから$\{g(x_n)\}_{n=1}^\infty$はコーシー列．すなわち収束列．
+以上より$\lim\limits_{x\to 1-0}g(x)$は存在する．その収束先を$\beta$とする．
+
+$G(x)=\begin{cases}
+	g(x) & (x\in (0,1))\\
+	\beta -G(1/x) & (x\in (1,\infty))\\
+	\beta & (x=1)
+	\end{cases}$と定めると$G|_{(0,1)}=g$であり，$G(x)+G(1/x)=\beta$である．
+
+$G(x)$は$x=1$以外の点で微分可能であり，導関数は連続である．
+$\lim\limits_{x\to 1-0}\frac{G(x)-G(1)}{x-1}=\lim\limits_{x\to 1-0}\frac{g'(x)}{1}=\alpha$である．(ロピタルの定理)
+$\lim\limits_{x\to 1+0} \frac{G(x)-G(1)}{x-1}=\lim\limits_{x\to 1+0} \frac{\beta-G(1/x)}{x-1}=\lim\limits_{x\to 1+0} \frac{-g'(1/x)(-x^{-2})}{1}=\alpha$である．よって$G$は$x=1$で微分可能．
+
+$\lim\limits_{x\to 1+0}G'(x)=\lim\limits_{x\to 1+0}-g'(1/x)(-x^{-2})=\alpha$である．よって導関数が$x=1$で連続であるから$G$は$C^1$級．
+
+\fbox{2}
+(1)一次独立であることを示す．
+$c_1\cos x +c_2\sin x +c_3\cos 2x +c_4\sin 2x=0$とする．
+$x=0$とすると，$c_1+c_3=0$である．$x=\pi$とすると，$-c_1+c_3=0$である．よって$c_1=c_3=0$である．
+$x=\frac{\pi}{2}$とすると，$c_2=0$である．よって$c_4=0$より$S$は一次独立．よって$V$の基底
+
+(2)$\Phi(\cos x)=-\sin x,\Phi(\sin x)=\cos x,\Phi(\cos 2x)=-2\sin 2x,\Phi(\sin 2x)=2\cos 2x$より$\Phi$の表現行列は$ \begin{pmatrix}
+	0 & 1 & 0 & 0\\
+	-1 & 0 & 0 & 0\\
+	0 & 0 & 0 & 2\\
+	0 & 0 & -2 & 0
+\end{pmatrix}$である．
+$\Psi(\cos x)=\sin x,\Psi(\sin x)=\cos x,\Psi(\cos 2x)=-\cos 2x,\Psi(\sin 2x)=-\sin 2x$より$\Psi$の表現行列は$ \begin{pmatrix}
+	0 & 1 & 0 & 0\\
+	1 & 0 & 0 & 0\\
+	0 & 0 & -1 & 0\\
+	0 & 0 & 0 & -1
+\end{pmatrix}$である．
+
+(3)$g(x)=c_1\cos x +c_2\sin x +c_3\cos 2x +c_4\sin 2x$とする．
+
+$\Phi(g(x))-\Psi(g(x))=\cos 2x$より$\qty(\begin{pmatrix}
+	0 & 1 & 0 & 0\\
+	-1 & 0 & 0 & 0\\
+	0 & 0 & 0 & 2\\
+	0 & 0 & -2 & 0
+\end{pmatrix}-\begin{pmatrix}
+	0 & 1 & 0 & 0\\
+	1 & 0 & 0 & 0\\
+	0 & 0 & -1 & 0\\
+	0 & 0 & 0 & -1
+	\end{pmatrix})\begin{pmatrix}
+	c_1\\
+	c_2\\
+	c_3\\
+	c_4
+\end{pmatrix}=\begin{pmatrix}
+	0\\
+	0\\
+	1\\
+	0
+	\end{pmatrix}$である．
+
+	すなわち$\begin{pmatrix}
+		0 & 0 & 0 & 0\\
+		-2 & 0 & 0 & 0\\
+		0 & 0 & 1 & 2\\
+		0 & 0 & -2 & 1
+	\end{pmatrix}\begin{pmatrix}
+	c_1\\
+	c_2\\
+	c_3\\
+	c_4
+\end{pmatrix}=\begin{pmatrix}
+	0\\
+	0\\
+	1\\
+	0
+	\end{pmatrix}$である．
+	したがって$c_2 \begin{pmatrix}
+		0\\
+		1\\
+		0\\
+		0
+	\end{pmatrix}+\begin{pmatrix}
+		0\\
+		0\\
+		1/5 \\
+		2/5
+	\end{pmatrix}$が解である．よって$g(x)=c_2\sin x+\frac{1}{5}\cos 2x+\frac{2}{5}\sin 2x$である．
+
+\fbox{3}
+	(1)$Q$が連結でないとすると，$Q$の非空開集合$U,V$で$U\cap V=\emptyset,U\cup V=Q$となるものが存在する．このとき$\pi^{-1}(U),\pi^{-1}(V)$は$\mathbb{R}^2$の開集合であり，$\pi^{-1}(U)\cap \pi^{-1}(V)=\emptyset,\pi^{-1}(U)\cup \pi^{-1}(V)=\mathbb{R}^2$となる．すなわち$\mathbb{R}^2$が連結でないがこれは矛盾．よって$Q$は連結である．
+
+	(2)$(1,0)\in \mathbb{R}^2$の同値類は$A=\{ (x,0)\mid x\neq 0\}$である．また$(0,0)$の同値類は$B=\{(0,0)\}$である．$B$を含む$Q$の開集合$U $を任意にとる．$(0,0)\in \pi^{-1}(Q)$で$\pi^{-1}(Q)$は開集合であるから，ある$\varepsilon>0$が存在して$B((0,0),\varepsilon)\subset \pi^{-1}(Q)$である．$B((0,0),\varepsilon)\cap A\neq \emptyset$である．よって$B$を含む任意の開集合は$A$を含むから，ハウスドルフ空間でない．
+
+	(3)$A_n=\qty{ (x,y)\in \mathbb{R} \relmiddle|  -n<xy<n}$とする．$A_n$は$\mathbb{R}^2$の開集合であり，$\pi^{-1}\pi(A_n)=A_n$である．
+	$\qty{\pi(A_n)\relmiddle| n =1,2,\dots}$は$Q$の有限部分被覆を持たない開被覆である．よってコンパクトでない．
+
+\fbox{4}
+(1)$z\in D$について，$z$に収束する$D$上の数列$\{z_n\}_{n=1}^\infty$を任意にとる．
+\begin{align}
+	2\pi i\lim\limits_{n\to \infty}\frac{f(z_n)-f(z)}{z_n-z}&=\lim\limits_{n\to \infty}\int_C \qty(\frac{1}{\zeta(\zeta-2)-z_n}-\frac{1}{\zeta(\zeta-2)-z})\frac{1}{z_n-z}d\zeta\\
+	&=\lim\limits_{n\to \infty}\int_C \frac{1}{(\zeta(\zeta-2)-z_n)(\zeta(\zeta-2)-z)}d\zeta\\
+\end{align}
+
+ここで$\zeta\in C,z_n,z \in D$より$\zeta(\zeta-2)-z_n>M,\zeta(\zeta-2)-z>M$となる$M>0$が存在する．よって$\frac{1}{(\zeta(\zeta-2)-z_n)(\zeta(\zeta-2)-z)}<\frac{1}{M^2}$であるから$\int_C \frac{1}{(\zeta(\zeta-2)-z_n)(\zeta(\zeta-2)-z)}d\zeta<2\pi M^2$である．よってルベーグの収束定理から
+\begin{align}
+	2\pi i\lim\limits_{n\to \infty}\frac{f(z_n)-f(z)}{z_n-z}=\int_C \lim\limits_{n\to \infty}\frac{1}{(\zeta(\zeta-2)-z_n)(\zeta(\zeta-2)-z)}d\zeta
+	=\int_C \frac{1}{(\zeta(\zeta-2)-z)^2}d\zeta
+\end{align}
+よって$f(z)$は$D$上で正則．
+
+(2)$\frac{1}{\zeta^{n+1}(\zeta-2)^{n+1}}=\sum_{k=-n-1}^\infty c_k\zeta^k$とする．
+$\frac{1}{(\zeta-2)^{n+1}}=\sum_{k=-n-1}^\infty c_k\zeta^{k+n+1}$より
+$(\frac{1}{(\zeta-2)^{n+1}})^{(n)}|_{\zeta=0}=n!c_{-1}$である．
+
+$((\zeta-2)^{-n-1})^{(n)}=(-n-1)(-n-2)\dots(-n-n)(\zeta-2)^{-2n-1}=\frac{(-1)^n(2n)!}{n!(\zeta-2)^{2n+1}}$より$(\frac{1}{(\zeta-2)^{n+1}})^{(n)}|_{\zeta=0}=\frac{(-1)^{n+1}(2n)!}{n!2^{2n+1}}$
+よって$c_{-1}=\frac{(-1)^{n+1}(2n)!}{(n!)^22^{2n+1}}$である．
+
+$\frac{1}{\zeta^{n+1}(\zeta-2)^{n+1}}$は$C$内で$\zeta=0$を特異点にもつ．よって留数定理から$\frac{1}{2\pi i}\int_C \frac{1}{\zeta^{n+1}(\zeta-2)^{n+1}}d\zeta=\Res{\frac{1}{\zeta^{n+1}(\zeta-2)^{n+1}},0}=c_{-1}=\frac{(-1)^{n+1}(2n)!}{(n!)^22^{2n+1}}$
+
+(3)$\zeta(\zeta-2)-z=(\zeta-(1+\sqrt{1+z}))(z-(1-\sqrt{1+z}))$である．
+$|z|<1$より$-\pi/2<\arg (1+z)<\pi/2$である．よって$-\pi/2<\arg (\sqrt{1+z})<\pi/2$より$\Re(1+\sqrt{1+z})>1$である．すなわち$|1+\sqrt{1+z}|>1$である．
+
+$\zeta=1-\sqrt{1+z}$は$\zeta^2-2\zeta-z=0$より$|\zeta||\zeta-2|=|z|<1$である．よって$|\zeta|<1/|\zeta-2|=1/|1-\sqrt{1+z}-2|=1/|1+\sqrt{1+z}|<1$である．よって
+$\frac{1}{\zeta(\zeta-2)-z}$は$D$内で特異点$\zeta=1-\sqrt{1+z}$を持つ．
+一位の極であるから留数は$\lim\limits_{\zeta\to 1-\sqrt{1+z}}(\zeta-(1-\sqrt{1+z}))\frac{1}{\zeta(\zeta-2)-z}=\frac{1}{-2\sqrt{1+z}}$である．
+よって$f(z)=\frac{1}{2\pi i}\int_C \frac{1}{\zeta(\zeta-2)-z}d\zeta=\frac{-1}{2\sqrt{1+z}}$である．
+
+
+
+
+\end{document}

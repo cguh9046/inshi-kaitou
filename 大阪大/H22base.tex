@@ -1,0 +1,112 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H22数学A}
+(1)$f$は一様連続であるから任意の$\varepsilon$に対して$\delta(\varepsilon)>0$が存在して$|x-y|<\delta(\varepsilon)$なら$|f(x)-f(y)|<\varepsilon$である．
+また$\{g_n\}_{n=1}^\infty$は一様収束するから$\delta(\varepsilon)$に対して，$N\in \mathbb{N}$が存在して$n>N$なら$|g_n(x)-g(x)|<\delta(\varepsilon)$である．
+
+以上より，$n>N$なら$|f(g_n(x))-f(g(x))|<\varepsilon$である．したがって$f\circ g_n$は$f\circ g$に一様収束する．
+
+(2)$h_n(x)=\sum\limits_{k=1}^n\frac{\cos (kx)}{k^2}$とする．
+$|h_n(x)-h(x)|=\left|\sum\limits_{k=n+1}^\infty\frac{\cos (kx)}{k^2}\right|\le \sum\limits_{k=n+1}^\infty\frac{1}{k^2}\rightarrow0\quad (n \to \infty)$である．したがって一様収束．
+
+また$\sin x$は一様連続である．これは平均値の定理から$\sin x-\sin y=(x-y)\cos \xi\le |(x-y)|\quad(\xi \in (x,y))$より明らか．
+(1)より$\alpha_n(x)=\sin(h_n(x))$は$\sin(h(x))$に一様収束する．
+
+\fbox{2}
+(1)$X=\begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix} \in V$を任意にとる．$X=X^T$であるから$b=c$である．したがって$X=aE_1+bE_2+cE_3$と表せる．また$c_1E_1+c_2E_2+c_3E_3=O$とすれば$c_1=c_2=c_3=0$は一次独立．したがって$V$は$\{E_1,E_2,E_3\}$を基底とする．
+
+(2)$(A^TXA)^T=A^TX(A^T)^T=A^TXA$であるから$f_A(X)\in V$である．
+$f_A(cX+Y)=A^T(cX+Y)A=cA^TXA+A^TYA=cf_A(X)+f_A(Y)$であるから線形写像である．
+
+(3)$f_A(E_1)=\begin{pmatrix} 
+    1 & a \\
+    a & a^2
+    \end{pmatrix}=E_1+aE_2+a^2E_3,
+    f_A(E_2)=\begin{pmatrix}
+    2a & a^2+1 \\
+    a^2+1 & 2a 
+    \end{pmatrix}=2aE_1+(a^2+1)E_2+2aE_3,
+    f_A(E_3)=\begin{pmatrix}
+    a^2 & a \\
+    a & 1
+    \end{pmatrix}=a^2E_1+aE_2+E_3$である．よって$f_A$の表現行列は$\begin{pmatrix}
+    1 & 2a & a^2 \\
+    a & a^2+1 & a \\
+    a^2 & 2a & 1
+    \end{pmatrix}$である．
+
+(4)$f_A$の表現行列を$G(a)$とする．
+$\det G(a)=\begin{vmatrix}
+    1 & 2a & a^2 \\
+    0 & -a^2+1 & a-a^3 \\
+    0 & -a^3+a & 1-a^2
+    \end{vmatrix}=-(1-a^2)^2-(a-a^3)^2=-(a^2+1)(1-a^2)^2$である．
+
+したがって$a\neq\pm{1}$のとき$\det G(a)\neq0$であるから$\Im f_A$の基底は$\{f_A(E_1),f_A(E_2),f_A(E_3)\}$である．
+
+$a=1$のとき$G(1)=\begin{pmatrix}
+    1 & 2 & 1 \\
+    1 & 2 & 1 \\
+    1 & 2 & 1
+    \end{pmatrix}$である．よって$\Im f_A$の基底は$\left\{\begin{pmatrix}
+    1 & 1 \\
+    1 & 1
+    \end{pmatrix}\right\}$である．
+
+$a=-1$のとき$G(-1)=\begin{pmatrix}
+    1 & -2 & 1 \\
+    -1 & 2 & -1 \\
+    1 & -2 & 1
+    \end{pmatrix}$である．よって$\Im f_A$の基底は$\left\{\begin{pmatrix}
+    1 & -1 \\
+    -1 & 1
+    \end{pmatrix}\right\}$である．
+
+\fbox{3}
+(1)$S=\{ (-\infty,n)\cup\{p_1\} \mid n\in \mathbb{N}\}$とする．$S$は$X_1$の開被覆である．有限部分被覆を持たないからコンパクトでない．
+
+(2)ユークリッド位相の入った位相空間$\mathbb{R}$を$E$で表す．$E$の開集合は$X_2$の開集合であることを示す．$E$の開基として$\{(x_0-\varepsilon,x_0+\varepsilon)\mid x_0\in \mathbb{R},\varepsilon>0\}$がとれる．$\frac{1}{n_1}\le\varepsilon<\frac{1}{n_1+1}$として$n_1$を定める．$n_{i}$を$\frac{1}{n_i}\le \varepsilon-\sum\limits_{j=1}^{i-1}\frac{1}{n_j}<\frac{1}{n_i}$として定める．ただし$\varepsilon-\sum\limits_{j=1}^{i-1}\frac{1}{n_j}=0$のとき$n_i$は定めない．$n_i$が定義される$i$を集めてできる$A \subset \mathbb{N}$を定める． このとき数列$\{n_j\}_{j=1}^{\max A}$を得る．$\bigcup\limits_{i=1}^{\max A} (x_0-\sum\limits_{j=1}^{i}\frac{1}{n_j},x_0-\sum\limits_{j=1}^{i-1}\frac{1}{n_j}+\frac{1}{n_i})\cup(x_0+\sum\limits_{j=1}^{i-1}\frac{1}{n_j}-\frac{1}{n_i},x_0-\sum\limits_{j=1}^{i}\frac{1}{n_j}+\frac{1}{n_i})=(x_0-\varepsilon,x_0+\varepsilon)$である．よって$E$の開集合は$X_2$の開集合である．
+
+$\varphi\colon X_2 \rightarrow [0,1]$を
+$\varphi(p_1)=0,\varphi(p_2)=1,\varphi(x)=(\arctan x+\pi/2)/\pi \quad (x\in \mathbb{R})$とする．$\varphi|_{\mathbb{R}}\colon E\rightarrow(0,1)$は同相写像であるから$\varphi$は全単射．
+$(x_0-\frac{1}{n},x_0+\frac{1}{n})$は $E$の開集合であるから$\varphi((x_0-\frac{1}{n},x_0+\frac{1}{n}))$は$[0,1]$の開集合である．$\varphi((-\infty,n)\cup\{p_1\})=(0,\varphi(n))\cup \{0\}=(-1,\varphi(n))\cap [0,1]$は開集合である．よって$\varphi^{-1}$は連続．
+$[0,1]$の開集合$U$について$U \subset (0,1)$なら$\varphi^{-1}(U)$は$E$の開集合．すなわち$X_2$の開集合．$0 \in U,1\notin U$ならある$\varepsilon>0$が存在して$U=[0,\varepsilon)\cup U\setminus\{0\}$である．$\varphi^{-1}(U\setminus \{0\})$は$X_2$の開集合である．$\varphi^{-1}([0,\varepsilon))=(-\infty,\varphi^{-1}(\varepsilon))\cup\{p_1\}$は$X_2$の開集合である．よって$\varphi^{-1}(U)$は$X_2$の開集合．
+$0\notin U,1\in U$のとき,$0,1\in U$のときも同様．よって$\varphi$は連続．
+すなわち$\varphi$は同相．
+
+(3)$p_1$が属す開基は$\{(-\infty,n)\cup\{p_1\}\}\quad(n\in \mathbb{Z})$である．任意の$m\in \mathbb{Z}$について$ \{ (-\infty,m)\} \cup \{p_3\}$も開基であるからそれぞれを含む任意の開基は共通部分をもつ．したがってハウスドルフ空間でない．
+
+\fbox{4}
+(1)\begin{align}
+    \left| \frac{\log z}{z^4+1} \right|= \frac{|\log r + i\theta|}{|r^4e^{4i\theta}+1|}\le \frac{|\log r|+\pi}{||r^4e^{4i\theta}|-1|}= \frac{|\log r|+\pi}{|r^4-1|}
+\end{align}
+
+(2)\begin{align}
+    \int_{\alpha_2}\frac{\log z}{z^4+1}dz=\int_{R}^{\varepsilon} \frac{\log xe^{\pi i}}{(x e^{\pi i})^4+1}e^{i\pi}dx=\int_{\varepsilon}^R \frac{\log x+\pi i}{x^4+1}dx = \int_{\varepsilon}^R \frac{\log x}{x^4+1}dx + \pi i\int_{\varepsilon}^R \frac{1}{x^4+1}dx
+\end{align}
+
+(3)$\partial D_{\varepsilon,R}$の小さい円弧を$C_1$，大きい円弧を$C_2$とする．
+$|\int_{C_1}\frac{\log z}{z^4+1}dz|=\int_{0}^\pi |\frac{\log r e^{i\theta}}{r^4e^{4i\theta}+1}i re^{i\theta}|d\theta\le \int_{0}^\pi \frac{r|\log r|+r\pi}{|r^4-1|}d\theta\le \pi \frac{r|\log r|+r\pi}{|r^4-1|}\rightarrow 0\quad (r\rightarrow 0)$である．
+また$|\int_{C_2}\frac{\log z}{z^4+1}dz|\le \int_{0}^\pi |\frac{\log Re^{i\theta}}{R^4e^{4i\theta}+1}i Re^{i\theta}|d\theta \le \pi \frac{R|\log R|+R\pi}{|R^4-1|}\rightarrow 0\quad (R\rightarrow \infty)$である．
+
+また$\int_{\alpha_1} \frac{\log z}{z^4+1}dz = \int_{\varepsilon}^R \frac{\log x}{x^4+1}dx$である．
+
+$\varepsilon<1<R$とする．
+$D_{\varepsilon,R}$内で$\frac{\log z}{z^4+1}$は$e^{\pi i/4},e^{3\pi i/4}$を特異点にもつ．留数を求めると$\Res(\frac{\log z}{z^4+1},e^{\pi i/4})=\pi e^{7i\pi/4}/16,\Res(\frac{\log z}{z^4+1},e^{3\pi i/4})=3\pi  e^{i\pi /4}/16$である．よって
+$\int_{\partial D_{\varepsilon,R}} \frac{\log z}{z^4+1}dz = \frac{i\pi^2}{8}(3e^{i\pi/4}+e^{-i\pi/4})$である．
+よって$\lim\limits_{R\rightarrow\infty}\int_{\partial D_{1/R,R}}  \frac{\log z }{z^4+1}dz=\frac{i\pi^2}{8}(3e^{i\pi/4}+e^{-i\pi/4}),\lim\limits_{R \rightarrow \infty}\int_{\partial D_{1/R,R}} \frac{\log z}{z^4+1}dz=2 \int_0^\infty \frac{\log x}{x^4+1}dx + \pi i \int_0^\infty \frac{1}{x^4+1}dx$である．
+以上より$\int_0^\infty \frac{\log x}{x^4+1}dx = -\frac{\pi^2}{8\sqrt{2}},\int_0^\infty \frac{1}{x^4+1}dx =\pi/2\sqrt{2}$である．
+\end{document}

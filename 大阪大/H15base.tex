@@ -1,0 +1,56 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H15数学A}
+\fbox{1}
+(1)$\{ f(x) \mid x\in X\}$が下に有界でないとする．すなわち任意の$n \in \mathbb{N}$に対して$f(x)\le -n$なる$x \in X$が存在する．これを$x_n$とおく．$X$は$\mathbb{R}^n$のコンパクト集合であるから有界閉集合である．よって$X$内の点列$\{ x_n\}_{n=1}^\infty$は収束する部分列$\{ x_{n_k}\}_{k=1}^\infty$をもち，$x_{n_k}\rightarrow \alpha \in X$となる．$f(\alpha)\le \liminf\limits_{k\rightarrow \infty} f(x_{n_k})=-\infty$となりこれは矛盾．よって下に有界．
+
+(2)下に有界であるから$\inf\{ f(x)\mid x\in X\}=M\in \mathbb{R}$である．$M$が下限であるから任意の$n\in \mathbb{N}$に対して$f(x_n)\le M+\frac{1}{m}$なる$x_n$が存在する．数列$\{ x_n\}$は収束部分列$\{ x_{n_k}\}$をもち，$x_{n_k}\rightarrow \alpha \in X$となる．
+$M\le f(\alpha)\le \liminf\limits_{k\rightarrow \infty} f(x_{n_k})\le \lim\limits_{k\to \infty} (M+\frac{1}{n_k})=M$となり$f(\alpha)=M$．よって$f$は最小値をもつ．
+
+\fbox{2}
+(1)$g(0)=1$であり$g$は連続関数であるから$0$を含むある開区間$I$で$g(x)>0$となる．$I$上で
+$h(x)=\sqrt[m]{g(x)}$とする．$I$上で$h$は$C^1$級であり$h(x)^m=g(x),h(x)>0$である．
+
+(2)$f(\varphi(y))=\varphi(y)^mg(\varphi(y))=\varphi(y)^mh(\varphi(y))^m=y^m$をみたす$\varphi(y)$を求める．$\varphi(y)h(\varphi(y))=y$をみたす$\varphi(y)$を求めればよい．$F(x,y)=xh(x)-y$とおく．$\partial F/\partial x(0,0)=h(0)+0\varphi'(0)>0$である．陰関数定理から$F(x,y)=0$をみたす$C^1$級関数$x=\varphi(y)$が$0$の近傍で存在する．
+
+\fbox{3}
+(1)$T_A(cX+Y)=^t(cX+Y)A+A(cX+Y)=c^tXA+cAX+^tYA+AY=cT_A(X)+T_A(Y)$である．
+よって線形．
+
+(2)$^t(^tXA+AX)=AX+^tXA$より$\mathrm{Im}T_A\subset S$である．
+$Y \in S$に対して$X=A^{-1}Y/2$とすると，$^tXA+AX=^t(AX)+AX=^t(Y/2)+(Y/2)=Y$となる．よって$S\subset \mathrm{Im}T_A$である．
+
+(3)$^t(AX)+AX=O$より$AX$が交代行列となる$X$を考える．よって$X_1=\begin{pmatrix}
+	0 & 1 & 0\\
+	-1 & 0 & 0\\
+	0 & 0 & 0
+\end{pmatrix},X_2=\begin{pmatrix}
+	0 & 0 & 1\\
+	0 & 0 & 0\\
+	-1 & 0 & 0
+	\end{pmatrix},X_3=\begin{pmatrix}
+	0 & 0 & 0\\
+	0 & 0 & 1\\
+	0 & -1 & 0
+\end{pmatrix}$とする．$AX_1,AX_2,AX_3$は交代行列である．よって$X_1,X_2,X_3$は$\ker T_A$の基底となる．
+
+\fbox{4}
+(1)$AB=BA$のとき．$v\in V_j$に対して$ABv=BAv=B\alpha_jv=\alpha_jBv$より，$ Bv \in V_j$である．
+
+$BV_j\subset V_j \quad(j=1,\dots,k)$のとき．$A$がエルミート行列であるから，$\mathbb{C}^n$を固有空間の直和に分解できる．したがって$\{v_1,\dots,v_n\}$をそれぞれが$A$の固有ベクトルであるような基底とできる．$v_i \in V_{s_i}$とする．$u \in \mathbb{C}^n$に対して$u=a_1v_1+\dots+a_nv_n$とできる．$ABu=A (a_1Bv_1+\dots a_nBv_n)=a_1\alpha_{s_1}Bv_1+\dots+a_n\alpha_{s_n}Bv_n$である．また$BAu=B (a_1\alpha_{s_1}v_1+\dots a_n\alpha_{s_n}v_n)=a_1\alpha_{s_1}Bv_1+\dots+a_n\alpha_{s_n}Bv_n$である．よって$ABu=BAu$である．すなわち$AB=BA$
+
+(2)$v \in V_j$に対して$A^mv_j=\alpha_j^m v_j$である．$A^m$の固有値$\alpha_j^m$の固有空間を$W_j$とすると，$W_j\supset V_j$である．$A$はエルミート行列であるから固有値は実数である．したがって異なる固有値$\alpha_i,\alpha_j$にたいして$\alpha_i^m=\alpha_j^m$となるには$m$が偶数であることが必要．今$m$は奇数であるから$\alpha_i^m\neq \alpha_j^m$である．したがって$i\neq j$なら$W_i\neq W_j$である．よって$W_j=V_j$である．$A^m$はエルミート行列であり$A^mC=CA^m$であるから(1)より$CW_j\subset W_j$である．よって$CV_j \subset V_j$であるから$AC=CA$である．
+
+
+
+\end{document}

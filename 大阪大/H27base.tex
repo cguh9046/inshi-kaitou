@@ -1,0 +1,112 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H27数学A}
+\fbox{1}
+(1)$|f(x)-f(y)|\le |f(x)-f_n(x)|+|f_n(x)-f_n(y)|+|f_n(y)-f(y)|$である．任意の$\varepsilon>0$に対して一様収束するから，ある$N\in \mathbb{N}$が存在して，$n\ge N$ならば，$^\forall x \in \mathbb{R},|f_n(x)-f(x)|<\varepsilon$である．この$N$に対して$f_N$は一様連続であるから，ある$\delta>0$が存在して，$|x-y|<\delta$ならば$|f_N(x)-f_N(y)|<\varepsilon$である．よって，$|x-y|<\delta$ならば，$|f(x)-f(y)|<3\varepsilon$である．すなわち，$f$は一様連続である．
+
+(2)一様収束するから任意の$\varepsilon>0$について，ある$N\in \mathbb{N}$が存在して，$n\ge N$ならば，$^\forall x \in \mathbb{R},f_n(x)-\varepsilon<f(x)<f_n(x)+\varepsilon$である．両辺の$\sup$をとって$\sup A \le \sup A_n +\varepsilon$である．よって$A$は有界．$|\sup A-\sup A_n|<\varepsilon$より$\lim \sup A_n=\sup A$
+
+\fbox{2}
+(1)$f_a(e_1)=a^t\!e_1-e_1^t\!a=\begin{pmatrix}
+a_1\\
+a_2\\
+a_3
+\end{pmatrix}\begin{pmatrix}
+1 & 0 & 0
+\end{pmatrix}-\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}\begin{pmatrix}
+a_1 & a_2 & a_3
+\end{pmatrix}=\begin{pmatrix}
+	0 & -a_2 & -a_3\\
+	a_2 & 0 & 0\\
+	a_3 & 0 & 0
+\end{pmatrix}=-a_2E_1-a_3E_2,
+f_a(e_2)=\begin{pmatrix}
+0 & a_1 & 0\\
+-a_1 & 0 & -a_3\\
+0 & a_3 & 0
+\end{pmatrix}=a_1E_1-a_3E_3,
+f_a(e_3)=\begin{pmatrix}
+0 & 0 & a_1\\
+0 & 0 & a_2\\
+-a_1 & -a_2 & 0
+\end{pmatrix}=a_1E_2+a_2E_3$である．
+
+よって$T_a=\begin{pmatrix}
+	-a_2 & a_1 & 0\\
+	-a_3 & 0 & a_1\\
+	0 & -a_3 & a_2
+\end{pmatrix}$である．
+
+(2)$\det T_a=-a_2(-a_1(-a_3))+a_3a_1a_2=0$より$\rank f_a \le 2$である．
+
+$a\neq 0$よりある$i$について$a_i\neq 0$である．$T_a$の部分小行列として$\begin{pmatrix}
+	a_1 & 0\\
+	0 & a_1
+	\end{pmatrix},\begin{pmatrix}
+	-a_2 & 0\\
+	0 & a_2
+	\end{pmatrix},\begin{pmatrix}
+	-a_3 & 0\\
+	0 & -a_3
+	\end{pmatrix}$がとれる．これらの行列式は何れかが$0$でないから$\rank f_a \ge 2$である．よって$\rank f_a=2$である．
+	したがって$\dim \Im f_a=2,\dim \Ker f_a=1$である．
+
+(3)$T_a$の固有多項式を$g_a$とすると
+$g_a=\begin{vmatrix}
+	-a_2-\lambda & a_1 & 0\\
+	-a_3 & -\lambda & a_1\\
+	0 & -a_3 & a_2-\lambda
+\end{vmatrix}=-\lambda^3+(a_2^2-2a_1a_3)\lambda=-\lambda(\lambda^2-(a_2^2-2a_1a_3))$である．
+
+よって$a_2^2-2a_1a_3\neq 0$ならば$T_a$の固有値は全て異なるから，対角化可能．
+$a_2^2-2a_1a_3=0$ならば，$T_a$の固有値は$0$のみである．固有値$0$の固有空間は$\ker T_a$であるから$a\neq 0$なら固有空間の次元は$1$となり，対角化不可能．
+$a=0$ならば$T_a=0$であるから対角化可能．
+
+以上より$a=0 \lor a_2^2-2a_1a_3\neq 0$が対角化可能性に関する必要十分条件である．
+
+\fbox{3}
+(1)$N_r(A)$は開集合である．これを示す．$x \in N_r(A)$を任意にとる．ある$a\in A$が存在して$b:=r-d(x,a)>0$である．
+$y \in B(x,b/2):=\qty{ y \in X\relmiddle| d(x,y)<b/2}$について$d(a,y)\le d(a,x)+d(x,y)<r-b+b/2<r$である．よって$B(x,b/2)\subset N_r(A)$である．よって$N_r(A)$は開集合である．
+
+$F_K=\qty{ N_n(K)\relmiddle| n = 1,2,\dots},F_L=\qty{ N_n(L)\relmiddle| n = 1,2,\dots}$とする．$F_K,F_L$は$X$の開被覆である．とくに$K,L$の開被覆である．よって$L$の被覆$\qty{N_{n_1}(K),N_{n_2}(K),\dots,N_{n_m}(K)}$と，$K$の被覆$\qty{N_{m_1}(L),N_{m_2}(L),\dots,N_{m_\ell}(L)}$がとれる．$r=n_m+m_\ell$とすれば，$L\subset N_{r}(K),K\subset N_{r}(L)$である．
+
+(2)任意の$r>0$に対して$K\subset N_r(K)$である．よって$D(K,K)=0$である．逆に$D(K,L)=0$とする．任意の$r>0$について$K\subset N_r(L),L\subset N_r(K)$である．$x \in K$に対して，ある$y \in L$が存在して$d(x,y)<r$である．この$r$は任意にとれるから$x$は$L$の触点である．距離空間はハウスドルフ空間であり，ハウスドルフ空間のコンパクト集合は閉集合であるから，$L$は閉集合である．よって$x \in L$である．すなわち$K\subset L$である．同様にして$L\subset K$である．よって$K=L$である．
+
+定義から$D(K,L)=D(L,K)$である．
+
+$K,L,M$をコンパクト集合とする．$D(K,L)=r_1,D(L,M)=r_2,r:=r_1+r_2$とする．任意の$\varepsilon>0$を一つ固定する．$x \in K$に対して，$y \in L$が存在して$d(x,y)<r_1+\varepsilon$である．$y \in L$に対して，$z \in M$が存在して$d(y,z)<r_2+\varepsilon$である．よって$d(x,z)<r_1+r_2+2\varepsilon$である．すなわち$K\subset N_{r_1+r_2+2\varepsilon}(M)$である．逆も同様に$M \subset N_{r_1+r_2+2\varepsilon}(K)$である．よって$D(K,M)\le r_1+r_2+2\varepsilon$である．$\varepsilon$は任意にとれるから$D(K,M)\le r_1+r_2$である．よって$D(K,M)\le D(K,L)+D(L,M)$である．
+
+\fbox{4}
+(1)$1+e^{2\pi z}=0$とする．$z=x+iy \quad(x,y\in \mathbb{R})$とすると，$e^{2\pi x}e^{2\pi iy}=-1$である．よって$\sin 2\pi y=0$であるから，$y=\frac{n}{2}\quad (n \in \mathbb{Z})$である．よって$e^{2\pi z}=e^{2\pi x}(-1)^n=-1$より$x=0$で$n$は奇数である．$S_R$内では$z=i/2$が唯一の解である．すなわち$f(z)$は$z=i/2$を特異点にもつ．
+\begin{align}
+	\lim_{z\to \frac{i}{2}}(z-\frac{i}{2})\frac{e^{2\pi a z}}{1+e^{2\pi z}}&=\lim_{z\to \frac{i}{2}}\frac{e^{2\pi a z}+(z-\frac{i}{2})2\pi ze^{2\pi az}}{2\pi e^{2\pi z}}=-\frac{e^{a \pi i}}{2\pi}\\
+\end{align}
+より$\Res{f(z),i/2}=-\frac{e^{a \pi i}}{2\pi}$である．
+
+したがって留数定理から$\int_{\gamma_R}f(z)dz=2\pi i(-\frac{e^{a \pi i}}{2\pi})=-i e^{a \pi i}$である．
+
+(2)$|\int_{J_R^+}f(z)dz|=|\int_0^{1} \frac{e^{2\pi a (R+iy)}}{1+e^{2\pi (R+iy)}}idy|\le \int_0^{1}|\frac{e^{2\pi a R}}{1+e^{2\pi (R+iy)}}|dy$である．
+\begin{align}
+	\left|\frac{e^{2\pi a R}}{1+e^{2\pi (R+iy)}}\right|= \left| \frac{1}{e^{-2\pi aR}+e^{2\pi R(1-a)}e^{2\pi iy}}\right|\le \frac{1}{e^{2\pi(1-a)R}}
+\end{align}であるから，$|\int_{J_R^+}f(z)dz|\le \int_0^{1}\frac{1}{e^{2\pi(1-a)R}}dy =\frac{1}{e^{2\pi(1-a)R}}$である．$0<1-a<1$より$|\int_{J_R^+}f(z)dz|\to 0\quad (R\to \infty)$である．
+同様に$|\int_{J_R^-}f(z)dz|\to 0\quad (R\to \infty)$である．
+
+(3)$R+i$から$R-i$への向きのついた線分を$C$とする．
+$\int_C dz=\int_C\frac{e^{2\pi a z}}{1+e^{2\pi z}}dz=\int_R^{-R}\frac{e^{2\pi a (x+i)}}{1+e^{2\pi (x+i)}}dx=-e^{2\pi a i}\int_{-R}^R \frac{e^{2\pi a x}}{1+e^{2\pi x}}dx$である．よって$\alpha=\int_{-R}^Rf(z)dz$とすれば，
+$\int_{\gamma_R}f(z)dz=(1-e^{2\pi a i})\alpha+\int_{J^+_R}f(z)dz-\int_{J^-_R}f(z)dz$である．よって$R\rightarrow \infty$で$-i e^{a \pi i}=(1-e^{2\pi a i})\alpha$である．よって$\alpha=\frac{-i e^{a \pi i}}{1-e^{2\pi a i}}=\frac{-i}{e^{-a\pi i}-e^{a \pi i}}=\frac{1}{2\sin a\pi}$である．
+
+\end{document}

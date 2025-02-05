@@ -1,0 +1,69 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H21数学A}
+\fbox{1}
+(1)
+\begin{align}
+	\lim\limits_{n\to \infty}\frac{f\left( \frac{1}{n} \right)-f(0)}{\frac{1}{n}-0}=\lim\limits_{n\to \infty}nf\left( \frac{1}{n} \right)=f'(0)
+\end{align}であるから$-f'(0)/2>0$に対してある$N \in \mathbb{N}$が存在して$n>N$なら$nf(\frac{1}{n})<f'(0)+(-f'(0)/2)=f'(0)/2$である．
+
+(2)$\pi>x>0$で$\frac{1}{1+x}<1$より$\log(1+x)=\int_0^1\frac{1}{1+t}dt<\int_0^11dt=t$である．したがって$\log(1+x)<x$である．またテイラーの定理から$\cos x=1-\frac{x^2}{2}+\frac{x^4}{4!}+R(x)$である．$R(x)=\frac{(\cos^{(5)}s)}{5!}x^5\quad(0<s<x<\pi)$である．$(\cos^{(5)}s)=-\sin s<0$であるから$R(x)<0$である．したがって$\cos x<1-\frac{x^2}{2}+\frac{x^4}{4!}$である．
+
+以上より \begin{align}
+	\log(\cos (\frac{1}{\sqrt{n}}))&\le\log(1-\frac{1}{2n}+\frac{1}{24n^2}) \le-\frac{1}{2n}+\frac{1}{24n^2}<-\frac{1}{n}\\
+\end{align}であるから発散する．
+
+\fbox{2}
+(1)略
+
+(2)$\sigma(u)=u-2\frac{(u,u)}{(u,u)}u=-u$より$-1$は固有値である．
+$\sigma(x)=-x$とすると，$x-2\frac{(x,u)}{(u,u)}u=-x$であるから$x=\frac{(x,u)}{(u,u)}u$である．すなわち$x \in \mathrm{spam(u)} $である．よって$W(-1)=\mathrm{spam(u)}$である．
+
+(3)$\sigma\circ f(u)=f \circ\sigma(u)=f(-u)=-f(u)$であるから$f(u)\in W(-1)=\mathrm{spam(u)}$である．したがって$u$は$f$の固有ベクトルである．
+
+(4)$\sigma(e_1)=e_1-2\frac{(e_1,u)}{(u,u)}u=e_1-\frac{2}{3}u=\frac{1}{3}e_1+\frac{2}{3}e_3-\frac{2}{3}e_4,\sigma(e_2)=e_2,\sigma(e_3)=e_3+\frac{2}{3}u=\frac{2}{3}e_1+\frac{1}{3}e_3+\frac{2}{3}e_4 ,\sigma(e_4)=e_4-\frac{2}{3}u=-\frac{2}{3}e_1+\frac{2}{3}e_3+\frac{1}{3}e_4$である．
+よって表現行列は$\begin{pmatrix}
+	\frac{1}{3} & 0 & \frac{2}{3} & -\frac{2}{3} \\
+	0 & 1 & 0 & 0 \\
+	\frac{2}{3} & 0 & \frac{1}{3} & \frac{2}{3} \\
+	\frac{-2}{3} & 0 & \frac{2}{3} & \frac{1}{3}
+\end{pmatrix}$である．
+
+\fbox{3}
+(1)ハウスドルフ空間$(X,\mathcal{O})$のコンパクト部分集合$C$をとる．$y \in X \setminus C$と$x\in C$について$x \in U_x,y\in V_x,U_x \cap V_x=\emptyset$となる開集合$U_x,V_x\in \mathcal{O}$が存在する．$\bigcup\limits_{x\in C }U_x\supset C$より有限部分集合$X' \subset X$が存在して$\bigcup\limits_{x\in X'}U_x\supset C$である．$V=\bigcap\limits_{x\in X'}V_x$とすれば$V$は$y$の開近傍で$V\cap C=\emptyset$である．したがって$X\setminus C$は開集合である．
+
+(2)$f\colon X \times Y \rightarrow \mathbb{R};(x,y)\mapsto x-y$とすると$f$は連続である．よって$f^{-1}(0)=F$は閉集合である．
+$g\colon F \rightarrow \mathbb{R};(x,x)\mapsto x$とすると$g$は連続である．$\sup g(x)=1$より$g$は最大値をもたない．したがって$F$はコンパクトでない．
+
+\fbox{4}
+(1)$zx+iy$とする．$e^z=-e^{-z}$より$e^x=|e^z|=|-e^{-z}|=e^{-x}$であるから$x=-x$である．したがって$x=0$である．$e^{iy}=-e^{-iy}$より$\cos y=-\cos y$である．よって$y=\frac{i\pi}{2}+n\pi\quad(n\in \mathbb{Z})$である．
+
+(2)$|e^{-iz}|=|e^{s-i\pm{R}}|=e^s\le e^\pi$である．$z=R+is$のとき$|e^z+e^{-z}|\ge |e^z|-|e^{-z}|=e^R-e^{-R}$であり，$z=-R+is$のとき$|e^z+e^{-z}|\ge |e^{-z}|-|e^{z}|=e^R-e^{-R}$である．
+よって$\sup\limits_{z\in \Gamma_R}|e^{-iz}/(e^z+e^{-z})|\le \frac{e^\pi}{e^R-e^{-R}}$である．
+
+(3)$f(z)=e^{-iz}/(e^z+e^{-z})$とする．(1)で求めた点以外で$f$は正則である．したがって積分経路$C$を4点$-R,R,R+i\pi,-R+i\pi$を結んでできる長方形を反時計回りに進むとすると，留数定理から$\int_C f(z)dz=2\pi i(\mathrm{Res}(f,i\pi/2))$である．
+$\lim\limits_{z\to i\pi/2}\frac{z-1\pi/2}{e^z+e^{-z}}=\lim\limits_{z\to i\pi/2}\frac{1}{e^z-e^{-z}}=\frac{1}{2i}$であるから$\int_C f(z)dz=\pi e^{\pi/2}$である．
+
+また \begin{align}
+	\int_{R+i\pi}^{-R+i\pi}f(z)dz&=\int_{R}^{-R}\frac{e^{-i(x+i\pi)}}{e^{x+i\pi}+e^{-x-i\pi}}dx=\int_{-R}^{R}\frac{e^{\pi}e^{-ix}}{e^{x}+e^{-x}}dx\\
+	\left| \int_{R}^{R+i\pi}f(z)dz \right|&\le \int_{R}^{R+i\pi}\left| \frac{e^{-iz}}{e^z+e^{-z}} \right|dz\le \pi e^\pi/(e^R-e^{-R})\rightarrow 0\quad (R\to \infty)\\
+	\left| \int_{-R+i\pi}^{-R}f(z)dz \right|&\le \int_{-R+i\pi}^{-R}\left| \frac{e^{-iz}}{e^z+e^{-z}} \right|dz\le \pi e^\pi/(e^R-e^{-R})\rightarrow 0\quad (R\to \infty)
+\end{align}である．よって$\pi e^{\pi/2}=\int_{-\infty}^\infty \cos x/(e^{x}+e^{-x})dx+e^{\pi}\int_{-\infty}^\infty e^{-ix}/(e^{x}+e^{-x})dx$である．
+よって$\int_{-\infty}^\infty \cos x/(e^{x}+e^{-x})dx=\frac{\pi }{e^{\pi/2}+e^{-\pi/2}}$である．
+	
+
+
+
+
+
+\end{document}

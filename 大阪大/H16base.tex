@@ -1,0 +1,46 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H16数学A}
+\fbox{1}
+$\lambda,\mu$の固有空間をそれぞれ$V_\lambda,V_\mu$とする．対角化可能であるから$V=V_\lambda \oplus V_\mu$である．$W_\lambda=W \cap V_\lambda,W_\mu=W \cap V_\mu$とする．$W_\lambda\cap W_\mu=W\cap V_\lambda \cap V_\mu=\{0\}$である．また$w\in W$に対して$w=w_\lambda+w_\mu$となる$w_\lambda\in V_\lambda, w_\mu \in V_\mu$が一意的に存在する．$W\ni f(w) -\mu w=(\lambda-\mu)w_\lambda $より$w_\lambda\in W_\lambda$である．同様に$w_\mu\in W_\mu$である．よって$W=W_\lambda \oplus W_\mu$である．$W$を$f$の固有空間の直和に分解できたから$f|_W$は対角化可能である．
+
+\fbox{2}
+(1)$X$のコンパクト集合$C$をとる．$x \in X\setminus C$を一つ固定する．各$y \in C$に対して$x \in U_y,y\in V_y,U_y \cap V_y=\emptyset$となる開集合$U_y,V_y$が存在する．$\{ V_y \mid y \in C\}$は$C$の開被覆であるから有限部分集合$C'\subset C$が存在して$C\subset \bigcup_{y\in C'}V_y$となる．$U=\bigcap_{y\in C'}U_y$とする．$U$は$x$の開近傍であり$U \subset X \setminus C$であるから$x$は$C$の外点．任意の$x$でなりたつから$C$は閉集合である．
+
+(2)$A \cap B$の開被覆$S= \{ U_\lambda \mid \lambda \in \Lambda\}$を任意にとる．
+$S \cup \{ X\setminus A\}$は$B$の開被覆である．したがって有限部分集合$\Lambda' \subset \Lambda$が存在して$B \subset \bigcup_{\lambda \in \Lambda'}U_\lambda \cup (X\setminus A)$となる．$A \cap B \subset \bigcup_{\lambda \in \Lambda'}U_\lambda$である．したがって$A \cap B$はコンパクト集合である．
+
+\fbox{3}
+(1)$G(x)=\int_0^xf(x,y)dy$とする．
+\begin{align}
+ \frac{G(x+h)-G(x)}{h} &=  \int_0^{x+h} \frac{f(x+h,y)}{h}dy - \int_0^x \frac{f(x,y)}{h}dy =  \int_x^{x+h} \frac{f(x,y)}{h}dy + \int_0^{x+h} \frac{f(x+h,y)-f(x,y)}{h}dy \\
+&= \int_0^h  \frac{f(x,y+x)}{h} dy  +  \int_0^x \frac{f(x+h,y)-f(x,y)}{h}dy+ \int_x^{x+h} \frac{f(x+h,y)-f(x,y)}{h}dy \\
+\end{align}
+である．第一項は$\lim\limits_{h\to 0}\int_0^h  \frac{f(x,y+x)}{h} dy =\frac{\partial }{\partial h}\int_0^h  f(x,y+x)dy =f(x,x)$である．
+
+第二項は$\frac{f(x+h,y)-f(x,y)}{h}=\frac{\partial f}{\partial x}(x+\theta h,y)$となる$\theta \in (0,1)$が存在して$ \int_0^x \frac{f(x+h,y)-f(x,y)}{h}dy\le  \int_0^x \frac{\partial f}{\partial x}(x+\theta h,y)dy\le \infty$であるから優収束定理より$\lim\limits_{h\to 0} \int_0^x \frac{f(x+h,y)-f(x,y)}{h}dy=\int_0^x \frac{\partial f}{\partial x}(x,y)dy$である．
+
+第三項はある$0$の近傍で$\left|  \frac{f(x+h,y)-f(x,y)}{h}\right|\le M$であるから$\lim\limits_{h\to 0} \int_x^{x+h} \frac{f(x+h,y)-f(x,y)}{h}dy \le\lim\limits_{h\to 0}\int_x^{x+h} Mdy=0$である．よって$G'(x)=f(x,x)+\int_0^x \frac{\partial f}{\partial x}(x,y)dy$である．
+
+したがって$F'(x)=f(x,x)-f(x,-x)+\int_{-x}^x \frac{\partial f}{\partial x}(x,y)dy$である．さらに$F''(x)=\frac{\partial f}{\partial x}(x,x)+\frac{\partial f}{\partial y}(x,x)-\frac{\partial f}{\partial x}(x,-x)+\frac{\partial f}{\partial y}(x,-x)+\frac{\partial f}{\partial x}(x,x)-\frac{\partial f}{\partial x}(x,-x)+\int_{-x}^x \frac{\partial^2 f}{\partial x^2}(x,y)dy=2\frac{\partial f}{\partial x}(x,x)-2\frac{\partial f}{\partial x}(x,-x)+\frac{\partial f}{\partial y}(x,x)+\frac{\partial f}{\partial y}(x,-x)+\int_{-x}^x \frac{\partial^2 f}{\partial x^2}(x,y)dy$である．
+
+\fbox{4}
+$f(z)=e^{iz}/(z-i\varepsilon)$とすれば，$f$は$z\neq i\varepsilon$で正則である．積分経路$C$を原点中心の半径$R>2\varepsilon$の上半平面の半円とする．$C_1$を実軸上の$-R$から$R$までの部分，$C_2$を半円とする．$f$の$C$での積分は留数定理から$\int_C f(z)dz=2\pi i \mathrm{Res}(f,i\varepsilon)=2\pi i e^{-\varepsilon}$である．
+$C_2$での積分は$z=Re^i\theta \quad(0\le \theta\le \pi)$とすると，
+$|\int_{C_2}f(z)dz|\le\int_{0}^{\pi}e^{-R\sin \theta}/Rd\theta\rightarrow 0\quad (R\to \infty)$である．したがって$\int_{-\infty}^{\infty}f(x)dx=2\pi i e^{-\varepsilon}$より$\frac{1}{2\pi i}\int_{-\infty}^{\infty}f(x)dx=e^{-\varepsilon}$である．
+
+
+
+
+
+\end{document}

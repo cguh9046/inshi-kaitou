@@ -1,0 +1,113 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H28数学A}
+\fbox{1}
+(1)$|x|\le\frac{1}{2}$なら$5-1/(1+x)^2>0$である．よって
+$0<\int_0^x 5-1/(1+t)^2dt=5x+1/(1+x)-1$である．
+よって$0<\int_0^x 5t+1/(1+t)-1dt=5x^2/2+\log(1+x)-x$である．
+よって$-5x^2/2<\log(1+x)-x$である．
+
+また$5+1/(1+x)^2>0$である．よって$0<\int_0^x 5+1/(1+t)^2dt=5x-1/(1+x)+1$である．よって$0<\int_0^x 5t-1/(1+t)+1dt=5x^2/2-\log(1+x)+x$である．よって$5x^2/2>\log(1+x)-x$である．
+
+すなわち$|\log (1+x)-x|<5x^2/2$である．
+
+(2)$\sum a_k$が収束するから，ある$N \in  \mathbb{N}$が存在して，$n\ge N$ならば，$a_n < 1/2$である．無限積の収束性は$k=N$からの無限積の収束性と同じ．
+また(1)より$|\log(1+x)|\le Cx^2+x$である．
+$\log$の連続性から
+\begin{align}
+    \log \lim_{n\to\infty}\prod_{k=N}^n(1+a_k)=\lim_{n\to\infty}\log \prod_{k=N}^n(1+a_k)=\lim_{n\to\infty}\sum_{k=N}^n\log(1+a_k)
+\end{align}である．
+
+絶対級数$\sum |\log(1+a_k)|$の収束性を考える．
+\begin{align}
+    \lim_{n\to\infty}\sum_{k=N}^n|\log(1+a_k)|\le \lim_{n\to\infty}\sum_{k=N}^n C a_k^2+a_k=C\lim_{n\to\infty}\sum_{k=N}^n a_k^2+\lim_{n\to\infty}\sum_{k=N}^n a_k
+\end{align}
+右辺は収束するから，$\sum \log(1+a_k)$は絶対収束する．よって収束するので，$\lim_{n\to\infty}\prod_{k=N}^n(1+a_k)$は収束する．
+
+(3)$\sum\limits_{k=1}^\infty\frac{(-1)^k}{3k+1}$と$\sum\limits_{k=1}^\infty\qty(\frac{(-1)^k}{3k+1})^2$の収束を示せばよい．
+$S_n=\sum\limits_{k=1}^n\frac{(-1)^k}{3k+1}$とする．
+$S_{2n}=\sum\limits_{k=1}^{n} \qty(\frac{1}{3(2k-1)+1}-\frac{1}{3(2k)+1})$であり，$\frac{1}{3(2k-1)+1}-\frac{1}{3(2k)+1}>0$より$S_{2n}$は単調増加する．
+同様に$S_{2n+1}=1/4-\sum\limits_{k=1}^{n} \qty(\frac{1}{3(2k)+1}-\frac{1}{3(2k+1)+1})$であり，$\frac{1}{3(2k)+1}-\frac{1}{3(2k+1)+1}>0$より$S_{2n+1}$は単調減少する．
+$S_{2n+1}-S_{2n}=1/(3(2n+1)+1)$であり，$\lim\limits_{n\to\infty}S_{2n+1}-S_{2n}=0$である．また$S_{2n+1}=1/(3(2n+1)+1)+S_n>0$より$S_{2n+1}$は有界な単調数列であるから収束する．したがって$S_{2n}$も収束して$\lim\limits_{n\to\infty}S_{2n}=\lim\limits_{n\to\infty}S_{2n+1}$である．よって$\sum\limits_{k=1}^\infty\frac{(-1)^k}{3k+1}$は収束する．
+
+$\sum\limits_{k=1}^\infty\qty(\frac{(-1)^k}{3k+1})^2=\sum\limits_{k=1}^\infty\frac{1}{(3k+1)^2}<\frac{1}{9}\sum\limits_{k=1}^\infty\frac{1}{k^2}<\infty$である．
+ともに収束するから無限積も収束する．
+
+\fbox{2}
+(1)$y \in f_A(W^{\perp})$を任意にとる．ある$x \in W^{\perp}$が存在して$y=f_A(x)$である．任意の$u \in W$について$(u,y)=^t\!u Ax=^t\!(^t\!Au)x=(^t\!Au,x)=(f_A(u),x)=0$である．よって$y \in W^{\perp}$である．
+
+$A$の固有値$\lambda\in \mathbb{C}$と固有ベクトル$v \in \mathbb{C}^n\setminus\{0\}$をとる．
+$x,y \in \mathbb{C}^n$について標準エルミート内積$(x,y)=^t\!x\overline{y}$を定める．
+$\lambda(v,v)=(Av,v)=(v,\overline{^t\!A}v)=(v,\overline{\lambda}v)=\overline{\lambda}(v,v)$である．$(v,v)>0$より$\lambda=\overline{\lambda}$である．よって$\lambda \in \mathbb{R}$である．
+
+(2)$A$の固有空間全ての直和を$W$とする．$\mathbb{R}^n=W \oplus W^{\perp}$である．$f_A(W)\subset W$となるから，$f_A|_{W^{\perp}} \colon W^{\perp} \rightarrow W^{\perp}$を得る．$\mathbb{C}$による定数倍を加えることで$\mathbb{R}^n$を$\mathbb{C}$上線形空間$\mathbb{C}^n$に拡張する．$W,W^{\perp}$も同様に$\overline{W},\overline{W^{\perp}}$に拡張する．$f_A|_{W^{\perp}}$は$\overline{W^{\perp}}$上の線形変換に拡張できる．
+$W^{\perp}\neq \{0\}$なら
+$f_A|_{\overline{W^{\perp}}}$の固有値$\lambda$と固有ベクトル$v \neq 0$をとれる．
+$u=0+v \in \overline{W}\oplus \overline{W^{\perp}}$とする．$Au=\lambda u$である．
+$\lambda$は$f_A$の固有値であるから$\lambda \in \mathbb{R}$である．よって$u \in \mathbb{R}^n$としてよい．$u \in W^{\perp}$となるがこれは$W$の定義に矛盾．よって$W^{\perp}=\{0\}$．
+
+$f_A$の固有値$\lambda$と固有ベクトル$x$について$\Span\{x \}=\Span\{x \}^{\perp\perp}$であり，任意の$y \in \Span\{x \}^{\perp}$について$(y,^t\!Ax)=(Ay,x)=0$より$^t\!A x \in \Span\{x \}$である．よって$^t\!A x = \mu x$とできる．
+$\lambda(x,x)=(Ax,x)=(x,^t\!Ax)=(x,\mu x)=\mu(x,x)$である．$(x,x)>0$より$\lambda=\mu$である．
+
+$\mathbb{R}^n$の任意の元$x$は固有ベクトル$v_1,\dots,v_n$の線形結合で表せる．$x=\sum_{i=1}^n a_i v_i$とする．$Ax=\sum_{i=1}^n a_i Av_i=\sum_{i=1}^n a_i \lambda_i v_i=^t\!A x$である．よって$A=^t\!A$である．
+
+\fbox{3}
+(1)任意の$x,y \in [0,1]^\infty$に対して$|x_k-y_k|\le1$である．よって$\sum\limits_{k=1}^\infty 2^{-k}|x_k-y_k|\le\sum\limits_{k=1}^\infty 2^{-k}=1$である．よって$d$は$[0,1]^\infty\times [0,1]^\infty$から$\mathbb{R}$への写像である．
+
+$x=y$なら$d(x,y)=0$である．また$d(x,y)=0$なら$\sum\limits_{k=1}^\infty 2^{-k}|x_k-y_k|=0$であるから$x_k=y_k$である．よって$d(x,y)=0$なら$x=y$である．
+$d(x,y)=d(y,x)$は明らか．
+
+$x,y,z$について$\sum\limits_{k=1}^n  2^{-k}|x_k-z_k| \le \sum\limits_{k=1}^n 2^{-k} |x_k-y_k|+\sum\limits_{k=1}^n  2^{-k}|y_k-z_k|$である．$n\to\infty$とすると$\sum\limits_{k=1}^\infty  2^{-k}|x_k-z_k| \le \sum\limits_{k=1}^\infty 2^{-k} |x_k-y_k|+\sum\limits_{k=1}^\infty  2^{-k}|y_k-z_k|$である．よって$d(x,z)\le d(x,y)+d(y,z)$である．
+
+よって$d$は距離．
+
+(2)$x_n\rightarrow a$とする．$d(x_n,a)=\sum\limits_{k=1}^\infty 2^{-k} |x_{n,k}-a_k|\ge  2^{-i}|x_{n,i}-a_i| \rightarrow 0 \quad(n\rightarrow \infty)$である．よって任意の$k$に対して$x_{n,k}\rightarrow a_k$．
+
+任意の$k$に対して$x_{n,k}\rightarrow a_k$とする．
+任意の$\varepsilon$に対して$2^{1-n_0}\le\varepsilon$なる$n_0$が存在する．このとき$\sum\limits_{k=n_0}^\infty 2^{-k}|x_{n,k}-a_k|\le 2^{1-n_0}\le\varepsilon$である．$1$から$n_0-1$までの整数$k$について，ある$N_k$が存在して$n\ge N_k$なら$|x_{n,k}-a_k|\le \varepsilon$である．$N=\max\{N_1,\dots,N_{n_0-1}\}$とする．このとき$\sum\limits_{k=1}^{n_0-1} 2^{-k}|x_{n,k}-a_k|\le \sum\limits_{k=1}^{n_0-1} 2^{-k}\varepsilon\le2\varepsilon$である．よって$n\ge N$なら$d(x_n,a)\le 3\varepsilon$であるから$x_n\rightarrow a$である．
+
+(3)$\{x_{n,k}\}_{k=1}^\infty$は有界閉区間$[0,1]$内の点列であるから，収束部分列を必ずもつ．
+したがって収束部分列$\{x_{n,k_j^{(n)}}\}_{j=1}^\infty$に対して数列$\{ x_{n+1,k_j^{(n)}}\}_{j=1}^\infty$も収束部分列$\{x_{n+1,k_j^{(n+1)}}\}_{j=1}^\infty$を持つ．
+このとき$\{k_j^{(n+1)}\}_{j=1}^\infty$は$\{k_j^{(n)}\}_{j=1}^\infty$の部分列である．
+これが任意の$n$について成り立つから数列$\{k_j^{(1)}\}_{j=1}^\infty,\{k_j^{(2)}\}_{j=1}^\infty,\dots$を得て，それぞれ前の数列の部分列となっている．
+数列$\{s_n\}_{n=1}^\infty$を$s_n=k_n^{(n)}$で定める．$\{s_n\}_{n=1}^\infty$は全ての$m$について$n>m$では$\{k_j^{(m)}\}_{j=1}^\infty$の部分列となっている．したがって$\{x_{s_n},k\}_{n=1}^\infty$は収束列になっている．よって$\{x_{s_n}\}_{n=1}^\infty$は収束列である．
+
+\fbox{4}
+(1)$z=re^{i\theta}$とする．
+\begin{align}
+	\int_{C_r}\frac{e^{iz}}{z}dz&=\int_0^\pi \frac{e^{ire^{i\theta}}ire^{i\theta}}{re^{i\theta}}d\theta=\int_0^\pi ie^{ire^{i\theta}}d\theta=\int_0^\pi i e^{ir \cos \theta}e^{-r \sin \theta}d\theta\\
+	\int_{C_r}  \left| \frac{e^{iz}}{z} \right|dz &= \int_0^\pi \left| e^{-r\sin \theta} \right|d\theta \le \int_0^\pi d\theta=\pi
+\end{align}である．
+よってルベーグの収束定理から
+\begin{align}
+	\lim_{r \to 0} \int_{C_r} \frac{e^{iz}}{z}dz=\int_0^\pi id\theta=\pi i,\quad
+	\lim_{r \to \infty}  \left|\int_{C_r}\frac{e^{iz}}{z}dz\right|\le\lim_{r \to \infty}\int_0^\pi \left| e^{-r\sin \theta} \right|d\theta = \int_0^\pi0 d\theta=0
+\end{align}
+
+(2)$r>0$に対して$z=1/r$から$z=r$までの積分経路を$\Gamma_r^+$とする．$z=-r$から$z=-1/r$までの積分経路を$\Gamma_r^-$とする．
+\begin{align}
+	\int_{\Gamma_r^+} \frac{e^{iz}}{z}dz&=\int_{1/r}^r \frac{e^{ix}}{x}dx=\int_{1/r}^r \frac{\cos x+i\sin x}{x}dx\\
+	\int_{\Gamma_r^-} \frac{e^{iz}}{z}dz&=\int_{-r}^{-1/r} \frac{e^{ix}}{x}dx=\int_{r}^{1/r} -\frac{\cos x-i\sin x}{-x}dx=\int_{1/r}^r \frac{-\cos x+i\sin x}{x}dx
+\end{align}である．
+積分経路$\Gamma_r^+,C_r,\Gamma_r^-,-C_{1/r}$によってできる閉曲線$\Gamma$を考えると，被積分関数は原点を除いて正則であるから，$\int_{\Gamma} \frac{e^{iz}}{z}dz=0$である．
+よって
+\begin{align}
+	0&= \int_{\Gamma_r^+} \frac{e^{iz}}{z}dz+\int_{C_r} \frac{e^{iz}}{z}dz+\int_{\Gamma_r^-} \frac{e^{iz}}{z}dz+\int_{-C_{1/r}} \frac{e^{iz}}{z}dz\\
+	&=\int_{1/r}^r \frac{\cos x+i\sin x}{x}dx+\int_{1/r}^r \frac{-\cos x+i\sin x}{x}dx+I(r)-I(1/r)\\
+	&=2i\int_{1/r}^r \frac{\sin x}{x}dx+I(r)-I(1/r)\rightarrow 2 i \int_{0}^\infty \frac{\sin x}{x}dx -\pi i \quad (r\rightarrow \infty)
+\end{align}
+したがって$\int_0^\infty \frac{\sin x}{x}dx=\pi/2$である．
+
+
+
+\end{document}

@@ -1,0 +1,67 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H23数学A}
+\fbox{1}
+(1)$V$の基底として$\{1,x+1,(x+1)^2\}$をとる．
+$F(1)=0,F(x)=x+1,F((x+1)^2)=2(x+1)^2$であるから$F$の表現行列は$\begin{pmatrix}
+    0 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 2
+\end{pmatrix}$である．
+
+(2)$G$の表現行列を$B=\begin{pmatrix}
+    b_{11} & b_{12} & b_{13} \\
+    b_{21} & b_{22} & b_{23} \\
+    b_{31} & b_{32} & b_{33}
+\end{pmatrix}$とし，$F$の表現行列を$A$とする．
+$G\circ F = F \circ G$は$AB=BA$と同値である．
+よって$AB=\begin{pmatrix}
+    0 & 0 & 0 \\
+    b_{21} & b_{22} & b_{23} \\
+    2b_{31} & 2b_{32} & 2b_{33}
+\end{pmatrix}=\begin{pmatrix}
+    0 & b_{12} & 2b_{13} \\
+    0 & b_{22} & 2b_{23} \\
+    0 & b_{32} & 2b_{33}
+\end{pmatrix}$であるから，$b_{12}=b_{13}=b_{21}=b_{31}=b_{23}=b_{32}=0$である．
+したがって$B=\begin{pmatrix}
+    b_{11} & 0 & 0 \\
+    0 & b_{22} & 0 \\
+    0 & 0 & b_{33}
+\end{pmatrix}$である．よって$M$の次元は$3$である．
+
+\fbox{2}
+(1)$\{f_n\}_{n=1}^\infty$は$f$に一様収束するから，ある$N\in \mathbb{N}$が存在して$|f_N(x)-f(x)|<1$である．$f_N$は有界であるから$f_N(x)\le M$とするとよって$|f(x)|\le1+|f_N(x)|<1+M$である．よって$f$は有界．
+
+(2)任意の$\varepsilon>0$に対して一様収束性から，ある$N\in \mathbb{N}$が存在して$n,m>N$なら$|f_n(x)-f(x)|<\varepsilon,|f(x)-f_m(x)|<\varepsilon$である．
+この$n,m$に対してある$M(n)>0$が存在して$x > M(n)$なら$|a_n-f_n(x)|<\varepsilon$であり，またある$M(m)>0$が存在して$x > M(m)$なら$|a_m -f_m(x)|<\varepsilon$である．
+$|a_n-a_m|\le|a_n -f_n(x)|+|f_n(x)-f(x)|+|f(x)-f_m(x)|+|f_m(x)-a_m|$であるから$x>M(n)+M(m)$をとることで$|a_n-a_m|<4\varepsilon$である．すなわち$\{a_n\}_{n=1}^\infty$はコーシー列である．
+
+(3)
+任意の$\varepsilon>0$に対して，ある$N_1 \in \mathbb{N}$が存在して$n>N_1$なら$|f(x)-f_n(x)|<\varepsilon$である．またある$N_2 \in \mathbb{N}$が存在して$n>N_2$なら$|a_n-A|<\varepsilon$である．$N=N_1+N_2$とする．ある$M>0$が存在して$x>M$なら$|f_N(x)-a_n|<\varepsilon$である．よって$|f(x)-A|\le|f(x)-f_n(x)|+|f_n(x)-a_n|+|a_n-A|<3\varepsilon$となる．
+
+\fbox{3}
+(1)$(a,b)\notin G$を任意にとる．$b\neq f(a)$と$Y$がハウスドルフ空間であることから開集合$U,V$が存在して$f(a)\in U,b\in V,U\cap V=\emptyset$である．$(a,b)\in f^{-1}(U)\times V$である．ある$(x,y)\in f^{-1}(U)\times V$について$f(x)=y$と仮定する．$f(x)\in U,y\in V$であるから$y \in U\cap V$となり矛盾．よって$f^{-1}(U)\times V \cap G = \emptyset$である．$f^{-1}(U)\times V$は開集合であるから$G$は閉集合．
+
+(2)$f(x)=\begin{cases}
+    0 & (x\le 0) \\
+    1/x & (x>0)
+\end{cases}$とする．$f$は連続でないが$G$は閉集合である．
+
+\fbox{4}
+(1)$|e^{iz}|=|\exp({ire^{it}})|=|\exp(-r\sin t+ir\cos t)|=|\exp(-r\sin t)|\le 1$である．よって$|\int_{C_r} f(z)dz|\le \int_{C_r} |\frac{2}{z^2}|dz=2\int_0^{\pi} |\frac{1}{r}|dt=2\pi\frac{1}{r}\rightarrow 0 \quad(r\rightarrow \infty)$である．
+
+$(1-e^{iz})/z^2=\sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-2}z^{n-2}$である．よって$\int_{C_r} f(z)dz= \sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-2}\int_{C_r}z^{n-2}dz=\sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-1}\int_{0}^\pi r^{n-1}e^{i(n-1)t}dt$である．$n=1$の項については$\int_{0}^\pi dt=\pi$である．$n\ge 2$なら
+$|\int_0^\pi r^{n-1}e^{i(n-1)t}dt|\le \int_0^\pi r^{n-1}dt\rightarrow0 \quad(r\to 0)$である．よって$\int_{C_r} f(z)dz\rightarrow 0 \quad(r\to 0)$である．
+
+\end{document}

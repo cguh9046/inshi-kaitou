@@ -1,0 +1,99 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H25数学A}
+\fbox{1}
+(1)\begin{align}
+	u(x)=\int_0^x \phi(x)\psi(y)f(y)dy+\int_x^\pi \psi(x)\phi(y)f(y)dy=
+	\phi(x)\int_0^x \psi(y)f(y)dy+\psi(x)\int_x^\pi \phi(y)f(y)dy
+\end{align}
+である．$\phi(y)f(y),\psi(y)f(y)$は$(0,\pi)$上連続であるから，$u(x)$は$(0,\pi)$上で微分可能である．
+\begin{align}
+	u'(x)&=\phi'(x)\int_0^x \psi(y)f(y)dy+\phi(x)\psi(x)f(x)+\psi'(x)\int_x^\pi \phi(y)f(y)dy-\psi(x)\phi(x)f(x)\\
+	&=\phi'(x)\int_0^x \psi(y)f(y)dy+\psi'(x)\int_x^\pi \phi(y)f(y)dy
+\end{align}
+
+先ほどと同様の理由で$u'(x)$は$(0,\pi)$上で微分可能である．
+\begin{align}
+	u''(x)&=\phi''(x)\int_0^x \psi(y)f(y)dy+\phi'(x)\psi(x)f(x)+\psi''(x)\int_x^\pi \phi(y)f(y)dy-\psi'(x)\phi(x)f(x)\\
+	&=-\phi(x)\int_0^x \psi(y)f(y)dy+\phi'(x)\psi(x)f(x)-\psi(x)\int_x^\pi \phi(y)f(y)dy+\psi'(x)\phi(x)f(x)\\
+	&=-u(x)+\phi'(x)\psi(x)f(x)-\psi'(x)\phi(x)f(x)
+\end{align}
+よって$u$は$C^2$級である．
+
+(2)
+$u''(x)+u(x)=(\phi'(x)\psi(x)-\psi'(x)\phi(x))f(x)$である．
+$h(x)=\phi'(x)\psi(x)-\psi'(x)\phi(x)$とおくと
+$h'(x)=\phi''(x)\psi(x)+\phi'(x)\psi'(x)-\psi''(x)\phi(x)-\psi'(x)\phi'(x)=-\phi(x)\psi(x)+\psi(x)\phi(x)=0$．より$h(x)=W$．
+
+(3)$\psi$が$C^2$級の実数値関数であることと$\psi''(x)+\psi(x)=0$より$\psi(x)=\Re(A e^{ix}+Be^{-ix})=C \cos x+D\sin x$．($A,B$は,$C=A+B\in \mathbb{R},D=(A-B)i\in \mathbb{R}$を満たす任意定数)である．
+
+$\phi(x)=\sin x,W=1$より$\cos x \psi(x)-\sin x \psi'(x)=1$．とくに$x=0$で$\psi(0)=1$である．よって$C=1$．また$\psi'(0)=0$より$D=0$．よって$\psi(x)=\cos x$．
+
+\fbox{2}
+(1)$v \in f^{n+1}(V)=f^n(f(V))$に対して，ある$u \in f(V)$が存在して，$v=f^n(u)$である．すなわち$f^{n+1}(V)\subset f^n(V)$である．
+
+(2)$f^{n+1}(V)\subset f^n(V)$より$f^{k}(V)$の次元は単調減少である．$V$は有限次元であるから，ある$n_0\in \mathbb{N}$が存在して，$n \ge n_0$ならば$f^{n+1}(V)=f^n(V)$である．
+
+(3)$f|_W\colon W \rightarrow W$は$f|_W(W)=f|_W(f^{n_0}(V))=f^{n_0+1}(V)=W$より全射である．有限次元ベクトル空間の全射自己準同型は同型射であるから，$f|_W$は同型．
+
+\fbox{3}
+(1)$\pi^{-1}(\emptyset)=\emptyset$は$R$の開集合であるから，$\emptyset \in \mathcal{O}$である．$\pi^{-1}(R/\sim)=R$は$R$の開集合であるから，$R/\sim \in \mathcal{O}$である．
+
+$U,V \in \mathcal{O}$に対して，$\pi^{-1}(U),\pi^{-1}(V)$は$R$の開集合であるから，$\pi^{-1}(U)\cap \pi^{-1}(V)=\pi^{-1}(U\cap V)$は$R$の開集合である．よって$U\cap V \in \mathcal{O}$である．
+
+$U_\lambda \in \mathcal{O}$に対して，$\pi^{-1}(U_\lambda)$は$R$の開集合であるから，$\pi^{-1}(\bigcup_\lambda U_\lambda)=\bigcup_\lambda \pi^{-1}(U_\lambda)$は$R$の開集合である．よって$\bigcup_\lambda U_\lambda \in \mathcal{O}$である．
+
+以上より$R/\sim$は$\mathcal{O}$を位相とする位相空間．
+
+(2)ハウスドルフ空間であれば，一点集合は閉集合である．$\{x_0\}\subset R/\sim$について$\pi^{-1}(\{x_0\})=D$は$R$の閉集合ではない．よって$\{x_0\}$は閉集合ではないから，ハウスドルフ空間でない．
+
+(3)$\{x_0\}$以外の一点集合はすべて閉集合である．よって$f$が同相写像なら閉集合の像は閉集合であるから$f(x_0)=x_0$である．
+
+\fbox{4}
+(1)$\{z_n\}_{n=1}^\infty$を$z$に収束する任意の複素数列とする．
+\begin{align}
+	\lim_{n \to \infty} \frac{f(z_n)-f(z)}{z_n-z}&=\frac{1}{2\pi}\lim_{n \to \infty}\int_0^{2\pi}\frac{\phi(\theta)e^{i\theta}}{z_n-z}\qty(\frac{1}{e^{i\theta}-z_n}-\frac{1}{e^{i\theta}-z})d\theta\\
+	&= \frac{1}{2\pi}\lim_{n \to \infty}\int_0^{2\pi}\frac{\phi(\theta)e^{i\theta}}{({e^{i\theta}-z_n})({e^{i\theta}-z})}d\theta\\
+\end{align}
+
+ここで$|z|<1$より任意の$\theta\in [0,2\pi]$とある整数$N$より大きい$n$に対して，ある$\varepsilon>0$が存在して
+$|({e^{i\theta}-z_n})({e^{i\theta}-z})|\ge|1-|z_n||1-|z||>\varepsilon$である．
+したがって
+$\sup_{n >N}\qty|\frac{\phi(\theta)e^{i\theta}}{({e^{i\theta}-z_n})({e^{i\theta}-z})}|<|\frac{\phi(\theta)e^{i\theta}}{\varepsilon}|<M\in \mathbb{R} $である．
+
+よってルベーグの収束定理から
+\begin{align}
+	\lim_{n \to \infty} \frac{f(z_n)-f(z)}{z_n-z}&=\frac{1}{2\pi}\int_0^{2\pi}\lim_{n \to \infty}\frac{\phi(\theta)e^{i\theta}}{({e^{i\theta}-z_n})({e^{i\theta}-z})}d\theta=\frac{1}{2\pi}\int_0^{2\pi}\phi(\theta)e^{i\theta}((e^{i\theta}-z)^{-1})'d\theta
+\end{align}
+となり微分可能．よって$f$は$|z|<1$で正則である．
+
+(2)$|z|<1$のとき$n!c_n=f^{(n)}(0)$である．
+$f^{(n)}(z)=\frac{1}{2\pi}\int_0^{2\pi}(\phi(\theta)e^{i\theta})((e^{i\theta}-z)^{-1})^{(n)}d\theta=\frac{1}{2\pi}\int_0^{2\pi}(\phi(\theta)e^{i\theta})(n!(e^{i\theta}-z)^{-n-1})d\theta$である．よって$f^{(n)}(0)=n!\frac{1}{2\pi}\int_0^{2\pi} \phi(\theta)e^{-ni\theta}d\theta $である．
+
+\begin{align}
+	2\pi c_n&=\int_0^{2\pi} \phi(\theta)e^{-ni\theta}d\theta = \qty[\phi(\theta)\frac{e^{-ni\theta}}{-ni}]_0^{2\pi}-\int_0^{2\pi} \phi'(\theta)\frac{e^{-ni\theta}}{-ni}d\theta\\
+	&=\int_0^{2\pi} \phi'(\theta)\frac{e^{-ni\theta}}{ni}d\theta = \qty[\phi'(\theta)\frac{e^{-ni\theta}}{n^2i^2}]_0^{2\pi}-\int_0^{2\pi} \phi''(\theta)\frac{e^{-ni\theta}}{-n^2i^2}d\theta\\
+	&=\int_0^{2\pi} \phi''(\theta)\frac{e^{-ni\theta}}{n^2}d\theta\le 2\pi \max_{\theta \in \mathbb{R}}|\phi''(\theta)|\frac{1}{n^2}
+\end{align}
+よって$n^2|c_n|\le \max_{\theta \in \mathbb{R}}|\phi''(\theta)|$である．
+
+(3)\begin{align}
+	\sum_{n=0}^\infty |c_nz^n|\le\sum_{n=0}^\infty |c_n|\le \sum_{n=0}^\infty \max_{\theta \in \mathbb{R}}|\phi''(\theta)|\frac{1}{n^2}<\infty
+\end{align}
+よって絶対収束するから，$|z|=1$で$\sum\limits_{n=0}^\infty c_nz^n$は収束する．
+
+(4)ワイエルシュトラスのM判定法と(3)での不等式から$\sum\limits_{n=0}^\infty c_nz^n$は$|z|\le 1$で一様収束する．したがって一様収束先の関数は連続であるから，$\lim_{x\rightarrow 1-0}f(x)=\lim_{x\rightarrow 1-0}\sum\limits_{n=0}^\infty c_nx^n=\sum\limits_{n=0}^\infty c_n$である．
+
+
+
+\end{document}

@@ -1,0 +1,121 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H24数学A}
+\fbox{1}
+(1)$\lim\limits_{n \to \infty} a_n=0$より，任意の$\varepsilon>0$に対してある$N\in \mathbb{N}$が存在して$n>N$なら$\varepsilon<a_n<\varepsilon$である．
+
+よって$n>N$で$(1-\frac{\varepsilon}{n})^n\le (1+\frac{a_n}{n})^n\le (1+\frac{\varepsilon}{n})^n$である．極限をとれば$e^{-\varepsilon}\le \lim\limits_{n \to \infty}(1+\frac{a_n}{n})^n\le e^{\varepsilon}$である．
+$\varepsilon$は任意であるから$\lim\limits_{n \to \infty}(1+\frac{a_n}{n})^n=1$である．
+
+(2)$n \cos \frac{t}{\sqrt{n}}-n=-\frac{1}{2}t^2+O(\frac{1}{n})$であり，$\lim\limits_{n \to \infty}s \cos \frac{t}{\sqrt{n}}=s$であるから，
+$\lim\limits_{n \to \infty}a_n=s-\frac{1}{2}t^2=0$より$(s,t)=(\frac{t^2}{2},t)\quad(t \in \mathbb{R})$である．
+
+(3)(2)の$a_n$をもちいると，
+$\cos \frac{t}{\sqrt{n}}=\frac{n}{n+s}\frac{n+s}{n}\cos \frac{t}{\sqrt{n}}=\frac{n}{n+s}(1+\frac{a_n}{n})$である．したがって$\lim\limits_{n \to \infty}(\cos \frac{t}{\sqrt{n}})^n=e^{-\frac{t^2}{2}}$である．よって$\int_0^\infty e^{-\frac{t^2}{2}}dt=\sqrt{2\pi}$である．
+
+\fbox{2}
+(1)$\begin{vmatrix}
+    -3-t & -2 & 1\\
+    4 & 3-t & -1\\
+    -4 & -2 & 2-t
+\end{vmatrix}=-t(t-1)^2$である．よって固有値は$0,1$である．
+
+$t=0$のとき，$\begin{pmatrix}
+    -3 & -2 & 1\\
+    4 & 3 & -1\\
+    -4 & -2 & 2
+    \end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & 0 & -1\\
+    0 & 1 & 1\\
+    0 & 0 & 0
+    \end{pmatrix}$であるから
+    $V_0$の基底は$\begin{pmatrix}
+        1\\
+        -1\\
+        1
+    \end{pmatrix}$である．
+
+$t=1$のとき，$\begin{pmatrix}
+    -4 & -2 & 1\\
+    4 & 2 & -1\\
+    -4 & -2 & 1
+    \end{pmatrix}$であるから固有ベクトルは$\begin{pmatrix}
+        1\\
+        0\\
+        4
+    \end{pmatrix},\begin{pmatrix}
+        0\\
+        1\\
+        2
+    \end{pmatrix}$である．
+
+(2)$BAy=BABx=B\alpha x=\alpha Bx= \alpha y$
+
+(3)$AB$のrankは2であるから$A$のrankは2以上．$A \colon \mathbb{C}^2 \rightarrow \mathbb{C}^3$であるから$A$のrankは2である．すなわち$A$は単射．同様に$B$は全射である．
+
+よって$\dim \Im g_1=2$である．
+
+(4)$B$は全射であるから任意の$y \in \mathbb{C}$に対して$Bx=y$となる$x \in \mathbb{C}^2=V_1$が存在する．$BAy=y$より$BA=\begin{pmatrix}
+    1 & 0\\
+    0 & 1\\
+\end{pmatrix}$である．
+
+\fbox{3}
+(1)$f^{-1}([0,1))=[0,1)$は$X$の開集合でないから$f$は連続でない．
+
+
+(2)
+$X$は$\left\{ (x-\varepsilon,x+\varepsilon)\relmiddle| x \in \mathbb{R}, \varepsilon>0 \right\}$を開基とする位相空間である．
+
+$g^{-1}(x-\varepsilon,x+\varepsilon)=(x-\varepsilon,x+\varepsilon)=\bigcup\limits_{n=1}^\infty [x-\frac{\varepsilon}{n},x+\varepsilon)$より$g$は連続．
+
+(3)$A^+$の任意の開被覆$S=\left\{ U_\lambda \mid \lambda\in \Lambda \right\}$をとる．$0 \in U_{\lambda'}$なる$\lambda' \in \Lambda$が存在する．ある$\varepsilon>0$が存在して$(-\varepsilon,\varepsilon)\subset U_{\lambda'}$である．$\frac{1}{n}<\varepsilon$となるような最大の$n$を$N$とする．$N$以下の$n$に対して$\frac{1}{n}$を含むような$U_{\lambda_n}$が存在する．したがって$\Lambda'= \left\{ \lambda_1,\lambda_2,\cdots,\lambda_N,\lambda' \right\}$は$A^+$の有限部分被覆である．よって$A^+$はコンパクトである．
+
+$A^-$は$A^+$と同様にしてコンパクトである．
+
+(4)$A^+$は$Y$においてコンパクトである．$0$を含む開集合は開集合$[0,x)$を部分集合にもつ．$x$以上の$\frac{1}{n}$なる$n$は有限個なので(3)と同様にコンパクト．
+
+$A^-$はコンパクトでない．$\{[-\frac{1}{n},-\frac{1}{n+1}) \mid n =1,2,\dots\}\cup \{[0,1)\}$は開被覆であるが有限部分被覆を持たない．
+
+\fbox{4}
+(1)$z=e^{i\pi/5}$は一位の極である．よって留数は$\lim\limits_{z \to e^{i\pi/5}}(z-e^{i\pi/5})/(z^5+1)=e^{6i\pi/5}/5$である．
+
+(2)$|\int_{\Gamma_R}f(z)dz|\le \int_{\Gamma_R} |\frac{1}{z^5+1}|dz=\int_{0}^{2\pi/5} |\frac{1}{R^5-1}Ri|d\theta=\frac{2\pi}{5}\frac{R}{R^5-1}\rightarrow 0\quad (R\rightarrow \infty)$である．
+
+(3)半径$R$の扇形で偏角が$0$から$2\pi/5$の曲線を反時計回りに進む積分曲線を$C$とする．$f(z)=\frac{1}{z^5+1}$は$C$を含むある領域で$C$内に孤立特異点をもち，それ以外で正則であるから，留数定理より
+$\int_C f(z)dz=2\pi i \Res(f,e^{i\pi/5})=2\pi ie^{6i\pi/5}/5$である．
+
+$\Gamma_A=\{ xe^{i2\pi/5} \mid 0 \le x \le R\}$とする．ただし$\Gamma_A$の向きは$C$と同じ方向にとる．
+
+\begin{align}
+    \int_{\Gamma_A} \frac{1}{z^5+1}dz=-\int_0^R \frac{1}{x^5+1}e^{2\pi i/5}dx
+    =-\cos \frac{2\pi}{5}\int_0^R \frac{1}{x^5+1}dx-i\sin \frac{2\pi}{5}\int_0^R \frac{1}{x^5+1}dx
+\end{align}
+よって
+\begin{align}
+    \int_0^\infty \frac{1}{x^5+1}dx-\cos \frac{2\pi}{5}\int_0^\infty \frac{1}{x^5+1}dx=-\frac{2\pi}{5}\sin \frac{6\pi}{5}
+\end{align}
+よって$\int_0^\infty \frac{1}{x^5+1}dx=\frac{2\pi}{5}\sin \frac{6\pi}{5}/(1-\cos \frac{2\pi}{5})$である．
+
+\begin{align}
+    \frac{\sin \frac{6\pi}{5}}{(1-\cos \frac{2\pi}{5})}= \frac{\sin \frac{\pi}{5}}{2\sin^2 \frac{\pi}{5}}=\frac{1}{2\sin \frac{\pi}{5}}
+\end{align}
+より$\int_0^\infty \frac{1}{x^5+1}dx=\frac{\pi}{5\sin \frac{\pi}{5}}$である．
+
+
+
+
+
+
+
+\end{document}

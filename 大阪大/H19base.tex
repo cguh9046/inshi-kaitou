@@ -1,0 +1,46 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H19数学A}
+\fbox{1}
+(1)$|f(y)-f(x)|=|\int_x^yf'(t)dt|\le\int_x^y|f'(t)|dt$
+
+(2)(i)$c>1$より
+$|f(y)-f(x)|\le\int_x^y At^{-c}dt=\frac{A}{-c+1}(y^{-c+1}-x^{-c+1})<\frac{A}{c-1}x^{1-c}\rightarrow 0\quad(x \rightarrow \infty)$である．
+$x_n=f(n)$とすれば$|x_n-x_m|\le\frac{A}{1-c}m^{1-c}\rightarrow0\quad(m\rightarrow \infty)$である．したがって数列$\{x_n\}_{n=2}^{\infty}$はコーシー列であるから，収束列でその収束先を$\alpha$とする．
+任意の$\varepsilon>0$に対してある$M>0$が存在して$x>M$なら$|f(x)-f([x]+1)|<\varepsilon$である．ここで$[x]$は$x$以下の最大の整数．
+またある整数$N$が存在して$n>N$なら$|x_n-\alpha|<\varepsilon$である．したがって$x>N+M$なら$|f(x)-\alpha|\le|f(x)-f([x]+1)|+|f([x]+1)-\alpha|<2\varepsilon$となるから収束する．
+
+(ii)$|f(x)-\alpha|=\lim\limits_{y\to \infty}|f(y)-f(x)|\le\lim\limits_{y\to \infty}\frac{A}{c-1}x^{1-c}=\frac{A}{c-1}x^{1-c}$
+
+\fbox{2}
+$v\in\ker AC_1$に対して$Cv\in \ker A$であり$C_1$が正則であるから$C_1 \colon \ker AC_1 \rightarrow\ker A$は同型写像．よって$\dim \ker AC_1=\dim \ker A$である．
+$v \in \ker AC_1$に対して$B_1v \in \ker B_1AC$である．$B_1$が正則であるから$B_1 \colon \ker AC_1 \rightarrow \ker B_1AC$は同型写像．よって$\dim \ker AC_1=\dim \ker B_1AC_1$である．以上より$\dim \ker A=\dim \ker B_1AC_1=m-r$である．同様に$\dim \ker A = \dim \ker B_2AC_2=m-s$であるから$r=s$．
+
+\fbox{3}
+$f(x,y_0)\neq 0$より$f(x,y_0)\in \mathbb{R}\setminus\{ 0\}$であるから，$(x,y_0)\in f^{-1}(\mathbb{R}\setminus\{ 0\})$である．$\mathbb{R}\setminus\{0\}$は開集合であるから，$f^{-1}(\mathbb{R}\setminus\{ 0\})$は開集合である．
+したがってある$X\times Y$の開集合$V_x\times U_x$が存在して$(x,y_0)\in V_x\times U_x\subset f^{-1}(\mathbb{R}\setminus\{ 0\})$である．$\bigcup\limits_{x\in X}V_x$は$X$の開被覆であるから，有限部分被覆$\{V_{x_1},\cdots,V_{x_n}\}$が存在する．$U=\bigcap\limits_{i=1}^nU_{x_i}$とすれば$X\times U\subset f^{-1}(\mathbb{R}\setminus\{ 0\})$である．
+
+\fbox{4}
+$f(z)=\frac{e^z-e^{-z}}{z^4}$とすれば$f(z)$は$z\neq 0$で正則であり，$z=0$で極である．$z=0$での$f$のローラン級数は
+\begin{align}
+	f(z)&= (\sum_{n=0}^{\infty}\frac{1}{n!}z^n-\sum_{n=0}^{\infty}\frac{1}{n!}(-z)^n)/z^4\\
+	&=\sum_{n=0}^{\infty}(\frac{1}{n!}-(-1)^n\frac{1}{n!})z^{n-4}
+\end{align}である．$z^{-1}$の係数は$1/3$である．
+
+$r<1$なら内部に特異点を持たないから$\int_{\Gamma_r}f(z)dz=0$である．
+$r>1$なら$z=0$が特異点となるから留数定理より$\int_{\Gamma_r}f(z)dz=2\pi i/3$である．
+
+
+
+
+\end{document}

@@ -1,0 +1,47 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H20数学A}
+\fbox{1}
+(1)\begin{align}
+	\frac{\partial F}{\partial\theta}\left( \frac{\pi}{3} \right)&=
+	f_x(\cos \frac{\pi}{3},\sin \frac{\pi}{3})(-\sin \frac{\pi}{3})+f_y(\cos \frac{\pi}{3},\sin \frac{\pi}{3})\cos \frac{\pi}{3}\\
+	&=-\frac{\sqrt{3}}{2}a+\frac{1}{2}b
+\end{align}
+
+(2)$F$は$[0,4\pi]$上で連続である．よって$\theta\in [0,4\pi]$に対して$|F(\theta)|<M$となる$M>0$が存在する．$\tau\in \mathbb{R}$に対して$t=2n\pi+\theta$をみたす，$n\in \mathbb{Z},\theta\in [0,2\pi)$が存在する．$F(\tau)=F(\theta)$であるから$|F(\tau)|<M$である．したがって有界．また$F$は$[0,4\pi]$上で連続であるから一様連続である．すなわち$\varepsilon>0$に対して$\delta>0$が存在して任意の$\theta,\tau\in [0,4\pi]$に対して$|\theta-\tau|<\delta$なら$|F(\theta)-F(\tau)|<\varepsilon$である．
+
+よって$s\ge t \in \mathbb{R}$に対して，$s=2n\pi+p$をみたす$p\in[0,2\pi)$が存在する．$|s-t|<\delta$なら$|F(s)-F(t)|=|F(p)-F(p+s-t)|<\varepsilon$であるから一様連続である．
+
+\fbox{2}
+(1)$\varphi_A \colon \mathbb{C}^n \rightarrow \mathbb{C}^m;x\mapsto Ax$で定める．$A$の階数が$m$であるから$\dim \varphi_A=m=\dim \mathbb{C}^m$．したがって$\varphi_A$は全射である．よって任意の$c\in \mathbb{C}^m$に対して$\varphi_A(x)=Ax=c$となる$x \in \mathbb{C}^n$が存在する．
+
+(2)$\varphi_B$が単射なら$\rank \varphi_B=m$である．よって$\rank B^T=m$であるから$\varphi_{B^T}$は全射である．
+
+(3)$B^TQ^T=P^t$なる$Q^T$の存在を示す．$P^T$の列ベクトル$p_i$ごとに$q_i \in \mathbb{C}^n$が存在して$B^Tq_i=p_i$である．よって$Q^T=(q_1,\cdots,q_m)$とすれば$B^TQ^T=P^T$である．
+
+\fbox{3}
+(1)$(x,0),(x,1)\in Y $について$(x,1)$が属す$Y$の開集合$U$をとる．$U$は開基の和集合でかけるから，ある$W\subset U,W \in \mathcal{B}$が存在して$(x,1)\in W$．すなわちある$V \in \mathcal{O}$が存在して$W=V\times \{0,1\}$である．
+よって$(x,0)\in W\subset U$であるから，ハウスドルフでない．
+
+(2)$X\times \{ 0\}$の開被覆$S=\{ U_\lambda\mid \lambda\in \Lambda\}$を任意にとる．任意の$x\in X$についてある$\lambda_x$が存在して$x \in U_{\lambda_x}$である．各$U_{\lambda_x}$についてある開集合$V_{\lambda_x}\in \mathcal{O}$が存在して
+$x \in V_{\lambda_x}\times \{ 0\} \subset U_{\lambda_x}$である．したがって$X \subset \bigcup\limits_{x\in X}V_{\lambda_x}$である．$X$はコンパクトであるから有限部分被覆$\{ V_{\lambda_{x_1}},\cdots,V_{\lambda_{x_n}}\}$が存在する．$X \subset \bigcup\limits_{i=1}^nV_{\lambda_{x_i}}$であるから$X\times \{ 0\} \subset \bigcup\limits_{i=1}^nU_{\lambda_{x_i}}$である．したがって$X\times \{ 0\}$はコンパクトである．
+(1)で示したように$(x,1)\in Y\setminus (X\times\{0\} )$を含む開集合$U$は$U\cap (X \times \{0\})\neq \emptyset$である．したがって$X\times\{ 1\}$は開集合でない．
+
+\fbox{4}
+(1)$\frac{1}{1-z^3}=1+z^3+z^6+\cdots \quad(|z|<1)$であるから，$\varphi(z)=\frac{z^p}{1-z^3}=\sum\limits_{n=0}^{\infty}z^{3n+p}$である．収束半径は$1$である．
+
+(2)$\varphi$の特異点は$1,e^{2\pi i/3},e^{4\pi i/3}$で，それ以外の点で正則である．したがって$R<1$なら$\int_{C}\varphi(z)dz=0$である．
+
+特異点での留数を計算する．$\lim\limits_{z\to 1}(z-1)\varphi(z)=\frac{1}{3},\lim\limits_{z\to e^{2\pi i/3}}(z-e^{2\pi i/3})\varphi(z)=\frac{e^{2(p+1)\pi i/3}}{3},\lim\limits_{z\to e^{4\pi i/3}}(z-e^{4\pi i/3})\varphi(z)=\frac{e^{4(p+1)\pi i/3}}{3}$である．よって留数定理から$\int_{C}\varphi(z)dz=\frac{2\pi i}{3}(1+e^{2(p+1)\pi i/3}+e^{4(p+1)\pi i/3})$である．
+
+\end{document}

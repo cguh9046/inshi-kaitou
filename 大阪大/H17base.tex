@@ -1,0 +1,47 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H17数学A}
+\fbox{1}
+(1)$AB$が正則であるから$f\circ g$は同型である．よって$f$は全射，$g$は単射である．$\dim \mathrm{C}^n-\dim \Ker f=\dim(\mathrm{Im} f)=\dim \mathrm{C}^m$より$\dim \Ker f=n-m$である．$g$は単射であるから$\dim \Ker g=0$
+
+(2)$AB v=\lambda v,v\neq 0$とする．このとき$BAB v=B\lambda v=\lambda Bv,Bv\neq 0$であるから$AB$の固有値$\lambda$は$BA$の固有値でもある．
+
+$BAv=\lambda v , v\neq 0$とする．$ABA v =\lambda Av$であるから，$Av\neq 0$なら$\lambda$は$AB$の固有値である．$Av=0$なら$BAv=0=\lambda v$より$\lambda=0$．すなわち$BA$の零でない固有値は$AB$の固有値でもあるから$BA$の固有値は$\lambda_0=0,\lambda_1,\dots,\lambda_k$である．
+
+(3)$\mathrm{C}^m$における$AB$の固有値$\lambda_i$の固有空間を$W(\lambda_i)$とする．対角化可能であるから$\sum_{i=1}^k \dim W(\lambda_i)=m$である．$\mathrm{C}^n$における$BA$の固有値$\lambda_i$の固有空間を$V(\lambda_i)$とする．$g(W(\lambda_i))\subset V(\lambda_i)$であり$g$は単射であるから$\dim W(\lambda_i)\le \dim V(\lambda_i)$である．また$V(\lambda_0)=\Ker (g\circ f)$より$\dim V(\lambda_0)\ge n-m$である．よって$\sum_{i=0}^k \dim V(\lambda_i)\ge n-m+\sum_{i=1}^k \dim W(\lambda_i)=n$である．
+よって$BA$は対角化可能である．
+
+\fbox{2}
+(1)$f$を商写像とする．$f^{-1}(B)$を閉集合とする．$X\setminus f^{-1}(B)=f^{-1}(X\setminus B)$は開集合であるから$X\setminus B$は開集合である．よって$B$は閉集合．
+
+$f^{-1}(B)$を開集合とする．$X\setminus f^{-1}(B)=f^{-1}(X\setminus B)$は閉集合であるから$X\setminus B$は閉集合である．よって$B$は開集合．
+
+(2)$B\subset Y$について$f^{-1}(B)$が閉集合だとする．コンパクト空間の閉集合はコンパクトであるから$f^{-1}(B)$はコンパクトである．$f$は全射連続写像であるから$f(f^{-1}(B))=B$はコンパクトである．ハウスドルフ空間のコンパクト部分集合は閉集合であるから$B$は閉集合である．よって$f$は商写像．
+
+\fbox{3}
+(1)任意の$x>0$について$x/N<1$なる$N$が存在する．$\log(1+x)=x-\frac{x^2}{2}+O(x^3)\quad(|x|<1)$であるから$n\ge N$のとき$\log(1+x/n)=(x/n)-\frac{x^2}{2n^2}+O(x^3/n^3)$である．したがって$\sum\limits_{n=N}^{\infty}x/n-\log(1+x/n)=\sum\limits_{n=N}^{\infty}\frac{x^2}{2n^2}+O(x^3/n^3)<\infty$である．よって収束する．
+
+(2)$I=(1/2,2)$とする．$x\in I$に対して
+$(x/n-\log(1+x/n))'=1/n-\frac{1}{n+x}<\frac{1}{n(2n+1)}$である．よって$\sum\limits_{n=1}^{\infty}1/n-\log(1+1/n)$は一様収束する．したがって
+$(\sum\limits_{n=1}^\infty x/n-\log(1+x/n))'|_{x=1}=\sum\limits_{n=1}^\infty 1/n-\frac{1}{n+1}=1$である．
+
+\fbox{4}
+(1)$\frac{1}{1+z^2}=\sum\limits_{n=0}^\infty(-1)^nz^{2n}$であるから
+$\frac{2z}{1+z^2}=\sum\limits_{n=0}^\infty2(-1)^nz^{2n+1}$である．
+
+(2)整級数であるから項別積分ができて$|z|<1$で
+$f(z)=\log(1+z^2)=\sum\limits_{n=0}^\infty2(-1)^{n}z^{2n+2}/(2n+2)=\sum\limits_{k=1}^\infty(-1)^{k-1}z^{2k}/k$である．よって$f(z)/z^n=\sum\limits_{k=1}^\infty(-1)^{k-1}z^{2k-n}/k$でありこのローラン級数の$z^{-1}$の係数は$n$が偶数か$1$のとき$0$，それ以外のとき$(-1)^{\ell-1}/\ell \quad (n=2\ell+1)$である．留数定理から$\int_C\frac{f(z)}{z^n}dz=\begin{cases} 2\pi i(-1)^{\ell-1}/\ell & (n=2\ell+1) \\ 0 & (n\neq 2\ell+1) \end{cases}$である．
+
+
+
+\end{document}
