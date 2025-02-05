@@ -1,0 +1,170 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H29数学必修}
+\fbox{1}
+(1)標準基底に関する$f,g$の表現行列を$F,G$とすると，$F=\begin{pmatrix}
+    1 & 2 & -2 & 1 & 5\\
+    -4 & 1 & -3 & 0 & 0 \\
+    \end{pmatrix},G=\begin{pmatrix}
+        1 & 1 \\
+        -7 & 4 \\
+        -3 & 0 \\
+        5  & 2 \\
+        1 & -2 \\
+    \end{pmatrix}$である．
+    よって$GF=A=\begin{pmatrix}
+        -3 & 3 & -5 & 1 & 5 \\
+        -23 & -10 & 2 & -7 & -35 \\
+        -3 & -6 & 6 & -3 & -15 \\
+        -3 & 12 & -16 & 5 & 25 \\
+        9 & 0 & 4 & 1 & 5 \\
+    \end{pmatrix},FG=B=\begin{pmatrix}
+        3 & 1 \\
+        -2 & 0 \\
+        \end{pmatrix}$である．
+
+    (2)$g_B(t)=\begin{vmatrix}
+        3-t & 1 \\
+        -2 & -t \\
+    \end{vmatrix}=(3-t)(-t)-(-2)=t^2-3t+2=(t-1)(t-2)$である．
+    固有値$1$に対する固有ベクトルは$B-2E=\begin{pmatrix}
+        1 & 1 \\
+        -2 & -2 \\
+        \end{pmatrix}$より$\begin{pmatrix}
+            1 \\
+            -2 \\
+        \end{pmatrix}$である．
+
+    固有値$2$に対する固有ベクトルは$B-E=\begin{pmatrix}
+        2 & 1 \\
+        -2 & -1 \\
+        \end{pmatrix}$より$\begin{pmatrix}
+            1 \\
+            -1 \\
+        \end{pmatrix}$である．
+
+        よって$P=\begin{pmatrix}
+            1 & 1 \\
+            -2 & -1 \\
+        \end{pmatrix}$とすれば$P^{-1}BP=\begin{pmatrix}
+            1 & 0 \\
+            0 & 2 \\
+        \end{pmatrix}$である．
+
+    (3)$F$の一列目と二列目は一次独立であるから$\mathrm{rank}F=2$である．よって$\dim \ker f=5-\dim \mathrm{Im}f=5-2=3$である．
+
+    (4)$g \circ f(g(v))=g \circ Bv=g(\lambda v) =\lambda g(v)$より$g(v)$は$g \circ f$の固有値$\lambda$の固有ベクトル．
+
+    (5)$x \in ker f$に対して$g\circ f(x)=0 \cdot x$であるから固有値$0$で固有空間の次元は$3$である．よって固有空間の次元の和が$5$となるから対角化可能で
+    対角行列は$\begin{pmatrix}
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 0 & 0 \\
+        0 & 0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 0 & 2 \\
+    \end{pmatrix}$である．
+    \fbox{2}
+    (1)$A=\begin{pmatrix}
+        a & b \\
+        c & d \\
+    \end{pmatrix},B=\begin{pmatrix}
+        e & f \\
+        g & h \\
+        \end{pmatrix}$とする．$ad-bc\neq 0,eh-fg\neq 0$である．
+        $AB=\begin{pmatrix}
+            ae+bg & af+bh \\
+            ce+dg & cf+dh \\
+            \end{pmatrix}$であり，$(ae+bg)(cf+dh)-(af+bh)(ce+dg)=(ad-bc)(eh-fg)\neq 0$である．よって積について閉じている．
+    $E=\begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+        \end{pmatrix}$は明らかに$E \in G$であり，$G$の単位元である．
+    $A=\begin{pmatrix}
+        a & b \\
+        c & d \\
+    \end{pmatrix}$に対して$A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}
+        d & -b \\
+        -c & a \\
+        \end{pmatrix}$であり，$A^{-1} \in G$である．
+
+    (2)$A$の行列式が$0$でないとは列ベクトルが一次独立であることである．一列目の選び方は$0$ベクトルを除いた$p^2-1$通り．二列目は一列目の定数倍を除いた$p^2-p$通り．よって$|G|=(p^2-1)(p^2-p)$である．
+
+    (3)$\det \colon G \rightarrow F_p^{\times};A \rightarrow ad-bc$は$b=c=0,d=1$とすることで全射であると分かる．準同型であることは(1)での計算から明らか．
+
+    (4)$\{ E\},G$は$G$の正規部分群である．また$N=\ker \det =\{ A \in G \mid \det A =1 \}$は$X \in N$について$\det A^{-1}XA=\det A^{-1}\det X \det A=\det X=1$より正規部分群である．
+
+    (5)$a \in \mathbb{Z}$の$F_p$での同値類を$[a]$で表す．
+    $C=\begin{pmatrix}
+        [1] & [1] \\
+        0 & [1] \\
+    \end{pmatrix}$とすると，$C^n=\begin{pmatrix}
+        [1] & [n] \\
+        0 & [1] \\
+        \end{pmatrix}$である．$2$と$p$は互いに素であるから$[2]^n =[1]$となる最小の$n$は$p-1$である．したがって$C$で生成される部分群は位数が$p$である．
+
+
+    \fbox{3}
+    (1)ダランベールの公式から$\lim\limits_{n \to \infty} \frac{(3n)!}{(n!)^3} \frac{((n+1)!)^3}{(3(n+1))!}=\lim\limits_{n \to \infty} \frac{(n+1)^3}{(3n+3)(3n+2)(3n+1)}=\frac{1}{27}$より$\rho=\frac{1}{27}$である．
+
+    (2)$g(x,y,z)=x^2+y^2+z^2-1$とする．$J_g=\begin{pmatrix}
+        2x & 2y & 2z 
+        \end{pmatrix}$であるから$g^{-1}(0)$の任意の点で全射である．よって$0$は$g$の正則値である．
+        ラグランジュの未定乗数法より極値点では$\begin{pmatrix}
+            \frac{\partial f}{\partial x} & \frac{\partial f}{\partial y} & \frac{\partial f}{\partial z} \\
+        \end{pmatrix}=\lambda \begin{pmatrix}
+            2x & 2y & 2z \\
+            \end{pmatrix}$なる$\lambda$が存在する．$J_f=\begin{pmatrix}
+                y & x & 0 \\
+            \end{pmatrix}$であるから$2x=\lambda y,2y=\lambda x,2z=0$である．$x=0$なら$y=0$となり$x^2+y^2+z^2=0$となるから$x \neq 0$．同様に$y\neq 0$である．よって$4xy=\lambda^2xy$より$\lambda=\pm 2$である．$x^2+(\frac{\lambda x}{2})^2+0^2=2x^2=1$より$x=\pm \frac{1}{\sqrt{2}}$である．したがって極値点の候補は
+            $(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0),(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}},0),(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0),(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}},0)$である．
+            それぞれの点での値は
+            $f(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0)=\frac{1}{2},f(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}},0)=-\frac{1}{2},f(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}},0)=-\frac{1}{2},f(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}},0)=\frac{1}{2}$である．
+            単位球面はコンパクトであり$f$は実数値連続関数であるから必ず最大値，最小値を持つ．よって最大値は$\frac{1}{2}$，最小値は$-\frac{1}{2}$である．
+
+            \begin{tcolorbox}[blanker,breakable,
+                left=3mm,right=3mm,
+                top=3mm,bottom=3mm,
+                before skip=15pt,after skip=15pt,
+                borderline vertical={1pt}{0pt}{black,dotted}]
+                極座標変換する方法もある．
+                $(x,y,z)=(r \sin \theta \cos \phi,r \sin \theta \sin \phi,r \cos \theta)$とすると$f(x,y)=xy=r^2 \sin^2 \theta \sin \phi \cos \phi$である．単位球面上であるから$r=1,\theta \in [0,\pi],\phi \in [0,2\pi]$である．最大値は$\theta=0,\pi $かつ$\phi=\pi/4,5\pi/4$であり，最小値は$\theta=1/2$である．
+                最小値も同様にして$-\frac{1}{2}$である．
+                \end{tcolorbox}
+
+
+
+            (3)$x+y=s,\sqrt{2}y=t$と変数変換するとヤコビアンは$\begin{vmatrix}
+                1 & 1 \\
+                0 & 1/\sqrt{2} \\
+            \end{vmatrix}=\sqrt{2}$であり，積分領域は
+            $\left\{ (s,t) \mid 0\le s \le 1,0\le t \le \sqrt{2} \right\}$である．よって
+            \begin{align}
+                I&=\int_0^1\int_0^{\sqrt{2}} \frac{1}{1+s^2} \frac{1}{\sqrt{2}}dtds=\int_0^1 \frac{s}{1+s^2}ds \\
+                &=\left[ \frac{1}{2}\log (1+s^2) \right]_0^1=\frac{1}{2}\log 2
+            \end{align}である．
+
+
+    \fbox{4}
+    $U_{-\infty}=X,U_{\infty}=\emptyset$と表すことにする．$\sup$や$\max$は拡大実数の順序で考える．
+    (1)$\emptyset,X \in \mathcal{O}_X$である．
+    $\bigcup\limits_{a \in A}U_a=U_{\inf A},\bigcap\limits_{i=1}^n U_{a_n}=U_{\max\limits_{1 \le i \le n}a_i}$であるから$\mathcal{O}_X$は位相空間の公理を満たす．
+    
+    (2)$0,1$について$0$を含む開集合$U_a$は$0>a$であるから$1\in U_a$となる．よってハウスドルフでない．
+
+    (3)$\left\{ U_n \mid n \in \mathbb{Z} \right\}$は$X$の開被覆であるが有限部分被覆を持たないのでコンパクトでない．
+
+    (4)$0 \in A$を含む$X$の開集合$U_a$について$0 >a$より$U_a \cap A=A$である．
+    したがって$A$の開被覆は$0 > a$なる$U_a$を用いて$U_a \cap A$と表せる開集合をもち，それは$A$であるから有限部分被覆$\{A\}$をとれる．よってコンパクト．
+
+    (5)$f^{-1}(U_0)=\left\{ x\mid x < 0 \right\}$である．これは開集合でないから連続写像でない．
+\end{document}

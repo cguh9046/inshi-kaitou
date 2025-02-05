@@ -1,0 +1,207 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H14数学必修}
+\fbox{1}
+(1) $\left\{ \begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+\end{pmatrix},\begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+\end{pmatrix},\begin{pmatrix}
+    0 & 0 \\
+    1 & 0
+    \end{pmatrix} \right\}$は$\mathrm{sl}_2(\mathbb{R})$の基底である．
+
+
+(2) $\phi_A(kX+\ell Y)=A(kX+\ell Y)-(kX+\ell Y)A=kAX+\ell YA-kXA-\ell YA=k(AX-XA)+\ell(AY-YA)=k\phi_A(X)+\ell\phi_A(Y)$より$\phi_A$は線形写像．
+
+$\begin{pmatrix}
+    a & b \\
+    c & -a 
+\end{pmatrix}\begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+\end{pmatrix}-\begin{pmatrix}
+    1 & 0 \\
+    0 & -1
+\end{pmatrix}\begin{pmatrix}
+    a & b \\
+    c & -a
+\end{pmatrix}=\begin{pmatrix}
+    a & -b \\
+    c & a
+\end{pmatrix}-\begin{pmatrix}
+    a & b \\
+    -c & a
+\end{pmatrix}=\begin{pmatrix}
+    0 & -2b \\
+    2c & 0
+\end{pmatrix}$
+
+$\begin{pmatrix}
+    a & b \\
+    c & -a
+\end{pmatrix}\begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+\end{pmatrix}-\begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+\end{pmatrix}\begin{pmatrix}
+    a & b \\
+    c & -a
+\end{pmatrix}=\begin{pmatrix}
+    0 & a \\
+    0 & c
+\end{pmatrix}-\begin{pmatrix}
+    c & -a \\
+    0 & 0 
+\end{pmatrix}= \begin{pmatrix}
+    -c & 2a \\
+    0 & c
+\end{pmatrix}$
+
+$\begin{pmatrix}
+    a & b \\
+    c & -a
+\end{pmatrix}\begin{pmatrix}
+    0 & 0 \\
+    1 & 0
+\end{pmatrix}-\begin{pmatrix}
+    0 & 0 \\
+    1 & 0
+\end{pmatrix}\begin{pmatrix}
+    a & b \\
+    c & -a
+\end{pmatrix}=\begin{pmatrix}
+    b & 0 \\
+    -a & 0
+\end{pmatrix}-\begin{pmatrix}
+    0 & 0 \\
+    a & b
+\end{pmatrix}= \begin{pmatrix}
+    b & 0 \\
+    -2a & -b
+\end{pmatrix}$
+
+よって$\phi_A$の表現行列は$\begin{pmatrix}
+    0 & -c & b \\
+    -2b & 2a & 0 \\
+    2c & 0 & -2a
+\end{pmatrix}$．
+
+(3) $\begin{vmatrix}
+    0 & -2b & 2c \\
+    -c & 2a & 0 \\
+    b & 0 & -2a
+\end{vmatrix}=c\begin{vmatrix}
+    -2b & 2c \\
+    0 & -2a
+\end{vmatrix}+b\begin{vmatrix}
+    -2b & 2c \\
+    2a & 0
+\end{vmatrix}=c(4ab)-b(4ac)=0$．
+より$\phi_A$の階数は2以下．
+
+$2\times 2$小行列式に着目すると，$\begin{vmatrix}
+    0 & 2c \\
+    -c & 0
+    \end{vmatrix}=2c^2, 
+    \begin{vmatrix}
+        0 & -2b \\
+        b & 0
+    \end{vmatrix}=2b^2,
+    \begin{vmatrix}
+        2a & 0 \\
+        0 & -2a
+    \end{vmatrix}=-4a^2$であるから，$a\neq 0 \vee b\neq 0 \vee c\neq 0$のとき$\phi_A$の階数は2である．
+
+    $a=b=c=0$のとき$\phi_A=0$であり階数は0である．
+
+
+\fbox{2}
+(1)
+$a\in G$に対して$aH=\left\{ ah \mid h \in H \right\}$は$ah=ah'$ならば$h=h'$であるから$|aH|=|H|$．よって剰余類$G/H$の各同値類の大きさは$|H|$である．すなわち$G=\bigsqcup\limits_{aH \in G/H} aH$であるから．$|G|=\sum\limits_{aH \in G/H} |aH|=|H||G/H|$．
+
+すなわち$H$の位数$|H|$および指数$|G/H|$は共に$G$の約数．
+
+(2)$a\in G$の位数が$n$とし，$f(a)\neq 0$とする．このとき$0=f(e)=f(a^n)=nf(a)$となり矛盾する．よって$a$の位数は無限．
+
+(3)$\varphi$は$1$の行き先で定まる．$1\neq \varphi(1)=\alpha\in \mathbb{C}^{\times}$とする．
+
+$\alpha=e^{2\pi i m/q}\quad(p/q\text{は既約分数})$のとき，$\ker \varphi = \left\{ pn \mid n\in \mathbb{Z} \right\}$である．
+
+他の場合は$\varphi(n)=1$なら$\alpha^n=1$より$\alpha=e^{2\pi i m/n}$となって矛盾するから，$\ker \varphi = \left\{ 0 \right\}$である．
+
+\fbox{3}
+(1)$\mathcal{O}_S=\left\{ \emptyset,S,\{ a,b \},\{b,c\},\{ d \}, \{ a,b,c \},\{ a,b,d \},\{b,c,d\},\{ b\} ,\{b,d\}\right\}$が最小の位相である．
+
+(2)$S=\{a,b,c\} \cup \{ d\}$が連結成分への分解である．
+$\{ a,b,c\}$が連結でないなら，すくなくともただ一つの元からなる連結成分が存在する．位相を考えると$\{b\}$のみが開集合である．このとき補集合$\left\{ a,c \right\}$は開集合でないため，$\{ a,b,c\}$は連結である．
+
+(3)ハウスドルフではない．
+$a$を含む開集合は全て$b$を含む．
+
+(4)開基の逆像を調べれば十分．
+
+$f^{-1}(\{ a,b\})=\{b,c\} \in \mathcal{O}_S,f^{-1}(\{ b,c\})=\{a,b\} \in \mathcal{O}_S,f^{-1}({d})=\{d\} \in \mathcal{O}_S$であるから$f$は連続．
+
+$g^{-1}(\{ a,b\})=\{a,c\} \notin \mathcal{O}_S$より$g$は連続でない．
+
+\fbox{4}
+($(a) \Rightarrow (b)$)$C^1$級関数$g\colon \mathbb{R}\rightarrow \mathbb{R}$が凸関数であるとする．このとき$x<y<z$に対して$(g(y)-g(x))/(y-x)\leq (g(z)-g(x))/(z-x)\le (g(z)-g(y))/(z-y)$が成り立つ．これを示す．
+
+$sx+(1-s)z=y$なる$s\in (0,1)$がただ一つ存在する．
+\begin{align}
+    g(y)-g(x)&=g(sx+(1-s)z)-g(x)\leq sg(x)+(1-s)g(z)-g(x)=(1-s)(g(z)-g(x))\\
+    (g(y)-g(x))/(y-x)&\leq (1-s)(g(z)-g(x))/(y-x)=(g(z)-g(x))/((1-s)(z-x))=(g(z)-g(x))/(z-x)
+    g(z)-g(y) & = g(z)-g(sx+(1-s)z)\ge g(z)-(sg(x)+(1-s)g(z))=s(g(z)-g(x))\\
+    (g(z)-g(y))/(z-y)&\ge s(g(z)-g(x))/(z-y)=s(g(z)-g(x))/s(z-x)=(g(z)-g(x))/(z-x)
+\end{align}
+
+$x<z$に対して，
+$g'(x)=\lim\limits_{y\rightarrow x+0} (g(y)-g(x))/(y-x)\leq \lim\limits_{y\rightarrow x+0} (g(z)-g(x))/(z-x)=(g(z)-g(x))/(z-x)$
+同様に$y\rightarrow z-0$として$(g(z)-g(x))/(z-x) \le g'(z)$．よって$g'(x)\le g'(z)$．したがって$g'$は広義単調増加である．
+
+$g(y)-g(x)-g'(x)(y-x)\ge 0$を示す．
+
+任意の$x,y \in \mathbb{R},x< y$に対して平均値の定理から$g(y)-g(x)=g'(c)(y-x)$となる$c\in (x,y)$が存在する．$x<c$より$g'(x)\le g'(c)$であるから，
+$g(y)-g(x)-g'(x)(y-x)=g'(c)(y-x)-g'(x)(y-x)=(g'(c)-g'(x))(y-x)\ge 0$
+また$x>y$の時も同様で$x=y$の時は明らか．
+
+$f$について(b)が成り立つことを示す．
+$x,y\in \mathbb{R}^n$に対して$c\colon \mathbb{R}\rightarrow \mathbb{R}^n;t\mapsto x+t(y-x)$とする．$f\circ c \colon \mathbb{R}\rightarrow \mathbb{R}$は$C^1$級凸関数である．
+よって$f\circ c(1)-f\circ c(0)-(f\circ c)'(0)\ge 0$である．
+$f\circ c(1)=f(y),f\circ c(0)=f(x),(f\circ c)'(0)=\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(c(0))(y_i-x_i)=\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(x)(y_i-x_i)$であるから，
+$f(y)-f(x)-\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(x)(y_i-x_i)\ge 0$である．
+
+($(b)\Rightarrow (c)$)
+$0\le E(x,y)+E(y,x)=-\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(x)(y_i-x_i)-\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(y)(x_i-y_i)=\sum\limits_{i=1}^{n} \qty(\frac{\partial f}{\partial x_i}(y)- \frac{\partial f}{\partial x_i}(x))(y_i-x_i)$
+
+($(c) \Rightarrow (a)$)
+$z=(1-\theta)x+\theta y$とする．$f$についてテイラーの定理をもちいると，$s=x+\alpha\theta(y-x),t=y+\beta(1-\theta)(x-y)$となる$\alpha,\beta \in (0,1)$が存在して次が成り立つ．
+\begin{align}
+    f(z)&=f(x)+\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(s)(z_i-x_i)= f(x)+\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(s)(\theta(y_i-x_i))\\
+    f(z)&= f(y)+\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(t)(z_i-y_i)= f(y)-\sum\limits_{i=1}^{n} \frac{\partial f}{\partial x_i}(t)((1-\theta)(y_i-x_i))\\
+    f(z)&=(1-\theta)f(z)+\theta f(z)\\
+    &=(1-\theta)f(x)+\theta f(y)+\theta(1-\theta)\sum\limits_{i=1}^{n} \qty(\frac{\partial f}{\partial x_i}(s)-\frac{\partial f}{\partial x_i}(t))(y_i-x_i)
+\end{align}
+$s-t=(x-y)+\alpha\theta(y-x)-\beta(1-\theta)(x-y)=(\alpha\theta+\beta(1-\theta)-1)(y-x)$である．ここで$\alpha,\beta,\theta$の範囲に注意すると$\alpha\theta+\beta(1-\theta)-1\le0$である．
+
+よって$0\le \sum\limits_{i=1}^{n} \qty(\frac{\partial f}{\partial x_i}(s)-\frac{\partial f}{\partial x_i}(t))(s_i-t_i)=(\alpha\theta+\beta(1-\theta)-1)\sum\limits_{i=1}^{n} \qty(\frac{\partial f}{\partial x_i}(s)-\frac{\partial f}{\partial x_i}(t))(y_i-x_i)$であるから，
+$\sum\limits_{i=1}^{n} \qty(\frac{\partial f}{\partial x_i}(s)-\frac{\partial f}{\partial x_i}(t))(y_i-x_i)\le 0$である．
+
+すなわち$f((1-\theta)x+\theta y)=f(z)\le (1-\theta)f(x)+\theta f(y)$である．
+
+\end{document}

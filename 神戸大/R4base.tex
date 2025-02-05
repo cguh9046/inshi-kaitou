@@ -1,0 +1,103 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R4数学必修}
+\fbox{1}
+(1)$g_A(t)=\begin{vmatrix}
+	2-t & a & 0 \\
+	a & 2-t & a \\
+	0 & a & 2-t
+\end{vmatrix}=(2-t)\begin{vmatrix}
+	2-t & a \\
+	a & 2-t
+\end{vmatrix}-a\begin{vmatrix}
+	a & 0 \\
+	a & 2-t
+	\end{vmatrix}=(2-t)((2-t)^2-a^2)-a^2(2-t)=(2-t)(t^2-4t+4-a^2)$である．
+	$t^2-4t+4-a^2=0$を満たす$t$の値は$t=2\pm\sqrt{2}a$である．
+	よって固有値は$2,\ 2+\sqrt{2}a,\ 2-\sqrt{2}a$である．
+
+(2)$\det A=\begin{vmatrix}
+	2 & a & 0 \\
+	a & 2 & a \\
+	0 & a & 2
+\end{vmatrix}=2(2^2-a^2)-a^22=-4a^2+8$である．
+よって$a\neq \pm\sqrt{2}$のとき，$A$は正則であるから$A$の階数は$3$である．
+
+$a=\sqrt{2}$のとき，$A=\begin{pmatrix}
+	2 & \sqrt{2} & 0 \\
+	\sqrt{2} & 2 & \sqrt{2} \\
+	0 & \sqrt{2} & 2
+\end{pmatrix}\rightarrow \begin{pmatrix}
+	2 & \sqrt{2} & 0 \\
+	0 & \sqrt{2} & 2 \\
+	0 & \sqrt{2} & 2
+	\end{pmatrix}$より，$A$の階数は$2$である．
+
+$a=-\sqrt{2}$のとき，$A=\begin{pmatrix}
+	2 & -\sqrt{2} & 0 \\
+	-\sqrt{2} & 2 & -\sqrt{2} \\
+	0 & -\sqrt{2} & 2
+\end{pmatrix}\rightarrow \begin{pmatrix}
+	2 & -\sqrt{2} & 0 \\
+	0 & \sqrt{2} & -2 \\
+	0 & -\sqrt{2} & 2
+	\end{pmatrix}$より，$A$の階数は$2$である．
+
+(3)$f(kv)=^t(kv)Akv=k^2v^tAv=k^2f(v)$であるから，$f$は線形写像でない．
+
+(4)固有値$\lambda$に対する固有ベクトル空間を$W(\lambda)$と表す．$a\neq 0$のとき，$A$の固有値は全て異なる．ノルムが$1$となるベクトル$v_1 \in W(2),v_2 \in W(2+\sqrt{2}a),v_3 \in W(2-\sqrt{2}a)$をとる．$A$は対称行列であるから，固有ベクトルは直交し，$\mathbb{R}^3$の基底となっている．
+$f(v+u)=^t(v+u)A(v+u)=f(v)+f(u)+^tvAu+^tuAv=f(v)+f(u)+2 (^tv)Au$である．よって$\mathbb{R}^3 \ni v=c_1v_1+c_2v_2+c_3v_3$とすると，
+$f(v)=c_1^2f(v_1)+f(c_2v_2+c_3v_3)+2c_1(^tv_1)A(c_2v_2+c_3v_3)=c_1^2f(v_1)+c_2^2f(v_2)+c_3^2f(v_3)=2c_1^2+(2+\sqrt{2}a)c_2^2+(2-\sqrt{2}a)c_3^2$である．よって$f$は全射である．
+
+$a=0$のとき$f(v)=^tvAv=2v^tv=2\|v\|^2$である．よって$f$は全射でない．
+
+\fbox{2}
+(1)$G$を$\mathbb{Z}$の部分群とする．$n$を$G$に含まれる最小の正の整数とする．$\langle n \rangle\subset G$である．$x \in G \setminus \langle x \rangle$がとれると仮定する．$x<0$なら$-x \in G \setminus \langle x \rangle$であるから$x>0$として一般性を失わない．$x=nq+r\ (0\leq r<n)$とできる．$r\in G$である．$n$の最小性から$r=0$であるがこのとき，$x \in \langle n \rangle$である．これは矛盾．よって$G= \langle x \rangle$．
+
+(2)
+(a)$\sqrt{200}-3\sqrt{18}=10\sqrt{2}-9\sqrt{2}=\sqrt{2}$である．したがって$\langle \sqrt{2} \rangle \subset G_1$である．逆に$n \sqrt{18}+m\sqrt{200}=(3n+10m)\sqrt{2}$であるから$G_1=\langle \sqrt{2} \rangle$である．すなわち巡回群．
+
+(b)$G_2$が$\alpha \in \mathbb{R}$によって生成される巡回群とする．このとき$n\alpha=\sqrt{20}=2\sqrt{5},m\alpha=\sqrt{200}=10\sqrt{2}$をみたす$n,m \in \mathbb{Z}$が存在する．よって$2m\sqrt{5}=10n\sqrt{2}$である．したがって$5m^2=5n^22$である．左辺は$2$の偶数乗を因数にもち，右辺は奇数乗を因数にもつから矛盾．よって巡回群でない．
+
+(c)$(1,2),(3,4)$で生成される群は$(1,2),(3,4)$が可換であり，位数が共に$2$であることから$G_3=\{ e,(1,2),(3,4),(1,2)(3,4)\}$である．位数$4$の元が存在しないから巡回群でない．
+
+(d)$(1,1) \in \mathbb{Z}/2 \mathbb{Z} \times \mathbb{Z}/3 \mathbb{Z}$の位数は$6$である．$G_4$の位数も$6$であるから巡回群．
+
+\fbox{3}
+(1)任意の$x \in A$について$x < \sqrt{2}$であるから，$\sup A \le \sqrt{2}$である．任意の$\varepsilon>0$について$1/n < \varepsilon$をみたす正の整数$n$が存在する．このとき$n\sqrt{2}-n(\sqrt{2}-\varepsilon)=n\varepsilon>1$より
+$n(\sqrt{2}-\varepsilon)\le m\le n\sqrt{2}$をみたす整数$m$が存在する．このとき$m/n \le \sqrt{2}$より$m/n \in A$であり，$\sqrt{2}-\varepsilon\le m/n$であるから$\sqrt{2}=\sup A$である．
+
+(2)$a_n >\alpha$なる整数$n$が存在すると仮定する．このとき$\varepsilon=(a_n-\alpha)/2$とすると，ある$N\in \mathbb{N}$が存在して任意の$m>N$について
+$\alpha-\varepsilon<a_{n_m}<\alpha+\varepsilon$であるが，$n_m>n$なる整数$m$について$a_{n_m}<\alpha+\varepsilon<a_n$となり，非減少であることに矛盾．よって$a_n < \alpha$である．
+
+${}^{\forall}\varepsilon>0,{}^{\exists}N \in \mathbb{N},{}^{\forall}m>N \Rightarrow \alpha-\varepsilon<a_{n_m}$である．$N_1=n_{N+1}$とすると，
+$n > N_1$なる$n$について$|\alpha-a_n|<|\alpha-a_{N_1}|<\varepsilon$であるから$\lim_{n \to \infty}a_n=\alpha$である．
+
+(3)$x-y=u,\sqrt{2}x=v$と変数変換する．ヤコビアンは$\begin{vmatrix}
+	0 & 1/\sqrt{2} \\
+	-1 & 1/\sqrt{2}
+\end{vmatrix}=1/\sqrt{2}$である．積分領域は$D'(t)=\{ (u,v) \in \mathbb{R}^2 | 0 \le u \le t,0 \le v \le \sqrt{2}u\}$である．よって
+\begin{align}
+	f(t)&=t\qty(1-2\iint_{D'(t)}e^{-u^2}/\sqrt{2}dudv ) =t\qty(1-\sqrt{2} \int_0^t\int_0^{\sqrt{2}u}e^{-u^2}dvdu) \\
+	&=t\qty(1-\sqrt{2} \int_0^t\sqrt{2}ue^{-u^2}du) = t\qty(1+[e^{-u^2}]_0^t) =te^{-t^2}
+\end{align}
+$f'(t)=e^{-t^2}(1-t^2)$である．
+よって最大値は$1/e$である．
+
+\fbox{4}
+(1)任意の異なる二点$x,y \in A\subset X$について$X$の開集合$U,V$で$x \in U , y\in V ,U \cap V=\emptyset$となるものが存在する．このとき$U\cap A,V\cap A$は$A$の開集合であり，$x \in U\cap A , y\in V\cap A ,(U\cap A) \cap (V\cap A)=\emptyset$であるから$A$はハウスドルフ空間．
+
+(2)$X={ 0,1}$に離散位相を入れる．$Y=\{ 0,1\}$に密着位相を入れる．このとき$f\colon X \rightarrow Y$を$f(0)=0,f(1)=1$とする．$f$は全単射であり$X$に離散位相が入っているから連続である．$f(\{1\})=\{1\}$は$Y$の開集合でないから逆写像は連続でない．
+
+(3)$X \times Y$の開被覆$S=\{ U_\lambda \mid \lambda\in \Lambda\}$を任意にとる．$X$の開集合$V_\lambda$，$Y$の開集合$W_\lambda$を用いて$U_{\lambda}=V_\lambda \times W_\lambda$とかける．$\{ V_\lambda\mid \lambda\in\Lambda\}$は$X$の開被覆である．よって有限部分集合$\Lambda_X \subset \Lambda$が存在して$X=\bigcup_{\lambda \in \Lambda_X}V_\lambda$である．同様に$Y$についても有限部分集合$\Lambda_Y \subset \Lambda$が存在して$Y=\bigcup_{\lambda \in \Lambda_Y}W_\lambda$である．よって$X \times Y=\bigcup_{\lambda \in \Lambda_X \cup \Lambda_Y}U_{\lambda} $である．したがって$X\times Y$はコンパクト．
+\end{document}
