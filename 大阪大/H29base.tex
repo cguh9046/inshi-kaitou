@@ -1,0 +1,89 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H29数学A}
+\fbox{1}
+(1)$\sum\limits_{k=1}^n|a_n|$は$n$に関する単調増加数列であり，$\sum\limits_{k=1}^n|a_n|\le \sum\limits_{k=1}^\infty b_n$より，有界である．よって$\sum |a_n|$は収束する．
+したがって$\sum\limits_{k=1}^n|a_n|$はコーシー列である．
+
+$S_n=\sum\limits_{k=1}^n a_n$とすると，$n\ge m$に対して
+$|S_n-S_m|=|\sum\limits_{k=m+1}^n a_n|\le \sum\limits_{k=m+1}^n|a_n|\rightarrow 0\quad(n,m\rightarrow\infty)$である．よって$S_n$はコーシー列であるから，収束列．
+
+(2)$x\in(0,1)$で$|f(x)|<x$より$\lim\limits_{x\rightarrow 0}f(x)=0$である．
+$x=0$なら$\sum\limits_{n=1}^\infty f(2^nx)=0$である．
+$0<x<1/2$のとき．$2^{n_0}x\le 1 < 2^{n_0+1}x$となる正の整数$n_0$が存在する．
+$\sum\limits_{n=1}^{n_0}|f(2^nx)|\le \sum\limits_{n=1}^{n_0}2^nx=x(2^{n_0+1}-2)\le 2$である．また$\sum\limits_{n=n_0+1}^\infty |f(2^nx)|\le \sum\limits_{n=n_0+1}^\infty 1/(2^n x)=1/(2^{n_0}x)\le2 $である．よって$\sum\limits_{n=1}^\infty |f(2^nx)|\le4$であるから$\sum\limits_{n=1}^\infty f(2^nx)$は収束する．
+
+(3)$\sup\limits_{x\in[0,\infty)} |\sum\limits_{n=1}^\infty f(2^n x)|\le4$である．
+
+\fbox{2}
+(1)$A$は正則であるから$\det A \neq 0$である．$\det A=\det(-^t\!A)=(-1)^n\det A$であるから$n$は偶数である．
+
+(2)$\mathbb{C}^n$における標準エルミート内積を$(x,y)=x \overline{^t\!y}$で表す．
+$A$の固有値$\lambda$とその固有ベクトル$v \neq 0$をとる．$\lambda(v,v)=(Av,v)=(v,\overline{^t\!A}v)=(v,-Av)=-\overline{\lambda}(v,v)$である．$v\neq 0$より$(v,v)\neq 0$であるから$\lambda=-\overline{\lambda}$より$\lambda$の実部は$0$．よって$\lambda$は純虚数である．
+
+(3)$v \in W(B,\alpha)$に対して$BAv=ABv=\alpha Av$より$Av \in W(B,\alpha)$である．
+よって$W(B,\alpha)\rightarrow W(B,\alpha);v \mapsto Av$は$W(B,\alpha)$上の線形写像である．$A$は正則であるからこの線形写像は単射．有限次元であるから全単射であるから$AW(B,\alpha)=W(B,\alpha)$である．
+
+(4)$ i\colon W(B,\alpha)\rightarrow \mathbb{R}^n$を包含写像とする．
+$g\colon W(B,\alpha)\rightarrow W(B,\alpha);v \mapsto Av$は$W(B,\alpha)$上の同型写像である．$\mathbb{R}^n$の標準内積に関する $ W(B,\alpha)$の正規直交基底$\{w_1,\dots,w_k\}$を一つ固定し，この基底に関する$g$の表現行列を$G$とする．$v \in W(B,\alpha)$に対して$i(Gv)=Ai(v)$である．
+
+$x=\sum a_iv_i,y=\sum b_iv_i$に対して$\langle x,y\rangle=\sum a_ib_i$と定めれば$W(B,\alpha)$の内積となり，$\langle x,y \rangle=(i(x),i(y))$である．($\because $基底が正規直交基底)
+
+よって$\langle Gx,y \rangle=(i(Gx),i(y))=(Ai(x),i(y))=-(i(x),Ai(y))=-\langle x,Gy \rangle$である．よって$G$は正則な交代行列．したがって$k$は偶数．$B$が対称行列であるから，固有空間の次元は固有値の固有方程式における重複度である．したがって全ての固有値の重複度が偶数であるから，$g_B(t)=f(t)^2$なら$f(t)$が存在する．
+\begin{tcolorbox}[blanker,breakable,
+    left=3mm,right=3mm,
+    borderline vertical={1pt}{0pt}{black,dotted}]
+    $\langle x,y \rangle=(i(x),i(y))$の証明
+
+    $v_i=\sum c_{i,j}e_j$とする．
+    $(i(x),i(y))=\sum_j (\sum_i a_ic_{i,j})(\sum_k b_kc_{k,j})=\sum_{i,j,k}a_ib_kc_{i,j}c_{k,j}=\sum_{i,k}a_ib_k(v_i,v_j)=\sum_{i,k}a_ib_k\delta_{i,k}=\sum_i a_ib_i=\langle x,y \rangle$である．
+    \end{tcolorbox}
+\begin{tcolorbox}[blanker,breakable,
+    left=3mm,right=3mm,
+    borderline vertical={1pt}{0pt}{black,dotted}]
+    別解
+
+    $W=W(B,\alpha)$の基底$\{t_1,\dots,t_k\}$をとり，$\mathbb{R^n}$に延長して$\{t_1,\dots,t_n\}$を得る．シュミットの正規直交化法をつかって$\{\tilde{t_1},\dots,\tilde{t_n}\}$を得る．$k$個目までは$W$の元である．$g$の$\{\tilde{t_1},\dots,\tilde{t_k}\}$に関する表現行列を$G$とする．$f$の$\{\tilde{t_1},\dots,\tilde{t_n}\}$に関する表現行列を$F$とする．$G$は$F$の首座小行列である．$\tilde {T}=\begin{pmatrix}
+    \tilde{t_1}&\dots&\tilde{t_n}
+    \end{pmatrix}$とすれば，$F=\tilde{T}^{-1}AT$である．$T$は直交行列であるから$F$は交代行列．よって$G$は交代行列．(1)より$k$は偶数．
+\end{tcolorbox} 
+
+\fbox{3}
+$X$の開集合全体を$\mathcal{O}$とすると，$\mathcal{O}=2^\mathbb{Q}\cup \{\mathbb{R}\}$である．実際これは位相の定義をみたす．
+
+(1)$A \in 2^\mathbb{Q}$に対して$f^{-1}(A)=\left\{ x \in \mathbb{R}\relmiddle| x+1 \in A \subset \mathbb{Q}\right\}\subset \mathbb{Q}$である．また$f^{-1}(\mathbb{R})=\mathbb{R}$であるから，$f$は連続．
+
+(2)$\sqrt{2}$を含む開集合は$\mathbb{R}$のみである．$\sqrt{3}$についても同様．よってハウスドルフでない．
+
+(3)$X$の開被覆$S=\left\{ U_\lambda\relmiddle| \lambda\in \Lambda,U_\lambda\in \mathcal{O}\right\}$を任意にとる．$\sqrt{2}$を含む開集合が$S$に存在する．$\sqrt{2}$を含む開集合は$\mathbb{R}$のみであるから，$\mathbb{R}\in S$である．よって有限部分被覆$\{ \mathbb{R}\}$が存在するからコンパクト．
+
+(4)$f^{-1}(\{0\})=\mathbb{Q}$である．$\{0\}$は$R$では閉集合であるから，$f$が連続なら$\mathbb{Q}$は$X$で閉集合である．すなわち，$\mathbb{R}\setminus \mathbb{Q}$は$X$で開集合であるがこれは矛盾．よって$f$は連続でない．
+
+\fbox{4}
+(1)$1/{(z^2+1)^{n+1}}$の$z=i$まわりのローラン展開を$\sum_k a_k(z-i)^k$とする．
+$1/(z+i)^{n+1}=\sum_k a_k (z-i)^{k+n+1}$であるから，$k+n+1<0$なら$a_k=0$である．両辺の$n$回微分に$i$を代入する．
+左辺は$(-(n+1))(-(n+2))\dots(-(2n))(2i)^{-2n-1}=(-1)^n(2i)^{-2n-1}(2n)!/n!$である．
+右辺は$a_{-1}n!$であるから，$a_{-1}=(-1)^n(2i)^{-2n-1}(2n)!/(n!)^2$である．これが留数．
+
+(2)\begin{align}
+    \left| \int_{\Gamma_R }\frac{dz}{(z^2+1)^{n+1}} \right|&= \left| \int_0^\pi \frac{Ri e^{i \theta}}{(1+R^2e^{2i\theta})^{n+1}}dz \right|\le \int_0^\pi \left| \frac{R}{(1+R^2e^{2i\theta})^{n+1}} \right| dz\le \int_0^\pi \frac{R}{|R^2-1|^{n+1}}dz=\frac{\pi R}{|R^2-1|^{n+1}}\rightarrow 0\quad (R\rightarrow \infty)
+\end{align}
+
+(3)$\int_{-1}^1 1/(x^2+1)^{n+1}dx$は有限値をとる．$\int_1^\infty 1/(x^2+1)^{n+1}dx,\int_{-\infty}^{-1} 1/(x^2+1)^{n+1}dx$はそれぞれ収束する．よって$\int_{-\infty}^\infty 1/(x^2+1)^{n+1}dx$は収束する．
+$\int_{-R}^R 1/(z^2+1)^{n+1}dz=\int_{C_R} 1/(z^2+1)^{n+1}dz-\int_{\Gamma_R} 1/(z^2+1)^{n+1}dz$である．($C_R$は$-R$から$R$まで進み$G_R$上を反時計まわりに進む経路)
+留数定理と(2)より
+\begin{align}
+    \int_{-\infty}^\infty \frac{1}{(x^2+1)^{n+1}}dx&=2\pi i\frac{(-1)^n(2n)!}{(n!)^2(2i)^{2n+1}}=\frac{(2n)!}{(n!)^2 2^{2n}}\pi=\frac{1\cdot3 \cdots (2n-1)}{2\cdot4\cdots (2n)}\pi
+\end{align}
+
+\end{document}

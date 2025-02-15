@@ -99,14 +99,16 @@ $0\notin U,1\in U$のとき,$0,1\in U$のときも同様．よって$\varphi$は
 \end{align}
 
 (3)$\partial D_{\varepsilon,R}$の小さい円弧を$C_1$，大きい円弧を$C_2$とする．
-$|\int_{C_1}\frac{\log z}{z^4+1}dz|=\int_{0}^\pi |\frac{\log r e^{i\theta}}{r^4e^{4i\theta}+1}i re^{i\theta}|d\theta\le \int_{0}^\pi \frac{r|\log r|+r\pi}{|r^4-1|}d\theta\le \pi \frac{r|\log r|+r\pi}{|r^4-1|}\rightarrow 0\quad (r\rightarrow 0)$である．
-また$|\int_{C_2}\frac{\log z}{z^4+1}dz|\le \int_{0}^\pi |\frac{\log Re^{i\theta}}{R^4e^{4i\theta}+1}i Re^{i\theta}|d\theta \le \pi \frac{R|\log R|+R\pi}{|R^4-1|}\rightarrow 0\quad (R\rightarrow \infty)$である．
+$\left|\int_{C_1}\frac{\log z}{z^4+1}dz\right|=\int_{0}^\pi \left|\frac{\log \varepsilon e^{i\theta}}{\varepsilon^4e^{4i\theta}+1}i \varepsilon e^{i\theta}\right|d\theta\le \int_{0}^\pi \frac{\varepsilon\left|\log \varepsilon\right|+\varepsilon\pi}{\left|\varepsilon^4-1\right|}d\theta\le \pi \frac{\varepsilon\left|\log \varepsilon\right|+\varepsilon\pi}{\left|\varepsilon^4-1\right|}\rightarrow 0\quad (\varepsilon\rightarrow 0)$である．
+また$\left|\int_{C_2}\frac{\log z}{z^4+1}dz\right|\le \int_{0}^\pi \left|\frac{\log Re^{i\theta}}{R^4e^{4i\theta}+1}i Re^{i\theta}\right|d\theta \le \pi \frac{R\left|\log R\right|+R\pi}{\left|R^4-1\right|}\rightarrow 0\quad (R\rightarrow \infty)$である．
 
 また$\int_{\alpha_1} \frac{\log z}{z^4+1}dz = \int_{\varepsilon}^R \frac{\log x}{x^4+1}dx$である．
 
-$\varepsilon<1<R$とする．
-$D_{\varepsilon,R}$内で$\frac{\log z}{z^4+1}$は$e^{\pi i/4},e^{3\pi i/4}$を特異点にもつ．留数を求めると$\Res(\frac{\log z}{z^4+1},e^{\pi i/4})=\pi e^{7i\pi/4}/16,\Res(\frac{\log z}{z^4+1},e^{3\pi i/4})=3\pi  e^{i\pi /4}/16$である．よって
-$\int_{\partial D_{\varepsilon,R}} \frac{\log z}{z^4+1}dz = \frac{i\pi^2}{8}(3e^{i\pi/4}+e^{-i\pi/4})$である．
-よって$\lim\limits_{R\rightarrow\infty}\int_{\partial D_{1/R,R}}  \frac{\log z }{z^4+1}dz=\frac{i\pi^2}{8}(3e^{i\pi/4}+e^{-i\pi/4}),\lim\limits_{R \rightarrow \infty}\int_{\partial D_{1/R,R}} \frac{\log z}{z^4+1}dz=2 \int_0^\infty \frac{\log x}{x^4+1}dx + \pi i \int_0^\infty \frac{1}{x^4+1}dx$である．
-以上より$\int_0^\infty \frac{\log x}{x^4+1}dx = -\frac{\pi^2}{8\sqrt{2}},\int_0^\infty \frac{1}{x^4+1}dx =\pi/2\sqrt{2}$である．
+$\varepsilon<1<R$である．
+$D_{\varepsilon,R}$内で$\frac{\log z}{z^4+1}$は$e^{\pi i/4},e^{3\pi i/4}$を特異点にもつ．
+留数を求めると$\Res(\frac{\log z}{z^4+1},e^{\pi i/4})=\pi e^{7i\pi/4}/16,\Res(\frac{\log z}{z^4+1},e^{3\pi i/4})=3\pi  e^{i\pi /4}/16$である．
+よって
+$\int_{\partial D_{\varepsilon,R}} \frac{\log z}{z^4+1}dz = \frac{i\pi^2}{8}(3e^{i\pi/4}+e^{-i\pi/4})=-\frac{\pi^2\sqrt{2}}{8}+i\frac{\pi^2\sqrt{2}}{4}$である．
+すなわち$\lim\limits_{R\rightarrow\infty,\varepsilon\rightarrow0}\int_{\partial D_{\varepsilon,R}} \frac{\log z}{z^4+1}dz=2 \int_0^\infty \frac{\log x}{x^4+1}dx + i\pi  \int_0^\infty \frac{1}{x^4+1}dx$である．
+以上より$\int_0^\infty \frac{\log x}{x^4+1}dx = -\frac{\pi^2\sqrt{2}}{16},\int_0^\infty \frac{1}{x^4+1}dx = \frac{\pi\sqrt{2}}{4}$である．
 \end{document}

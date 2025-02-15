@@ -62,6 +62,16 @@ $|a_n-a_m|\le|a_n -f_n(x)|+|f_n(x)-f(x)|+|f(x)-f_m(x)|+|f_m(x)-a_m|$であるか
 (1)$|e^{iz}|=|\exp({ire^{it}})|=|\exp(-r\sin t+ir\cos t)|=|\exp(-r\sin t)|\le 1$である．よって$|\int_{C_r} f(z)dz|\le \int_{C_r} |\frac{2}{z^2}|dz=2\int_0^{\pi} |\frac{1}{r}|dt=2\pi\frac{1}{r}\rightarrow 0 \quad(r\rightarrow \infty)$である．
 
 $(1-e^{iz})/z^2=\sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-2}z^{n-2}$である．よって$\int_{C_r} f(z)dz= \sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-2}\int_{C_r}z^{n-2}dz=\sum\limits_{n=1}^\infty \frac{1}{n!}i^{n-1}\int_{0}^\pi r^{n-1}e^{i(n-1)t}dt$である．$n=1$の項については$\int_{0}^\pi dt=\pi$である．$n\ge 2$なら
-$|\int_0^\pi r^{n-1}e^{i(n-1)t}dt|\le \int_0^\pi r^{n-1}dt\rightarrow0 \quad(r\to 0)$である．よって$\int_{C_r} f(z)dz\rightarrow 0 \quad(r\to 0)$である．
+$|\int_0^\pi r^{n-1}e^{i(n-1)t}dt|\le \int_0^\pi r^{n-1}dt\rightarrow0 \quad(r\to 0)$である．よって$\int_{C_r} f(z)dz\rightarrow \pi \quad(r\to 0)$である．
+
+(2)曲線$\alpha_{\varepsilon,r}$を$z=x \quad(-r \le x \le -\varepsilon)$とする．
+$\int_{\alpha_{\varepsilon,r}}f(z)dz=\int_{-r}^{-\varepsilon} \frac{1-e^{ix}}{x^2}dx=\int_{\varepsilon}^{r} \frac{1-e^{-ix}}{x^2}dx=\int_{\varepsilon}^{r} \frac{1-\cos x}{x^2}dx+i\int_{\varepsilon}^{r} \frac{\sin x}{x^2}dx$である．
+
+曲線$\beta_{\varepsilon,r}$を$z=x \quad(\varepsilon \le x \le r)$とする．
+$\int_{\beta_{\varepsilon,r}}f(z)dz=\int_{\varepsilon}^{r} \frac{1-e^{ix}}{x^2}dx=\int_{\varepsilon}^{r} \frac{1-\cos x}{x^2}dx-i\int_{\varepsilon}^{r} \frac{\sin x}{x^2}dx$である．
+
+$C_{\varepsilon},\beta_{\varepsilon,r},C_r ,\alpha_{\varepsilon,r}$をつないでできる積分曲線を$C$とすると，$C$の内部で$f$は正則であるから$\int_C f(z)dz=0$である．よって$\int_{-C_{\varepsilon}}f(z)dz+\int_{\beta_{\varepsilon,r}}f(z)dz+\int_{C_r}f(z)dz+\int_{\alpha_{\varepsilon,r}}f(z)dz=0$である．
+$\varepsilon \to 0,r\to \infty$とすると$2\int_{\varepsilon}^{r} \frac{1-\cos x}{x^2}dx-\pi \rightarrow 0$であるから$\int_{0}^\infty \frac{1-\cos x}{x^2}dx=\frac{\pi}{2}$である．
+
 
 \end{document}

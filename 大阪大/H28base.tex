@@ -80,7 +80,7 @@ $x,y,z$について$\sum\limits_{k=1}^n  2^{-k}|x_k-z_k| \le \sum\limits_{k=1}^n
 したがって収束部分列$\{x_{n,k_j^{(n)}}\}_{j=1}^\infty$に対して数列$\{ x_{n+1,k_j^{(n)}}\}_{j=1}^\infty$も収束部分列$\{x_{n+1,k_j^{(n+1)}}\}_{j=1}^\infty$を持つ．
 このとき$\{k_j^{(n+1)}\}_{j=1}^\infty$は$\{k_j^{(n)}\}_{j=1}^\infty$の部分列である．
 これが任意の$n$について成り立つから数列$\{k_j^{(1)}\}_{j=1}^\infty,\{k_j^{(2)}\}_{j=1}^\infty,\dots$を得て，それぞれ前の数列の部分列となっている．
-数列$\{s_n\}_{n=1}^\infty$を$s_n=k_n^{(n)}$で定める．$\{s_n\}_{n=1}^\infty$は全ての$m$について$n>m$では$\{k_j^{(m)}\}_{j=1}^\infty$の部分列となっている．したがって$\{x_{s_n},k\}_{n=1}^\infty$は収束列になっている．よって$\{x_{s_n}\}_{n=1}^\infty$は収束列である．
+数列$\{s_n\}_{n=1}^\infty$を$s_n=k_n^{(n)}$で定める．$\{s_n\}_{n=1}^\infty$は全ての$m$について$n>m$では$\{k_j^{(m)}\}_{j=1}^\infty$の部分列となっている．したがって$\{x_{s_n,k}\}_{n=1}^\infty$は収束列になっている．よって$\{x_{s_n}\}_{n=1}^\infty$は収束列である．
 
 \fbox{4}
 (1)$z=re^{i\theta}$とする．
@@ -94,17 +94,19 @@ $x,y,z$について$\sum\limits_{k=1}^n  2^{-k}|x_k-z_k| \le \sum\limits_{k=1}^n
 	\lim_{r \to \infty}  \left|\int_{C_r}\frac{e^{iz}}{z}dz\right|\le\lim_{r \to \infty}\int_0^\pi \left| e^{-r\sin \theta} \right|d\theta = \int_0^\pi0 d\theta=0
 \end{align}
 
-(2)$r>0$に対して$z=1/r$から$z=r$までの積分経路を$\Gamma_r^+$とする．$z=-r$から$z=-1/r$までの積分経路を$\Gamma_r^-$とする．
+(2)
+
+$r>\varepsilon>0$に対して$z=\varepsilon$から$z=r$までの積分経路を$\Gamma_{\varepsilon,r}^+$とする．$z=-r$から$z=-\varepsilon$までの積分経路を$\Gamma_{\varepsilon,r}^-$とする．
 \begin{align}
-	\int_{\Gamma_r^+} \frac{e^{iz}}{z}dz&=\int_{1/r}^r \frac{e^{ix}}{x}dx=\int_{1/r}^r \frac{\cos x+i\sin x}{x}dx\\
-	\int_{\Gamma_r^-} \frac{e^{iz}}{z}dz&=\int_{-r}^{-1/r} \frac{e^{ix}}{x}dx=\int_{r}^{1/r} -\frac{\cos x-i\sin x}{-x}dx=\int_{1/r}^r \frac{-\cos x+i\sin x}{x}dx
+	\int_{\Gamma_{\varepsilon,r}^+} \frac{e^{iz}}{z}dz&=\int_{\varepsilon}^r \frac{e^{ix}}{x}dx=\int_{\varepsilon}^r \frac{\cos x+i\sin x}{x}dx\\
+	\int_{\Gamma_{\varepsilon,r}^-} \frac{e^{iz}}{z}dz&=\int_{-r}^{-\varepsilon} \frac{e^{ix}}{x}dx=\int_{r}^{\varepsilon} -\frac{\cos x-i\sin x}{-x}dx=\int_{\varepsilon}^r \frac{-\cos x+i\sin x}{x}dx
 \end{align}である．
-積分経路$\Gamma_r^+,C_r,\Gamma_r^-,-C_{1/r}$によってできる閉曲線$\Gamma$を考えると，被積分関数は原点を除いて正則であるから，$\int_{\Gamma} \frac{e^{iz}}{z}dz=0$である．
+積分経路$\Gamma_{\varepsilon,r}^+,C_r,\Gamma_{\varepsilon,r}^-,-C_{\varepsilon}$によってできる閉曲線$\Gamma$を考えると，被積分関数は原点を除いて正則であるから，$\int_{\Gamma} \frac{e^{iz}}{z}dz=0$である．
 よって
 \begin{align}
-	0&= \int_{\Gamma_r^+} \frac{e^{iz}}{z}dz+\int_{C_r} \frac{e^{iz}}{z}dz+\int_{\Gamma_r^-} \frac{e^{iz}}{z}dz+\int_{-C_{1/r}} \frac{e^{iz}}{z}dz\\
-	&=\int_{1/r}^r \frac{\cos x+i\sin x}{x}dx+\int_{1/r}^r \frac{-\cos x+i\sin x}{x}dx+I(r)-I(1/r)\\
-	&=2i\int_{1/r}^r \frac{\sin x}{x}dx+I(r)-I(1/r)\rightarrow 2 i \int_{0}^\infty \frac{\sin x}{x}dx -\pi i \quad (r\rightarrow \infty)
+	0&= \int_{\Gamma_{\varepsilon,r}^+} \frac{e^{iz}}{z}dz+\int_{C_r} \frac{e^{iz}}{z}dz+\int_{\Gamma_{\varepsilon,r}^-} \frac{e^{iz}}{z}dz+\int_{-C_{\varepsilon}} \frac{e^{iz}}{z}dz\\
+	&=\int_{\varepsilon}^r \frac{\cos x+i\sin x}{x}dx+\int_{\varepsilon}^r \frac{-\cos x+i\sin x}{x}dx+I(r)-I(\varepsilon)\\
+	&=2i\int_{\varepsilon}^r \frac{\sin x}{x}dx+I(r)-I(\varepsilon)\rightarrow 2 i \int_{0}^\infty \frac{\sin x}{x}dx -\pi i \quad (r\rightarrow \infty)
 \end{align}
 したがって$\int_0^\infty \frac{\sin x}{x}dx=\pi/2$である．
 

@@ -105,8 +105,10 @@ $K,L,M$をコンパクト集合とする．$D(K,L)=r_1,D(L,M)=r_2,r:=r_1+r_2$と
 \end{align}であるから，$|\int_{J_R^+}f(z)dz|\le \int_0^{1}\frac{1}{e^{2\pi(1-a)R}}dy =\frac{1}{e^{2\pi(1-a)R}}$である．$0<1-a<1$より$|\int_{J_R^+}f(z)dz|\to 0\quad (R\to \infty)$である．
 同様に$|\int_{J_R^-}f(z)dz|\to 0\quad (R\to \infty)$である．
 
-(3)$R+i$から$R-i$への向きのついた線分を$C$とする．
-$\int_C dz=\int_C\frac{e^{2\pi a z}}{1+e^{2\pi z}}dz=\int_R^{-R}\frac{e^{2\pi a (x+i)}}{1+e^{2\pi (x+i)}}dx=-e^{2\pi a i}\int_{-R}^R \frac{e^{2\pi a x}}{1+e^{2\pi x}}dx$である．よって$\alpha=\int_{-R}^Rf(z)dz$とすれば，
-$\int_{\gamma_R}f(z)dz=(1-e^{2\pi a i})\alpha+\int_{J^+_R}f(z)dz-\int_{J^-_R}f(z)dz$である．よって$R\rightarrow \infty$で$-i e^{a \pi i}=(1-e^{2\pi a i})\alpha$である．よって$\alpha=\frac{-i e^{a \pi i}}{1-e^{2\pi a i}}=\frac{-i}{e^{-a\pi i}-e^{a \pi i}}=\frac{1}{2\sin a\pi}$である．
+(3)
+$\int_{-\infty}^\infty\frac{e^{2\pi ax}}{1+e^{2\pi x}}dx=\int_{-\infty}^\infty \frac{1}{e^{-2\pi ax}+e^{2\pi(1-a) x}}dx\le \int_0^\infty \frac{1}{e^{2\pi(1-a)x}}dx+\int_{-\infty}^0 \frac{1}{e^{-2\pi ax}}dx<\infty$である．よって広義積分は収束する．
+$R+i$から$-R+i$への向きのついた線分を$C$とする．
+$\int_C\frac{e^{2\pi a z}}{1+e^{2\pi z}}dz=\int_R^{-R}\frac{e^{2\pi a (x+i)}}{1+e^{2\pi (x+i)}}dx=-e^{2\pi a i}\int_{-R}^R \frac{e^{2\pi a x}}{1+e^{2\pi x}}dx$である．よって
+$\int_{\gamma_R}f(z)dz=(1-e^{2\pi a i})\int_{-R}^Rf(z)dz+\int_{J^+_R}f(z)dz-\int_{J^-_R}f(z)dz$である．すなわち$R\rightarrow \infty$で$-i e^{a \pi i}=(1-e^{2\pi a i})\int_{-\infty}^\infty f(z)dz$である．よって$\int_{-\infty}^\infty f(z)dz=\frac{-i e^{a \pi i}}{1-e^{2\pi a i}}=\frac{-i}{e^{-a\pi i}-e^{a \pi i}}=\frac{1}{2\sin a\pi}$である．
 
 \end{document}

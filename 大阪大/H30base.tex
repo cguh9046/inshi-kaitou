@@ -1,0 +1,124 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H30数学A}
+\fbox{1}
+(1)$f(X)$が連結でないと仮定する．このとき，$f(X)\subset U \cup V$なる$Y$の開集合$U,V$で$U\cap V\cap f(X)=\emptyset$かつ$U\cap f(X)\neq \emptyset, V\cap f(X)\neq \emptyset$を満たすものが存在する．$f^{-1}(U)\cup f^{-1}(V)=f^{-1}(U\cup V)=X$であり，$f^{-1}(U),f^{-1}(V)$は$X$の開集合である．$f^{-1}(U)\cap f^{-1}(V)=f^{-1}(U\cap V\cap f(X))=\emptyset$で，$f^{-1}(U)\neq \emptyset, f^{-1}(V)\neq \emptyset$であるから，$X$は連結でない．
+これは矛盾．よって，$f(X)$は連結である．
+
+(2)$Y=\{0,1\}$で$Y$に密着位相をいれる．$X=\{0,1\}$で$X$に離散位相をいれる．このとき$f(x)=x$は連続であり，$X$はハウスドルフ空間である．しかし$Y=f(X)$はハウスドルフ空間でない．
+
+(3)$f(X)$の任意の開被覆$S=\{U_{\lambda}\}_{\lambda\in \Lambda}$に対して，$T=\{f^{-1}(U_{\lambda})\}_{\lambda\in \Lambda}$は$X$の開被覆である．$X$はコンパクトであるから，$T$の有限部分集合$\{f^{-1}(U_{\lambda_i})\}_{i=1}^n$が存在して，$X=f^{-1}(\bigcup_{i=1}^n U_{\lambda_i})$となる．$f(X)=\bigcup_{i=1}^n U_{\lambda_i}$であり，$f(X)$はコンパクトである．
+
+\fbox{2}
+(1)$f^d(V)=V^d$とする．$V^{d+1}=f^{d+1}(V)=f^d(f(V))\subset f^d(V)=V^d$である．よって，ベクトル空間の降下列$V=V^0\supset V^1\supset \cdots \supset V^n \supset \cdots$が定まる．$f^d$が零写像であるから$V^d=0$である．降下列であるから次元は単調減少する．
+$V^{i-1}=V^{i}$なる$i$が存在したとき，$V^{i+1}=f^{i+1}(V)=f(V^i)=f(V^{i-1})=V^i$となるから，以降すべて等しい．
+よって次元は小さくなり続けたのち，ある次元で以降不変になる．
+
+$f^d=0$より，$V^d=0=V^{d+1}$である．また$f^{d-1}\neq 0$より$V^{d-1}\neq 0$である．
+すなわち$V^d$までは次元は小さくなり続ける．$\dim V=n$より$d\le n$である．
+
+(2)$v \in \Im(f)\cap \ker (f)$について，ある$w\in V$が存在して$f(w)=v$である．$0=f(v)=f(f(w))=f(w)=v$であるから，$\Im(f)\cap \ker (f)=\{0\}$である．
+
+(3)求める最大元は$m:=\lfloor \frac{n}{2} \rfloor$である．ただし，$\lfloor x \rfloor$は$x$以下の最大の整数を表す．
+
+$V$の基底を$\{v_1,\cdots,v_n\}$とする．$g(v_i)=\begin{cases}
+	0 & (i\le m)\\
+	v_{i-m} & (i>m)
+\end{cases}$とする．$g$は線形写像である．$\Im (g)=\Span\{v_{1},\cdots,v_{n-m}\}$であり，$\ker (g)=\Span\{v_1,\cdots,v_m\}$である．$m$の定義から$m\le n-m$であるから，$\dim(\Im (g)\cap \ker (g))=\dim \Span\{v_1,\cdots,v_m\}=m$である．
+よって$m \in A$である．
+
+次元定理より$f \colon V \rightarrow V$に対して$n=\dim V=\dim \Im(f)+\dim \ker(f)$である．よって$\dim (\Im (f) \cap \ker (f))\le \min \{ \dim \Im(f),\dim \ker(f)\} \le \lfloor\frac{n}{2}\rfloor$である．
+
+よって$\lfloor \frac{n}{2} \rfloor$は$A$の上界である．よって$m$は求める最大元である．
+
+\fbox{3}
+(1)$2-\cos x>0$より$0\le \int_0^x 2-\cos tdt=2x-\sin x$である．よって
+$0\le \int_0^x 2t-\sin t dt= x^2 +\cos x -1$である．
+よって$0\le\int_0^x t^2+\cos t-1 dt=\frac{1}{3}x^3+\sin x-x$である．
+
+よって$f_n(x)=n^{p+1}(\frac{x}{n}-\sin \frac{x}{n})\le n^{p+1}(\frac{1}{3}(\frac{x}{n})^3)=\frac{x^3}{3n^{2-p}}$である．
+$p<2$なら$0<2-p$より$n\rightarrow \infty$で$f_n(x)\rightarrow 0$である．
+
+(2)任意の有界閉区間$I$について，$^\forall x \in I,|x|\le M$とできる$M>0$が存在する．
+$S_n(x)=\sum_{k=1}^n  f_n(x)$が一様コーシー列であることを示す．
+$n>m$に対して$|S_n(x)-S_m(x)|=|\sum_{k=m+1}^n f_k(x)|\le \sum_{k=m+1}^n |f_k(x)|\le \sum_{k=m+1}^n \frac{M^3}{3k^{2-p}}=\frac{M^3}{3}\sum_{k=m+1}^n k^{p-2}$である．
+$p<1$より$p-2<-1$であるから，$\sum_{k=m+1}^n k^{p-2} \le \sum_{k=m+1}^n \int_{k-1}^k t^{p-2}dt=\int_m^n t^{p-2}dt=\frac{1}{p-1}(n^{p-1}-m^{p-1})\rightarrow 0\quad(n,m\rightarrow \infty)$である．
+よって一様コーシー列であるから，一様収束する．
+
+(3)$|x|<\pi/6$のとき，$\cos x-\frac{1}{2}\ge0$である．よって$0\le\int_0^x \cos t-\frac{1}{2}dt=\sin x-\frac{x}{2}$である．よって$0\le\int_0^x \sin t-\frac{t}{2}dt=-\cos x- \frac{x^2}{4}+1$である．よって$0\le\int_0^x -\cos t-\frac{t^2}{4}+1dt=-\sin x-\frac{x^3}{12}+x$である．すなわち$\frac{x^3}{12}\le x-\sin x\quad(|x|<\pi/6)$である．
+
+よってある$x$に対して$\frac{x}{n}<\frac{\pi}{6}$なる$n$について
+$f_n(x)=n^{p+1}(\frac{x}{n}-\sin \frac{x}{n})\ge\frac{x^3}{12n^{2-p}}$である．すなわち$p>2$なら$n\rightarrow \infty$で$f_n(x)\rightarrow \infty$である．
+
+$p<2$のとき(1)より$f(x)=0$に各点収束する．$x=n\pi/2$とすると，$f(n\pi/2)=0,f_n(n\pi/2)=n^{p+1}(\frac{\pi}{2}-1)$であるから，$\mathbb{R}$上で一様収束しない．
+
+$p=2$のとき，各$x$について$f_n(x)=n^3(\frac{x}{n}-\sin \frac{x}{n})=n^3(\frac{1}{3!}(\frac{x}{n})^3-\frac{1}{5!}(\frac{x}{n})^5+\cdots)\rightarrow \frac{x^3}{6}\quad(n\rightarrow \infty)$である．よって$g(x)=\frac{x^3}{6}$に各点収束する．
+$g(n\pi/2)=\frac{(n\pi/2)^3}{6}=n^3\frac{\pi^3}{48},f_n(n\pi/2)=n^3(\frac{\pi}{2}-1)$より一様収束しない．
+
+\fbox{4}
+(1)\begin{align}
+	\lim_{z \to 0}\frac{ze^{iz}}{e^z-e^{-z}}&=\lim_{z\to 0} \frac{e^{iz}+ize^{iz}}{e^z+e^{-z}}=\frac{1}{2} , & \lim_{z \to i\pi} \frac{(z-i\pi)e^{iz}}{e^z-e^{-z}}&=\lim_{z\to i\pi} \frac{e^{iz}+i(z-i\pi)e^{iz}}{e^z+e^{-z}}=-\frac{1}{2e^{\pi}}
+\end{align}
+である．よって$\Res(f(z),0)=\frac{1}{2},\Res(f(z),i\pi)=-\frac{1}{2e^{\pi}}$である．
+
+(2)\begin{align}
+	\left| \int_{\Gamma_R^+}f(z)dz \right|&\le \left| \int_0^\pi \frac{e^{i(R+it)}}{e^{R+it}-e^{-(R+it)}}idt \right|\le\int_0^\pi \left| \frac{e^{-t}}{e^{R+it}-e^{-(R+it)}} \right|dt\le \int_0^\pi \frac{e^{-t}}{||e^R|-|e^{-R}||}dt=\frac{1-e^{-\pi}}{e^R-e^{-R}}\rightarrow 0\quad (R\rightarrow \infty)\\
+	\left| \int_{\Gamma_R^-}f(z)dz \right|&\le \left| \int_0^\pi \frac{e^{i(-R+it)}}{e^{-R+it}-e^{-(-R+it)}}idt \right|\le\int_0^\pi \left| \frac{e^{-t}}{e^{-R+it}-e^{R-it}} \right|dt\le \int_0^\pi \frac{e^{-t}}{||e^{-R}|-|e^{R}||}dt=\frac{1-e^{-\pi}}{e^R-e^{-R}}\rightarrow 0\quad (R\rightarrow \infty)
+\end{align}
+
+(3)
+\begin{wrapfigure}[6]{r}[2cm]{8cm}
+    \centering\vspace{0em}
+    \begin{tabular}{@{\hskip 0cm}c}
+        \begin{tikzpicture}[auto]
+            \draw[->] (-3,0)--(3,0) node[right] {$\Re$};
+            \draw[->] (0,-0.5)--(0,2) node[above] {$\Im$};
+            \draw[line width=1pt,-{Latex[length=5pt]}] (0.5,0) --(1.7,0) node[below] {$C_1$};
+            \draw[line width=1pt] (1.3,0) --(2.5,0) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (-2.5,0) --(-1.5,0) node[below] {$C_4$};
+            \draw[line width=1pt] (-1.7,0) --(-0.5,0) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (2.5,0) --(2.5,0.8) node[right] {$\Gamma_R^+$};
+            \draw[line width=1pt] (2.5,0.7) --(2.5,1.5) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (2.5,1.5) --(1.5,1.5) node[above] {$C_2$};
+            \draw[line width=1pt] (1.7,1.5) --(0.5,1.5) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (-0.5,1.5) --(-1.8,1.5) node[above] {$C_3$};
+            \draw[line width=1pt] (-1.5,1.5) --(-2.5,1.5) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (-2.5,1.5) --(-2.5,0.8) node[left] {$\Gamma_R^-$};
+            \draw[line width=1pt] (-2.5,1.0) --(-2.5,0) ;
+            \draw[line width=1pt,-{Latex[length=5pt]}] (-0.5,0) arc[x radius=0.5,y radius=0.5,start angle=180,end angle=70];
+            \draw[line width=1pt] (0,0.5)  arc[x radius=0.5,y radius=0.5,start angle=90,end angle=0]node[right,pos=0.1] {$\alpha_{\varepsilon}$};
+            \draw[line width=1pt,-{Latex[length=5pt]}] (0.5,1.5) arc[x radius=0.5,y radius=0.5,start angle=0,end angle=-110];
+            \draw[line width=1pt] (0,1)  arc[x radius=0.5,y radius=0.5,start angle=-90,end angle=-180] node[left,pos=0.1] {$\beta_{\varepsilon}$};
+            \node at (2.5,1.5) [right] {$R+i\pi$};
+            \node at (2.5,0) [below] {$R$};
+            \node at (0.5,0) [below] {$\varepsilon$};
+        \end{tikzpicture}
+    \end{tabular}
+    \parbox{10cm}{\caption{積分経路の図}}
+\end{wrapfigure}
+図のように積分経路$C_1,C_2,C_3,C_4,\alpha_{\varepsilon},\beta_{\varepsilon}$とそれらをつなげてできる閉曲線$C$を定める．$C$内で$f$は正則であるから$\int_C f(z)dz=0$である．
+\begin{align}
+	\int_{C_1}f(z)dz&=\int_{\varepsilon}^R \frac{\cos x+i\sin x}{e^x-e^{-x}}dx\\
+	\int_{C_4}f(z)dz&=\int_{-R}^{-\varepsilon} \frac{e^{ix}}{e^x-e^{-x}}dx=\int_R^\varepsilon -\frac{e^{i(-x)}}{e^{-x}-e^x}dx=\int_{\varepsilon}^R \frac{-\cos x+i\sin x}{e^x-e^{-x}}dx\\
+	\int_{C_2}f(z)dz&=\int_{R}^{\varepsilon} \frac{e^{i(x+i\pi)}}{e^{x+i\pi}-e^{-(x+i\pi)}}dx=e^{-\pi}\int_R^\varepsilon \frac{e^{ix}}{-e^x+e^{-x}}dx=e^{-\pi}\int_{\varepsilon}^R \frac{\cos x+i\sin x}{e^x-e^{-x}}dx\\
+    \int_{C_3}f(z)dz&=\int_{-\varepsilon}^{-R} \frac{e^{i(x+i\pi)}}{e^{x+i\pi}-e^{-(x+i\pi)}}dx=-e^{-\pi}\int_{\varepsilon}^R \frac{e^{-ix}}{e^x-e^{-x}}dx=e^{-\pi}\int_{\varepsilon}^R \frac{-\cos x+i\sin x}{e^x-e^{-x}}dx
+\end{align}
+である．$z=0,z=i\pi$は$f$の一位の極であるから，
+\begin{align}
+    \int_{\alpha_{\varepsilon}}f(z)dz&=\int_{\alpha_\varepsilon}f(z)-\frac{1}{2z}dz+\int_{\pi}^0 \frac{1}{2\varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta=-\frac{i\pi}{2},\,
+    \int_{\beta_{\varepsilon}}f(z)dz=\int_{\beta_\varepsilon}f(z)+\frac{1}{2e^\pi z}dz+\int_{0}^{-\pi} -\frac{1}{2e^\pi \varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta=\frac{i\pi}{2e^\pi}
+\end{align}である．
+よって$0=\int_C f(z)dz=2i(1+e^{-\pi})\int_{\varepsilon}^R \frac{\sin x}{e^x-e^{-x}}dx+\frac{i\pi}{2}(-1+e^{-\pi})+\int_{\gamma_R^+}f(z)dz+\int_{\gamma_R^-}f(z)dz$である．
+$R\rightarrow \infty,\varepsilon \rightarrow 0$とすると，$\int_0^\infty \frac{\sin x}{e^x-e^{-x}}dx=-\frac{\pi(e^{-\pi}-1)}{4(e^{-\pi}+1)}$である．
+
+\end{document}
