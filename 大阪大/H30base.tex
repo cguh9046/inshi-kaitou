@@ -113,12 +113,12 @@ $g(n\pi/2)=\frac{(n\pi/2)^3}{6}=n^3\frac{\pi^3}{48},f_n(n\pi/2)=n^3(\frac{\pi}{2
 	\int_{C_2}f(z)dz&=\int_{R}^{\varepsilon} \frac{e^{i(x+i\pi)}}{e^{x+i\pi}-e^{-(x+i\pi)}}dx=e^{-\pi}\int_R^\varepsilon \frac{e^{ix}}{-e^x+e^{-x}}dx=e^{-\pi}\int_{\varepsilon}^R \frac{\cos x+i\sin x}{e^x-e^{-x}}dx\\
     \int_{C_3}f(z)dz&=\int_{-\varepsilon}^{-R} \frac{e^{i(x+i\pi)}}{e^{x+i\pi}-e^{-(x+i\pi)}}dx=-e^{-\pi}\int_{\varepsilon}^R \frac{e^{-ix}}{e^x-e^{-x}}dx=e^{-\pi}\int_{\varepsilon}^R \frac{-\cos x+i\sin x}{e^x-e^{-x}}dx
 \end{align}
-である．$z=0,z=i\pi$は$f$の一位の極であるから，
+である．$z=0,z=i\pi$は$f$の一位の極であるから，原点近傍で有界になるように，$f(z)$から主要部を引けば$\varepsilon\rightarrow0$で0になる．
 \begin{align}
-    \int_{\alpha_{\varepsilon}}f(z)dz&=\int_{\alpha_\varepsilon}f(z)-\frac{1}{2z}dz+\int_{\pi}^0 \frac{1}{2\varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta=-\frac{i\pi}{2},\,
-    \int_{\beta_{\varepsilon}}f(z)dz=\int_{\beta_\varepsilon}f(z)+\frac{1}{2e^\pi z}dz+\int_{0}^{-\pi} -\frac{1}{2e^\pi \varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta=\frac{i\pi}{2e^\pi}
+    \int_{\alpha_{\varepsilon}}f(z)dz&=\int_{\alpha_\varepsilon}f(z)-\frac{1}{2z}dz+\int_{\pi}^0 \frac{1}{2\varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta\rightarrow -\frac{i\pi}{2}\quad(\varepsilon\rightarrow0)\\
+    \int_{\beta_{\varepsilon}}f(z)dz&=\int_{\beta_\varepsilon}f(z)+\frac{1}{2e^\pi z}dz+\int_{0}^{-\pi} -\frac{1}{2e^\pi \varepsilon e^{i\theta}}\varepsilon ie^{i\theta }d\theta\rightarrow\frac{i\pi}{2e^\pi}\quad(\varepsilon\rightarrow0)
 \end{align}である．
-よって$0=\int_C f(z)dz=2i(1+e^{-\pi})\int_{\varepsilon}^R \frac{\sin x}{e^x-e^{-x}}dx+\frac{i\pi}{2}(-1+e^{-\pi})+\int_{\gamma_R^+}f(z)dz+\int_{\gamma_R^-}f(z)dz$である．
+よって$0=\int_C f(z)dz=2i(1+e^{-\pi})\int_{\varepsilon}^R \frac{\sin x}{e^x-e^{-x}}dx+\int_{\alpha_\varepsilon}f(z)dz+\int_{\beta_\varepsilon}f(z)dz+\int_{\gamma_R^+}f(z)dz+\int_{\gamma_R^-}f(z)dz$である．
 $R\rightarrow \infty,\varepsilon \rightarrow 0$とすると，$\int_0^\infty \frac{\sin x}{e^x-e^{-x}}dx=-\frac{\pi(e^{-\pi}-1)}{4(e^{-\pi}+1)}$である．
 
 \end{document}
