@@ -1,0 +1,106 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R4数学A}
+\fbox{1}
+(1)$[0,\frac{\pi}{4}]$と$[\frac{\pi}{4},\infty)$にわけて収束をしらべる．
+
+$x\in [0,\pi/4]$で$\frac{1}{2}\le\cos x \le 1$である．不等式を$0$から$x$まで積分すると，$\frac{1}{2}x \le \sin x \le x$を得る．
+
+$\int_0^{\pi/4} \left|\frac{\sin x}{x^\alpha}\right|dx\le \int_0^{\pi/4} \frac{1}{x^{\alpha-1}}dx=\begin{cases}
+\left[ \frac{1}{2-\alpha}\frac{1}{x^{\alpha-2}} \right]_0^{\pi/4} & (\alpha\neq 2)\\
+\left[\log x \right]_0^{\pi/4} & (\alpha=2)
+\end{cases}$であるから$\alpha<2$で絶対収束する．
+
+$\int_0^{\pi/4}\frac{\sin x}{x^\alpha}dx\ge \int_0^{\pi/4} \frac{1}{2x^{\alpha-1}}dx$であるから，$\alpha\ge 2$で発散する．
+
+$1<\alpha<2$のとき，
+$\int_{\pi/4}^{\infty} \left|\frac{\sin x}{x^\alpha}\right|dx\le \int_{\pi/4}^{\infty} \frac{1}{x^\alpha}dx=
+\left[ \frac{1}{1-\alpha}\frac{1}{x^{\alpha-1}} \right]_{\pi/4}^{\infty}$であるから$\alpha>1$で絶対収束する．
+
+$\alpha\le 1$のとき，$p>q\ge\pi/4$に対して
+\begin{align}
+	\left| \int_q^p \frac{\sin x}{x^\alpha}dx \right|&=\left| \left[ \frac{-\cos x}{x^\alpha} \right]_q^p-\int_q^p \frac{\cos x}{\alpha x^{\alpha+1}}dx \right|\le \frac{1}{q^\alpha}+\frac{1}{p^\alpha}+\frac{1}{\alpha}\int_q^p \frac{1}{x^{\alpha+1}}dx\le \frac{1}{q^\alpha}+\frac{1}{p^\alpha}+\left[ -\frac{1}{x^\alpha} \right]_q^p\rightarrow 0\quad(p,q \rightarrow \infty)
+\end{align} 
+であるから，$\alpha\le1$で収束する．
+
+以上より$\int_0^\infty \frac{\sin x}{x^\alpha}dx$は$\alpha<2$で収束する．
+
+(2)(1)の計算から$1<\beta<2$で収束し，$\beta\ge 2$で発散することがわかる．
+
+$\beta\le 1$のとき，$n\in \mathbb{N}$に対して
+\begin{align}
+	\int_{n\pi}^{(n+1)\pi}\frac{|\sin x|}{x^\beta}dx&=\int_0^\pi \frac{\sin x}{(x+n\pi)^\beta}dx\ge \frac{1}{((n+1)\pi)^\beta}\int_0^\pi \sin xdx=\frac{2}{((n+1)\pi)^\beta}\\
+	\int_{1}^{\infty}\frac{|\sin x|}{x}dx&=\sum_{n=1}^\infty \int_{n\pi}^{(n+1)\pi}\frac{|\sin x|}{x}dx\ge \sum_{n=1}^\infty \frac{2}{((n+1)\pi)^\beta}\\
+\end{align}
+よって$\beta\le 1$で発散する．
+
+以上より$1<\beta<2$で収束し，$\beta\le1, 2\le\beta$で発散する．
+
+\fbox{2}
+(1)$b(x,y)=x^T Ay=x^T(-A^T)y=-((Ax)^Ty)^T=-y^T(Ax)=-b(y,x)$．
+
+(2)(1)より$y \in \ker f$のときに示せば十分．$b(x,y)=x^TAy=x^T0=0$．
+
+(3)$Ax=v+u,v\in V,u\in \ker f$と一意に表せる．
+$B(x,v)=b(x,Ax-u)=x^TA(Ax-u)=x^TA^2x=-x^TA^TAx=-(Ax)^TAx$である．$x \in V$より$Ax \neq 0$であるあから，$(Ax)^TAx\neq 0$．よって$B(x,v)\neq 0$．
+
+(4)$\det A=\det -A^T=(-1)^n\det A$より$n$が奇数なら$\det A=0$．
+
+(5)$V$の基底$\{v_1,\dots,v_k\}$を一つ固定する．
+$b_{ij}=B(v_i,v_j)$として行列$M=(b_{ij})$を定める．
+$x=\sum x_iv_i,y=\sum y_iv_i \in V$に対して
+$B(x,y)=(\sum_i x_iv_i)^TA(\sum_j y_jv_j)=\sum_{i,j}x_iy_j v_i^TA v_j=\sum_{i,j}x_iy_j b_{ij}=x^TMy$である．(この転置は$\mathbb{R}^n$の標準基底による座標の転置ではなく，固定した$V$の基底による座標の転置)
+(1)から$b_{ij}=b(v_i,v_j)=-b(v_j,v_i)=-b_{ji}$であるから$M$は交代行列．
+$M$が正則でないとする．このときある$x\in V$について$Mx=0$であるが任意の$y$について$B(x,y)=-B(y,x)=-y^TBx=0$となり(3)に矛盾．よって$M$は正則．$\det M\neq 0$だから(4)より$k$は偶数．
+$\rank A=n-\dim \ker f=\dim V=k$より$\rank A$は偶数．
+
+\fbox{3}
+(1)任意の$x \in X$について$(x,y)\in U$より$x \in S_x,y \in V_x,S_x \times V_x \subset U$なる開集合$S_x,V_x$が存在する．$\left\{ S_x\relmiddle| x\in X\right\}$は$X$の開被覆であるから有限部分被覆$\left\{ S_{x_i}\relmiddle| i=1,\dots,n\right\}$が存在する．
+$V=\bigcap_{i=1}^n V_{x_i}$とすると任意の$x\in X,y\in V$について$x \in S_{x_i}$なる$x_i$が存在して$y \in V_{x_i}$であるから$(x,y)\in U$．よって$X \times V \subset U$である．
+
+(2)$X \times Y$の閉集合$C$を任意にとる．$U:= X\times Y \setminus C$とする．$ y\notin P_Y(C)$について$X\times {y}\subset U$であるから(1)より$X \times V_y \subset U$なる開集合$V_y$が存在する．
+$V:=\bigcup\limits_{y \in P_Y(C)} V_y$とすると，$Y\setminus P_Y(C)\subset V$である．$v \in V$に対して$X \times \{v\} \subset U$であるから$^\forall x \in X,(x,v)\notin C$である．よって$v \notin P_Y(C)$であるから$Y \setminus P_Y(C) =V$より$P_Y$は閉写像．
+
+\fbox{4}
+(1)$f$の極は$z=i,-i$である．$z=i$の留数は$\lim (z-i)f(z)=\frac{e^{xi}}{2i}$である．$z=-i$の留数は$\lim (z+i)f(z)=\frac{e^{-xi}}{-2i}$である．
+
+(2)$i,-i$は共に$D$の内部の点である．留数定理から$\int_Cf(z)dz=2\pi i(\frac{e^{xi}}{2i}+\frac{e^{-xi}}{-2i})=\pi(e^{xi}-e^{-xi})=2\pi i\sin x$である．
+
+(3)$C_1$を$1+Ri$から$Ri$への有向線分，$C_2$を半径$R$の円の実部が負の部分を反時計回りに周る曲線，$C_3$を$-Ri$から$1-Ri$への有向線分とする．$C_1,C_2,C_3,L_R$を合わせると$C$となる．
+$R>2$のとき
+\begin{align}
+	\left| \int_{C_1}f(z)dz \right|&=\left| \int_1^0 \frac{e^{x(t+Ri)}}{(t+Ri)^2+1}dt \right|\le \int_0^1 \left| \frac{e^{xt}}{t^2-R^2+1+tRi} \right|dt\le \int_0^1 \frac{e^x}{R^2}dt\rightarrow 0\quad(R\rightarrow \infty)\\
+	\left| \int_{C_3}f(z)dz \right|&=\left| \int_0^1 \frac{e^{x(t-Ri)}}{(t-Ri)^2+1}dt \right|\le \int_0^1 \left| \frac{e^{xt}}{t^2-R^2+1-tRi} \right|dt\le \int_0^1 \frac{e^x}{R^2}dt\rightarrow 0\quad(R\rightarrow \infty)\\
+	\left| \int_{C_2}f(z)dz \right|&=\left| \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \frac{e^{xRe^{i\theta}}}{R^2e^{2i\theta}+1}Rie^{i\theta}d\theta \right|\le \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \left| \frac{e^{xR\cos\theta}}{R^2e^{2i\theta}+1}R\right|d\theta\le \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \frac{R}{R^2-1}d\theta\rightarrow 0\quad(R\rightarrow \infty)
+\end{align}
+よって$\lim\limits_{R\rightarrow \infty}\frac{1}{2\pi i}\int_{L_R}f(z)dz=\lim\limits_{R\rightarrow \infty}\frac{1}{2\pi i}\int_Cf(z)dz=\sin x$である．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

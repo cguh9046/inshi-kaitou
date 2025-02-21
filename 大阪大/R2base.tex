@@ -1,0 +1,87 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R2数学A}
+\fbox{1}
+(1)一様連続でないと仮定する．このとき
+${}^\exists \varepsilon>0,{}^\forall \delta>0,{}^\exists x,y\in [0,1],|x-y|<\delta \land |f(x)-f(y)|\geq \varepsilon$である．
+$\delta=\frac{1}{n}$として，$x_n,y_n$を定める．
+数列$\{x_n\}_{n=1}^\infty$は有界閉区間$[0,1]$に含まれるので，収束部分列$\{x_{\varphi(n)}\}_{n=1}^\infty$を持つ．$|y_{\varphi(n)}-x_*|\le |y_{\varphi(n)}-x_{\varphi(n)}|+|x_{\varphi(n)}-x_*|\le \frac{1}{\varphi(n)}+|x_{\varphi(n)}-x_*|\rightarrow 0 \quad(n\rightarrow \infty)$より，$y_{\varphi(n)}\rightarrow x_*$である．
+
+よって$\varepsilon\le |f(x_{\varphi(n)})-f(y_{\varphi(n)})|\rightarrow |f(x_*)-f(x_*)|=0$となり矛盾する．
+
+(2)任意の$\varepsilon>0$に対して，一様収束性からある$N \in \mathbb{N}$が存在して，$^\forall x \in [0,1],^\forall n\ge N,|f(x)-f_n(x)|<\varepsilon$である．
+この$N$について$f_N$の連続性から，$^\exists \delta>0,^\forall x\in [0,1],|x-x_*|<\delta \Rightarrow |f_N(x)-f_N(x_*)|<\varepsilon$である．
+よって$|x-x_*|<\delta $なら$|f(x)-f(x_*)|\le |f(x)-f_N(x)|+|f_N(x)-f_N(x_*)|+|f_N(x_*)-f(x_*)|<3\varepsilon$となるから連続．
+
+$|f(x)|$は有界閉区間の連続関数だから最大値$M$が存在する．また一様収束するから，
+$^\exists N\in \mathbb{N},^\forall n>N,\sup_{x\in [0,1]}|f(x)-f_n(x)|<M$である．すなわち$|f_n(x)|<2M \quad (n > N,x\in [0,1])$である．
+
+$f_n$の最大値を$M_n$とし，$L:=\max\{ M,M_1,\dots,M_N\}$とする．このとき$\sup\limits_{n \in \mathbb{N}}|f_n(x)|\le L \quad(x\in [0,1])$である．
+
+有界閉区間の定数関数はルベーグ可積分であるから，ルベーグの収束定理より，
+$\int_0^1 f(x)dx=\lim_{n\rightarrow \infty}\int_0^1 f_n(x)dx$である．
+
+\fbox{2}
+(1)$|PQ|$で線分$PQ$の長さを表す．$|PQ|=\sqrt{54}$である．よって$|PR|=\sqrt{(m+4)^2+(n+1)^2+(-1)^2}=\sqrt{54}$である．
+$\overrightarrow{PQ}=(5,5,-2),\overrightarrow{PR}=(m+4,n+1,-1)$で内積は
+$\sqrt{54}^2\cos \frac{\pi}{3}=27$であるから，$5(m+4)+5(n+1)+2=27$である．
+よって$m+n=0$である．
+$54=(m+4)^2+(-m+1)^2+1$より，$m=3,-6$である．
+よって$(m,n)=(3,-3),(-6,6)$である．
+
+(2)$\{\overrightarrow{OP},\overrightarrow{OQ},\overrightarrow{OR}\}$は線形独立である．よってこの基底からつくられる全ての内積が，$f$で保たれることが$f$が直交変換であることの必要十分条件．
+
+$m=3,n=-3$のとき，$(\overrightarrow{OP},\overrightarrow{OQ})=-9,(\overrightarrow{OP},\overrightarrow{OR})=-9,(\overrightarrow{OQ},\overrightarrow{OR})=-9$である．よって(*)を満たす全ての$f$は直交変換だから，$f(\overrightarrow{OP})=\overrightarrow{OR}$より$2$個．
+
+$m=-6,n=6$のとき，$(\overrightarrow{OP},\overrightarrow{OQ})=-9,(\overrightarrow{OP},\overrightarrow{OR})=18,(\overrightarrow{OQ},\overrightarrow{OR})=18$である．$f(\overrightarrow{OP})=\overrightarrow{OR}$より(*)を満たす直交変換は存在しない．
+
+\fbox{3}
+(1)$\{x_n\}_{n=1}^\infty$が$x,y$に収束するとする．$x\neq y$ならハウスドルフであるから，開集合$U,V$が存在して$x\in U,y\in V,U\cap V=\emptyset$である．
+$x$に収束するから，ある$N_1$が存在して$^\forall n>N_1,x_n\in U$である．同様に$y$に収束するから，ある$N_2$が存在して$^\forall n>N_2,x_n\in V$である．
+$N=\max\{N_1,N_2\}$とすると，$x_n\in U\cap V$となり矛盾する．よって$x=y$である．
+
+(2)$X=\{0,1\}$として$X$に密着位相をいれる．$x_n=0$とする数列$\{x_n\}_{n=1}^\infty$は$0,1$に収束する．
+
+(3)$f(x)$を含む任意の開集合$V$をとる．$x \in f^{-1}(V)=U$であるから，ある$N$が存在して$^\forall n>N,x_n\in U$である．よって$^\forall n>N,f(x_n)\in V$であるから$f(x_n)$は$f(x)$に収束する．
+
+\fbox{4}
+(1)$f(z)=\frac{\exp(-z^2/2)}{z}$とする．$z=0$は$f$の一位の極で，主要部は$\frac{1}{z}$である．よって$f(z)-\frac{1}{z}$は原点近傍で正則であるから，有界である．よって$\int_{C_\varepsilon}f(z)-\frac{1}{z}dz\rightarrow 0 \quad (\varepsilon \rightarrow 0)$である．$\int_{C_\varepsilon}\frac{1}{z}dz=\int_0^{\pi/4}\frac{1}{\varepsilon e^{i\theta}}\varepsilon ie^{i\theta}d\theta=\frac{i \pi}{4}$
+であるから，$\int_{C_\varepsilon}f(z)dz\rightarrow\frac{i \pi}{4}\quad(\varepsilon\rightarrow0)$である．
+
+(2)\begin{align}
+	\left| \int_{S_R}\frac{\exp(-z^2/2)}{z}dz \right|&
+	=\left| \int_0^R \frac{\exp\left(\frac{y^2-R^2}{2}\right)e^{iRy}}{R+iy}idy \right|\le \frac{1}{Re^{\frac{R^2}{2}}}\int_0^R e^{\frac{y^2}{2}}dy\\
+	\lim_{R\rightarrow \infty} \frac{1}{Re^{\frac{R^2}{2}}}\int_0^R e^{\frac{y^2}{2}}dy&= \lim_{R\rightarrow \infty} \frac{1}{e^{\frac{R^2}{2}}+R^2e^{\frac{R^2}{2}}}e^{\frac{R^2}{2}}=0
+\end{align}よって$\lim\limits_{R \to \infty}\int_{S_R}\frac{\exp(-z^2/2)}{z}dz=0$である．
+
+(3)$I_{\varepsilon,R}$を$\varepsilon$から$R$までの実軸上の積分経路とする．
+$D_{\varepsilon,R}$を$R+Ri$から$(\varepsilon+\varepsilon i)/\sqrt{2}$までの積分経路とする．
+
+$-C_{\varepsilon},I_{\varepsilon,R},S_R,D_{\varepsilon,R}$を結んでできる閉曲線を$C$とする．$f$は原点以外で正則であるか，$\int_C f(z)dz=0$である．
+
+\begin{align}
+	\int_{D_{\varepsilon,R}}f(z)dz&=\int_R^{\frac{\varepsilon}{\sqrt{2}}} \frac{\exp(-\frac{x^2(1+i)^2}{2})}{x(1+i)}(1+i)dx=-\int_{\frac{\varepsilon}{\sqrt{2}}}^R \frac{\exp(-ix^2)}{x}dx
+	=-\int_{\varepsilon}^R \frac{\cos x^2}{x}dx-\int_{\frac{\varepsilon}{\sqrt{2}}}^{\varepsilon} \frac{\cos x^2}{x}dx+i\int_{\frac{\varepsilon}{\sqrt{2}}}^R \frac{\sin x^2}{x}dx\\
+	\int_{I_{\varepsilon,R}}f(z)dz&=\int_{\varepsilon}^R \frac{\exp(-\frac{x^2}{2})}{x}dx,\,\int_{D_{\varepsilon,R}}f(z)dz+\int_{I_{\varepsilon,R}}f(z)dz=\int_{\varepsilon}^R \frac{\exp(-\frac{x^2}{2})-\cos x^2}{x}dx-\int_{\frac{\varepsilon}{\sqrt{2}}}^{\varepsilon} \frac{\cos x^2}{x}dx+i\int_{\frac{\varepsilon}{\sqrt{2}}}^R \frac{\sin x^2}{x}dx
+\end{align}
+ここで$\frac{cos x^2}{x}=\frac{1}{x}-\frac{x^4}{2x}+\cdots$であるから，$\int_{\frac{\varepsilon}{\sqrt{2}}}^{\varepsilon} \frac{\cos x^2}{x}-\frac{1}{x}dx\rightarrow 0 \quad (\varepsilon \rightarrow 0)$である．また$\int_{\frac{\varepsilon}{\sqrt{2}}}^{\varepsilon} \frac{1}{x}dx=\log \sqrt{2}$である．
+
+よって
+\begin{align}
+	0&=\lim\limits_{\varepsilon \to 0,R\rightarrow 0}\int_{-C_{\varepsilon}}f(z)dz+\int_{I_{\varepsilon,R}}f(z)dz+\int_{S_R}f(z)dz+\int_{D_{\varepsilon,R}}f(z)dz\\
+	&=-\frac{i\pi}{4}+\int_{0}^\infty \frac{\exp(-\frac{x^2}{2})-\cos x^2}{x}dx-\log \sqrt{2}+i\int_{0}^\infty \frac{\sin x^2}{x}dx\\
+	\int_{0}^\infty \frac{\exp(-\frac{x^2}{2})-\cos x^2}{x}dx&=\log \sqrt{2}
+\end{align} 
+
+
+\end{document}

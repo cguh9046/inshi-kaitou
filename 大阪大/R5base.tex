@@ -1,0 +1,115 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R5数学A}
+\fbox{1}
+(1)$f_n(0)=\frac{(-1)^n}{2n}$である．$S_n(x)=\sum\limits_{k=1}^{n}f_k(x)$とする．
+$S_{2n}(0)=\sum\limits_{k=1}^{2n}f_k(0)=\sum\limits_{k=1}^{n} f_{2k-1}(0)+f_{2k}(0)=\sum\limits_{k=1}^{n}\frac{-1}{2(2k-1)}+\frac{1}{2(2k)}=\sum\limits_{k=1}^{n}\frac{-2}{4k(4k-2)}$である．よって$S_{2n}(0)$は単調減少である．
+$S_{2n+1}(0)=\frac{-1}{2}+\sum\limits_{k=1}^{n}f_{2k}(0)+f_{2k+1}(0)=\frac{-1}{2}+\sum\limits_{k=1}^{n}\frac{1}{2(2k)}-\frac{1}{2(2k+1)}=\frac{-1}{2}+\sum\limits_{k=1}^{n}\frac{2}{4k(4k+2)}$である．よって$S_{2n+1}(0)$は単調増加である．
+$S_{2n+1}(0)=S_{2n}(0)+\frac{-1}{2(2n+1)}$より$S_{2n+1}(0)<S_{2n}(0)$である．よって共に有界数列であるから，収束する．また$\lim S_{2n+1}(0)=\lim (S_{2n}(0)+\frac{-1}{2(2n+1)})=\lim S_{2n}(0)$より極限値は一致する．よって$S_n(0)$は収束する．
+
+(2)$|f_n(x)|=\left|\frac{(-1)^n}{2n+\sin x}\right|=\frac{1}{2n+\sin x}\geq \frac{1}{2n+1}$である．よって$\sum\limits_{n=1}^{\infty}|f_n(x)|\ge \sum\limits_{n=1}^{\infty}\frac{1}{2n+1}\ge \int_1^\infty \frac{1}{2x+1}dx $より発散する．
+
+(3)まずは各点収束することを示す．
+(1)と同様に$S_{2n}(x)=\sum\limits_{k=1}^{n}\frac{-1}{2(2k-1)+\sin x}+\frac{1}{2(2k)+\sin x}=\sum\limits_{k=1}^{n}\frac{-2}{(4k+\sin x)(4k-2+\sin x)}$である．よって$S_{2n}(x)$は単調減少である．
+$S_{2n+1}(x)=\frac{-1}{2+\sin x}+\sum\limits_{k=1}^{n}\frac{1}{2(2k)+\sin x}-\frac{1}{2(2k+1)+\sin x}=\frac{-1}{2+\sin x}+\sum\limits_{k=1}^{n}\frac{2}{(4k+\sin x)(4k+2+\sin x)}$である．よって$S_{2n+1}(x)$は単調増加である．
+$S_{2n+1}(x)=S_{2n}(x)+\frac{-1}{2(2n+1)+\sin x}$より$S_{2n+1}(x)<S_{2n}(x)$である．よって共に有界数列であるから，収束する．また$\lim S_{2n+1}(x)=\lim (S_{2n}(x)+\frac{-1}{2(2n+1)+\sin x})=\lim S_{2n}(x)$より極限値は一致する．よって$S_n(x)$は収束する．
+$S_n(x)$が$S(x)$に各点収束するとする．
+\begin{align}
+	\left|S(x)-S_{2n}(x)\right|&= \left| \sum\limits_{k=2n+1}^\infty f_{2k-1}(x) +f_{2k}(x)\right|=\left| \sum\limits_{k=2n+1}^\infty \frac{-2}{(4k+\sin x)(4k-2+\sin x)} \right|\leq \sum\limits_{k=2n+1}^\infty \frac{2}{(4k-3)(4k-1)}\rightarrow 0 \quad (n\rightarrow \infty)\\
+	\left|S(x)-S_{2n+1}(x)\right|&= \left| \sum\limits_{k=2n+2}^\infty f_{2k}(x) +f_{2k+1}(x)\right|=\left| \sum\limits_{k=2n+2}^\infty \frac{2}{(4k+\sin x)(4k+2+\sin x)} \right|\leq \sum\limits_{k=2n+2}^\infty \frac{2}{(4k-1)(4k+1)}\rightarrow 0 \quad (n\rightarrow \infty)
+\end{align} 共に$x$について一様収束する．よって$S_n(x)$は$S(x)$に一様収束する．
+
+\fbox{2}
+(1)$\{w,f(w),f^2(w),\dots,f^m(w)\}$が一次独立であり$\{ w,f(w),f^2(w),\dots,f^{m+1}(w)\}$が一次従属となるような最小の$m$をとる．$m=n-1$なら$V$の次元が$n$であることより条件をみたすから，このような$m$は存在する．
+
+一次従属であるから，$f^{m+1}(w)=a_0w+a_1f(w)+\dots+a_mf^m(w)$となる$a_0,a_1,\dots,a_m \in \mathbb{C}$が存在する．
+このとき$f^{m+2}(w)=a_0f(w)+a_1f^2(w)+\dots+a_mf^{m+1}(w)=a_0w+(a_1+a_0)f(w)+\dots+(a_m+a_{m-1})f^m(w)$と表せる．$f^{m+3},f^{m+4},\dots$も同様に表せる．
+
+よって$f^n(w)$は$w,f(w),f^2(w),\dots,f^{m-1}(w)$の線形結合で表せるから$f^n(w)\in W$．
+
+(2)(1)で定めた$m$について，$W$は$\{ w,f(w),\dots,f^{m}(w)\}$で生成されるから，$m$次元ベクトル空間．よって$k=m$である．
+
+(3)$\dim W=n$より$W=V$である．よって$\{w,f(w),\dots,f^{n-1}(w)\}$は$V$の基底である．この基底に関する，$f$の表現行列は$f^n(w)=\alpha w$より
+$\begin{pmatrix}
+	0 & 0 & \dots & 0 & \alpha \\
+	1 & 0 & \dots & 0 & 0 \\
+	0 & 1 & \dots & 0 & 0 \\
+	\vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & \dots & 1 & 0
+\end{pmatrix}$である．よって固有方程式は
+\begin{align}
+	\det \begin{vmatrix}
+		-t & 0 & \dots & 0 & \alpha \\
+		1 & -t & \dots & 0 & 0 \\
+		0 & 1 & \dots & 0 & 0 \\
+		\vdots & \vdots & \ddots & \vdots & \vdots \\
+		0 & 0 & \dots & 1 & -t
+	\end{vmatrix}=\begin{vmatrix}
+	-t & 0 & \dots & 0 & \alpha \\
+	1 & -t & \dots & 0 & 0 \\
+	0 & 1 & \dots & 0 & 0 \\
+	\vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & \dots & 1 & 0
+\end{vmatrix}+\begin{vmatrix}
+	-t & 0 & \dots & 0 & 0 \\
+	1 & -t & \dots & 0 & 0 \\
+	0 & 1 & \dots & 0 & 0 \\
+	\vdots & \vdots & \ddots & \vdots & \vdots \\
+	0 & 0 & \dots & 1 & -t
+	\end{vmatrix} =(-1)^{n+1}\alpha+(-t)^n
+\end{align}である．
+
+\fbox{3}
+(1)$(x_1,y_1)\sim (x_2,y_2)$とする．ある正の実数$r$が存在して，$rx_1=x_2,r^{-1}y_1=y_2$である．よって$x_1=r^{-1}x_2,y_1=ry_2$で$r^{-1}$は正の実数であるから，$(x_2,y_2)\sim (x_1,y_1)$である．
+
+$(x_1,y_1)\sim (x_2,y_2),(x_2,y_2)\sim (x_3,y_3)$とする．ある正の実数$r_1,r_2$が存在して，$r_1x_1=x_2,r_1^{-1}y_1=y_2,r_2x_2=x_3,r_2^{-1}y_2=y_3$である．よって$r_2r_1x_1=x_3,(r_2r_1)^{-1}y_1=y_3$であるから，$(x_1,y_1)\sim (x_3,y_3)$である．
+
+よって$\sim$は同値関係である．
+
+(2)$a\neq 0,b\neq 0$のとき$A_{a,b}=\left\{ (x,y)\in \mathbb{R}^2\relmiddle| xy=ab,ax>0\right\}$である．実際，$(x,y) \sim (a,b)$なら$rx=a,r^{-1}y=b$より$xy=ab$であり，$r>0$より$a$と$x$は同符号である．また$xy=ab\neq 0$より$x\neq 0,y\neq 0$であるから$ax>0$である．逆に$(x,y)$が$xy=ab,ax>0$を満たすとする．$x/a=r>0$とすれば，$ar=x,r^{-1}b=y$であり$(x,y)\sim (a,b)$である．
+
+$a<0,b\neq 0$のとき$A_{a,b}=\left\{ (x,y)\in \mathbb{R}^2\relmiddle| x<0,y=0\right\}$である．これは明らか．
+よって$B=\bigcup\limits_{(a,b)\in I} A_{a,b}=\left\{ (x,y)\in \mathbb{R}\relmiddle| -1\le xy\le1,x<0\right\}$である．したがって$\overline{B}=\left\{ (x,y)\in \mathbb{R}\relmiddle| -1\le xy\le1,x\le 0\right\}$より$\overline{B}\setminus B= \left\{ (x,y)\in \mathbb{R}\relmiddle| x=0 \right\}$である．
+
+(3)$\mathbb{R}^2\setminus\{ (0,0)\}$から$X$への標準射影を$p$とする．
+$A_{-1,0}$と$A_{0,1}$について考える．$A_{-1,0}\in U\subset X$なる開集合$U$について$(-1,0)\in A_{-1,0}\subset p^{-1}(U)$よりある$\varepsilon>0$が存在して$(-1,0)$を中心とする半径$\varepsilon$の開球$B((-1,0),\varepsilon)\subset p^{-1}(U)$である．
+同様に$A_{0,1}\in V\subset X$なる開集合$V$について$(0,1)\in A_{0,1}\subset p^{-1}(V)$よりある$\delta>0$が存在して$B((0,1),\delta)\subset p^{-1}(V)$である．$\gamma=\min\{\varepsilon,\delta\}$とする．
+$(-1,\gamma)\in p^{-1}(U),(-1,-\gamma)\in p^{-1}(V)$である．$p(-1,\gamma)\sim p(-1,-\gamma)$であるから$A_{-1,\gamma} \in U,A_{-1,-\gamma}\in V$である．よって$U\cap V\neq \emptyset$である．
+
+任意の開集合$U,V$について成り立つから，$X$はハウスドルフでない．
+
+\fbox{4}
+(1)$1<|z|<2$なら$\frac{|z|}{2}<1,\frac{1}{|z|}<1$である．よって共に有界数列であるから
+$\frac{1}{(z-1)(z-2)}=\frac{1}{z-2}-\frac{1}{z-1}=\frac{-1}{2}\frac{1}{1-\frac{z}{2}}-\frac{1}{z}\frac{1}{1-\frac{1}{z}}=-\frac{1}{2}(1+\frac{z}{2}+\frac{z^2}{4}+\dots)-\frac{1}{z}(1+\frac{1}{z}+\frac{1}{z^2}+\dots)$である．
+
+(2)$\sin z$の零点は$z=n\pi$である．$(\sin z)'|_{n\pi}=(-1)^n$であるから，$z=n\pi$は$\sin z$の一位の零点である．すなわち$\sin z=(z-n\pi)g(z),g(n\pi)\neq 0$となる正則関数$g(z)$が存在する．また$|f(n\pi)|\le |\sin n\pi|=0$より$f(n\pi)=0$である．
+$h(z)=\frac{f(z)}{\sin z}$とする．$\lim\limits_{z\to n\pi}(z-n\pi)h(z)=\lim\limits_{z\to n\pi}\frac{f(z)}{g(z)}=0$である．すなわち$z=n\pi$は$h(z)$の除去可能な特異点である．
+$|h(z)|\le 1$となるから，リュービルの定理より$h$は定数関数で$h(z)\equiv \alpha \in \mathbb{C}$とできる．
+したがって$f(z)=\alpha\sin z$である．
+
+(3)実数値関数$u,v$を用いて$g(x+iy)=u(x,y)+iv(x,y)$と表せる．$g$は正則関数であるから，$u,v$は$C^\infty$級関数である．
+またコーシー・リーマンの方程式$u_x = v_y,u_y=-v_x$を満たす．
+
+実数値関数$s,t$を用いて$\overline{g(\overline{x+iy})}=s(x,y)+it(x,y)$と表せる．$\overline{g(\overline{z})}=u(x,-y)-iv(x,-y)$であるから，$s(x,y)=u(x,-y),t(x,y)=-v(x,-y)$である．したがって$s,t$は$C^\infty$級関数である．
+$s_x=u_x=v_y=t_y,s_y=-u_y=v_x=-t_x$であるから，$s,t$はコーシー・リーマンの方程式を満たす．
+よって$\overline{g(\overline{z})}$は正則関数である．
+
+
+
+
+
+
+
+
+
+\end{document}

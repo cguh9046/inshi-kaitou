@@ -1,0 +1,101 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H31数学A}
+\fbox{1}
+(1)
+$^{\forall} \varepsilon >0, {}^{\exists} N \in \mathbb{N}, {}^{\forall} n\ge N, {}^{\forall} x \in \mathbb{R}, |f_n(x)-f(x)|<\varepsilon$である．また$f_N$は連続であるから，
+$^{\forall} \varepsilon >0, {}^{\exists} \delta >0, {}^{\forall} x \in \mathbb{R}, |x-x_0|<\delta \Rightarrow |f_N(x)-f_N(x_0)|<\varepsilon$である．
+以上より，$^{\forall} x_* \in \mathbb{R}, {}^{\forall} \varepsilon >0, {}^{\exists} \delta >0, {}^{\exists} N \in \mathbb{N}, {}^{\forall} x \in \mathbb{R}, |x-x_*|<\delta \Rightarrow |f(x)-f(x_*)|\le |f(x)-f_N(x)|+|f_N(x)-f_N(x_*)|+|f_N(x_*)-f(x_*)|<3\varepsilon$であるから，$f$は連続である．
+
+(2)$a\ge x>0$のとき，平均値の定理から$u\left( \frac{x}{n} \right)-u(0)=\frac{x}{n}u'(\alpha_n), u(-\frac{x}{n})-u(0)=-\frac{x}{n}u'(\beta_n)$となる$-\frac{x}{n}<\beta_n<0<\alpha_n<\frac{x}{n}$が存在する．よって$u_n(x)=\frac{x}{n}(u'(\alpha_n)-u'(\beta_n))$である．
+平均値の定理から$u'(\alpha_n)-u'(\beta_n)=u''(\gamma_n)(\alpha_n-\beta_n)$となる$-\frac{x}{n}<\beta_n<\gamma_n<\alpha_n<\frac{x}{n}$が存在する．よって$u_n(x)=\frac{x}{n}(u''(\gamma_n)(\alpha_n-\beta_n))$である．
+$\alpha_n-\beta_n\le \frac{2x}{n}$であり，また$u''$は$[-a,a]$上連続であるから，有界である．よって$^\forall n,u''(\gamma_n)<M$とできる$M>0$が存在する．
+以上より$|u_n(x)|\le \frac{2x^2}{n}|u''(\gamma_n)|\le \frac{2a^2M}{n^2}$である．よって
+$\sum |f_n(x)|\le 2a^2M\sum \frac{1}{n^2}<\infty$である．これは$-a\le x<0$でも成立し，また$x=0$なら$u_n(x)=0$であるから$x=0$でも成立する．ワイエルシュトラスのM判定法より，$u_n(x)$は絶対一様収束する．また(1)より収束先の関数は連続である．
+
+\fbox{2}
+(1)$N^2\neq O$より$N^2u\neq0$なる$u \in \mathbb{C}^3$が存在する．この$u$について$c_1u+c_2Nu+c_3N^2u=0$とすると，$N^2$を左からかけれ，$c_1N^2u=0$より$c_1=0$である．よって$N$をかければ$c_2N^2u=0$より$c_2=0$である．よって$c_3=0$である．よって$u,Nu,N^2u$は一次独立である．
+
+(2)(1)の$P=\begin{pmatrix}
+N^2u & Nu & u
+\end{pmatrix}$とすれば$P$は正則で$J:=P^{-1}NP=\begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{pmatrix}$である．
+
+$g \colon V\rightarrow V$を$g(X)=JX-XJ$とする．
+$f(PXP^{-1})=NPXP^{-1}-PXP^{-1}N=Pg(X)P^{-1}$である．$f^2(PXP^{-1})=f(Pg(X)P^{-1})=Pg(g(X))P^{-1}=Pg^2(X)P^{-1}$である．繰り返して$f^k(PXP^{-1})=Pg^k(X)P^{-1}$である．$P$は正則であるから，$f^k=0\Leftrightarrow g^k=0$である．
+また$g^k=0$ならば$g^{k+1}=0$である．
+
+$g^2(X)=J(JX-XJ)-(JX-XJ)J=J^2X-2JXJ+XJ^2, g^3(X)=J^2(JX-XJ)-2J(JX-XJ)J+(JX-XJ)J^2=-3J(JX-XJ)J, g^4(X)=-3J(J^2-2JXJ+XJ^2)J=6J^2XJ^2, g^5(X)=6J^2(JX-XJ)J^2=0$である．よって$g^5=0$である．
+
+$X=\begin{pmatrix}
+    0 & 0 & 0\\
+    0 & 0 & 0\\
+    1 & 0 & 0
+    \end{pmatrix}$とすると$J^2XJ^2=\begin{pmatrix}
+    0 & 0 & 1\\
+    0 & 0 & 0\\
+    0 & 0 & 0
+    \end{pmatrix}\neq O$であるから，$g^4\neq 0$である．よって$g^k=0$となる最小の$k$は$5$である．
+
+\fbox{3}
+(1)$d \colon A\times A \rightarrow \mathbb{R}$が距離関数であるとは次の条件を満たすことである．
+\begin{enumerate}[label=(\roman*)]
+    \item $^\forall x,y\in A,d(x,y)=0 \Leftrightarrow x=y$
+    \item $^\forall x,y\in A,d(x,y)=d(y,x)$
+    \item $^\forall x,y,z\in A,d(x,z)\le d(x,y)+d(y,z)$
+\end{enumerate}
+
+(2)任意の異なる二点$x,y \in A$について$d(x,y)>0$である．$\varepsilon=d(x,y)/2$とすれば，$x \in B(x,\varepsilon):=\left\{ a\in A \relmiddle| d(x,a)<\varepsilon\right\},y\in B(y,\varepsilon),B(x,\varepsilon)\cap B(y,\varepsilon)=\emptyset$である．よって$A$はハウスドルフ空間である．
+
+(3)$x\in A$を一つ固定する．$S=\left\{ B(x,n) \relmiddle| n \in \mathbb{N}\right\}$は$A$の開被覆である．コンパクトであるから，有限部分集合$\left\{ B(x,n_i) \relmiddle| i=1,\cdots,m\right\}$が存在して，$A\subset \bigcup_{i=1}^m B(x,n_i)$となる．$n=\max_{i=1,\cdots,m} n_i$とすれば$A\subset B(x,n)$である．したがって任意の二点$y,z \in A$について$d(y,z)\le d(y,x)+d(x,z)<2n$である．
+
+(4)$x\in U_{x,y},y\in V_{x,y},U_{x,y}\cap V_{x,y}=\emptyset$となる開集合対$(U_{x,y},V_{x,y})$を各$(x,y)\in C_1\times C_2$ごとに定める．
+
+$S_y=\left\{ U_{x,y}\relmiddle| x \in C_1\right\}$は$C_1$の開被覆であるから，有限部分集合$C_{1,y}\subset C_1$が存在して，$S'_y =\left\{ U_{x,y}\relmiddle| x \in C_{1,y}\right\}$が$C_1$の開被覆となる．また$V_y=\bigcap_{x\in C_{1,y}}V_{x,y}$とする．有限個の共通部分であるから$V_y$は開集合である．
+
+$T=\left\{ V_y \relmiddle| y \in C_2\right\}$は$C_2$の開被覆であるから，有限部分集合$C_2'\subset C_2$が存在して，$T'=\left\{ V_y \relmiddle| y \in C_2'\right\}$が$C_2$の開被覆となる．$U=\bigcap\limits_{y\in C_2'} ( \bigcup\limits_{S'_y} U_{x,y} ),V=\bigcup\limits_{y\in C_2'} V_y$とする．$C_2'$は有限集合であるから，$U,V$は開集合である．
+
+$S_y'$は$C_{1}$の開被覆であるから，$C_1\subset U$であり，また$C_2 \subset V$も明らか．
+$z \in U\cap V$とすると，ある$y' \in C_2'$について$z \in V_{y'} \subset V_{x,y'}\quad (^\forall x\in C_{1,y'})$である．
+また$z \in U$より${}^\forall y \in C_2'$について$z \in  \bigcup\limits_{S'_y} U_{x,y} $である．とくに$z \in \bigcup\limits_{S_{y'}'} U_{x,y'}$である．したがってある$x' \in C_{1,y'}$について$z \in U_{x',y'}$である．よって$z \in U_{x',y'}\cap V_{x',y'}$となり矛盾．よって$U\cap V=\emptyset$である．
+
+\fbox{4}
+(1)$zf(z)$は$z=0$で正則であるから，$z=0$は$f$の一位の極である．よって$\lim\limits_{z\to 0}zf(z)=\frac{1}{a^2}$より主要部は$\frac{1}{a^2z}$である．
+
+(2)$f(z)-\frac{1}{a^2z}$は原点近傍で有界である．よって$\int_{C_r} f(z)-\frac{1}{a^2z}dz\rightarrow 0 \quad (r\rightarrow 0)$である．
+よって$\lim\limits_{r \rightarrow 0}\int_{C_r} f(z)dz=\lim\limits_{r \rightarrow 0}\int_{C_r} \frac{1}{a^2z}dz=\lim\limits_{r \rightarrow 0}\int_0^\pi \frac{1}{a^2re^{i\theta}}rie^{i\theta}d\theta=\frac{i\pi}{a^2}$である．
+
+\begin{align}
+    \left| \int_{C_r}f(z)dz \right|&= \left| \int_0^\pi \frac{\exp(ie^{i\theta})}{re^{i\theta}(r^2e^{2i\theta}+a^2)}rie^{i\theta}d\theta \right|\le \int_0^\pi \left| \frac{\exp(-\sin \theta)}{(r^2e^{2i\theta}+a^2)} \right|d\theta\le \int_0^\pi \frac{1}{|r^2-a^2|}d\theta=\frac{\pi}{|r^2-a^2|}\rightarrow 0 \quad (r\rightarrow \infty)
+\end{align}
+
+(3)$D_{r,R}$の内部に$f$は$z=ia$を特異点にもち，$z=ia$を除いて$f$は$D_{r,R}$で正則であるから留数定理より$\int_{\partial D_{r,R}}f(z)dz=2\pi i \Res(f,ia)$である．
+$\lim\limits_{z \to ia} (z-ia)f(z)=\frac{e^{iia}}{ia(ia+ia)}=-\frac{1}{2a^2e^a}$より
+$\int_{\partial D_{r,R}}f(z)dz= -\frac{\pi ie^{-a}}{a^2}$である．
+
+(4)$\partial D_{r,R}$と実軸の正の部分との共通部分を$\alpha_1$，負の部分との共通部分を$\alpha_2$とする．向きは$\partial D_{r,R}$と同じ向きを入れる．$\int_{\alpha_1}f(z)dz=\int_r^R \frac{e^{ix}}{x(x^2+a^2)}dx=\int_r^R \frac{\cos x+i\sin x}{x(x^2+a^2)}dx$である．また$\int_{\alpha_2}f(z)dz=\int_{-R}^{-r} \frac{e^{ix}}{x(x^2+a^2)}dx=\int_{R}^{r} \frac{e^{-ix}}{-x(x^2+a^2)}(-1)dx=\int_{r}^{R} \frac{-\cos x+i\sin x}{x(x^2+a^2)}dx$である．
+よって
+\begin{align}
+    -\frac{\pi ie^{-a}}{a^2} &= \lim\limits_{r\to 0,R\to \infty}\int_{\partial D_{r,R}}f(z)dz=\lim\limits_{r\to 0,R\to \infty} \left( \int_{-C_r}f(z)dz+\int_{\alpha_1}f(z)dz+\int_{\alpha_2}f(z)dz \right)\\
+&=-\frac{i\pi}{a^2}+\lim\limits_{r\to 0,R\to \infty} \left( \int_{r}^{R} \frac{2i\sin x}{x(x^2+a^2)}dx \right)
+=-\frac{i\pi}{a^2}+2i\int_{0}^{\infty} \frac{\sin x}{x(x^2+a^2)}dx\\
+\int_{0}^{\infty} \frac{\sin x}{x(x^2+a^2)}dx&=\frac{\pi}{2a^2}(1-e^{-a})
+\end{align}
+
+
+
+
+\end{document}
