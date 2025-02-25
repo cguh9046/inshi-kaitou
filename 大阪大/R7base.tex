@@ -1,0 +1,70 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R7数学A}
+\fbox{1}
+$^\forall x ,f(x)\le M$より
+\begin{align}
+    \left( \int_0^1 f(x)^ndx \right)^{\frac{1}{n}} \le \left( \int_0^1 M^ndx \right)^{\frac{1}{n}} = M \therefore \lim_{n\rightarrow \infty} \left( \int_0^1 f(x)^ndx \right)^{\frac{1}{n}} \le M
+\end{align}
+である．
+任意の$\varepsilon > 0$に対して，
+$A_{\varepsilon}=\left\{ x\in [0,1]\relmiddle| |f(x)-M|\le\varepsilon\right\}$とする．
+$\mu$をルベーグ測度とすると
+\begin{align}
+    \left( \int_0^1 f(x)^ndx \right)^{\frac{1}{n}} &\ge \left( \int_{A_{\varepsilon}} f(x)^ndx \right)^{\frac{1}{n}} \ge \left( \int_{A_{\varepsilon}} (M-\varepsilon)^ndx \right)^{\frac{1}{n}} = (M-\varepsilon)\mu(A_{\varepsilon})^{\frac{1}{n}}\rightarrow M-\varepsilon \quad (n\rightarrow \infty)
+\end{align}である．
+$\varepsilon$は任意であるから，$\lim\limits_{n\rightarrow \infty} \left( \int_0^1 f(x)^ndx \right)^{\frac{1}{n}} = M$である．
+
+\fbox{2}
+(1)$E_{ij}$を$i,j$成分が$1$で他が$0$である行列とする．このとき
+$\left\{ E_{ij}\relmiddle|i\neq j \right\}\cup \left\{ E_{ii}-E_{nn}\relmiddle| i=1,2,\dots,n-1\right\}$は$V$の基底となる．よって$V$の次元は$n^2-1$である．
+
+(2)$X,Y\in M_n(\mathbb{C})$に対して$\tr(XY)=\sum\limits_{i=1}^n \sum\limits_{j=1}^n x_{ij}y_{ji}= \sum\limits_{j=1}^n \sum\limits_{i=1}^n y_{ji}x_{ij}=\tr(YX)$である．
+よって$X \in V$に対して$\tr(A^{-1}XA)=\tr(XAA^{-1})=\tr(X)=0$である．
+すなわち$f_A(V)\subset V$である．また任意の$X\in V$に対して$f_A(AXA^{-1})=X$であるから，$f_A(V)=V$である．
+
+(3)$A$が対角化可能であるから正則行列$P$と対角行列$D$が存在して$P^{-1}AP=D$である．$A$が正則であるから$D$も正則である．すなわち$D$の対角成分は全て非零である．$D=\begin{pmatrix}
+    d_1 & & 0\\
+    & \ddots & \\
+    0 & & d_n
+\end{pmatrix}\quad(^\forall i,d_i\neq 0)$とする．$M_n(\mathbb{C})$の基底$\left\{ E_{ij}\relmiddle| i,j \in 1,2,\dots,n\right\}$に対して$\left\{ PE_{ij}P^{-1}\relmiddle| i,j \in 1,2,\dots,n\right\}$も基底である．
+$P^{-1}f_A(PE_{ij}P^{-1})P=P^{-1}A^{-1}PE_{ij}P^{-1}AP=D^{-1}E_{ij}D=\frac{d_j}{d_i}E_{ij}$である．すなわち$f(PE_{ij}P^{-1})=\frac{d_j}{d_i}PE_{ij}P^{-1}$である．よって固有ベクトルからなる基底が存在するから対角化可能．
+
+\fbox{3}
+(1)略
+
+(2)ハウスドルフ$A$のコンパクト部分集合$C$を任意にとる．$a \in A\setminus C$を固定する．$c \in C,a\in A$に対して$c \in U_c,a \in V_c , U_c \cap V_c=\emptyset$なる開集合$U_c,V_c$が存在する．$\left\{ U_c\relmiddle| c \in C\right\}$は$C$の開被覆であるから，有限部分被覆$\left\{ U_{c_1},U_{c_2},\dots,U_{c_n}\right\}$が存在する．$V_a= \bigcap\limits_{i=1}^n V_{c_i}$は開集合であり，$V_a \cap C=\emptyset$である．$A\setminus C=\bigcup\limits_{a\in A\setminus C} V_a$であるから$A\setminus C$は開集合である．よって$C$は閉集合．
+
+(3)$K$を$X\times Y$のコンパクト集合とする．$\pi(K)$はコンパクト集合であるから，$f^{-1}(\pi(K))$はコンパクト集合．$z \in h^{-1}(K)$に対して$(f(z),g(z))\in K$であるから，$f(z)\in \pi(K)$である．よって$h^{-1}(K)\subset f^{-1}(\pi(K))$である．また$K$は閉集合であるから，$h^{-1}(K)$は閉集合である．コンパクト集合の閉部分集合はコンパクトであるから，$h^{-1}(K)$はコンパクト集合．よって$h$は固有．
+
+\fbox{4}
+(1)$z=-1$が極であり，留数は$f(-1)= \exp((a-1)\log(-1))=\exp((a-1)(0+i\pi))=e^{i(a-1)\pi}$である．
+
+(2)
+\begin{align}
+    \left| \int_{C_{(r,\varepsilon)}} f(z)dz\right|=\left| \int_\varepsilon^{2\pi-\varepsilon} \frac{\exp((a-1)\log re^{i\theta})}{re^{i\theta}+1}ire^{i\theta}d\theta\right|\le \int_\varepsilon^{2\pi-\varepsilon} \left| \frac{r^{a-1}}{re^{i\theta}+1}r\right|d\theta\le \int_{\varepsilon}^{2\pi-\varepsilon} \frac{r^a}{|r-1|}d\theta \le 2\pi \frac{r^a}{|r-1|}\rightarrow 0 \quad (r\rightarrow 0)
+\end{align}
+
+(3)$R>r$として
+$re^{i\varepsilon}$から$Re^{i\varepsilon}$までの経路を$S_{(r,R)}$とし，$Re^{i(2\pi-\varepsilon)}$から$re^{i(2\pi-\varepsilon)}$までの経路を$T_{(r,R)}$とする．積分経路$C$を$C=S_{(r,R)}+C_{(R,\varepsilon)}+T_{(r,R)}-C_{(r,\varepsilon)}$とすれば，留数定理から$\int_C f(z)dz=2\pi i e^{i(a-1)\pi}$である．
+また(2)の不等式から$\lim\limits_{R\to\infty}\lim\limits_{\varepsilon\to 0}\int_{C_{(R,\varepsilon)}} f(z)dz = 0 $である．
+\begin{align}
+    \int_{S_{(r,R)}} f(z)dz &= \int_r^R \frac{\exp((a-1)\log xe^{i\varepsilon})}{xe^{i\varepsilon}+1}e^{i\varepsilon}dx = \int_r^R \frac{x^{a-1}e^{ia\varepsilon}}{xe^{i\varepsilon}+1}dx
+\end{align}
+$\left|  \frac{x^{a-1}e^{ia\varepsilon}}{xe^{i\varepsilon}+1} \right|\le \frac{x^{a-1}}{|x-1|}$である．右辺は$[r,R]$で可積分であるからルベーグの収束定理より$\lim\limits_{\varepsilon\to 0}\int_{S_{(r,R)}} f(z)dz = \int_r^R \lim\limits_{\varepsilon\to 0} \frac{x^{a-1}e^{i(a-1)\varepsilon}}{xe^{i\varepsilon}+1}dx=\int_r^R \frac{x^{a-1}}{x+1}dx$である．同様に
+$\lim\limits_{\varepsilon\to 0}\int_{T_{(r,R)}} f(z)dz =\int_R^r \lim\limits_{\varepsilon\to 0} \frac{x^{a-1}e^{ia(2\pi-\varepsilon)}}{xe^{i(2\pi-\varepsilon)}+1}dx=-e^{2\pi a}\int_r^R \frac{x^{a-1}}{x+1}dx$である．よって
+\begin{align}
+    2\pi i e^{i(a-1)\pi}&=\int_{S_{(r,R)}} f(z)dz + \int_{T_{(r,R)}} f(z)dz + \int_{C_{(r,\varepsilon)}} f(z)dz + \int_{C_{(R,\varepsilon)}} f(z)dz \rightarrow (1-e^{2i\pi a})\int_r^R \frac{x^{a-1}}{x+1}dx \\
+    \therefore \int_0^\infty \frac{x^{a-1}}{x+1}dx&= \frac{2\pi i e^{i(a-1)\pi}}{1-e^{2i\pi a}}=2\pi i \frac{1}{e^{i\pi a}-e^{-i\pi a}}=\frac{\pi}{\sin a\pi}
+\end{align}
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R6数学A}
+\fbox{1}
+(1)一様収束であるから，$^\forall \varepsilon > 0,^\exists N \in \mathbb{N},^\forall n \ge N,\sup\limits_{x\in [a,b]}|f(x)-f_n(x)|<\varepsilon$となる．$f(x)$は連続であるから可積分である．
+\begin{align}
+	\left|\int_a^b f(x)-f_n(x)dx\right| &\le \int_a^b |f(x)-f_n(x)|dx\le \int_a^b \varepsilon dx = \varepsilon(b-a)\rightarrow 0 \quad (n\rightarrow \infty)\\
+	\therefore \lim_{n\rightarrow \infty}\int_a^b f_n(x)dx &= \int_a^b f(x)dx
+\end{align}
+
+(2)$x\in [a,b]$に対して$0<g(x)<1$であるから，$\sum\limits_{k=0}^\infty g(x)^k$は収束する．
+$g(x):= \lim\limits_{n\rightarrow \infty} \sum\limits_{k=0}^n g(x)^k$とする．$g(x)$は有界閉区間上の連続関数であるから，$^\forall x ,g(x)<M<1$となる$M$が存在する．
+\begin{align}
+	\left|\sum_{k=0}^n g(x)^k - g(x)\right| &= \left|\sum_{k=0}^n g(x)^k - \sum_{k=0}^\infty g(x)^k\right|= \left|\sum_{k=n+1}^\infty g(x)^k\right|\le \frac{g(x)^{n+1}}{1-g(x)}\le \frac{M^{n+1}}{1-M}\\
+	\sup_{x\in [a,b]}\left|\sum_{k=0}^n g(x)^k - g(x)\right| &\le \frac{M^{n+1}}{1-M}\rightarrow 0 \quad (n\rightarrow \infty)\\
+\end{align}
+より一様収束．
+
+(3)$1\le x\le 3$のとき，$0<\frac{x}{1+x}<1$であるから，$\sum\limits_{k=0}^\infty \left( \frac{x}{1+x} \right)^k$は$\frac{1}{1-\frac{x}{1+x}}=1+x$に一様収束する．したがって
+\begin{align}
+	\lim_{n\rightarrow \infty} \int_1^3 \sum_{k=0}^n\left( \frac{x}{1+x} \right)^k dx &= \int_1^3 \lim_{n\rightarrow \infty} \sum_{k=0}^n\left( \frac{x}{1+x} \right)^k dx= \int_1^3 1+x dx = 6
+\end{align}
+
+\fbox{2}
+(1)$\lambda$に対応する固有ベクトル$v \in V\setminus\{0\}$をとる．$Tv=\lambda v$である．$T^2 v=T(Tv)=\lambda Tv=\lambda^2v$であるから，$\lambda^2$は$T^2$の固有ベクトルである．
+
+(2)$T^k=0$とする．$T$の固有値$\lambda$に対して(1)と同様にして$\lambda^k$が$T^k$の固有値であることがわかる．
+零写像の固有値は全て零であるから，$\lambda^k=0$である．よって$\lambda=0$である．
+
+(3)$F=\mathbb{C}$より$V$は$T$の広義固有空間に分解できる．$T$の固有値は$0$のみであるから，$V$が$T$の広義固有空間である．すなわち$V=\left\{ v \in V \relmiddle| ^\exists n, T^nv=0\right\}$である．$V$の基底$\{v_1,\cdots,v_n\}$に対して，$T^nv_i=0$となる$n$をそれぞれ$n_i$とする．$N:=\max\{n_1,\cdots,n_n\}$とすれば，$T^N=0$である．
+
+(4)$A=\begin{pmatrix}
+ 0 & 1\\
+ -1 & 0
+\end{pmatrix}$とすれば，$f(x)=Ax$で定まる線形写像$f \colon \mathbb{R}^2 \rightarrow \mathbb{R}^2$は$\det \begin{vmatrix}
+	 0-\lambda & 1\\
+ -1 & 0-\lambda
+ \end{vmatrix}=\lambda^2+1=0$であるから，$0$以外の実数を固有値にもたない．$A^2=-E$であるから，$f$はべき零でない．
+
+ \fbox{3}
+ (1)成立．
+
+ (2)成立．$f(K)$が連結でないと仮定する．$f(K)=(U\cap f(K))\cup (V\cap f(K)), (U\cap f(K))\cap (V\cap f(K))=\emptyset,(U\cap f(K))\neq \emptyset \neq (V\cap f(K))$となる$Y$の開集合$U,V$が存在する．
+ $(f^{-1}(U)\cap K) \cup (f^{-1}(V)\cap K)=K,(f^{-1}(U)\cap K)\cap (f^{-1}(V)\cap K)=\emptyset,(f^{-1}(U)\cap K)\neq \emptyset \neq (f^{-1}(V)\cap K)$である．$K$が連結であることに矛盾．
+
+ (3)$K\cap A$の任意の開被覆$S=\{ U_\lambda\}_{\lambda\in \Lambda}$を任意にとる．$S'=S\cup \{X\setminus A\}$とする．$S'$は$K$の開被覆であるから有限部分被覆$\{U_{\lambda_1},\cdots,U_{\lambda_n},X\setminus A\}$が存在する．よって$\{ U_1,\cdots,U_n\}$が$K\cap A$の有限部分被覆であるからコンパクト．
+
+ \fbox{4}
+ (1)$f$が$a$で正則であるから，ある$a$の$\varepsilon$近傍で$f(z)=\sum\limits_{n=0}^\infty c_n(z-a)^n$とできる．一様収束しているから，$f'(z)=\sum\limits_{n=1}^\infty nc_n(z-a)^{n-1}$である．よって$f'(a)=c_1$である．
+
+ $\frac{f(z)}{(z-a)^n}$の$z=a$における留数は$\frac{f(z)}{(z-a)^n}$のローラン展開が$\sum\limits_{k=-2}^\infty c_k(z-a)^{k-2}$であるから$c_{1}$である．よって留数は$f'(a)$
+
+ (2)$(z^2+1)^2=(z-i)^2(z+i)^2$である．よって極は$z=i,-i$．$\frac{e^{iz}}{(z+i)^2}$は$z=i$で正則であるから，$\frac{e^{iz}}{(z-i)^2(z+i)^2}$の$z=i$における留数は(1)より$\frac{d}{dz}\left. \frac{e^{iz}}{(z+i)^2}\right|_{z=i}=\frac{1}{2ei}$である．
+ 同様に$z=-i$における留数は$\frac{d}{dz}\left. \frac{e^{iz}}{(z-i)^2}\right|_{z=-i}=0$である．
+
+ (3)\begin{align}
+	\left|\int_{C_R} \frac{e^{iz}}{(z^2+1)^2}dz\right|\le \left| \int_0^\pi \frac{e^{iRe^{i\theta}}}{(R^2e^{2i\theta}+1)^2}Rie^{i\theta}d\theta\right| \le \int_0^\pi \left|\frac{e^{-R\sin \theta}}{(R^2-1)^2}\right|d\theta = \frac{\pi}{(R^2-1)^2}\rightarrow 0 \quad (R\rightarrow \infty)
+ \end{align}
+
+ (4)$R_1,R_2>1$に対して，
+ \begin{align}
+	\left|\int_{R_1}^{R_2} \frac{\cos x}{(x^2+1)^2}\right| &\le \int_{R_1}^{-1} \frac{1}{(x^2+1)^2}dx + \int_{-1}^{1} \frac{1}{(x^2+1)^2}dx + \int_{1}^{R_2} \frac{1}{(x^2+1)^2}dx \\
+	&\le \int_{R_1}^{-1} \frac{1}{x^4}dx + \int_{-1}^{1} \frac{1}{(x^2+1)^2}dx + \int_{1}^{R_2} \frac{1}{x^4}dx\rightarrow 0 \quad (R_1,R_2\rightarrow \infty) 
+ \end{align}
+よって広義積分は収束する．
+留数定理から$\int_{-\infty}^\infty \frac{\cos x}{(x^2+1)^2}dx=2\pi i\frac{1}{2ei}=\frac{\pi}{e}$である．
+
+ 
+
+ 
+
+ 
+ 
+
+\end{document}
