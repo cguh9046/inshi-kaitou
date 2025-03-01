@@ -1,0 +1,88 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H6数学選択}
+\fbox{3}
+(1)$E_1$上で$0<f(x)<1$であるから，$f(x)^n > f(x)^{n+1}$である．よって$f(x)^{\frac{1}{n+1}}>f(x)^{\frac{1}{n}}$となるから$\{ f(x)^\frac{1}{n}\}_{n=1}^\infty$は単調増加．
+また$\lim\limits_{n \to \infty} f(x)^\frac{1}{n}=1$である．
+よって単調収束定理から$\lim\limits_{n \to \infty} \int_{E_1} f(x)^\frac{1}{n}dx=\int_{E_1} \lim\limits_{n \to \infty} f(x)^\frac{1}{n}dx=\int_{E_1} 1dx=\mu(E_1)$となる．
+
+(2)$E_2$上で$1\le f(x)$であるから，$f(x)\le f(x)^n $より$f(x)^\frac{1}{n}\le f(x)$となる．また$\lim\limits_{n \to \infty} f(x)^\frac{1}{n}=1$である．$f(x)$は$E_2$上可積分であるから，ルベーグの収束定理より
+$\lim\limits_{n \to \infty} \int_{E_2} f(x)^\frac{1}{n}dx=\int_{E_2} \lim\limits_{n \to \infty} f(x)^\frac{1}{n}dx=\int_{E_2} 1dx=\mu(E_2)$となる．
+
+(3)$\mathbb{R}$上可積分であるから，$E_2$上可積分である．また$E_1 \cap E_2=\emptyset$であるから，$\mu(E_1 \cup E_2)=\mu(E_1)+\mu(E_2)=\lim\limits_{n \to \infty} \int_{E_1 \cup E_2} f(x)^\frac{1}{n}dx=\lim\limits_{n \to \infty} \int_{\mathbb{R}} f(x)^\frac{1}{n}dx$となる．
+
+\fbox{4}
+(1)$0$が$M$の内点でないことを示す．内点ならば$\varepsilon$近傍$B(0,\varepsilon)$がとれる．$X$の基底の各ベクトル$v$について$\varepsilon\frac{v}{2\|v\|}$とすることで，$B(0,\varepsilon)$の部分集合で$X$の基底となるものが存在すると分かる．これは$M\neq X$に矛盾．よって$0$は内点でない．
+
+任意の$v \in M$について$v$が内点ならば，$v$の$\varepsilon$近傍$B(v,\varepsilon)$が存在する．$B(v,\varepsilon)-v=\varepsilon B(0,\varepsilon)\subset M$となり，$0$も内点である．これは矛盾．
+
+(2)$X$を$L^1([0,1])$とする．これはBanach空間である．
+
+$L^{\infty}([0,1])$は$L^1([0,1])$の無限次元の部分空間である．$\frac{1}{x} \in L^1([0,1])$であるが，$\frac{1}{x} \notin L^{\infty}([0,1])$である．したがって真部分空間である．また完備であるから閉集合である．これが(i)の例．
+
+$C^0([0,1])$を$[0,1]$上の連続関数全体とすればこれは，無限次元の部分空間である．$\{x^n\}$は$X$の収束列であり，$C^0([0,1])$の数列であるが，極限は$f(x)=\begin{cases} 0 & (0\le x < 1) \\ 1 & (x=1) \end{cases}$であり，$C^0([0,1])$には属さない．これが(ii)の例．
+
+(3)すべての$F_n$が内点をもたないとする．$x_1 \in X\setminus F_1$を任意にとる．このとき開集合であるから$\Cl(B(x_1,\delta_1))\subset X\setminus F_1$となる$\delta_1$をとれる．($\Cl$で閉包をあらわす．)$x_1 \in F_a$となる$a$が存在する．$a=2$としても一般性を失わない．
+$x_1 \in F_2$であるが，$F_2$は内点をもたないため，$B(x_1,\delta_1)\cap X \setminus F_2 \neq \emptyset$である．よって$x_2 \in B(x_1,\delta_1)\cap X \setminus F_2$となる$x_2$がとれる．$0<\delta_2 < \frac{\delta_1-d(x_1,x_2)}{2}$をみたし，$\Cl(B(x_2,\delta_2))\subset X\setminus F_2$となる$\delta_2$がとれる．$\delta_2$の定め方から，$B(x_2,\delta_2)\subset B(x_1,\delta_1)$である．
+これを繰り返して点列$\{x_n\}$と数列$\{ \delta_n\}$を得る．$n\ge m$に対して$\| x_n-x_m\| \le \delta_m \le \frac{\delta_1}{2^m}\rightarrow 0 \quad(m,n \rightarrow \infty)$であるから$\{x_n\}$はCauchy列である．$X$は完備であるから$\{x_n\}$は収束する．$x_*=\lim\limits_{n \to \infty} x_n$とする．$x_* \in F_N$なる$N$が存在する．
+$\Cl(B(x_N,\delta_N))\subset X\setminus F_N$であり，$\{ x_n\}_{n=N}^\infty$は閉集合$\Cl(B(x_N,\delta_N))$の収束点列であるから，$x_* \in \Cl(B(x_N,\delta_N)) \subset X\setminus F_N$となる．これは矛盾．
+
+\fbox{6}
+(1)斉次式であることから可約であれば，$x^2+xy+y^2=(x-ay)(x-by) \quad(a,b\in F)$とできる．$x^2+xy+y^2=x^2-(a+b)xy+abx^2$となるから，$a+b=-1,ab=1$より$a^2+a+1=0$をみたす．また$b=a^2$である．よって可約であれば$x^2+xy+y^2=(x-\varepsilon y)(x-\varepsilon^2 y)$となる$\varepsilon$が存在して$\varepsilon^2+\varepsilon+1=0$を満たす．
+
+逆に$\varepsilon^2+\varepsilon+1=0$をみたす$\varepsilon \in F$が存在すれば，可約である．
+
+$\mathrm{ch}F \neq 3$のとき．
+$\varepsilon \neq 1$である．
+$\varphi\colon F^2\rightarrow F^2;(x,y)\mapsto (x-\varepsilon y,x-\varepsilon^2 y)$とする．$\varphi$は加法群として準同型である．$x-\varepsilon y=0=x-\varepsilon^2 y$となるとき，$\varepsilon\neq 1$より$y=0,x=0$となる．よって$\varphi$は単射であるから，全単射である．
+任意の$a\in F^\times$に対して$uv=a$なら$u=av^{-1}$である．したがって$uv=a$となる$(u,v)$の組は$|F|-1$個である．$a=0$なら$u=0$または$v=0$であるから$2|F|-1$個である．$\varphi$が全単射であるから，これが求める解の個数．
+
+$\mathrm{ch}F=3$のとき．
+$\varepsilon=1$より$x^2+xy+y^2=(x-y)^2=a$である．
+よって$a=0$なら解は$\left\{ (x,x)\in F^2\relmiddle| x\in F\right\}$より$|F|$個である．
+$a\neq 0$なら二乗して$a$になる数が存在するとき，$\mathrm{ch}F\neq 2$より解は$2$個あるから$2|F|$個である．
+存在しないなら$0$個である．
+
+(2)$F$の位数を$q$とする．既約であるから$\mathrm{ch}F \neq 3$である．すなわち$3 \nmid q$である．また$3 \mid q-1$なら乗法群は巡回群であるから，位数$3$の元$\varepsilon$が存在する．このとき$\varepsilon^3-1=0$であり，$\varepsilon \neq 1$であるから$\varepsilon^2+\varepsilon+1=0$である．これは既約性に矛盾．よって$3 \nmid q-1$である．
+
+$a=0$のとき．解$(x,y)\neq (0,0)$を持つと仮定する．対称性から$y\neq 0$としてよい．$x=\varepsilon y$を満たす$\varepsilon\in F$が存在する．このとき$\varepsilon^2+\varepsilon+1=0$となり，既約性に矛盾．したがって解は$1$個である．
+
+$a\neq 0$のとき，$\varepsilon^2+\varepsilon+1$をみたす$\varepsilon$を$F$に添加した拡大体$K:=F(\varepsilon)$を考える．$\varepsilon^{q}=\varepsilon^2$である．
+$K$は$F$上の$2$次元ベクトル空間であるから，任意の$z \in K$は$z=\alpha-\varepsilon \beta \quad (\alpha,\beta \in F)$と一意にあらわせる．
+$z^{q+1}=z z^q=(\alpha-\varepsilon \beta)(\alpha -\varepsilon^2 \beta)=\alpha^2+\alpha\beta +\beta^2$である．したがって$\phi\colon K^\times\rightarrow F^\times;z \mapsto z^{q+1}$は群準同型である．
+$K^\times = \langle g \rangle$となる$g$が存在する．$z \in ker \phi$について$g^k=z$なる$k$が存在する．$(g^k)^{q+1}=1$より$(q^2-1)\mid k(q+1)$である．これをみたす$0\le k< q^2-1$は$0,q-1,2(q-1),\cdots,q(q-1)$の$q+1$個である．したがって$|ker \phi|=q+1$である．
+よって$|\Im \phi|=|q^2-1|/|\ker \phi|=q-1=|F^\times|$である．よって$\phi$は全射である．
+以上より$0\neq a \in F$に対して$\phi^{-1}(a)\ni z=\alpha+\beta \varepsilon$とすれば，$\alpha^2+\alpha \beta+\beta^2=a$であり，$K^\times$の元は$F^2\setminus \{ (0,0)\}$と一対一対応するから，解の個数は$q+1$である．
+
+(3)単射にならない$a$を考える．$f(x)=f(y)$かつ$x\neq y$とする．$x^3+ax=y^3+ay$より
+$(x-y)(x^2+xy+y^2)=-a(x-y)$であるから$x^2+xy+y^2=-a$である．
+
+$3\mid (q+1)$のとき，すなわち$x^2+xy+y^2$が既約なとき，$a\neq 0$なら$x^2+xy+y^2=-a$を満たす$(x,y)$は$q+1$個あるから，$x\neq y$となる解も存在する．よって単射でない．$a=0$なら解は$(0,0)$のみであるから単射．
+
+$3\mid q$のとき，(1)から$a=0$あるいは二乗して$-a$になる数が存在しないときに単射，それ以外は単射でない．
+
+$3\mid (q-1)$のとき，$a=0$なら単射でない．$a\neq 0$で単射な$a$が存在すると仮定する．解の個数が$q-1$であり，$(0,0)$は解でないから解は$(x,x)\quad (x\in F^\times)$である．すなわち$x^2+x^2+x^2=-a$より$x^2=-3^{-1}a\quad (x \in F^\times)$である．二次方程式であるから解は重複を含めて$2$個．よって$q-1=|F^\times|\le 2$である．$3\mid (q-1)$よりこれを満たす$q\ge 2$は存在しない．したがって$a\neq 0$なら単射でない．
+
+\fbox{7}
+帰納法でとく．$n=1$は明らか．$n-1$以下で成立すると仮定する．$H_{n-1}$を$n-1$次正方行列ですべての主小行列式が非零な行列な行列とする．下三角行列$P_{n-1}$と上三角行列$Q_{n-1}$を用いて$H_{n-1}=P_{n-1}Q_{n-1}$とできる．
+$0\neq \det H_{n-1}=\det P_{n-1} \det Q_{n-1}$であるから，$\det P_{n-1}\neq 0,\det Q_{n-1}\neq 0$である．
+\begin{align}
+	H_n=\begin{pmatrix} H_{n-1} & a \\ b^T & c \end{pmatrix}=\begin{pmatrix} P_{n-1} & 0 \\ b^T Q_{n-1}^{-1} & 1 \end{pmatrix}\begin{pmatrix} Q_{n-1} & P_{n-1}^{-1}a \\ 0 & c-b^T Q_{n-1}^{-1}P_{n-1}^{-1}a \end{pmatrix}=P_nQ_n
+\end{align}
+とすれば，$P_n$は下三角行列であり，$Q_n$は上三角行列である．
+
+
+
+
+
+\end{document}
