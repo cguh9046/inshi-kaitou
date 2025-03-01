@@ -1,0 +1,132 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H12数学必修}
+\fbox{1}
+(1) テイラーの定理より，
+$f(a+h)=f(a)+f'(a)h+\frac{f''(a)}{2!}h^2+o(h^2)$とできる．
+
+\begin{align}
+    \lim\limits_{h\to 0} \frac{f(a+h)+f(a-h)-2f(a)}{h^2}&=\lim\limits_{h\to 0} \frac{f'(a)h+\frac{f''(a)}{2!}h^2+o(h^2)+f'(a)(-h)+\frac{f''(a)}{2!}h^2+o(h^2)}{h^2}  \\
+    &=f''(a)
+\end{align}
+
+(2) $(x,y)=(a+h,b+k)$とする．$f(x,y)=f(a,b)+(h\frac{\partial }{\partial x} + k\frac{\partial }{\partial y})f(a,b)+\frac{1}{2!}(h\frac{\partial }{\partial x} + k\frac{\partial }{\partial y})^2f(a,b)+o(h^2+k^2)$が成り立つ．
+
+(3)$f(a+r\cos\theta,b+r\sin\theta)=f(a,b)+r(\cos\theta\frac{\partial }{\partial x} + \sin\theta\frac{\partial }{\partial y})f(a,b)+\frac{1}{2!}r^2(\cos\theta\frac{\partial }{\partial x} + \sin\theta\frac{\partial }{\partial y})^2f(a,b)+g(r,\theta)\quad g(r,\theta)\in o(r^2)$が成り立つ．
+
+\begin{align}
+    \int_0^{2\pi} f(a+r\cos\theta,b+r\sin\theta)-f(a,b)d\theta &= \int_0^{2\pi} r(\cos\theta\frac{\partial }{\partial x} + \sin\theta\frac{\partial }{\partial y})f(a,b) + \frac{1}{2!}r^2(\cos\theta\frac{\partial }{\partial x} + \sin\theta\frac{\partial }{\partial y})^2f(a,b) + g(r,\theta)d\theta \\
+    &= \int_0^{2\pi} r^2 \frac{1}{2!}(\cos^2\theta\frac{\partial^2 }{\partial x^2} + \sin^2\theta\frac{\partial^2 }{\partial y^2})f(a,b) + g(r,\theta)d\theta \\
+    &= \pi r^2\frac{\partial^2}{\partial x^2}f(a,b)\int_0^{2\pi} \cos^2\theta d\theta + \pi r^2\frac{\partial^2}{\partial y^2}f(a,b)\int_0^{2\pi} \sin^2\theta d\theta + \int_0^{2\pi} g(r,\theta)d\theta \\
+    &= \pi r^2\frac{\partial^2}{\partial x^2}f(a,b) + \pi r^2\frac{\partial^2}{\partial y^2}f(a,b) + \int_0^{2\pi} g(r,\theta)d\theta
+\end{align}
+
+$\lim\limits_{r\to 0} g(r,\theta)/r^2=0$より，任意の$\varepsilon >0$に対して$\delta >0$が存在して，$0<r<\delta$ならば$|g(r,\theta)|<\varepsilon r^2$である．よって$|\int_0^{2\pi} g(r,\theta)d\theta |/r^2 \le  \int_0^{2\pi} |\varepsilon r^2| d\theta/r^2 = 2\pi \varepsilon $である．
+
+よって$\lim\limits_{r\to 0}\frac{1}{\pi r^2} \int_0^{2\pi}g(r,\theta) d\theta = 0$である．
+
+すなわち$\lim\limits_{r\to 0}\frac{1}{\pi r^2} \int_0^{2\pi} f(a+r\cos\theta,b+r\sin\theta)-f(a,b)d\theta = \frac{\partial^2}{\partial x^2}f(a,b) + \frac{\partial^2}{\partial y^2}f(a,b)$である．
+
+\fbox{2}
+(1) $\det A_x =\begin{vmatrix}
+    x & x & x \\
+    x & 1-x & 1 \\
+    x & 1 & 1-x
+\end{vmatrix}=\begin{vmatrix}
+    x & x & x \\
+    0 & 1-2x & 1-x \\
+    0 & 1-x & 1-2x
+\end{vmatrix}=x((1-2x)^2-(1-x)^2)=-x^2(2-3x)$
+
+(2)$x\neq 0,2/3$のとき，$\det A_x\neq 0$より$A_x$は正則であるから，$ \mathrm{rank} A_x = 3$である．
+
+$x=3/2$のとき，$\mathrm{rank} A_{2/3}=\mathrm{rank} \begin{pmatrix}
+    2/3 & 2/3 & 2/3 \\
+    0 & -1/3 & 1/3 \\
+    0 & 1/3 & -1/3
+\end{pmatrix} = 2$である．
+
+$x=0$のとき，$\mathrm{rank} A_0=\mathrm{rank} \begin{pmatrix}
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    0 & 1 & 1
+\end{pmatrix} = 1$である．
+
+(3) $B,B'\in V(A_x),c\in \mathbb{C}$に対して$A_x(B+cB')=A_xB+cA_xB'=BA_x+cB'A_x=(B+cB')A_x$より$V(A_x)$は部分空間である．
+
+(4) $A_x$の階数が最小になるのは$x=0$のときである．
+
+$A_0$の固有値および固有空間をもとめる．
+$\begin{vmatrix}
+    -\lambda & 0 & 0 \\
+    0 & 1-\lambda & 1 \\
+    0 & 1 & 1-\lambda
+    \end{vmatrix}=\lambda^3-2\lambda^2=0$より$\lambda=0,2$である．
+
+$\lambda=0$のとき，$\begin{pmatrix}
+    0 & 0 & 0 \\
+    0 & 1 & 1 \\
+    0 & 1 & 1
+    \end{pmatrix}$より固有空間$W(0)= \qty\langle \begin{pmatrix}
+    1 \\
+    0 \\
+    0
+    \end{pmatrix},\begin{pmatrix}
+    0 \\
+    1 \\
+    -1
+    \end{pmatrix} \rangle$である．
+
+$\lambda=2$のとき，$\begin{pmatrix}
+    -2 & 0 & 0 \\
+    0 & -1 & 1 \\
+    0 & 1 & -1
+    \end{pmatrix}$より固有空間$W(2)= \langle \begin{pmatrix}
+    0 \\
+    1 \\
+    1
+    \end{pmatrix} \rangle $である．
+
+    $B \in A_0$と$A_0$の固有値$\lambda$の固有ベクトル$x$について，$ABx=BAx=\lambda Bx$であるから，$Bx$は固有値$\lambda$の固有ベクトルである．
+    よって$B$は各固有空間の自己準同型である．
+    すなわち$\dim V(A_0)= \dim \mathrm{Hom}(W(0),W(0))+\dim \mathrm{Hom}(W(2),W(2))=2^2+1^2=5$である．
+
+\fbox{3}
+(1)\begin{align}
+    f(e)&=f(ee)=f(e)f(e) \\
+    f(e)^{-1}f(e)&=f(e)^{-1}f(e)f(e)\\
+    e'&=f(e)
+\end{align}
+
+(2)$f(g)f(g^{-1})=f(gg^{-1})=f(e)=e',f(g^{-1})f(g)=f(g^{-1}g)=f(e)=e'$より$f(g)^{-1}=f(g^{-1})$
+
+(3)$g\in G,x\in \ker f$について$f(gxg^{-1})=f(g)f(x)f(g^{-1})=f(g)f(g)^{-1}=e'$より$gxg^{-1}\in \ker f$．よって$g\ker f g^{-1}\subset \ker f$が任意の$g\in G$について成り立つ．
+
+(4)$aba^{-1}b^{-1}\in[G,G]$について$f(aba^{-1}b^{-1})=f(a)f(b)f(a)^{-1}f(b)^{-1}=f(a)f(a)^{-1}f(b)f(b)^{-1}=e'$である．二番目の等式は$G'$がアーベル群であるから成り立つ．
+
+よって$[G,G]\subset \ker f$である．
+
+\fbox{4}
+(1)任意の$x,y \in X$について$x\neq y$なら$U,V \in \mathcal{O}_X$であって$x\in U, y \in V, U\cap V = \emptyset$となるものが存在するとき，$(X,\mathcal{O}_X)$はハウスドルフ空間という．
+
+$X$の部分集合$A$がコンパクトであるとは，$A$の任意の開被覆が有限部分被覆を持つことである．
+
+(2)$y \in A$に対して$y\in V_y,x\in U_y, U_y \cap V_y = \emptyset$となる$U_y,V_y \in \mathcal{O}_X$を定める．$\bigcup\limits_{y\in A} V_y \supset A$である．
+$A$はコンパクトだから，有限部分集合$A'\subset A$が存在して$\bigcup\limits_{y\in A'} V_y \supset A$となる．
+
+$V=\bigcup\limits_{y\in A'} V_y,U=\bigcap\limits_{y\in A'} U_y$とすると，$x\in U,A\subset V,U\cap V=\emptyset$である．
+
+(3)ハウスドルフ空間$(X,\mathcal{O}_X)$において，$A$がコンパクトであるとき，$x\in A^c$に対して(2)より$x\in U, A\subset V, U\cap V=\emptyset$となる$U,V \in \mathcal{O}_X$が存在する．$U\cap A = \emptyset$であるから$A^c$は開集合である．すなわち$A$は閉集合．
+
+
+\end{document}

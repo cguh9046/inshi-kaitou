@@ -1,0 +1,140 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\url{https://warp.ndl.go.jp/info:ndljp/pid/259094/www.math.sci.kobe-u.ac.jp/home-j/index9-4.html}
+
+\section{H6数学必修}
+\fbox{1}
+(1) 固有方程式$g_A(t) = 
+\begin{vmatrix}
+1-t & 1 & 1 \\
+1 & 1-t & -1 \\
+1 & -1 & 1-t \\	
+\end{vmatrix}=(t+1)(t-2)^2$より固有値は$-1,2$である.
+$A-(-1)E= \begin{pmatrix}
+2 & 1 & 1 \\
+1 & 2 & -1 \\
+1 & -1 & 2 \\
+\end{pmatrix}$を簡約化すると$\begin{pmatrix}
+1 & 0 & 1 \\
+0 & 1 & -1 \\
+0 & 0 & 0 \\
+\end{pmatrix}$となる. よって固有空間$W(1)$の基底は$\left\{\begin{pmatrix}
+-1 \\
+1 \\
+1 \\
+\end{pmatrix}\right\}$である. 
+
+$A-2E= \begin{pmatrix}
+-1 & 1 & 1 \\
+1 & -1 & -1 \\
+1 & -1 & -1 \\
+\end{pmatrix}$を簡約化すると$\begin{pmatrix}
+1 & -1 & -1 \\
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+\end{pmatrix}$となる. よって固有空間$W(2)$の基底は$\left\{\begin{pmatrix}
+1 \\
+1 \\
+0 \\
+\end{pmatrix},\begin{pmatrix}
+1 \\
+0 \\
+1 \\
+\end{pmatrix}\right\}$である. 
+
+(2) $\mathbb{R}^3$の基底として，$\left\{\begin{pmatrix}
+-1 \\
+1 \\
+1 \\
+\end{pmatrix},\begin{pmatrix}
+1 \\
+1 \\
+0 \\
+\end{pmatrix},\begin{pmatrix}
+1 \\
+0 \\
+1 \\
+\end{pmatrix}\right\}$を選ぶと，$F$の表現行列は$\begin{pmatrix}
+	-1 & 0 & 0 \\
+	0 & 2 & 0 \\
+	0 & 0 & 2 \\
+\end{pmatrix}$となる.
+
+(3) 異なる固有値の固有空間のベクトルは直交するから，$\left\{v_1=\begin{pmatrix}
+1 \\
+1 \\
+0 \\
+\end{pmatrix},v_2=\begin{pmatrix}
+1 \\
+0 \\
+1 \\
+\end{pmatrix}\right\}$を直交化する．
+$v_2' = v_2 - \frac{(v_2,v_1)}{|v_1|} \frac{v_1}{|v_1|}= \frac{1}{2} \begin{pmatrix}
+1 \\
+-1 \\
+2 \\
+\end{pmatrix}$は$v_1$と直交する固有ベクトルである．
+正規化すると求める基底は$\left\{\frac{1}{\sqrt{3}}\begin{pmatrix}
+	-1 \\
+	1 \\
+	1 \\
+	\end{pmatrix},\frac{1}{\sqrt{2}}\begin{pmatrix}
+	1 \\
+	1 \\
+	0 \\
+	\end{pmatrix},\frac{1}{\sqrt{6}}\begin{pmatrix}
+	1 \\
+	-1 \\
+	2 \\
+	\end{pmatrix}\right\}$である．
+
+
+\fbox{2}
+(1) $\pdv[2]{u}{x} = \pdv{}{x}\alpha x(x^2+y^2+z^2)^{\frac{\alpha}{2}-1}=\alpha (x^2+y^2+z^2)^{\frac{\alpha}{2}-1}+\alpha(\alpha-2) x^2(x^2+y^2+z^2)^{\frac{\alpha}{2}-2}$
+
+より$\pdv[2]{u}{x}+ \pdv[2]{u}{y}+\pdv[2]{u}{z} = 3\alpha (x^2+y^2+z^2)^{\frac{\alpha}{2}-1} + \alpha
+(\alpha-2) (x^2+y^2+z^2)^{\frac{\alpha}{2}-2} (x^2+y^2+z^2)= (\alpha^2+\alpha)(x^2+ y^2+z^2)^{\frac{\alpha}{2}-1} $
+
+(2)存在しないと仮定する．ある$\varepsilon>0,R>0$が存在して，${}^\forall x >R,xf'(x)>\varepsilon$である．
+$f(x)-f(R)=\int_R^{x}f'(t)dt > \int_R^{x}\frac{\varepsilon}{t}dt = \varepsilon \log \frac{x}{R} \to \infty \quad(x \to \infty)$ となり矛盾．
+
+
+\fbox{3}
+(1) $ab=ba \Leftrightarrow aba^{-1}b^{-1}=e\Leftrightarrow abab=e\Leftrightarrow(ab)^2=e$
+一番右の式は成立するから，$G$はアーベル群である．
+
+(2) $a\in G, h\in H$を任意に取る．$H \ni (ah)^2=ahah=aha^{-1}h^{-1}$より，$aha^{-1} \in H$である．
+よって$H$は$G$の正規部分群
+
+$[a]\in G/H$に対して$[a]^2=[a^2]=H$であるから，(1)より$G/H$はアーベル群である．
+
+\fbox{4}
+(1) $d(x,y)\ge 0,d(x,y)=0 \Leftrightarrow x=y,d(x,y)=d(y,x)$は明らかである．
+$x,y,z \in \mathbb{R}^n$に対して，$|x_i-z_i| \le |x_i-y_i|+|y_i-z_i|$より$d(x,z)=\max\limits_{1\le i \le n}|x_i-z_i| \le \max\limits_{1\le i \le n}(|x_i-y_i|+|y_i-z_i|)<d(x,y)+d(y,z)$
+よって$d$は三角不等式を満たす．
+
+(2) $d(x,y) \le \delta$なる任意の$x,y \in \mathbb{R}^n$に対して，$d(p,x) - d(p,y) \le d(p,y)+d(y,x)-d(p,y)=d(y,x) \le \delta$である．$x,y$を入れ替えても同様にして$d(p,y)-d(p,x) \le \delta$であるから，$|d(p,x)-d(p,y)| \le \delta$である．
+
+すなわち任意の$\varepsilon$に対して$\delta=\varepsilon$と定めれば，$d(x,y) \le \delta$ならば$|f(x)-f(y)| \le \varepsilon$より$f$は連続．
+
+(3) $a\in A$に対して$d(a,y) \le d(a,x)+d(x,y)$である．$a\in A$についての下限をとれば$g(y)=\inf\limits_{a\in A}d(a,y) \le \inf\limits_{a\in A}d(a,x)+d(x,y)=g(x)+d(x,y)$を得る．これは$x,y$を入れ替えても成り立つから，$|g(x)-g(y)| \le d(x,y)$である．
+
+したがって任意の$\varepsilon$に対して$\delta=\varepsilon$と定めれば，$d(x,y) \le \delta$ならば$|g(x)-g(y)| \le \varepsilon$より$g$は連続．
+
+
+
+
+\end{document}
+
+
+

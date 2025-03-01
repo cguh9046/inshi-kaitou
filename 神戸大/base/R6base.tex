@@ -1,0 +1,183 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R6数学必修}
+\fbox{1}
+(1) $\begin{pmatrix}
+    2 & 3 & 5\\
+    1 & 2 & 4\\
+    1 & a & 1 \\
+    4 & b & -5
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & 2 & 4\\
+    0 & -1 & -3\\
+    0 & a-2 & -3\\
+    0 & b-4 & -21
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & 2 & 4\\
+    0 & 1 & 3\\
+    0 & 0 & -3a+3\\
+    0 & 0 & -3b-9 
+    \end{pmatrix}$より$a=1,b=-3$のとき次元は$2$である．
+    $a \neq 1 $または$b \neq -3$のとき次元は$3$である．
+
+(2)(a)$g_A(t)=\begin{vmatrix}
+    t+2 & 1 & -1 \\
+    1 & t+2 & 1 \\
+    -1 & 1 & t+2\\
+    \end{vmatrix}=\begin{vmatrix}
+    0 & -t^2-4t-3& -t-3\\
+    1 & t+2 & 1 \\
+    0 & t+3 & t+3\\
+    \end{vmatrix}=-(t+3)\begin{vmatrix}
+        -t^2-4t -3& -t-3\\
+        1 & 1
+    \end{vmatrix}=-(t+3)(-t^2-4t-3+t+3)=t(t+3)^2$である．
+(b)各固有値の固有ベクトルをもとめる．固有値$0$に対して$\begin{pmatrix}
+    2 & 1 & -1\\
+    1 & 2 & 1\\
+    -1 & 1 & 2
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & 2 & 1\\
+    0 & 3 & 3\\
+    0 & 3 & 3
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & 0 & -1\\
+    0 & 1 & 1\\
+    0 & 0 & 0
+\end{pmatrix}$より固有ベクトルは$\begin{pmatrix}
+    1\\
+    -1\\
+    1
+\end{pmatrix}$である．
+
+固有値$-3$に対して$\begin{pmatrix}
+    -1 & 1 & -1\\
+    1 & -1 & 1\\
+    -1 & 1 & -1
+\end{pmatrix}\rightarrow \begin{pmatrix}
+    1 & -1 & 1\\
+    0 & 0 & 0\\
+    0 & 0 & 0
+\end{pmatrix}$より固有ベクトルは$\begin{pmatrix}
+    1\\
+    1\\
+    0
+\end{pmatrix},\begin{pmatrix}
+    -1\\
+    0\\
+    1
+\end{pmatrix}$である．直交化して$\begin{pmatrix}
+    1\\
+    1\\
+    0
+\end{pmatrix},\begin{pmatrix}
+    -1/2
+    1/2\\
+    1
+\end{pmatrix}$である．
+
+$T=\begin{pmatrix}
+    1 & -1/2 & 1\\
+    -1 & 1/2 & 1\\
+    1 & 1 & 0
+    \end{pmatrix}$とする．$TAT^{-1}=\begin{pmatrix}
+    0 & 0 & 0\\
+    0 & -3 & 0\\
+    0 & 0 & -3
+\end{pmatrix}$である．
+
+\fbox{2}
+(1)(a)$gh_1g^{-1}(gh_2g^{-1})^{-1}=gh_1g^{-1}(gh_2g^{-1})=gh_1h_2g^{-1}\in gHg^{-1}$である．よって部分群である．
+
+(b)$\varphi\colon H \rightarrow gHg^{-1};h \mapsto ghg^{-1}$とする．$\varphi(h_1)=\varphi(h_2)$とすると$gh_1g^{-1}=gh_2g^{-1}$である．$h_1=h_2$である．よって$\varphi$は単射である．$H$は有限であるから$\varphi$は全単射である．
+
+(2)(a)$x$の選び方は$4$通り，$y$の選び方は$5$通り，よって位数は$20$である．
+
+(b)$\begin{pmatrix}
+    x & 0\\
+    0 & 1
+    \end{pmatrix}$の逆元は$\begin{pmatrix}
+    x^{-1} & 0\\
+    0 & 1
+    \end{pmatrix}$である．$\begin{pmatrix}
+    x & 0\\
+    0 & 1
+    \end{pmatrix}\begin{pmatrix}
+    y^{-1} & 0\\
+    0 & 1
+    \end{pmatrix}=\begin{pmatrix}
+    xy^{-1} & 0\\
+    0 & 1
+    \end{pmatrix}$である．$xy^{-1}\in \mathbb{F}_5^{\times}$であるから，$H$は部分群である．
+
+(c)$g_1=\begin{pmatrix}
+    1 & 1\\
+    0 & 1
+\end{pmatrix},g_2=\begin{pmatrix}
+    2 & 1\\
+    0 & 1
+    \end{pmatrix}$とする．$g_1\begin{pmatrix}
+    x & 0\\
+    0 & 1
+    \end{pmatrix}g_1^{-1}=\begin{pmatrix}
+    x & -x+1\\
+    0 & 1
+    \end{pmatrix}$である．$g_2\begin{pmatrix}
+    x & 0\\
+    0 & 1
+    \end{pmatrix}g_2^{-1}=\begin{pmatrix}
+    x & -2x+1\\
+    0 & 1
+    \end{pmatrix}$である．よって$g_1Hg_1^{-1},g_2Hg_2^{-1}$は同じ部分群でないから，$H,g_1Hg_1^{-1},g_2Hg_2^{-1}$が求める$3$つの部分群である．
+
+\fbox{3}
+(1)$f_x(x,y)=(-x^2-2x+3-y^2)e^x,f_y(x,y)=-2ye^x$である．
+$f_x(x,y)=0,f_y(x,y)=0$を満たす$x,y$は$(x,y)=(1,0),(-3,0)$である．
+
+$f_{xx}(x,y)=(-x^2-4x+1-y^2)e^x,f_{yy}(x,y)=-2e^x,f_{xy}(x,y)=-2ye^x$である．
+$(1,0)$でのヘッセ行列は$\begin{pmatrix}
+    -4e & 0\\
+    0 & -2e
+    \end{pmatrix}$である．負定値であるから極大値$f(1,0)=2e$である．$(-3,0)$でのヘッセ行列は$\begin{pmatrix}
+        4e^{-3} & 0\\   
+        0 & -2e^{-3}
+        \end{pmatrix}$である．行列式が負であるから鞍点である．
+
+(2)$a\le 1$のとき$a_n\le \frac{1}{n^2}\rightarrow 0\quad (n\rightarrow \infty)$であるから収束する．
+
+$a>1$のとき$a=1+\varepsilon,\varepsilon>0$と表せる．このとき
+$a^n=(1+\varepsilon)^n>\binom{n}{3}\varepsilon^3$である．よって
+$\frac{a^n}{n^2}>\frac{n(n-1)(n-2)}{6n^2}\varepsilon^3\rightarrow \infty\quad (n\rightarrow \infty)$であるから発散する．
+
+(3)$A=\{ (x,y) \mid (x,y)\in D,y\ge x\},B=D\setminus A$としてそれぞれの積分を計算する．
+
+$A$での積分は$(x,y)=(r\cos \theta,r\sin \theta),0\le r\le 1,\pi/4\le \theta\le\pi/2$として変数変換するとヤコビアンは$r$である．
+$\iint_A 1/\sqrt{x^2+y^2}dxdy=\int_{\pi/4}^{\pi/2}\int_0^1\frac{r}{r}drd\theta=\frac{\pi}{4}$である．
+
+$B$での積分は
+$\iint_B 1/\sqrt{x^2+y^2}dxdy=\int_0^{1/2}\frac{1}{x}\int_0^x 1/\sqrt{1+(y/x)^2}dydx=\int_0^{1/2}\left[ \log (1+ \sqrt{1+1})\right]dx=\log(1+\sqrt{2})/2$
+よって$\iint_D 1/\sqrt{x^2+y^2}dxdy=\frac{\pi}{4}+(1+\sqrt{2})/2$である．
+
+\fbox{4}
+(1)位相空間$(X,\mathcal{O}_1)$がハウスドルフ空間であるとは，任意の異なる$2$点$x,y\in X$に対して開集合$U,V\in \mathcal{O}_1$が存在して$x\in U,y\in V,U\cap V=\emptyset$となることである．
+
+(2)位相空間$(X,\mathcal{O}_1)$がコンパクトであるとは，任意の$X$の開被覆に対して，有限部分被覆が存在することである．
+
+(3)$f \colon X \rightarrow Y$が連続であるとは，任意の$Y$の開集合$V\in \mathcal{O}_2$に対して$f^{-1}(V)$が$X$の開集合であることである．
+
+(4)$y \in X \setminus C$を任意にとる．各$x \in C$に対してハウスドルフ性から$x \in U_x,y \in V_x,U_x \cap V_x=\emptyset$となる$U_x,V_x$が存在する．$C$はコンパクトであるから$C$の開被覆$\{U_x\}_{x\in C}$に対して有限部分被覆$\{U_{x_1},\cdots,U_{x_n}\}$が存在する．$V=\bigcap_{i=1}^n V_{x_i}$とすると$y \in V\in \mathcal{O}_1$である．したがって$y$は$C$の外点である．
+
+(5)$y \in X \setminus I$について$f(p)\neq g(p)$であり，$Y$のハウスドルフ性から$f(p)\in U, g(p)\in V, U\cap V=\emptyset$となる開集合$U,V$が存在する．$f,g$は連続であるから$f^{-1}(U),g^{-1}(V)$は$X$の開集合である．$y \in f^{-1}(U)\cap g^{-1}(V)$である．$x \in f^{-1}(U)\cap g^{-1}(V)$について$f(x)=g(x)$なら$f(x)\in U,g(x)\in V$となり$U \cap V=\emptyset$に矛盾．よって$f^{-1}(U)\cap g^{-1}(V) \cap I=\emptyset$である．すなわち$y$は外点である．
+
+
+\end{document}

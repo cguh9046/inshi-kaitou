@@ -1,0 +1,348 @@
+
+%----------
+%LuaLaTeXで実行する！！
+%----------
+%各章節には以下を書く. 1-03.texのような名前にする
+%----------
+% \documentclass[
+% 		book,
+% 		head_space=20mm,
+% 		foot_space=20mm,
+% 		gutter=10mm,
+% 		line_length=190mm
+% ]{jlreq}
+% \input {preamble.tex}
+% \usepackage{docmute} %ファイル分割
+% \begin{document}
+
+% %\chapter{章のタイトル}
+% \section{節のタイトル}
+% no text
+
+% \end{document}
+%----------
+
+%main.texには以下を書く
+%----------
+% \documentclass[
+% 		book,
+% 		head_space=20mm,
+% 		foot_space=20mm,
+% 		gutter=10mm,
+% 		line_length=190mm,
+%         openany
+% ]{jlreq}
+% \input {preamble.tex}
+% \usepackage{docmute} %ファイル分割
+% \begin{document}
+
+% %---------- 1章1節
+% \input 1-01.tex
+% %---------- 1章2節
+% \input 1-02.tex
+% % ---------- 1章3節
+% \input 1-03.tex
+% % ---------- 1章4節
+% \input 1-04.tex
+% % ---------- 1章5節
+% \input 1-05.tex
+% % ---------- 1章6節
+% \input 1-06.tex
+% %---------- 1章7節
+% \input 1-07.tex
+% % ---------- 1章8節
+% \input 1-08.tex
+% % ---------- 1章9節
+% \input 1-09.tex
+% % ---------- 1章10節
+% \input 1-10.tex
+% % ---------- 1章11節
+% \input 1-11.tex
+% % ---------- 1章12節
+% \input 1-12.tex
+% % ---------- 参考文献
+% \input reference.tex
+% \end{document}
+% ----------
+
+
+
+\usepackage{bxtexlogo}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{bbm} %小文字の黒板文字
+\usepackage{physics}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage[margin=20truemm]{geometry}
+\usepackage{textcomp}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{math,matrix,backgrounds}
+\usetikzlibrary{angles}
+\usetikzlibrary{calc}
+
+
+%----------
+%日本語フォント
+% \usepackage[deluxe]{otf} platex用 lualatexでは動かない
+
+%----------
+%欧文フォント
+\usepackage[T1]{fontenc}
+
+%----------
+%文字色
+\usepackage{color}
+
+%----------
+\setlength{\parindent}{2\zw} %インデントの設定
+
+%----------
+% %参照した数式にだけ番号を振る cleverrefと併用するとうまくいかない
+% \mathtoolsset{showonlyrefs=true}
+%----------
+
+%----------
+%集合の中線
+\newcommand{\relmiddle}[1]{\mathrel{}\middle#1\mathrel{}}
+% \middle| の代わりに \relmiddle| を付ける
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}} %置換sgn
+\newcommand{\Int}{\mathop{\mathrm{Int}}} %位相空間の内部Int
+\newcommand{\Ext}{\mathop{\mathrm{Ext}}} %位相空間の外部Ext
+\newcommand{\Cl}{\mathop{\mathrm{Cl}}} %位相空間の閉包Cl
+\newcommand{\supp}{\mathop{\mathrm{supp}}} %関数の台supp
+\newcommand{\restrict}[2]{\left. #1 \right \vert_{#2}}%関数の制限 \restrict{f}{A} = f|_A
+\newcommand{\Span}{\mathop{\mathrm{Span}}}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}}
+\newcommand{\Coker}{\mathop{\mathrm{Coker}}}
+\newcommand{\coker}{\mathop{\mathrm{coker}}}
+\newcommand{\Coim}{\mathop{\mathrm{Coim}}}
+\newcommand{\coim}{\mathop{\mathrm{coim}}}
+\newcommand{\id}{\mathop{\mathrm{id}}}
+\newcommand{\Gal}{\mathop{\mathrm{Gal}}}
+\renewcommand{\Im}{\mathop{\mathrm{Im}}}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}}
+
+
+\newtheorem{definition}{定義}[section]
+
+\usepackage{aliascnt}
+
+% \newaliastheorem{（環境とカウンターの名前）}{（元となるカウンターの名前）}{（表示される文字列）}
+\newcommand*{\newaliastheorem}[3]{%
+  \newaliascnt{#1}{#2}%
+  \newtheorem{#1}[#1]{#3}%
+  \aliascntresetthe{#1}%
+  \expandafter\newcommand\csname #1autorefname\endcsname{#3}%
+}
+\newaliastheorem{proposition}{definition}{命題} 
+\newaliastheorem{theorem}{definition}{定理}
+\newaliastheorem{lemma}{definition}{補題}
+\newaliastheorem{corollary}{definition}{系}
+\newaliastheorem{example}{definition}{例}
+\newaliastheorem{practice}{definition}{演習問題}
+
+\newtheorem*{longproof}{証明}
+\newtheorem*{answer}{解答}
+\newtheorem*{supplement}{補足}
+\newtheorem*{remark}{注意}
+%----------
+
+%----------
+%古い記法を注意するパッケージ
+\RequirePackage[l2tabu, orthodox]{nag}
+%----------
+
+
+% 定理環境（tcolorbox）
+\usepackage{tcolorbox} %箱
+\tcbuselibrary{breakable,skins,theorems}
+\tcolorboxenvironment{definition}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=2mm,bottom=2mm,
+	before skip=15pt,after skip=20pt,
+	borderline ={0.5pt}{0pt}{black}
+}
+\newtcolorbox{emptydefinition}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=2mm,bottom=2mm,
+	before skip=15pt,after skip=20pt,
+	borderline ={0.5pt}{0pt}{black}
+}
+%----------
+\tcolorboxenvironment{proposition}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black}
+}
+\newtcolorbox{emptyproposition}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black}
+}
+%----------
+\tcolorboxenvironment{theorem}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+    sharp corners,boxrule=0.6pt,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black},
+    borderline={0.5pt}{1.5pt}{black}
+}
+\newtcolorbox{emptytheorem}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+    sharp corners,boxrule=0.6pt,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black},
+    borderline={0.5pt}{1.5pt}{black}
+}
+%----------
+\tcolorboxenvironment{lemma}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black}
+}
+%----------
+\tcolorboxenvironment{corollary}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={1.0pt}{0pt}{black,dotted}
+}
+\newtcolorbox{emptycorollary}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={1.0pt}{0pt}{black,dotted}
+}
+%----------
+\tcolorboxenvironment{example}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black}
+}
+%----------
+\tcolorboxenvironment{practice}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline={0.5pt}{0pt}{black}
+}
+%----------
+\tcolorboxenvironment{proof}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=2mm,bottom=2mm,
+	before skip=15pt,after skip=20pt,
+	% borderline west={1.5pt}{0pt}{black,dotted}
+	borderline vertical={1pt}{0pt}{black,dotted}
+	% borderline vertical={0.8pt}{0pt}{black,dotted,arrows={Square[scale=0.5]-Square[scale=0.5]}}
+	}
+%----------
+\tcolorboxenvironment{supplement}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=2mm,bottom=2mm,
+	before skip=15pt,after skip=20pt,
+	% borderline west={1.5pt}{0pt}{black,dotted}
+	% borderline vertical={0.5pt}{0pt}{black,arrows = {Circle[scale=0.7]-Circle[scale=0.7]}}
+	borderline vertical={0.5pt}{0pt}{black}
+	% borderline vertical={0.5pt}{0pt}{black},
+	% borderline north={0.5pt}{0pt}{white,arrows={Circle[black,scale=0.7]-Circle[black,scale=0.7]}}
+	}
+%----------
+\tcolorboxenvironment{remark}{
+	blanker,breakable,
+	left=3mm,right=3mm,
+	top=1mm,bottom=1mm,
+	before skip=15pt,after skip=20pt,
+	% borderline west={1.5pt}{0pt}{black,dotted}
+	% borderline vertical={0.5pt}{0pt}{black,arrows = {Circle[scale=0.7]-Circle[scale=0.7]}}
+	borderline vertical={0.5pt}{0pt}{black}
+	% borderline vertical={0.5pt}{0pt}{black},
+	% borderline north={0.5pt}{0pt}{white,arrows={Circle[black,scale=0.7]-Circle[black,scale=0.7]}}
+	}
+    
+%---------------------
+ 
+
+%----------
+%ハイパーリンク
+% 「%」は以降の内容を「改行コードも含めて」無視するコマンド
+\usepackage[%
+%  dvipdfmx,% 欧文ではコメントアウトする
+luatex,%
+pdfencoding=auto,%
+ setpagesize=false,%
+ bookmarks=true,%
+ bookmarksdepth=tocdepth,%
+ bookmarksnumbered=true,%
+ colorlinks=false,%
+ pdftitle={},%
+ pdfsubject={},%
+ pdfauthor={},%
+ pdfkeywords={}%
+]{hyperref}
+%------------
+
+
+%参照 参照するときに自動で環境名を含んで参照する
+\usepackage[nameinlink]{cleveref}
+\let\normalref\ref
+\renewcommand{\ref}{\cref}
+\crefname{definition}{定義}{定義}
+\crefname{proposition}{命題}{命題}
+\crefname{theorem}{定理}{定理}
+\crefname{lemma}{補題}{補題}
+\crefname{corollary}{系}{系}
+\crefname{example}{例}{例}
+\crefname{practice}{演習問題}{演習問題}
+\crefname{equation}{式}{式} 
+\crefname{chapter}{第}{第}
+\creflabelformat{chapter}{#2#1章#3}
+\crefname{section}{第}{第}
+\creflabelformat{section}{#2#1節#3}
+\crefname{subsection}{第}{第}
+\creflabelformat{subsection}{#2#1小節#3}
+%----------
+
+%---------------------
+%章跨ぎの参照が不具合を起こすための代わり
+% \mylabl でラベル付け
+\newcommand{\mylabel}[1]{
+\label{#1}
+\hypertarget{#1}{}
+}
+% \myref で環境名付きリンクをつける
+\newcommand{\myref}[1]{
+\hyperlink{#1}{\cref*{#1}}
+}
+%-----------------
+
+\usepackage{autonum} %参照した数式にだけ番号を振る

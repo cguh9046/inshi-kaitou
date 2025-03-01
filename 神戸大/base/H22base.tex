@@ -1,0 +1,184 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H22数学必修}
+\url{https://www.math.kobe-u.ac.jp/HOME/home-j/gif/h22.pdf}
+
+\fbox{1}
+(1)
+$W\subset V$が$V$の部分空間であるとは，任意の$v,w \in W$に対して$v+w\in W$であり，任意の$r \in \mathbb{R},w \in W$に対して$rv\in W$であることである．
+
+(2)$x,y \in W$なら$A(x+y)=AX+Ay=0$より$x+y \in W$であり$k \in \mathbb{R},x \in W$に対して$A(kx)=kAx=0$より$kx \in W$であるから$W$は部分空間．
+
+(3)$A$が正則でないような$a$を求める．
+$\begin{vmatrix}
+    1 & 1 & a^2 \\
+    1 &a & a \\
+    a & 1 & a
+\end{vmatrix}=\begin{vmatrix}
+    0 & 1 & a^2 \\
+    1-a & a & a \\
+    a-1 & 1 & a
+\end{vmatrix}=(a-1)\begin{vmatrix}
+    0 & 1 & a^2 \\
+    -1 & a & a \\
+    1 & 1 & a
+\end{vmatrix}=(a-1)\begin{vmatrix}
+    0 & 1 & a^2 \\
+    0 & a+1 & 2a \\
+    1 & 1 & a
+\end{vmatrix}=(a-1)\begin{vmatrix}
+    1 & a^2 \\
+    a+1 & 2a
+\end{vmatrix}=(a-1)(2a-a^2(a+1))=-a(a-1)^2(a+2)$
+より$a=0,1,-2$のとき正則でない．
+
+$a=0$のとき，$A=\begin{pmatrix}
+    1 & 1 & 0 \\
+    1 & 0 & 0 \\
+    0 & 1 & 0
+\end{pmatrix}$の階数は$2$であるから$\dim W=1$
+
+$a=1$のとき，$A=\begin{pmatrix}
+    1 & 1 & 1 \\
+    1 & 1 & 1 \\
+    1 & 1 & 1
+\end{pmatrix}$の階数は$1$であるから$\dim W=2$
+
+$a=-2$のとき，$A=\begin{pmatrix}
+    1 & 1 & 4 \\
+    1 & -2 & -2 \\
+    -2 & 1 & -2
+    \end{pmatrix}\rightarrow \begin{pmatrix}
+        1 & 1 & 4 \\
+        0 & -3 & -6 \\
+        0 & 3 & 6
+        \end{pmatrix}$より階数は$2$であるから$\dim W=1$
+
+\fbox{2}
+(1)$a,c \in F_p^{\times},b,d \in F_p$とする．
+$\begin{pmatrix}
+    a & b \\
+    0 & 1
+\end{pmatrix}\begin{pmatrix}
+    c & d \\
+    0 & 1
+\end{pmatrix}= \begin{pmatrix}
+    ac & ad+b \\
+    0 & 1
+    \end{pmatrix}$
+    である．$ac \in F_P^{\times},ad+b \in F_p$であるから$G$は乗法で閉じている．$G$の乗法が結合律を満たすことは明らか．また単位元$\begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+        \end{pmatrix} \in G$も明らか．$a \in F_p^{\times}$に対して逆元$c\in F_p^{times}$が唯一存在して$ac=1$である．$d=-cb$と定めれば$ad=-b$であるから$\begin{pmatrix}
+            a & b \\
+            0 & 1
+        \end{pmatrix}$に対して$\begin{pmatrix}
+            c & d \\
+            0 & 1
+        \end{pmatrix}$が逆元である．よって$G$は群である．
+
+(2)$A=\begin{pmatrix}
+    a & b \\
+    0 & 1
+    \end{pmatrix} \in G, X=\begin{pmatrix}
+        1 & e \\
+        0 & 1
+        \end{pmatrix} \in N$を任意にとる．$ac=ca=1$として$c$を定める．
+
+    $AXA^{-1}=\begin{pmatrix}
+        a & b \\
+        0 & 1
+        \end{pmatrix}\begin{pmatrix}
+        1 & e \\
+        0 & 1
+        \end{pmatrix}\begin{pmatrix}
+        c & -cb \\
+        0 & 1
+        \end{pmatrix}=\begin{pmatrix}
+            ac & -acb+ae+b \\
+            0 & 1
+            \end{pmatrix}=\begin{pmatrix}
+                1 & ae \\
+                0 & 1
+            \end{pmatrix} \in N$である．よって$N$は正規部分群．
+
+(3)$X^2=\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+\end{pmatrix}$より$X$の位数は$2$.
+
+$Y^2=\begin{pmatrix}
+    4 & 3b \\
+    0 & 1
+    \end{pmatrix},Y^3=\begin{pmatrix}
+        1 & 0 \\
+        0 & 1
+        \end{pmatrix}$より$Y$の位数は$3$.
+
+$Z^n=\begin{pmatrix}
+    1 & 2^n b \\
+    0 & 1
+    \end{pmatrix}$で$b\neq 0$なら$2^nb=0$となる$n$は存在しないから位数は無限．
+
+    $b=0$なら位数は$1$.
+
+\fbox{3}
+(1)$f(x)=x(x-1/2)(x+1)$とすれば$f(0)=0,f(1)=1$である．$f$が全射であることは明らか．$f(0)=f(1/2)$より単射ではない．
+
+(2)$f(x) =\arctan (x)/\arctan(1)$とすると$f(0)=0,f(1)=1$であり$f$は単射であるが$f(x)=10$をみたす$x$は存在しないから全射でない．
+
+(3)$f(x)=\begin{cases}
+    0 & x\le 0 \\
+    x & 0\le x \le 1 \\
+    1 & x\ge 1
+\end{cases}$とすると$f(0)=0,f(1)=1$で$f$の像は$[0,1]$だから有界閉集合，すなわちコンパクト．
+
+\fbox{4}
+(1)$n=1$のとき，$f_1(x)=\int_0^x f_0(t)dt$である．$\int_0^x \frac{(x-t)^0}{0!}f(t)dt$より$n=1$で成り立つ．
+
+$n\le k-1$で成り立つとする．$n=k$のとき，
+\begin{align}
+    f_{k}(x)&=\int_0^x f_{k-1}(x)dx=\int_0^x \int_0^t \frac{(t-s)^{k-2}}{(k-2)!}f(s)dsdt \\
+    &= \int_0^x \int_s^x \frac{(t-s)^{k-2}}{(k-2)!}f(s)dtds \\
+    &= \int_0^x f(s) \int_s^x \frac{(t-s)^{k-2}}{(k-2)!}dtds \\
+    &= \int_0^x f(s) \frac{(x-s)^{k-1}}{(k-1)!}ds
+\end{align}
+より成り立つ．
+
+(2)\begin{align}
+|f_n(x)|&=\left| \int_0^x \frac{(x-t)^{n-1}}{(n-1)!}f(t)dt\right| \le \int_0^x \frac{(x-t)^{n-1}}{(n-1)!}|f(t)|dt \\
+&\le [-(x-t)^n /n!]_0^x \sup\limits_{t\in [0,1]}|f(t)|=\frac{1}{n!}\sup\limits_{t\in [0,1]}|f(t)|
+\end{align}
+
+(3)$x$を固定すると$\sum_{k=0}^{n} f_k(x)\le \sup\limits_{t\in [0,1]}|f(t)|\sum_{k=0}^{n} \frac{1}{k!}\rightarrow e\sup\limits_{t\in [0,1]}|f(t)|\quad(n \to \infty)$より各点収束する．よって$g(x)=\sum_{k=0}^{\infty} f_k(x)$と定められる．
+
+$|g(x)-g_n(x)|=\left| \sum_{k=n+1}^{\infty} f_k(x)\right| \le \sup\limits_{t\in [0,1]}|f(t)|\sum_{k=n+1}^{\infty} \frac{1}{k!}$である．
+$\lim\limits_{n\to \infty} \sup\limits_{x \in [0,1]}|g(x)-g_n(x)|\le \lim\limits_{n\to \infty} \sum_{k=n+1}^{\infty} \frac{1}{k!}=0$より一様収束する．
+
+(4)$g_n$が一様収束することから
+$\int_0^x g(t)+f(t)dt=\int_0^x \sum_{k=0}^{\infty} f_k(t)dt=\sum_{k=0}^{\infty} \int_0^x f_k(t)dt=\sum_{k=0}^{\infty} f_{k+1}(x)=g(x)$である．
+
+よって$g(x)$は微分可能であり$g'(x)=g(x)+f(x)$である．
+
+(5)
+\begin{align}
+    \left|e^{x-t}-\sum_{k=0}^{n} \frac{(x-t)^k}{k!}\right|&=\left| \sum_{k=n+1}^{\infty} \frac{(x-t)^k}{k!}\right| \le \sum_{k=n+1}^{\infty} \frac{x^k}{k!} \rightarrow 0\quad (n\to \infty)
+\end{align}より$\sum_{k=0}^{n} \frac{(x-t)^k}{k!}$は$t\in[0,x]$について一様収束する．したがって
+\begin{align}
+    g(x)&=\sum_{k=1}^{\infty} f_k(x)=\sum_{k=1}^{\infty} \int_0^x \frac{(x-t)^{k-1}}{(k-1)!}f(t)dt=\int_0^x \sum_{k=1}^{\infty} \frac{(x-t)^{k-1}}{(k-1)!}f(t)dt\\
+    &=\int_0^x e^{x-t}f(t)dt
+\end{align}
+
+        
+
+\end{document}

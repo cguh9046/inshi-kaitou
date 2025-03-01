@@ -1,0 +1,150 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R2数学必修}
+\fbox{1}
+(1)$A,B \in S_2(\mathbb{R})$に対して$^t(A+B)=^t\!A+^t\!B=A+B$より，$A+B \in S_2(\mathbb{R})$である．また$k \in \mathbb{R},A \in S_2(\mathbb{R})$に対して$^t(kA)=k^t\!A=kA$より$kA \in S_2(\mathbb{R})$である．よって$S_2(\mathbb{R})$は部分空間．
+
+(2)$Q_1=\begin{pmatrix}
+    1 & 0\\
+    0 & 0
+\end{pmatrix},Q_2=\begin{pmatrix}
+    0 & 1\\
+    1 & 0
+\end{pmatrix},Q_3=\begin{pmatrix}
+        0 & 0\\
+        0 & 1
+\end{pmatrix}$とする．それぞれ対称行列である．$A=\begin{pmatrix}
+    a_{11} & a_{12}\\
+    a_{12} & a_{22}
+\end{pmatrix}\in S_2(R)$に対して$A=a_{11}Q_1+a_{12}Q_2+a_{22}Q_3$である．$c_1Q_1+c_2Q_2+c_3Q_3=0$とする．$c_1Q_1+c_2Q_2+c_3Q_3=\begin{pmatrix}
+    c_1 & c_2\\
+    c_2 & c_3
+\end{pmatrix}=O$より$c_1=c_2=c_3=0$である．よって$Q_1,Q_2,Q_3$は線形独立である．
+すなわち$\{ Q_1,Q_2,Q_3 \}$は$S_2(\mathbb{R})$の基底である．
+
+(3)$A \in S_2(\mathbb{R})$に対して$^t(^tPAP)=^tP^tA^t(^tP)=^tPAP$である．よって$f_p(S_2(\mathbb{R}))\subset S_2(\mathbb{R})$である．
+
+(4)$g_P(Q_1)=\begin{pmatrix}
+    a & c \\
+    b & d
+    \end{pmatrix}\begin{pmatrix}
+        1 & 0\\
+        0 & 0
+    \end{pmatrix}\begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}=\begin{pmatrix}
+        a & 0\\
+        b & 0
+    \end{pmatrix}\begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}=\begin{pmatrix}
+        a^2 & ab\\
+        ab & b^2
+        \end{pmatrix}=a^2Q_1+abQ_2+b^2Q_3$である．
+
+    $g_P(Q_2)=\begin{pmatrix}
+        a & c\\
+        b & d
+    \end{pmatrix}\begin{pmatrix}
+        0 & 1\\
+        1 & 0
+    \end{pmatrix}\begin{pmatrix}
+        a & b\\
+        c & d
+        \end{pmatrix}=\begin{pmatrix}
+            2ac & cb+ad\\
+            cb+ad & 2bd
+        \end{pmatrix}=2acQ_1+(cb+ad)Q_2+2bdQ_3$である．
+
+    $g_P(Q_3)=\begin{pmatrix}
+        a & c\\
+        b & d
+    \end{pmatrix}\begin{pmatrix}
+        0 & 0\\
+        0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        a & b\\
+        c & d
+    \end{pmatrix}=\begin{pmatrix}
+        c^2 & cd\\
+        cd & d^2
+    \end{pmatrix}=c^2Q_1+cdQ_2+d^2Q_3$である．
+
+    よって表現行列は$X=\begin{pmatrix}
+        a^2 & 2ac & c^2\\
+        ab & cb+ad & cd\\
+        b^2 & 2bd & d^2
+    \end{pmatrix}$である．
+
+(5)$g_P$が全射なら$^tPAP=E$を満たす$A \in S_2(\mathbb{R})$が存在する．$\det ^tP \det A \det P= 1$であるから$(\det P)^2 \det A=1$である．よって$\det P \neq 0$である．よって$P$は可逆行列．
+
+$P$が可逆行列なら任意の$Q \in S_2(\mathbb{R})$に対して$A=^tP^{-1}QP^{-1}$とすれば，$A \in S_2(\mathbb{R})$であり，$g_P(A)=Q$である．よって$g_P$は全射である．
+
+\fbox{2}
+(1)
+$G$を非空集合，$\cdot :G \times G \to G$を写像とする．$\langle G,\cdot \rangle$が群であるとは，次の条件を満たすことである．
+\begin{enumerate}[label=(\roman*)]
+    \item 任意の$a,b,c \in G$に対して$(a\cdot b)\cdot c=a\cdot (b\cdot c)$である． 
+    \item ある$e \in G$がただ一つ存在して任意の$a \in G$に対して$e\cdot a=a\cdot e=a$である．
+    \item (ii)の$e$と任意の$a \in G$に対して，ある$b \in G$が存在して$a\cdot b=b\cdot a=e$である．
+\end{enumerate}
+
+(2)$((x_1,y_1)\cdot(x_2,y_2))\cdot(x_3,y_3)=(x_1+x_2,(-1)^{x_2}y_1+y_2)\cdot(x_3,y_3)=(x_1+x_2+x_3,(-1)^{x_3}((-1)^{x_2}y_1+y_2)+y_3)=(x_1+x_2+x_3,(-1)^{x_2+x_3}y_1+(-1)^{x_3}y_2+y_3)$である．
+また$(x_1,y_1)\cdot((x_2,y_2)\cdot(x_3,y_3))=(x_1,y_1)\cdot(x_2+x_3,(-1)^{x_3}y_2+y_3)=(x_1+x_2+x_3,(-1)^{x_3}y_1+(-1)^{x_1}y_2+y_3)$である．よって(i)を満たす．
+
+$(x_1,y_1)\cdot(0,0)=(x_1,(-1)^0y_1)=(x_1,y_1)$である．また$(0,0)\cdot(x_1,y_1)=(0,(-1)^{x_1}y_1)=(x_1,y_1)$である．逆に$(x_1,y_1)\cdot(x_2,y_2)=(x_1,y_1)$なら$x_1=x_1+x_2$であるから$x_2=0$である．よって$(-1)^{x_2}y_1+y_2=y_1+y_2=y_1$より$y_2=0$である．よって(ii)を満たす．
+
+$(x_1,y_1)$に対して
+$(x_1,y_1)\cdot(-x_1,(-1)^{-x_1+1}y_1)=(0,(-1)^{-x_1}y_1+(-1)^{-x_1+1}y_1)=(0,0),(-x_1,(-1)^{-x_1+1}y_1)\cdot(x_1,y_1)=(0,(-1)^{x_1}y_1+(-1)^{-x_1+1}y_1)=(0,0)$である．よって(iii)を満たす．
+すなわち群である．
+
+(3)任意の$(x_1,y_1)\in G,(x,y)\in H$に対して，
+$(-x_1,(-1)^{-x_1+1}y_1)\cdot(x,y)\cdot (x_1,y_1)=(-x_1+x,(-1)^x(-1)^{-x_1+1}y_1+y)\cdot(x_1,y_1)=(x,(-1)^{x_1}((-1)^{x-x_1+1}y_1+y)+y_1)=(x,(-1)^{x+1-2x_1}y_1+(-1)^{x_1}y+y_1)$である．
+$x \in 2\mathbb{z}$であり，$(-1)^{x+1-2x_1}y_1+(-1)^{x_1}y+y_1=(-1)^{x_1}y \in 3 \mathbb{Z}$である．よって$H$は$G$の正規部分群．
+
+\fbox{3}
+(1)$(x,y)=(r\cos \theta,r\sin \theta)$と極座標変換する．ヤコビアンは$r$である．積分領域は$D'=\{ (r,\theta) \mid 0 \leq r \leq 1,-\pi/3 \leq \theta \leq \pi/3 \}$である．
+よって \begin{align}
+    \iint_D x |\log (x^2+y^2)|dxdy&=\int_{-\pi/3}^{\pi/3} \int_0^1 r^2\cos \theta |\log r^2|drd\theta=
+    [\sin \theta]_{-\pi/3}^{\pi/3} \int_0^1 -r^2\log r^2dr\\
+    &=-2\sqrt{3}\left(\left[\frac{1}{3}r^3\log r\right]_0^1-\int_0^1 \frac{r^2}{3}dr\right)=\frac{2\sqrt{3}}{9}
+\end{align}
+
+(2)極座標変換して$0\le r \le \sqrt{2},0 \le \theta < 2\pi$での
+$f(r,\theta)=r^2\cos \theta \sin \theta(3-r^2)$の最大値，最小値を考える．
+
+$0\le r \le \sqrt{2}$での$r^2(3-r^2)=-(r^2-3/2)^2+9/4$は$r=\frac{3}{2}$で最大値$\frac{9}{4}$をとり，$r=0$で最小値$0$をとる．
+$ 0 \le \theta < 2\pi$での$\cos \theta \sin \theta=\frac{1}{2}\sin 2\theta$は$\theta=\pi/4$で最大値$\frac{1}{2}$をとり，$\theta=3\pi/4$で最小値$-\frac{1}{2}$をとる．
+
+よって最大値は$\frac{9}{8}$，最小値は$-\frac{9}{8}$である．
+
+(3)$(a_n)_{n=1}^{\infty}$がコーシー列であることを示す．$n>m$とする．
+$(f(n))_{n=1}^{\infty}$は単調減少有界列であるから収束列である．よってコーシー列である．よって
+\begin{align}
+    |a_n-a_m|&=\left| \int_{m}^{n} f(x)dx-\sum\limits_{k=m+1}^n f(k)\right| =\left| \sum\limits_{k=m+1}^n \int_{k-1}^{k} f(x)-f(k)dx\right|\\
+    &\le \left| \sum\limits_{k=m+1}^n f(k-1)-f(k)\right|=|f(m)-f(n)| \rightarrow 0 \ (n,m \rightarrow \infty)
+\end{align}
+となるからコーシー列である．
+
+\fbox{4}
+(1)任意の異なる二点$(x_1,y_1),(x_2,y_2) \in X \times Y$をとる．$x_1 \neq x_2$のとき，$x_1 \subset U_1 ,x_2 \subset U_2$なる開集合$U_1,U_2$で$U_1 \cap U_2=\emptyset$を満たすものが存在する．このとき$(x_1,y_1)\subset U_1 \times Y,(x_2,y_2) \subset U_2 \times Y$であり，$U_1 \times Y \cap U_2 \times Y=\emptyset$である．$x_1=x_2$のとき，$y_1 \neq y_2$であり，その場合も同様にできる．よって$X \times Y$はハウスドルフである．
+
+(2)$A \subset X$が有限のとき，$S=\{ U_\lambda\mid \lambda\in \Lambda\}$を$A$の開被覆とする．各$a \in A$に対して$a \in U_{\lambda_a}$なる $ \lambda_a \in \Lambda$が存在するからこれを固定する．このとき$A \subset \bigcup\limits_{a \in A }U_{\lambda_a}$より$A$はコンパクト．
+
+$A$が無限集合なら$A$の開被覆として$S=\{ \{a\} \mid a \in A\}$とすればこれは有限部分被覆をもたないからコンパクトでない．対偶をとればコンパクトなら有限集合である．
+
+
+
+\end{document}
