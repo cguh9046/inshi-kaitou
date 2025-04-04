@@ -1,0 +1,54 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H12数学選択}
+\fbox{8}
+(1) $\pi(ab)=(ab)^2=a^2b^2=\pi(a)\pi(b)$である．よって準同型．
+
+(2)$\pi(a)=b \in \Im \pi$に対して，$\pi(x)=b$なら$x$は$x^2-b=0$の根である．したがって$\pi(x)=b$となる$x$は$a,-a$のみ．
+
+$a=-a$なら$a=0 \vee 2=0\in \mathbb{F}_p^\times$である．$a \in \mathbb{F}_p^\times$より$a\neq 0$で$p$は奇素数であるから$2 \neq 0$である．よって$a\neq -a$である．
+
+したがって位数は$\frac{p-1}{2}$である．
+
+(3)$\ker \pi^2=\left\{ x \relmiddle| x^4=1\right\}$である．$x^2=1$となる$x$は$1,-1$のみ．$x \in \ker \pi^2$で$x\neq \pm 1$なら$x^2=-1$である．
+
+したがって$p-1$が$4$の倍数ならば$-1$は平方剰余であるから$\ker \pi^2$は位数$4$の群$\left\{ -1,1,a,-a \right\}\quad(a^2=-1)$となる．
+
+$p-1$が$4$の倍数でないならば$-1$は平方非剰余であるから$\ker \pi^2$は位数$2$の群$\left\{ -1,1 \right\}$となる．
+
+(4)$1^2=1,2^2=4,3^2=9,4^2=5,5^2=3$であるから，$\mathbb{F}_{11}^\times$は$x^2-2$の根を持たない．よって$x^2-2$は既約である．
+
+$x^4-2=(x^2+4x+8)(x^2+7x+8)$であるから既約でない．
+
+\fbox{9}
+(1)$G$による不変体を$L^G$とする．
+$G=\left\{ \sigma,\tau,\sigma \circ \tau \right\}$である．
+$\sigma(x^2+y^2)=y^2+x^2,\sigma(xy)=yx,\tau(x^2+y^2)=x^2+y^2,\tau(xy)=xy$であるから$K\subset L^G$である．$[L:L^G]=|\Gal(L/L^G)|=|G|=4$である．
+
+$L=K(x)$である．$(t-x)(t+x)(t-y)(t+y)=t^4-(x^2+y^2)t^2+x^2y^2$であるから$[L:K]\le 4$である．したがって$K=L^G$である．
+よって$L/K$はGalois拡大でgalois群は$G$である．
+
+(2)$G$の非自明な部分群は$\langle \sigma \rangle,\langle \tau \rangle,\langle \sigma \circ \tau \rangle$である．
+$\sigma(x+y)=y+x,\tau(x^2-y^2)=x^2-y^2,\sigma \circ \tau(x-y)=x-y$であり，また$\tau(x+y)=-x-y,\sigma(x^2-y^2)=y^2-x^2,\tau(x-y)=-x+y$である．
+よって$K(x+y),K(x^2-y^2),K(x-y)$がそれぞれに対応する中間体である．
+これに$L,K$を加えたものが全ての中間体である．
+
+
+
+
+
+
+
+
+
+\end{document}

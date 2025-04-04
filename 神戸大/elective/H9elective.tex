@@ -1,0 +1,51 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H9数学選択}
+\fbox{6}
+(1)$p(t)=t^3-x^3\in L[t]$が$x$の最小多項式であることを示す．
+$p(t)=(t-x)(t-e^{2\pi i/3}x)(t-e^{4\pi i/3}x)$である．
+したがって$p(t)$は$L$上で既約なモニック多項式．
+
+(2)$L(x)\ni x^{-1} (xy)=y$より$K=L(x)$である．$p(t)$の根をすべて$K$は含むから$K/L$は正規拡大．よって$K/L$はガロア拡大で拡大次数は$3$．
+すなわち$\Gal(K/L)\cong \mathbb{Z}/3\mathbb{Z}$．
+
+(3)$M(x)\cdot M(y)=M(x,y)=K$であり，$M(x)\cap M(y)=L$である．$M(x)/M,M(y)/M$はgalois拡大で$\Gal(M(x)/M)\cong\Gal(M(y)/M)\cong \mathbb{Z}/3\mathbb{Z}$である．galois拡大の推進定理より$\Gal(K/M)\cong \mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/3\mathbb{Z}$である．
+
+$\mathbb{Z}/3\mathbb{Z}\times \mathbb{Z}/3\mathbb{Z}$の非自明な部分群は$\langle (1,0)\rangle,\langle (1,1)\rangle,\langle (1,2)\rangle,\langle (0,1)\rangle$である．
+$\sigma \in \Gal(M(x)/M)$を$\sigma(x)=e^{2\pi i/3}x$とし，$\tau \in \Gal(M(y)/M)$を$\tau(y)=e^{2\pi i/3}y$とする．$(\sigma,\id)$で不変な$K$の元は$y$であるから$\langle (1,0)\rangle$に対応する中間体は$M(y)$である．
+同様にしてそれぞれ$M(xy^2),M(xy),M(x)$が対応する．
+
+以上より中間体は$M,M(x),M(y),M(xy),M(xy^2),K$である．
+
+\fbox{8}
+(1)位相空間$X$が連結であるとは，$X$の空でない開集合$U,V$で$U\cap V=\emptyset,U\cup V=X$を満たすものが存在しないことである．
+
+位相空間$X$が弧状連結であるとは，$X$の任意の$2$点$x,y$に対して連続写像$\gamma:[0,1]\to X$で$\gamma(0)=x,\gamma(1)=y$を満たすものが存在することである．
+
+(2)$X$を局所弧状連結であり連結である位相空間とする．連結性から$X\neq \emptyset$である．
+$x,y \in X$に対して,連続写像$\gamma:[0,1]\to X$で$\gamma(0)=x,\gamma(1)=y$を満たすものが存在するとき$x \sim y$とかく．
+
+$U=\left\{ y\in X\relmiddle| x\sim y\right\}$とする．$y \in U$に対して弧状連結な開近傍$U_y$が存在する．
+任意の$z \in U_y$に対して$z \sim y \sim x$であるから$z \in U$である．よって$U_y \subset U$である．すなわち$U$は開集合である．
+
+$z \in X\setminus U$とする．$z$に対して弧状連結な開近傍$U_z$が存在する．$U_z \cap U \neq \emptyset$であるとすると$y \in U_z \cap U$が存在する．
+このとき$x\sim y\sim z$であるから$z \in X \setminus U$に矛盾する．よって$U_z \cap U = \emptyset$である．
+$z$は任意であるから$X\setminus U$は開集合である．
+よって$U$は開かつ閉である．$X$は連結であるから$U=X$である．すなわち$X$は弧状連結である．
+
+(3)$M$を連結な多様体とする．(2)より局所弧状連結であることを示せばよい．
+$M$の点$x$に対して$x$を含む開集合$U$と同相写像$\varphi:U\to V\subset \mathbb{R}^n$が存在する．
+$\varphi(x)\subset B(\varphi(x),\varepsilon)\subset V$となる$\varepsilon$開球が存在する．$x\in \varphi^{-1}(B(\varphi(x),\varepsilon))$は$x$を含む弧状連結な開集合である．よって局所弧状連結．
+
+
+\end{document}

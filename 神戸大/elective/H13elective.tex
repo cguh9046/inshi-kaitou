@@ -1,0 +1,53 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H13数学選択}
+\fbox{N}
+(1)$t^4-zt^2+1=(t-x)(t+x)(t-\frac{1}{x})(t+\frac{1}{x})$であるから$K(x)/K(z)$は正規拡大．$ \mathrm{ch} K\neq 2$より$x\neq \frac{1}{x}$より$t^4-zt^2+1$は分離多項式．
+よって$x$が$K(z)$上分離的であるから$K(z)/K(x)$がGalois拡大．
+
+(2)$t^2-ty+1$は$K(y)$上の$x$の最小多項式であり，根は$x,\frac{1}{x}$である．よって$K(y)/K(x)$はGalois拡大であるから$\mathrm{Aut}(K(y)/K(x))=\Gal(K(y)/K(x))$である．よって位数は$2$である．
+
+$\mathrm{ch}K\neq 2$なら$K(x)/K(z)$はGalois拡大であった．$K(y)$が非自明な中間体となるから$[K(x):K(z)]=4$である．よって$\mathrm{Aut}(K(x)/K(z))$の位数は$4$である．
+
+$\mathrm{ch}K=2$なら$K(x)/K(z)$は正規拡大であるが分離拡大でない．したがって$\sigma(x)=\frac{1}{x}$と$id$の$2$個が$\mathrm{Aut}(K(x)/K(z))$の元である．位数は$2$．
+
+\fbox{O}
+(1)$m_{(a,b)}\subsetneq J$なるイデアル$J$が存在すると仮定する．$f(x,y)\in J\setminus m_{(a,b)}$となる$f(x,y)\in \mathbb{C}[x,y]$をとる．
+$f(x,y)=g(x,y)(x-a)+h(y)(y-b)+r$となる$g(x,y)\in \mathbb{C}[x,y],h(y)\in \mathbb{C}[y],r\in \mathbb{C}$が存在する．
+このとき$r \in J$より$J= \mathbb{C}[x,y]$である．
+よって$m_{(a,b)}$は極大イデアルである．
+
+(2)$\phi(x^3-y^2)=0$より$\ker \phi \supset (x^3-y^2)$である．$f(x,y)\in \ker \psi$に対して$f(x,y)=g(x,y)(x^3-y^2)+h_1(x)y+h_2(x)$となる$g(x,y)\in \mathbb{C}[x,y],h_1(x),h_2(x)\in \mathbb{C}[x]$が存在する．
+
+$0=f(t^3,t^2)=h_1(t^2)t^3+h_2(t^2)$であるから$-h_1(t^2)t^3=h_2(t^2)$である．右辺の$t$の次数は偶数であるから，$h_1=0$である．よって$h_2=0$より$f(x,y)\in (x^3-y^2)$である．
+すなわち$\ker \psi=(x^3-y^2)$である．
+
+(3)$\psi(m_{(a,b)})=(t^3-a,t^2-b)$である．
+
+$b=0$のとき．
+$(t^3-a,t^2-b)=(t^3-a,t^2)=(a,t^2)=\begin{cases}
+    (t^2) & a=0\\
+    (1) & a\neq 0
+\end{cases}
+$である．
+
+$b\neq 0$のとき．
+$(t^3-a,t^2-b)=(-a-bt,t^2-b)=(\frac{a}{b}+t,t^2-b)=(\frac{a}{b}+t,\frac{a^2}{b^2}-b)=\begin{cases}
+    (\frac{a}{b}+t) & a^2=b^3\\
+    (1) & a^2\neq b^3
+\end{cases}
+$である．
+
+
+
+\end{document}

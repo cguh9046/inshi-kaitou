@@ -1,0 +1,100 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H7数学選択}
+\fbox{4}
+(1)距離空間においてコンパクト性と点列コンパクト性は同値である．
+点列$\{\alpha_{n,k}\}_{k=1}^\infty;\alpha_{n,k}:=\delta_{n,k}$は$\{\alpha_{n,k}\}_{k=1}^\infty \in B$である．$B$の点列$\{\alpha_n\}_{n=1}^\infty$を$\alpha_n:=\{\alpha_{n,k}\}_{k=1}^\infty$とすると，$\{\alpha_n\}_{n=1}^\infty$は収束部分列を持たない．(任意の異なる二項の差が$1$以上であるためコーシー列にならない．) よって$B$は点列コンパクトでない．
+
+(2)$1-\| x\|$の連続性は明らか．
+$(\sum\frac{\zeta_k}{k})^2\le \sum \zeta_k^2 \sum \frac{1}{k^2}$(コーシーシュワルツ)より収束性と連続性がわかる．よって$f$は連続で$f(\alpha_n)=\frac{1}{n}$より$\inf_{x \in B}f(x)=0$である．
+
+$\min_{x \in B }f(x)$が存在すれば，$\| x\|=1,\sum\frac{\zeta_k}{k}=0$だがこれを満たす$x$は存在しない．
+
+\fbox{6}
+(1)$\Gal (K/\mathbb{Q})\cong\mathbb{Z}/4 \mathbb{Z}$よりgalois群の非自明な部分群はただ一つ．よって非自明な中間体もただ一つである．
+
+(2)$\Gal (K/\mathbb{Q}) ={\id,\sigma,\sigma^2,\sigma^3}$とする．
+$\sigma^2((\sqrt{\alpha})^2)=\sigma^2(\alpha)=\alpha$より$\sigma^2(\sqrt{\alpha})=-\sqrt{\alpha}$である．同様に$\sigma^2(\sqrt{\beta})=-\sqrt{\beta}$である．よって$\sigma^2(\sqrt{\alpha\beta})=(-\sqrt{\alpha})(-\sqrt{\beta})=\sqrt{\alpha\beta}$である．
+すなわち$\sqrt{\alpha\beta}\in F$であるから$\alpha\beta$は$F$の平方数．
+
+(3)$K/F$は二次拡大であるから$K=F(\sqrt{x+y\sqrt{a}})\quad (x,y \in \mathbb{Q})$と書ける．$K/\mathbb{Q}$がgalois拡大であることから，$\sqrt{x+y\sqrt{a}}$の$\mathbb{Q}$上の共役$\sqrt{(x-y\sqrt{a})}\in K$である．
+また$K=F(\sqrt{x-y\sqrt{a}})$であるから(2)より$x^2-y^2a=(c+d\sqrt{a})^2$となる$c,d\in \mathbb{Q}$が存在する．
+$x^2-y^2a=c^2+d^2a+2cd\sqrt{a}$より$cd=0$である．
+$\sqrt{x+y\sqrt{a}}$の$\mathbb{Q}$上の共役は$\pm{\sqrt{x\pm{y\sqrt{a}}}}$である．$\sigma(\sqrt{x+y\sqrt{a}})=-\sqrt{x+y\sqrt{a}}$なら$\sqrt{x+y\sqrt{a}}\in F$となるから，$\sigma(\sqrt{x+y\sqrt{a}})=\sqrt{x-y\sqrt{a}}$としてよい．($\sigma$と$\sigma^3$の対称性)
+このとき，$-\sqrt{x+y\sqrt{a}}=\sigma^2(\sqrt{x+y\sqrt{a}})=\sigma(\sqrt{x-y\sqrt{a}})=\sigma(\frac{\sqrt{x^2-y^2a}}{\sqrt{x+y\sqrt{a}}})$より$\sigma(\sqrt{x^2-y^2a})=-\sqrt{x+y\sqrt{a}}\sigma(\sqrt{x+y\sqrt{a}})=-\sqrt{x^2-y^2a}$となるから$\sqrt{x^2-y^2a}\notin \mathbb{Q}$である．
+
+よって$c=0$であるから$x^2-y^2a=d^2a$である．よって$a=\left( \frac{xd}{d^2+y^2} \right)^2+\left( \frac{xy}{d^2+y^2} \right)^2$である．
+
+\fbox{7}
+(1)\begin{tcolorbox}[blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline vertical={1pt}{0pt}{black,dotted}]
+	$x^2+y^2-1$の既約性を示せばよいが，やや面倒．そこでUFD上の原始多項式の既約性はその商体上の既約性と同値であることを使う．
+	\end{tcolorbox}
+$x^2+y^2-1$が$ K(y)[x]$上で既約であれば，$K[x,y]$上でも既約である．
+$x^2+y^2-1$が$ K(y)[x]$可約なら$K(y)$に根$f(y)/g(y)\quad(f(y),g(y)\in K[y])$をもつ．また$\mathrm{ch} K\neq 2$より$y-1\neq y+1$である．
+このとき$f(y)^2=(1-y^2)g(y)^2$であるが，$K[y]$の等式とみたときに素元$1-y$の個数が右辺と左辺で異なるため矛盾．よって可約でないから既約である．
+よって$K[x,y]$はUFDだから$x^2+y^2-1$は素元であり$(x^2+y^2-1)$は素イデアル，よって$R=K[x,y]/(x^2+y^2-1)$は整域．
+
+(2)$x$が既約であるが素元でないことを示す．
+$x$が素元$\Leftrightarrow$$R/(x)$は整域．
+ここで$R/(x)\cong K[y][x]/(x,x^2+y^2-1)\cong K[y]/(y^2-1)$である．
+$y^2-1=(y-1)(y+1)$より$y^2-1$は既約でないから$R/(x)$は整域でない．よって$x$は素元でない．
+
+$f(x,y)+I\in R$について，$f(x,y)=(x^2+y^2-1)h(x,y)+ya(x)+b(x)$となる$a(x),b(x)\in K[x]$が存在する．$f(x,y)+I=g(x,y)+I$なら$g(x,y)-f(x,y)=(x^2+y^2-1)p(x)$となる$p(x)\in K[x]$が存在して，$g(x,y)=(x^2+y^2-1)(h(x,y)+p(x))+ya(x)+b(x)$となる．よって$a(x),b(x)$は$R$の各元に対して一意に定まる．
+ノルム$N\colon R\rightarrow K[x]$を$N(a(x)+b(x)y+I)=a(x)^2-b(x)^2(1-x^2)$とする．
+\begin{align}
+	&N((a(x)+b(x)y+I)(c(x)+d(x)y+I))=N(ac(x)+bd(x)(1-x^2)+(ad+bc)(x)y+I)\\
+	=&(ac(x)+bd(x)(1-x^2))^2-(ad+bc)^2(1-x^2)
+	=(a(x)^2-b(x)^2(1-x^2))(c(x)^2-d(x)^2(1-x^2))=N(a(x)+b(x)y+I)N(c(x)+d(x)y+I)
+\end{align} 
+よって$N((f(x,y)+I)(g(x,y)+I))=N(f(x,y)+I)N(g(x,y)+I)$である．
+\begin{tcolorbox}[blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline vertical={1pt}{0pt}{black,dotted}]
+	有限次拡大$E/F$に対して$m_a\colon E\rightarrow E$が$m$倍写像として定まる．$E$の$F$上基底$S$を一つ固定して$S$に関する表現行列の行列式が$a$のノルムである．(青雪江4.12節)
+
+	整域$R$に対してその商体$P$を考えれば$\alpha$を添加した環$R(\alpha)$のノルムを$P(\alpha)/P$のノルムの制限として考えられる．
+
+	上の観察から$R$は$K[x]$に$y$を添加した環だと思える．($\mathbb{Z}$に$\sqrt{2}$を添加するのと同じノリ)
+
+	そこで$R$上のノルムは$K[x]$の商体$K(x)$上のノルムを考えればよい．
+	$R$の$K(x)$上の基底は$\{1,y\}$であるから$f$倍写像では$m_f(1)=a+by,m_f(y)=(1-x^2)b+ay$である．行列式は$\begin{vmatrix}
+		a & (1-x^2)b \\
+		b & a
+	\end{vmatrix}=a^2-b^2(1-x^2)$である．これがノルム．
+
+	以上を認めれば$N(fg)=N(f)N(g)$が成り立つことは明らか．
+	\end{tcolorbox}
+
+	$x+I=(a(x)+b(x)y+I)(c(x)+d(x)y+I)$とする．$N(x+I)=x^2$より，次の2つ場合がある．
+	\begin{enumerate}[label=(\roman*)]
+		\item $N(a(x)+b(x)y+I)=a(x)^2-b(x)^2(1-x^2)=\pm{x},N(c(x)+d(x)y+I)=c(x)^2-d(x)^2(1-x^2)=\pm{x}$(複号同順)
+		\item $N(a(x)+b(x)y+I)=a(x)^2-b(x)^2(1-x^2)=\pm{1},N(c(x)+d(x)y+I)=c(x)^2-d(x)^2(1-x^2)=\pm{x^2}$(複号同順)
+	\end{enumerate}
+	(i)のとき，$x$の次数が左辺は偶数で右辺は奇数だから矛盾．
+	(ii)のとき，$(a(x)+b(x)y+I)(a(x)-b(y)+I)=a(x)^2-b(x)^2(1-x^2)+I=\pm{1}+I$より$a(x)+b(x)y+I$は単元．よって$x$は既約元である．
+
+	よって$R$は$UFD$でない．
+
+	(3)全射環準同型$\varphi\colon K[x,y]\rightarrow K[u,v]/(uv-1);x\mapsto \frac{u+v}{2},y\mapsto \frac{u-v}{2\sqrt{-1}}$を考える．
+	$\ker \varphi=((x+\sqrt{-1}y)(x-\sqrt{-1}y)-1)=(x^2+y^2-1)$である．よって
+	$R \cong K[u,v]/(uv-1)$である．$uv-1=0\in K[u,v]/(uv-1)$より$uv=1$すなわち，$v=u^{-1}$である．よって$R\cong K[u,u^{-1}]$である．
+	$K[u,u^{-1}]$は$K[u]$の$\left\{ u^n \relmiddle| n=0,1,2,\dots \right\}$による局所化である．
+	$K[u]$はUFDであるからその局所化もまたUFDである．よって$R$はUFDである．
+	
+\end{document}

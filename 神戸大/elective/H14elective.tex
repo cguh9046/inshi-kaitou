@@ -1,0 +1,36 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H14数学選択}
+\fbox{D}
+(1)$f(t)=\sum a_i t^i,g(t)=\sum b_j t^j$とする．
+$\deg f > \deg g$なら$f(t)^2+g(t)^2$の次数は$2\deg f>0$となる．
+$\deg f=\deg g$なら$f(t)^2+g(t)^2$なら最高次の係数は$a_n^2+b_n^2>0$より定数でない．
+
+(2)同型写像$\phi: \mathbb{R}[x,y]/(x^2+y^2-1)\rightarrow \mathbb{R}[t]$があると仮定する．
+$x^2+y^2=1\in \mathbb{R}[x,y]/(x^2+y^2-1)$より$\phi(x)^2+\phi(y)^2=1\in \mathbb{R}[t]$である．
+
+$\psi$は$\mathbb{R}$上の同型写像であるから$\phi(x),\phi(y)\notin \mathbb{R}$である．これは(1)に矛盾．
+
+(3)$(x^2+y^2-1)$が素イデアルであることを示せばよく，そのためには
+$\mathbb{R}[x,y]$はUFDであるから$x^2+y^2-1$が既約であることを示せばよい．
+
+$\mathbb{R}[x]$はUFDであるから，
+$\mathbb{R}[x][y]$上の既約性は$\mathbb{R}(x)[y]$上の既約性と同値である．
+
+可約なら$x^2+\frac{f(x)^2}{g(x)^2}=1$となる$f(x),g(x)\in \mathbb{R}[x]$が存在する．このとき$x^2 g(x)^2+f(x)^2=g(x)^2$である．
+$x$の次数は$\max (2+2\deg g,2\deg f)>2 \deg g$となり矛盾．
+したがって$x^2+y^2-1$は既約である．
+
+
+
+\end{document}

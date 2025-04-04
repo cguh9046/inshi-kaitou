@@ -1,0 +1,62 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H11数学選択}
+\fbox{7}
+Galois群が推移的なとき．$f(x)$が可約であると仮定する．$f(x)=g_1(x)g_2(x)\dots g_n(x)$と$K[x]$上で既約分解される．
+$g_1$の根$\alpha$と$g_2$の根$\beta$を任意にとって固定する．
+$f(x)$の最小分解体を$F$で表す．推移的であるから$\sigma \in \Gal(F/K)$で$\sigma(\alpha)=\beta$となるものが存在する．
+このとき$\sigma(g_1)(\beta)=\sigma(g_1(\alpha))=0$であるから$\sigma(g_1)$は$\beta$を根にもつ．
+よって$\sigma(g_1)$と$g_2$は共に$\beta$の最小多項式と同伴である．
+$g_1 \in K[x]$より$\sigma(g_1) =g_1$であるから$g_1$と$g_2$は同伴である．このとき$\alpha$は$g_1,g_2$のどちらの根でもあるがこれは$f$の分離性に矛盾．
+
+$f(x)$が$K[x]$上で既約であるとき．$f(x)$の2根$\alpha,\beta$をとって固定する．$\Gal(F/K)\alpha=\{ \alpha_1,\dots,\alpha_n\}$とする．
+$g(x)=\prod_{i=1}^n (x-\alpha_i)$とする．
+このとき$\Gal(F/K)g(x)=g(x)$より$g(x)\in K[x]$である．
+$g(x)$の根は$\alpha$の共役であるから$g(x)\mid f(x)$である．
+既約性から$cg(x)=f(x)\quad (c\in K)$とできる．これは$\Gal(F/K)$が推移的であることを意味する．
+
+\fbox{8}
+(1)$f(x,y)=\sum a_{ij}x^iy^j$とできる．
+$f(tx,ty)=\sum a_{ij}t^{i+j}x^iy^j=t^nf(x,y)=\sum a_{ij}t^n x^iy^j$である．
+$K(x,y)[t]$における等式とみれば$\sum_{i+j=k} a_{ij}t^k x^iy^j=0,\quad (k\neq n)$である．したがって$a_{ij}=0\quad(i+j\neq n)$である．
+よって$f(x)=\sum\limits_{i+j=n} a_{ij}x^iy^j$である．
+
+$x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = x\sum\limits_{i+j=n} a_{ij}ix^{i-1}y^j + y\sum\limits_{i+j=n} a_{ij}jx^iy^{j-1}=\sum\limits_{i+j=n} a_{ij}(i+j) x^iy^j=nf(x,y)$である．
+
+(2)$f(tx,ty)=(tx)^2+(tx)(ty)+(ty)^2=t^2(x^2+xy+y^2)=t^2f(x,y)$である．したがって(1)より$2f=x \frac{\partial f}{\partial x}+y \frac{\partial f}{\partial y}$である．
+
+よって$J_f=(f,\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})=(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y})$である．
+
+$\frac{\partial f}{\partial x}=2ax+2by, \frac{\partial f}{\partial y}=2bx+2cy$であるから$J_f=(2ax+2by,2bx+2cy)$である．
+
+$a=b=0$のとき．$J_f=(y)$より$\mathbb{C}[x,y]/J_f \cong \mathbb{C}[x]$である．これは無限次元．
+$b=c=0$のときも同様．
+
+$a=c=0,b\neq 0$のとき．$J_f=(x,y)$である．$\mathbb{C}[x,y]/J_f \cong \mathbb{C}$である．これは有限次元．
+
+$a=0,b\neq 0\neq c$のとき．$J_f=(2by,2bx+2cy)=(x,y)$である．$\mathbb{C}[x,y]/J_f \cong \mathbb{C}$である．
+これは有限次元．
+$c=0,a\neq 0\neq b$のときも同様．
+
+$b=0,a\neq 0\neq c$のとき．$J_f=(2ax,2cy)=(x,y)$である．よって有限次元．
+
+$a\neq 0,b\neq 0,c\neq 0$のとき．
+$J_f=(\frac{a}{b}x+y,x+\frac{c}{b}y)$である．$(\frac{a}{b}x+y)-\frac{a}{b}(x+\frac{c}{b}y)=(1-\frac{ac}{b^2})y$より$J_f=(ax+by,(1-\frac{ac}{b^2})y)$である．
+
+ここで$1-\frac{ac}{b^2}=0$ならば$J_f=(ax+by)$より$\mathbb{C}[x,y]/J_f \cong \mathbb{C}[y]$である．これは無限次元．
+
+$1-\frac{ac}{b^2}\neq 0$ならば$J_f=(x,y)$より有限次元．
+
+以上より$f$が有限次元である条件は$ac \neq b^2$である．
+
+\end{document}

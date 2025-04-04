@@ -1,0 +1,144 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H8数学選択}
+\fbox{6}
+\begin{tcolorbox}[blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline vertical={1pt}{0pt}{black,dotted}]
+	群$G$と$N \lhd G,H\le G$について$NH=G,H\cap N=\{e\}$ならば半直積$N\rtimes H\cong G$である．
+	\end{tcolorbox}
+    $N=\left\{ \begin{pmatrix}
+    1 & 1 \\
+    0 & 1
+    \end{pmatrix}^n=\begin{pmatrix}
+    1 & n \\
+    0 & 1
+    \end{pmatrix} \relmiddle| n \in \mathbb{Z}\right\}，H=\left\{ \begin{pmatrix}
+    -1 & 0 \\
+    0 & 1
+    \end{pmatrix},\begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+    \end{pmatrix}=\begin{pmatrix}
+        -1 & 0 \\
+        0 & 1
+        \end{pmatrix}^2\right\}$とする．
+
+    $\begin{pmatrix}
+    1 & n \\
+    0 & 1
+    \end{pmatrix}\begin{pmatrix}
+    -1 & 0 \\
+    0 & 1
+    \end{pmatrix}= \begin{pmatrix}
+    -1 & n \\
+    0 & 1
+    \end{pmatrix} $より$NH=G$でありまた$H\cap N=\{e\}$である．よって$N\rtimes H\cong G$である．
+
+    $\begin{pmatrix}
+    1 & a \\
+    0 & 1
+    \end{pmatrix}$は位数無限であり，$\begin{pmatrix}
+    -1 & b \\
+    0 & 1
+    \end{pmatrix}$は位数$2$である．
+
+    $\varphi\in {\mathop{\mathrm{Aut}}}(G)$を任意にとる．$\varphi\left(\begin{pmatrix}
+    1 & 1 \\
+    0 & 1
+    \end{pmatrix}\right)$は位数が無限であるから$\varphi\left(\begin{pmatrix}
+        1 & 1 \\
+        0 & 1
+        \end{pmatrix}\right)=\begin{pmatrix}
+    1 & a \\
+    0 & 1
+    \end{pmatrix}$となる．
+
+    同様に$\varphi\left(\begin{pmatrix}
+    -1 & 0 \\
+    0 & 1
+    \end{pmatrix}\right)=\begin{pmatrix}
+    -1 & b \\
+    0 & 1
+    \end{pmatrix}$となる．$\begin{pmatrix}
+    1 & a \\
+    0 & 1
+    \end{pmatrix}^n=\begin{pmatrix}
+    1 & an \\
+    0 & 1
+    \end{pmatrix}$である．よって$\varphi$の全射性から$a=\pm 1$である．
+    逆に$a=\pm 1,b\in \mathbb{Z}$が定まれば同型写像$\varphi$が一意に定まる．
+    半直積$\mathbb{Z} \rtimes_f \mathbb{Z}/2\mathbb{Z}$を$f(i)=(n\mapsto (-1)^i n)$で定める．
+    このとき${\mathop{\mathrm{Aut}}}(G)\rightarrow \mathbb{Z} \rtimes_f \mathbb{Z}/2\mathbb{Z};\varphi \mapsto (b,a)$は全単射である．$\phi \mapsto (d,c)$に対して$\varphi \circ \phi\left( \begin{pmatrix}
+    1 & 1 \\
+    0 & 1
+    \end{pmatrix} \right)=\varphi\left( \begin{pmatrix}
+    1 & c \\
+    0 & 1
+    \end{pmatrix} \right)=\begin{pmatrix}
+    1 & ac \\
+    0 & 1
+    \end{pmatrix},\varphi\circ \phi\left( \begin{pmatrix}
+    -1 & 0 \\
+    0 & 1
+    \end{pmatrix} \right)=\varphi\left( \begin{pmatrix}
+    -1 & d \\
+    0 & 1
+    \end{pmatrix} \right)=\begin{pmatrix}
+        -1 & b+ad \\
+        0 & 1
+        \end{pmatrix}$より$\varphi \circ \phi \mapsto (b+ad,ac)=(b+(-1)^ad,ac)=(b,a)\cdot (d,c)$となるから$ {\mathop{\mathrm{Aut}}}(G)\rightarrow \mathbb{Z} \rtimes_f \mathbb{Z}/2\mathbb{Z}$は同型射．
+
+
+\fbox{7}
+(1)$f(x^2)=f(x)g(x)$なる$g(x)\in \mathbb{Q}[x]$が存在する．
+$f$の根$\alpha$に対して$f(\alpha^2)=f(\alpha)g(\alpha)=0$より$\alpha^2$も$f$の根である．
+$f$が$n$次多項式であるから，異なる根は高々$n$個である．よって$\alpha^{2^m}=\alpha^{2^k}$となる$m>k$が存在する．
+このとき$\alpha^{2^m-2^k}=1$となるから$\alpha$は$1$の冪根である．
+
+$\alpha$が偶数位数の根であるとする．すなわち$\alpha^{2m}=1$となる最小の正の整数$m$が存在する．このとき$\alpha^m= -1$となる．
+また$x^{m}-1=0$は$\alpha^2$を根にもつ．$f$は$\alpha^2$の最小多項式であるから$x^{m}-1=f(x)h(x)$となる$h(x)\in \mathbb{Q}[x]$が存在する．
+$\alpha$を代入すると$-2=\alpha^{m}-1=f(\alpha)h(\alpha)=0$となり矛盾する．よって$\alpha$は奇数位数の根である．
+
+(2)$f$の根$\alpha,\beta$の位数を$s>t$とする．$f(x)|(x^t-1)$であるから$\alpha^t=1$である．これは$s>t$であることに矛盾する．よって$f$の根は全て位数が等しい．
+
+$f$の根$\alpha$の位数が$m$であるとする．$f(-\alpha)=0$なら$(-\alpha)^m=(-1)^m\alpha^m=(-1)^m=1$となり$m$は偶数である．これは矛盾．
+
+$f((-\alpha)^2)=f(\alpha^2)=f(\alpha)g(\alpha)=0$であり，$f((-\alpha)^2)=f(-\alpha)g(-\alpha)=0$であるから$g(-\alpha)=0$である．
+$g$の次数は$f$と等しいから最高時の係数に注意すれば$g(x)=(-1)^nf(-x)$である．
+
+(3)$f$が奇数位数の冪根の最小多項式であるから$f$は円分多項式である．オイラーのトーシュエント関数を$\varphi$とすると，位数$m$の$1$の冪根を解に持つ円分多項式の次数は$\varphi(m)$である．
+
+$\varphi(m)\le 6$となる奇数$m$を考える．$1,2,4,8,16,m-1,32$は$m$と互いに素である．したがって$m\ge 34$なら$\varphi(m)> 6$である．また$33\ge m\ge 18$で$3,5,7$のいずれも素因数にもつ数は存在しない．よって$m\ge 18$なら$\varphi(m)> 6$である．
+$m=1,3,5,7,9$なら$\varphi(m)\le 6$であり，$m=11,13,15,17$なら$\varphi(m)> 6$である．$m=1,3,5,7$に対応する円分多項式は$x-1,x^2+x+1,x^4+x^3+x^2+x+1,x^6+ x^5+x^4+x^3+x^2+x+1$である．$m=9$なら$(x^9-1)/(x^3-1)=x^6+x^3+1$である．
+
+この$5$つが求める$f(x)$である．
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
