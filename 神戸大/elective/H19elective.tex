@@ -1,0 +1,38 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H19数学選択}
+\fbox{7}
+(1)$\mathrm{ch}F\neq 2$より$\alpha\neq -\alpha$である．したがって$F(\alpha)/F$はGalois拡大である．
+$\id\neq \sigma\in \Gal(F(\alpha)/F)$をとる．
+$\sigma(\alpha)=-\alpha$である．$F(\beta)=F(\alpha)$より$\sigma(\beta)=-\beta$である．
+よって$F(\alpha\beta)=\alpha\beta$より$\alpha\beta\in F$である．
+すなわち$ab=(\alpha\beta)^2$となり$F$の平方数．
+
+(2)(a)$\Gal(L/F)\cong \mathbb{Z}/4\mathbb{Z}=\left\{ \bar{0},\bar{1},\bar{2},\bar{3} \right\}$であるから，唯一の真部分群$\left\{ \bar{0},\bar{2} \right\}$に対応する中間体$K$が唯一の非自明な中間体である．
+
+(b)$F$上$2$次の元とすると$F(\xi)/F$は$2$次拡大であるから$F(\xi)=K=F(\gamma)$である．
+このとき$L=K(\xi)=F(\xi)$となり矛盾する．したがって$4$次の元である．
+
+(c)$\xi$の$F$上の最小多項式は$(x^2-p)^2=q^2c$である．この方程式の解は$\pm\sqrt{p\pm q\gamma}$である．$L/K$はGalois拡大であるから，$L=K(\sqrt{p+q\gamma})=K(\sqrt{p-q\gamma})$である．
+したがって$(p+q\gamma)(p-q\gamma)=p^2-q^2\gamma^2=(a+b\gamma)^2 $なる$a,b\in F$が存在する．
+$p^2-q^2c-a^2-b^2c=2ab\gamma$より$ab=0$である．
+
+$a=0$のとき，$p^2-q^2c=b^2c$より$p^2=(b^2+q^2)c$である．よって$c=(\frac{pb}{b^2+q^2})^2+(\frac{pq}{b^2+q^2})^2$とできる．
+
+$b=0$なら$\sqrt{p^2-q^2c}=a\in F$である．
+$\sigma(\sqrt{p+q\gamma})=\sqrt{p-q\gamma}$に対して$\sigma(\sqrt{p-q\gamma})=\sigma(a/\sqrt{p+q\gamma})=\frac{a}{\sqrt{p-q\gamma}}=\sqrt{p+q\gamma}$である．
+したがって$\sigma^2=\id$である．$\tau(\sqrt{p+q\gamma})=-\sqrt{p+q\gamma}$とすると$\tau^2=\id$である．
+これは$\Gal(L/K)$が巡回拡大であることに矛盾．
+
+
+\end{document}

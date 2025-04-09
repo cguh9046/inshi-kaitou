@@ -1,0 +1,40 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H18数学選択}
+\fbox{1}
+(1)$F/K$が2次拡大であれば$\alpha\in F\setminus K$の最小多項式の根は$a+b\sqrt{\beta}$の形で表せる．この$\sqrt{\beta}$を添加した体は$F$となる．
+
+$2$次の中間体の一つを$M=K(\sqrt{\beta})\quad(\beta\in K)$とする．$L/M$は$2$次拡大であるから，$L=M(\sqrt{\gamma})\quad(a,b\in K,\gamma=a+b\sqrt{\beta})$と表せる．
+
+$b\neq 0$のとき．
+$(\gamma^2-a)^2=b^2\beta$より$x^4-2ax^2+(a^2-b^2\beta)=0$の根は
+$\pm\sqrt{a\pm b\sqrt{\beta}}$である．
+この多項式が可約なら$K(\sqrt{a+b\sqrt{\beta}})/K$は$2$次拡大である．
+$(\sqrt{a+b\sqrt{\beta}})^2=a+b\sqrt{\beta}$より
+$K(\sqrt{a+b\sqrt{\beta}})=K(\sqrt{\beta})=M$となる．これは矛盾．よって多項式は既約である．
+
+$b=0$のとき$\delta=\sqrt{\beta}+\sqrt{\gamma}$とすると$(\delta-\sqrt{\beta})^2=\gamma=a^2$より
+$\delta^2+\beta-a^2=2\sqrt{\beta}\delta$．よって$\delta^4+2(\beta-a^2)\delta^2+(\beta-a^2)^2=4\beta\delta^2$より$x^4-2(a^2+\beta)x^2+(\beta-a^2)^2=0$の根は$\pm \sqrt{\beta} \pm \sqrt{\gamma}$である．
+標数が$2$でないから$K(\sqrt{\beta},\sqrt{\gamma})/K$はGalois拡大である．Galois群は$\left\{ \id,\sigma,\tau,\tau \circ \sigma \right\}\quad (\sigma(\sqrt{\beta})=\sqrt{\beta},\sigma(\sqrt{\gamma})=\sqrt{\gamma},\tau(\sqrt{\beta})=-\sqrt{\beta},\tau(\sqrt{\gamma})=\sqrt{\gamma})$である．
+
+このとき任意の$f \in \Gal(K(\sqrt{\beta},\sqrt{\gamma})/K)$に対して$f(\delta)\neq \delta$であるから，$K(\delta)/K$は$4$次拡大である．すなわち$x^4-2(a^2+\beta)x^2+(\beta-a^2)^2$は既約である．
+
+(2)$b\neq 0$のとき，$a^2-b^2\beta=c^2\quad(c\in K)$である．$\sqrt{a+b\sqrt{\beta}}\sqrt{a-b\sqrt{\beta}}=\sqrt{a^2-b^2\beta}=c\in K$より$K(\sqrt{a+b\sqrt{\beta}})\ni \sqrt{a-b\sqrt{\beta}}$である．よって$L/K$はGalois拡大である．
+
+$\sigma\in \Gal(L/K)$について$\sigma(\sqrt{a+b\sqrt{\beta}})=\sqrt{a-b\sqrt{\beta}}$とする．このとき$\sigma^2(\sqrt{a+b\sqrt{\beta}})=\sigma(\sqrt{a-b\sqrt{\beta}})=\sigma(c/\sqrt{a+b\sqrt{\beta}})=c/\sqrt{a-b\sqrt{\beta}}=\sqrt{a+b\sqrt{\beta}}$より$\sigma^2=\id$である．すなわち$\Gal(L/K)$は位数$2$の元を二つもつ．
+
+$\Gal(L/K)$は位数$4$の群であるから，$\mathbb{Z}/4\mathbb{Z},\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$のいずれかである．位数$2$の元を二つもつ群は$\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$であるから，$\Gal(L/K)\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$である．
+
+よって中間体の数は$\mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$の部分群の数であるから$5$である．非自明な中間体は$3$個ある．
+
+\end{document}
