@@ -1,0 +1,53 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H20数学選択}
+\fbox{A}
+(1)$F(\beta)/F$が$2$次拡大であり，$\beta$が$F$上分離的であるから$\beta$の最小多項式は$(x-\beta)(x-\gamma)\quad(\beta\neq \gamma\in F(\beta))$である．$(x-\beta)(x-\gamma)=x^2-(\beta+\gamma)x+\beta\gamma$であり
+$\beta+\gamma=0\Leftrightarrow \beta=-\gamma=\gamma \quad(\because \mathrm{ch}F=2)$より$\beta+\gamma\neq 0$である．
+
+$\beta^2+a\beta+b=0$より$(\frac{\beta}{a})^2+(\frac{\beta}{a})+\frac{b}{a^2}=0$である．したがって$x^2+x+\frac{b}{a^2}$が$\alpha$を根にもつ二次方程式．
+
+(2)$K/F$が$2$次拡大であるから$K=F(\beta)$なる$\beta$が存在する．非自明な自己同型$\sigma$によって$\sigma(\beta)\neq \beta$となるから$\beta$は$F$上分離的．
+したがって(1)から$x^2+x+\frac{b}{a^2}$の根$\alpha\in F$が存在する．
+$(\frac{\beta}{a}+1)^2+(\frac{\beta}{a}+1)+\frac{b}{a^2}=\frac{1}{a^2}(\beta^2+a\beta+1+2a\beta+a^2+a^2)=0$より$\alpha+1$は$\alpha$の$F$上の共役である．
+
+よって$\sigma(\alpha)=\alpha+1$．
+
+\fbox{B}
+(1)$x^4-(t^2+\frac{1}{t^2})x^2+1$について$t,\frac{1}{t}$は根である．
+したがて$t,\frac{1}{t}$は共に$S$上整である．$S$上整な元全体は環をなすから$S[t,\frac{1}{t}]=R$は$S$上整である．
+
+(2)$R$の商体は$L=\mathbb{C}(t)$，$S$の商体は$K=\mathbb{C}(t^2+\frac{1}{t^2})$である．
+$t$の$K$上の最小多項式は$x^4-(t^2+\frac{1}{t^2})x^2+1$の因数である．よって根は$\pm t,\pm\frac{1}{t}$のいずれかに限る．全て$\mathbb{C}(t)$の元であるから$L/K$は正規拡大．$\mathbb{C}$は完全体であるから$L/K$はGalois拡大である．
+
+(3)$\sigma(t)=-t,\tau(t)=\frac{1}{t}$が共に$L$の$K$上の自己同型となるから$[L:K]=4$であり，また$\sigma,\tau$の位数が$2$であるから$\Gal(L/K)= \mathbb{Z}/2 \mathbb{Z}\times \mathbb{Z}$である．
+
+$\sigma$で固定される体は$\mathbb{C}(t^2)$，$\tau$で固定される体は$\mathbb{C}(t+\frac{1}{t})$，$\sigma\circ\tau$で固定される体は$\mathbb{C}(t-\frac{1}{t})$である．これに自明な中間体$L,K$を加えた$5$つ全ての中間体．
+
+(4)$R$は$\mathbb{C}[t]$の$\left\{ t^i\relmiddle|i=0,1,2,\cdots \right\}$による局所化である．UFDの局所化はUFDであるから$R$はUFD．
+
+$L$に対して$R$が$S$上整であり，$L$は$R$の商体である．$R$は$UFD$であるから$R$は正規環．すなわち$L$の元で$R$上整な元は$R$の元である．$R$上整な元は$S$上整であるから$T_L=R$である．
+
+$K$は$S$の商体であり，$S$はPIDであるから正規環．よって$T_K=S$である．
+
+$\mathbb{C}(t^2)$は$S\subset \mathbb{C}[t^2,\frac{1}{t^2}]$の商体である．$\mathbb{C}[t^2,\frac{1}{t^2}]$はUFDであるから同様にして$T_{\mathbb{C}(t^2)}=\mathbb{C}[t^2,\frac{1}{t^2}]$である．
+
+$\mathbb{C}(t+\frac{1}{t})$は$S\subset \mathbb{C}[t+\frac{1}{t}]$の商体である．
+上と同様に$T_{\mathbb{C}(t+\frac{1}{t})}=\mathbb{C}[t+\frac{1}{t}]$である．
+
+$\mathbb{C}(t-\frac{1}{t})$は$S\subset \mathbb{C}[t-\frac{1}{t}]$の商体である．
+上と同様に$T_{\mathbb{C}(t-\frac{1}{t})}=\mathbb{C}[t-\frac{1}{t}]$である．
+
+
+
+\end{document}

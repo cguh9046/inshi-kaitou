@@ -1,0 +1,36 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H23数学選択}
+\fbox{B}
+(1)$\alpha^2-2=\sqrt{2}$より$\sqrt{2}\in \mathbb{Q}(\alpha)$である．
+よって$\mathbb{Q}(\sqrt{2})\subset \mathbb{Q}(\alpha)$． 
+
+(2)$\alpha^4-4\alpha^2+2$は$\mathbb{Q}[x]$上既約である．これは$2\in \mathbb{Z}$によってアイゼンシュタインの既約判定法によって$\mathbb{Z}[x]$上で既約であることからわかる．
+
+よって$[\mathbb{Q}(\alpha):\mathbb{Q}]=4$である．すなわち$\alpha\notin \mathbb{Q}$である．
+
+(3)(2)より$[\mathbb{Q}(\alpha):\mathbb{Q}]=4$．
+
+(4)(2)より$x^4-4x^2+2$である．$\mathbb{Q}$上共役は$\pm \alpha,\sqrt{2-\sqrt{2}}$である．
+
+(5)$\sqrt{2+\sqrt{2}}\sqrt{2-\sqrt{2}}=\sqrt{2}$より$\mathbb{Q}(\alpha)\ni \sqrt{2-\sqrt{2}}$となる全ての共役元が$\mathbb{Q}(\alpha)$に属すから正規拡大．$\mathbb{Q}$は完全体であるからGalois拡大．
+
+(6)$\Gal(\mathbb{Q}(\alpha)/\mathbb{Q})\ni\sigma$について$\sigma(\sqrt{2+\sqrt{2}})=\sqrt{2-\sqrt{2}}$とする．
+$2+\sigma(\sqrt{2})=\sigma((\sqrt{2+\sqrt{2}})^2)=(\sqrt{2-\sqrt{2}})^2=2-\sqrt{2}$であるから$\sigma(\sqrt{2})=-\sqrt{2}$である．
+
+よって$\sigma^2(\sqrt{2+\sqrt{2}})=\sigma(\sqrt{2-2\sqrt{2}})=\sigma(\sqrt{2})/\sigma(\sqrt{2+\sqrt{2}})=-\sqrt{2}/(\sqrt{2-\sqrt{2}})=-\sqrt{2+\sqrt{2}}$である．
+
+よって$\sigma^2\neq \id$である．
+
+$[\mathbb{Q}(\alpha):\mathbb{Q}]=4$より$\Gal(\mathbb{Q}(\alpha)/\mathbb{Q})\cong \mathbb{Z}/4 \mathbb{Z}$である．
+\end{document}

@@ -1,0 +1,52 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H21elective}
+\fbox{A}
+(1)$\tau^2=\id$であり$\sigma^2(a)=-a-b,\sigma^2(b)=a$より$\sigma^3=\id$である．
+$\tau\circ\sigma\circ\tau(a)=\tau\circ\sigma(b)=\tau(-a-b)=-a-b=\sigma^2(a),\tau\circ\sigma\circ\tau(b)=\tau\circ\sigma(a)=\tau(b)=\sigma^2(b)$である．
+
+よって$\tau\circ\sigma\circ\tau=\sigma^{-1}$となるから$G\cong D_3\cong S_3$である．
+
+(2)$\tau(p)=p,\tau(q)=q,\sigma(p)=b(-a-b)+b^2+(-a-b)^2=ab+a^2+b^2=p,\sigma(q)=-b(-a-b)(b-a-b)=-ab(a+b)=q$である．よって$G$不変．
+
+(3)$s_1=a+b,s_2=ab$とする．$\tau(s_1)=s_1,\tau(s_2)=s_2$である．
+$\tau$不変な元は対称式である．対称式は基本対称式の多項式として表せるから$\mathbb{C}[s_1,s_2]$が$H$不変な元からなる環である．
+
+(4)$h(s_1,s_2)=(s_1^2-s_2,-s_1s_2)$とすれば$h \circ g(a,b)=h\circ(a+b,ab)=(ab+a^2+b^2,-ab(a+b))=f(a,b)$である．
+
+(5)$\mathbb{C}[P,X]$はUFDであるから$X^3-PX-Q$の既約性はその商体$\mathbb{C}(P,X)$における既約性と等しい．$\mathbb{C}(P,X)[Q]$は体上の多項式環であるから$PID$である．
+$\varphi\colon \mathbb{C}(P,X)[Q]\rightarrow \mathbb{C}(P,X);Q\mapsto X^3-PX$とすればこれは環準同型である．$\mathbb{C}(P,X)[Q]/(X^3-X-Q)\cong \mathbb{C}(P,X)$より$(X^3-PX-Q)$は素イデアル．したがって$X^3-PX-Q$は既約である．
+
+よって$X^3-PX-Q$は$\mathbb{C}[P,X][Q]=\mathbb{C}[P,Q,X]$上で既約．
+
+(6)$X^3-(ab+a^2+b^2)X+ab(a+b)=X^3-(S_1^2-S_2)X+S_1S_2=(X+S_1)(X^2-S_1X+S_2)=(X+a+b)(X^2-(a+b)X+ab)$となるから既約でない．
+
+\fbox{B}
+(1)$x^p-q$はアイゼンシュタインの既約判定法から$\mathbb{Z}[x]$上既約である．$\mathbb{Z}$はUFDであるから$\mathbb{Q}[x]$上でも既約．
+$\zeta_p=\cos\frac{2\pi }{p}+i\sin \frac{2\pi}{p}$とすると，根は$\zeta_p^i \sqrt[p]{q}\quad(i=0,1,\dots,p-1)$である．
+
+また$\zeta_p\sqrt[p]{q}/\sqrt[p]{q}=\zeta_p$であるから$\zeta_p\in K$である．よって$K=\mathbb{Q}(\zeta_p,\sqrt[p]{q})$である．
+
+(2)$\mathbb{Q}(\zeta_p)/Q$はGalois拡大であり，Galois群は$(\mathbb{Z}/p \mathbb{Z})^\times$で与えられる．
+また$\mathbb{Q}(\sqrt[p]{q})/\mathbb{Q}$は$p$次拡大である．
+$\mathbb{Q}(\sqrt[p]{q})\cdot \mathbb{Q}(\zeta_p)=K$となるから$K/\mathbb{Q}(\zeta_p)$は$p$次拡大である．よって$\Gal(K/\mathbb{Q}(\zeta_p))\cong \mathbb{Z}/p \mathbb{Z}$である．
+$G=\Gal(K/\mathbb{Q})$とすれば$\mathbb{Q}(\zeta_p)/Q$はGalois拡大であるから$\Gal(K/\mathbb{Q}(\zeta_p)) \triangleleft G$である．
+また推進定理より$K/\mathbb{Q}(\sqrt[p]{q})$はGalois拡大で$\Gal(K/\mathbb{Q}(\sqrt[p]{q}))\cong (\mathbb{Z}/ p \mathbb{Z})^\times$である．
+
+$\mathbb{Q}(\sqrt[p]{q})/\mathbb{Q}$は非自明な中間体をもたないから$\mathbb{Q}(\sqrt[p]{q})\cap \mathbb{Q}(\zeta_p)=\mathbb{Q}$である．
+$\Gal(K/\mathbb{Q}(\zeta_p))\cap \Gal(K/\mathbb{Q}(\sqrt[p]{q}))=\Gal(K/K)=1，\Gal(K/\mathbb{Q}(\zeta_p))\cdot \Gal(K/\mathbb{Q}(\sqrt[p]{q}))=\Gal(K/\mathbb{Q})=G$である．
+よって$G \cong \Gal(K/\mathbb{Q}(\zeta_p))\rtimes \Gal(K/\mathbb{Q}(\sqrt[p]{q}))\cong\mathbb{Z}/p \mathbb{Z} \rtimes (\mathbb{Z}/p \mathbb{Z})^\times \cong \mathbb{Z}/p \mathbb{Z} \rtimes \mathbb{Z}/(p-1) \mathbb{Z}$
+
+
+
+\end{document}
