@@ -1,0 +1,112 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H24数学選択}
+\fbox{B}
+(1)$H\subset G\subset GL(2,\mathbb{F}_p)$は明らか．
+$G\ni A=\begin{pmatrix}
+a & b \\
+0 & 1
+\end{pmatrix}$に対して$A^{-1}=\begin{pmatrix}
+1/a & -b/a \\
+0 & 1
+\end{pmatrix}$である．$G \ni B=\begin{pmatrix}
+    c & d \\
+    0 & 1
+    \end{pmatrix}$に対して$BA^{-1}=\begin{pmatrix}
+        c/a & -cb/a + d \\
+        0 & 1
+        \end{pmatrix}\in G$より$G\le GL(2,\mathbb{F}_p)$である．
+
+$a=c=1$のとき$BA^{-1}=\begin{pmatrix}
+    1 & -b+d \\
+    0 & 1
+    \end{pmatrix}\in H$であるから$H\le G$である．
+
+$\begin{pmatrix}
+a & b \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+1 & c \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+1/a & -b/a \\
+0 & 1
+\end{pmatrix}=\begin{pmatrix}
+a & ac + b \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+1/a & -b/a \\
+0 & 1
+\end{pmatrix}=\begin{pmatrix}
+1 & ac \\
+0 & 1
+\end{pmatrix}\in H$より$H \triangleleft G$である．
+
+(2)$L/K$がGalois拡大$\Leftrightarrow \Gal(F/L)\triangleleft \Gal(F/K)$である．
+
+$S=\left\{ \begin{pmatrix}
+c & 0 \\
+0 & 1
+\end{pmatrix}\relmiddle| c\in \mathbb{F}_p^\times \right\}$とする．
+
+$\begin{pmatrix}
+a & b \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+c & 0 \\
+0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+1/a & -b/a \\
+0 & 1
+\end{pmatrix}=\begin{pmatrix}
+ac & b \\
+0 & 1
+\end{pmatrix}\begin{pmatrix}
+1/a & -b/a \\
+0 & 1
+\end{pmatrix}=\begin{pmatrix}
+c & -bc+b \\
+0 & 1
+\end{pmatrix}\notin S$より$S\triangleleft G$でない．よって$S$に対応する中間体$L$は$L/K$がGalois拡大でない．
+
+(3)$\Gal(F/M)\cong H \cong \mathbb{Z}/p \mathbb{Z}$であり$\mathbb{Z}/p \mathbb{Z}$は非自明な部分群をもたないから$F/M$は非自明な中間体を持たない．
+
+(4)$\Gal(M/K)\cong \Gal(F/K)/ \Gal(F/M)\cong G/H$である．
+
+$G \rightarrow \mathbb{F}_p^\times;\begin{pmatrix}
+a & b \\
+0 & 1
+\end{pmatrix} \mapsto a$とすれば全射準同型であり核は$H$であるから$G/H \cong \mathbb{F}_p^\times\cong \mathbb{Z}/(p-1)\mathbb{Z}$である．
+
+$a \in \mathbb{Z}/(p-1)\mathbb{Z}$に対して$\gcd(a,p-1)=d$とすれば$ab+c(p-1)=d$となる$b,c\in \mathbb{Z}$が存在するから$\langle a \rangle=\langle d \rangle$である．
+よって$\mathbb{Z} /(p-1)\mathbb{Z}$の部分群は$p-1$の正の約数の個数ある．
+
+すなわち$M/K$の中間体の個数も$p-1$の正の約数の個数ある．
+
+\fbox{D}
+$\partial_0 \circ \partial_1=0,\partial_1 \circ \partial_2=0,\partial_2 \circ \partial_3=0$である．($\because \partial_1=0,\partial_3=0$)
+
+
+(1)$\partial_2=0$なら，$^\forall i \in \left\{ 0,1,2,3 \right\},\partial_i =0$である．
+
+$\Ker \partial_i = C_i,\Im \partial_i =0$であるから$H_i\cong C_i$である．
+
+(2)$\ker \partial_2=0,\Im \partial_2=\langle (2,0) \rangle_{\mathbb{Z}}$である．
+よって$H_2=0,H_1=\mathbb{Z}^2/\langle (2,0) \rangle_{\mathbb{Z}}\cong \mathbb{Z}/2\mathbb{Z} \times \mathbb{Z},H_0=C_0$である．
+
+(3)$p=q=0$なら(1)と同じ．
+
+$pq\neq 0$なら(2)と同様にして$H_1=\mathbb{Z}/ p \mathbb{Z} \times \mathbb{Z}/q \mathbb{Z}$である．
+
+\end{document}

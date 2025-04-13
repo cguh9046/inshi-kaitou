@@ -1,0 +1,51 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H25数学選択}
+\fbox{A}
+(1)$x^2-5$は既約．よって$[\mathbb{Q}(\sqrt{5}):\mathbb{Q}]=2$である．
+最小多項式の根は$\pm \sqrt{5}$である．すなわち$\mathbb{Q}(\sqrt{5})/\mathbb{Q}$はGalois拡大である．
+Galois群は$\Gal(\mathbb{Q}(\sqrt{5})/\mathbb{Q})\cong\mathbb{Z}/2\mathbb{Z}$である．
+中間体は$\mathbb{Q},\mathbb{Q}(\sqrt{5})$である．
+
+(2)$x^3-5$は既約．よって$[\mathbb{Q}(\sqrt[3]{5}):\mathbb{Q}]=3$である．
+最小多項式の根は$\sqrt[3]{5},\omega \sqrt[3]{5},\omega^2 \sqrt[3]{5}$である．ただし$\omega=\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}$とする．
+$\omega\in \mathbb{C}\setminus \mathbb{R}$であるから$\omega\notin \mathbb{Q}(\sqrt[3]{5})\subset \mathbb{R}$である．
+よって$\mathbb{Q}(\sqrt[3]{5})/\mathbb{Q}$はGalois拡大でない．
+
+Galois閉包は$\mathbb{Q}(\sqrt[3]{5},\omega)$である．
+$x^2+x+1$は$\mathbb{Q}(\sqrt[3]{5})$上既約であるから$[\mathbb{Q}(\sqrt[3]{5},\omega):\mathbb{Q}(\sqrt[3]{5})]=2$である．
+よって$[\mathbb{Q}(\sqrt[3]{5},\omega):\mathbb{Q}]=6$である．
+
+(3)$x^2+x+1$は$\mathbb{Z}/2 \mathbb{Z}$上唯一の$2$次の既約なモニック多項式である．
+したがって$\mathbb{Z}/2 \mathbb{Z}$上の可約な$4$次多項式で$\mathbb{Z}/2 \mathbb{Z}$に根を持たない多項式は$(x^2+x+1)^2=x^4+x^2+1$のみである．
+すなわち$x^4+x^3+x^2+x+1$は$\mathbb{Z}/2 \mathbb{Z}$上既約である．
+
+仮に$x^4+x^3+x^2+x+1$が$\mathbb{Q}[x]$上可約であるとする．これは$\mathbb{Z}[x]$上可約であることを意味する．
+このとき$\pi\colon \mathbb{Z} \rightarrow \mathbb{Z}/2 \mathbb{Z}$から誘導される写像で$x^4+x^3+x^2+x+1$を送ると，$\mathbb{Z}/2 \mathbb{Z}[x]$上で可約となり矛盾する．
+したがって$x^4+x^3+x^2+x+1$は$\mathbb{Q}[x]$上既約である．
+
+すなわち$\mathbb{Q}(\zeta_5)/\mathbb{Q}$は$4$次のGalois拡大である．
+
+$\sigma(\zeta_5)=\zeta_5^2$とする．
+$\sigma^2(\zeta_5)=\zeta_5^4\neq \zeta_5$であるから$\sigma^2\neq \id$である．
+よって$\sigma$の位数は$4$であるから$\Gal(\mathbb{Q}(\zeta_5)/\mathbb{Q})\cong \mathbb{Z}/4 \mathbb{Z}$である．
+
+よって中間体はただ一つ存在して$\mathbb{Q}(\zeta_5+\zeta_5^{-1})=\mathbb{Q}(\cos \frac{2\pi}{5})$である．
+\begin{tcolorbox}[blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline vertical={1pt}{0pt}{black,dotted}]
+	円分体の知識をみとめれば，$\Gal(\mathbb{Q}(\zeta_5)/\mathbb{Q})\cong (\mathbb{Z}/5 \mathbb{Z})^\times\cong \mathbb{Z}/4 \mathbb{Z}$であることがすぐにわかる．
+	\end{tcolorbox}
+\end{document}

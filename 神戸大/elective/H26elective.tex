@@ -1,0 +1,69 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H26数学選択}
+\fbox{A}
+(1)$\varphi\colon \mathbb{C}[x,y]\rightarrow \mathbb{C}[z,\frac{1}{z}]$を$\varphi(x)=z,\varphi(y)=\frac{1}{z}$として定める．$\varphi$は全射準同型である．
+$\ker \varphi\supset (xy-1)$は明らか．
+$f(x,y)\in \ker \varphi$とする．$f(x,y)=(xy-1)g(x,y)+p(y)\quad(g\in \mathbb{C}[x,y],p\in \mathbb{C}[y])$とできる．
+$\varphi(f(x,y))=\varphi(p(y))=p(\frac{1}{z})=0$である．
+よって$p=0$であるから$f(x,y)\in (xy-1)$である．
+したがって$\ker \varphi=(xy-1)$である．
+
+すなわち$\mathbb{C}[x,y]/(xy-1)\cong \mathbb{C}[z,\frac{1}{z}]$である．
+
+$\mathbb{C}[z,\frac{1}{z}]$の商体は$\mathbb{C}(z)$であるから$\mathbb{C}[x,y]/(xy-1)$の商体は$\mathbb{C}(z)$と同型である．
+
+(2)$\mathbb{C}[z]^\times=\mathbb{C}^\times$である．
+
+また$\mathbb{C}[z,\frac{1}{z}]^\times=\left\{ cz^k \relmiddle| c\in \mathbb{C}^\times,k\in \mathbb{Z} \right\}\cong \mathbb{C}^\times \times \mathbb{Z}$である．
+
+すなわち乗法群が異なるから$\mathbb{C}[x,y]/(xy-1),\mathbb{C}[z]$は同型でない．
+
+(3)$\varphi\colon \mathbb{C}[x,y]\rightarrow \mathbb{C};\varphi(x)=a,\varphi(y)=b$とする．
+$\varphi$は全射準同型である．
+$\ker \varphi\supset ((x-a),(y-b))$は明らか．
+$f (x,y)\in \ker \varphi$とする．$f(x,y)=(x-a)g_1(x,y)+(y-b)g_2(y)+r \quad (g_1,g_2\in \mathbb{C}[x,y],r\in \mathbb{C})$とできる．
+$\varphi(f(x,y))=r=0$である．
+よって$f(x,y)\in ((x-a),(y-b))$である．
+したがって$\ker \varphi=((x-a),(y-b))$である．
+
+すなわち$\mathbb{C}[x,y]/((x-a),(y-b))\cong \mathbb{C}$であるから$((x-a),(y-b))$は極大イデアルである．
+
+(4)$xy-1\in ((x-a),(y-b))$なら$xy-1=(x-a)g_1(x,y)+(y-b)g_2(x,y)$とできる．
+$x=a,y=b$として$ab=1$である．
+
+逆に$ab=1$なら$xy-ab=(x-a)y+(y-b)a$とできるから$xy-1\in ((x-a),(y-b))$である．
+すなわち$ab=1$が必要十分条件．
+
+\fbox{B}
+(1)$\mathbb{Z}$はUFDでありその商体は$\mathbb{Q}$であるから$\mathbb{Z}[x]$上既約な多項式は$\mathbb{Q}[x]$上既約である．
+
+$x^4-2$はアイゼンシュタインの既約判定法から$\mathbb{Z}[x]$上既約である．
+よって$\mathbb{Q}[x]$上既約である．
+
+(2)$x^4-2$が$\sqrt[4]{2}$の最小多項式であるから$[L:\mathbb{Q}]=4$である．
+
+(3)$x^4-2=0$をといて$x=\sqrt[4]{2},i\sqrt[4]{2},-\sqrt[4]{2},-i\sqrt[4]{2}$が$\sqrt[4]{2}$の$\mathbb{Q}$上の共役である．
+
+(4)$L\subset \mathbb{R}$より$i\notin L$であるから$L/\mathbb{Q}$は正規拡大でない．よってGalois拡大でない．
+
+(5)$L$の$\mathbb{Q}$上自己同型$\sigma$は$\sqrt[4]{2}$をその共役に移す．
+よって$\sigma(\sqrt[4]{2})=-\sqrt[4]{2}$または$\id$の何れかである．
+すなわち$G\cong \mathbb{Z}/2\mathbb{Z}$である．
+
+(6)$i\sqrt[4]{2}/\sqrt[4]{2}=i$であるから$i\in F$である．よって$F=\mathbb{Q}(\sqrt[4]{2},i)$である．
+
+$\mathbb{Q}(i,\sqrt[4]{2})/\mathbb{Q}(\sqrt[4]{2})$は二次拡大であるから$[F:\mathbb{Q}]=8$である．
+
+
+\end{document}
