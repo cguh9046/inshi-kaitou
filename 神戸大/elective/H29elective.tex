@@ -1,0 +1,49 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H29数学選択}
+\fbox{A}
+(1)$\varphi(f+g)=f+g,\varphi(fg)=fg,\varphi(1)=1$より部分環．
+
+(2)$\psi(f(s,t,u))=f(x^3,y^3,xy)$とする．
+$\varphi(f(x^3,y^3,xy))=f(x^3,y^3,xy)$より$\psi(f)\in R$である．準同型であることは明らか．
+$R$の任意の元は$g(x,y)=\sum\limits_{3\mid(i+2j)} a_{ij}x^iy^j$と表される．
+$\sum\limits_{3\mid(i+2j)} a_{ij}x^iy^j=\sum\limits_{i\equiv 0\equiv j } a_{ij} x^iy^j+\sum\limits_{i\equiv 1,j \equiv =1 } a_{ij} x^iy^j+\sum\limits_{i\equiv 2,j\equiv 2 } a_{ij} x^iy^j=\sum\limits_{i\equiv 0\equiv j } a_{ij} x^iy^j+xy\sum\limits_{i\equiv 1,j \equiv =1 } a_{ij} x^{i-1}y^{j-1}+(xy)^2\sum\limits_{i\equiv 2,j\equiv 2 } a_{ij} x^{i-2}y^{j-2}$とできる．
+
+$k\le \ell$に対して$x^{3k}y^{3\ell}=(xy)^{3k} y^{3(\ell-k)}=u^{3\ell}t^{\ell-k}$とできるから$\sum\limits_{i\equiv 0\equiv j } a_{ij} x^iy^j$は$\psi$の像である．他の項も同様であるから$\psi$は全射である．
+
+(3)$(st-u^3)\subset \ker \psi$は明らかである．
+$f\in \ker \psi$に対して$f(s,t,u)=(st-u^3)g(s,t,u)+u^2h_1(s,t)+uh_2(s,t)+h_3(s,t)$である．
+$\psi$で送れば$(xy)^2h_1(x^3,y^3)+xyh_2(x^3,y^3)+h_3(x^3,y^3)=0$である．
+$x,y$の次数について$3$の剰余に着目すれば$h_1(x^3,y^3)=h_2(x^3,y^3)=h_3(x^3,y^3)=0$より$h_i=h_2=h_3=0$がわかる．よって$\ker\psi = (st-u^3)$である．
+
+\fbox{B}
+(1)$f(T)=\frac{T^{17}-1}{T-1}$である．
+よって$f(T+1)=\frac{(T+1)^{17}-1}{T}$である．$0$次の係数は$ \binom{17}{1}=17$である．
+$17$は素数であるから$T^i\quad(i=1,2,\cdots,15)$の係数は$17$の倍数である．よってアイゼンシュタインの既約判定法から$f(T+1)$は既約である．よって$f(T)$も既約である．
+
+(2)$f(T)$の根は$\zeta_i\quad(i=1,2,\cdots,16)$である．したがって$\mathbb{Q}(\zeta)/\mathbb{Q}$は正規拡大であるから$\mathbb{Q}$が完全体であることよりGalois拡大である．
+
+(3)$\Gal(\mathbb{Q}(\zeta)/\mathbb{Q})$の任意の元は$\zeta$の行き先で定まり，行き先の候補は$\zeta_i \quad(i=1,2,\cdots,16)$のいずれかである．
+$\sigma(\zeta)=\zeta_i$について$\varphi\colon \Gal(\mathbb{Q}(\zeta)/\mathbb{Q})\rightarrow (\mathbb{Z}/17 \mathbb{Z})^\times;\sigma\mapsto [i]$とする．
+
+全射準同型であることは明らか．$\varphi(\sigma)=1$は$\sigma(\zeta)=\zeta$を意味するから$\varphi$は単射である．よって同型．
+
+(4)$\mathbb{Q}(\alpha)\subset \mathbb{R}$である．よって$\mathbb{Q}(\alpha)$は$\mathbb{Q}(\zeta)$の真の部分体である．
+$x^2-\alpha x+1$とすれば根は$\zeta,\zeta^{-1}$である．よって$\mathbb{Q}(\zeta)/\mathbb{Q}(\alpha)$は$2$次拡大である．
+$\mathbb{Z}/ 17 \mathbb{Z}$が体であるから乗法群は巡回群となる．よって$(\mathbb{Z}/17 \mathbb{Z})^\times\cong \mathbb{Z}/16 \mathbb{Z}$である．
+$\mathbb{Z}/16 \mathbb{Z}$において位数$2$の元は$[8]$のみであるから，$\Gal(\mathbb{Q}(\zeta)/\mathbb{Q}(\alpha))\cong \{ [0],[8]\}$である．
+よって正規部分群であるから$\Gal(\mathbb{Q}(\alpha)/\mathbb{Q})\cong (\mathbb{Z}/16 \mathbb{Z})/\{ [0],[8]\}\cong \mathbb{Z}/ 8 \mathbb{Z}$である．
+
+
+
+\end{document}

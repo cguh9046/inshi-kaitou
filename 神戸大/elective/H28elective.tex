@@ -1,0 +1,54 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H28数学選択}
+\fbox{A}
+(1)$\varphi(t^2-ut+v)=x^2-(x+y)x+xy=0$である．
+よって$\ker \varphi\supset (t^2-ut+v)$である．
+$f\in \ker \varphi$とすると，$f(u,v,t)=(t^2-ut+v)g(u,v,t)+h_1(u,v)t+h_2(u,v)$である．
+よって$h_1(x+y,xy)x+h_2(x+y,xy)=0$である．$h_1(x+y,xy)x$は対称式の項をもたず，$h_2(x+y,xy)$は対称式の項のみからなるので，$h_1=0,h_2=0$である．
+
+(2)$\varphi(I_{(a,b)})$が素イデアル．$\Leftrightarrow$ $\mathbb{R}[x,y]/\varphi(I_{(a,b)})$が整域．
+ここで$\mathbb{R}[x,y]\cong \mathbb{R}[u,v,t]/\ker \varphi$であるから，
+$\mathbb{R}[x,y]/\varphi(I_{(a,b)})\cong (\mathbb{R}[u,v,t]/\ker \varphi)/((\ker \varphi,I_{(a,b)})/\ker \varphi)\cong \mathbb{R}[u,v,t]/(\ker \varphi,I_{(a,b)})$である．
+
+$(\ker \varphi,I_{(a,b)})=(t^2-ut+v,u-a,v-b)=(t^2-at+b,u-a,v-b)$であるから，$\mathbb{R}[u,v,t]/(\ker \varphi,I_{(a,b)})\cong \mathbb{R}[t]/(t^2-at+b)$である．
+これが整域となるのは$t^2-at+b$が既約であるときである．
+すなわち$a^2-4b<0$のときである．
+
+以上より，$\varphi(I_{(a,b)})$が素イデアルであるのは，$a^2-4b<0$のときである．
+
+\fbox{B}
+(1)$F=\mathbb{Q}(\alpha)(\beta)$とかける．$\beta$の$\mathbb{Q}(\alpha)$上の最小多項式は$P(X)/(X-\alpha)$の因数であるから$3$次以下である．よって$[F:\mathbb{Q}(\alpha)]\leq 3$である．
+
+(2)$[\mathbb{Q}(\alpha):\mathbb{Q}]=4$より$[F:\mathbb{Q}]=[F:\mathbb{Q}(\alpha)][\mathbb{Q}(\alpha):\mathbb{Q}]=4[F:\mathbb{Q}(\alpha)]$であるから(1)より$[F:\mathbb{Q}]=4,8,12$のいずれかである．
+
+(3)$F/\mathbb{Q}$がGalois拡大であるからGalois群は$(\mathbb{Z}/2\mathbb{Z})^2$か$\mathbb{Z}/4 \mathbb{Z}$の何れかである．
+どちらも真部分群を含むから，$F/\mathbb{Q}$は非自明な中間体をもつ．
+
+(4)$P(X)=X^4-4X^2+1$とする．$P(X+1)=X^4+4X^3+2X^2-4X-2$は既約であるから$P(X)$は既約多項式である．
+$P(X)$の根は$\pm{\sqrt{2\pm \sqrt{3}}}$である．
+$\sqrt{2+\sqrt{3}}\sqrt{2-\sqrt{3}}=1$より$F=\mathbb{Q}(\sqrt{2+\sqrt{3}})$とすれば$F/\mathbb{Q}$はGalois拡大で$[F:\mathbb{Q}]=4$である．
+
+$\sigma(\sqrt{2+\sqrt{3}})=\sqrt{2-\sqrt{3}}$とすると，$\sigma^2(\sqrt{2+\sqrt{3}})=\sigma(\sqrt{2-\sqrt{3}})=\sigma(1/\sqrt{2+\sqrt{3}})=\sqrt{2+\sqrt{3}}$であるから，$\sigma^2=\id$である．
+
+また$\tau(\sqrt{2+\sqrt{3}})=-\sqrt{2+\sqrt{3}}$についても$\tau^2=\id$であるから，$\Gal(F/\mathbb{Q})$は位数$2$の元を$2$つ以上もつ．よって$\Gal(F/\mathbb{Q})\cong (\mathbb{Z}/2\mathbb{Z})^2$より巡回群でない．
+
+(5)$\beta$の$\mathbb{Q}(\alpha)$上の最小多項式の次数は$2$である．したがって$\gamma,\delta$のいずれか一方のみが$\mathbb{Q}(\alpha)$に属す．
+$\gamma\in \mathbb{Q}(\alpha)$として一般性を失わない．
+よって$\sigma(\alpha)=\gamma$とすれば$\sigma$は$\mathbb{Q}(\alpha)$の恒等写像でない同型射である．
+
+$\mathbb{Q}(\alpha)$の恒等写像でない同型射について，$\sigma(\alpha)$は$\alpha$の$\mathbb{Q}$上共役であるから存在すれば$\sigma(\alpha)=\gamma$のみである．よって一意性も示された．
+
+
+
+\end{document}

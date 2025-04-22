@@ -1,0 +1,62 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H31数学選択}
+\fbox{A}
+(1)(a)$I_1,I_2$が互いに素とは$I_1+I_2=A$であることをいう．
+
+(b)$I_1=I_1A\supset I_1I_2$より$I_1\cap I_2\supset I_1I_2$である．
+$c\in I_1\cap I_2$を任意にとる．互いに素であるから$x+y=1$なる$x\in I_1,y\in I_2$が存在する．
+$c=cx+cy$であり，$c\in I_2$より$cx\in I_1I_2$である．また$c\in I_1$より$cy\in I_1I_2$である．
+よって$c\in I_1I_2$である．すなわち$I_1\cap I_2=I_1I_2$である．
+
+(c)$I_1\supset I_1I_2$より自然な全射準同型$\pi_1 \colon A/I_1I_2\rightarrow A/I_1$がある．同様に$\pi_2 \colon A/I_1I_2\rightarrow A/I_2$がある．
+$\varphi\colon A/I_1I_2\rightarrow A/I_1\times A/I_2;\varphi(a+I_1I_2)=(\pi_1(a+I_1I_2),\pi_2(a+I_1I_2))$とする．
+
+$\varphi(a+I_1I_2)=0$なら$\pi_1(a+I_1I_2)=0,\pi_2(a+I_1I_2)=0$より$a\in I_1,I_2$である．すなわち$a\in I_1\cap I_2=I_1I_2$より$\varphi$は単射である．
+
+$(b+I_1,c+I_2)\in A/I_1\times A/I_2$に対して
+$\varphi(cx+by)=(cx+b(1-x)+I_1,by+c(1-y)+I_2)=(b+I_1,c+I_2)$であるから$\varphi$は全射である．
+よって$\varphi$は同型である．
+
+(2)
+(a)$(X-2)(X^2+2X+4)=X^3-8$であり，$X-2\neq 0\in A,X^2+2X+4\neq 0\in A$であるから$A$は整域でない．
+
+(b)$(X-2)(X+4)-(X^2+2X+4)=-12$であるから$(X-2),(X^2+2X+4)$は互いに素である．
+よって$A\cong \mathbb{R}[X]/(X-2)\times \mathbb{R}[X]/(X^2+2X+4)$である．
+
+$\psi\colon \mathbb{R}[X]/(X-2)\times \mathbb{R};X\mapsto 2$は同型である．
+$\varphi\colon \mathbb{R}[X]/(X^2+2X+4)\rightarrow \mathbb{C};X\mapsto -1+i\sqrt{3}$とする．
+$a+bi=a+\frac{b}{\sqrt{3}}+\frac{b}{\sqrt{3}}(-1+i\sqrt{3})$であるから$\varphi(\frac{b}{\sqrt{3}}X+a+\frac{b}{\sqrt{3}})=a+bi$より全射．
+$\varphi(f+(X^2+2X+4))=0$なら$f(X)=(X^2+2X+4)g(X)+aX+b$とできる．
+$a\neq 0$なら$a(-1+i\sqrt{3})+b=0$であるから$i=\frac{-b+a}{a\sqrt{3}}\in \mathbb{R}$となり矛盾．よって$a=b=0$であるから$\varphi$は同型である．
+
+したがって$A\cong \mathbb{R} \times \mathbb{C}$である．
+右辺の単位元は$(1,1)$であるから$a^4=1$なる$a\in A$は$\pm 1\in \mathbb{R},i^k\in \mathbb{C}\quad(k=0,1,2,3)$に対応する分の$8$個存在する．
+
+\fbox{B}
+(1)$\sqrt{2},\sqrt{3},\sqrt{-1}$それぞれの$\mathbb{Q}$上共役は$\pm\sqrt{2},\pm\sqrt{3},\pm\sqrt{-1}$であるから全て$F$に含まれる．したがって$F/\mathbb{Q}$は正規拡大である．
+$\mathbb{Q}$は完全体であるから$F/\mathbb{Q}$はGalois拡大である．
+
+(2)$[\mathbb{Q}(\sqrt{2}):\mathbb{Q}]=2$である．
+$[\mathbb{Q}(\sqrt{3}):\mathbb{Q}(\sqrt{2})]=2$である．
+よって$[F_0:\mathbb{Q}]=4$である．
+
+$[F_0(\sqrt{-1}):F_0]=2$であるから$[F:\mathbb{Q}]=8$である．
+
+(3)$F_0=\mathbb{Q}(\sqrt{2})\cdot \mathbb{Q}(\sqrt{3}),\mathbb{Q}(\sqrt{2})\cap \mathbb{Q}(\sqrt{3})=\mathbb{Q}$であるから推進定理より$\Gal(F_0/\mathbb{Q})\cong \Gal(\mathbb{Q}(\sqrt{2})/\mathbb{Q})\times \Gal(\mathbb{Q}(\sqrt{3})/\mathbb{Q})\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$である．
+
+$F_0 \cdot \mathbb{Q}(\sqrt{-1})=F,F_0\cap \mathbb{Q}(\sqrt{-1})=\mathbb{Q}$であるから推進定理より$\Gal(F/\mathbb{Q})\cong \Gal(F_0/\mathbb{Q})\times \Gal(\mathbb{Q}(\sqrt{-1})/\mathbb{Q})\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$である．
+
+(4)$[L:\mathbb{Q}]=4$なら$[F:L]=2$である．よって位数$2$の$\Gal(F/\mathbb{Q})$の部分群の個数を求めればよい．位数$2$の部分群の個数は位数$2$の元の個数であり，単位元以外のすべての元が位数$2$であるから$7$個である．
+
+\end{document}

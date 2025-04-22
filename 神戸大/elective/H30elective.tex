@@ -1,0 +1,49 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H30数学選択}
+\fbox{A}
+(1)$\phi(f+g)=f(1,z)+g(1,z)+(z^2)=\phi(f)+\phi(g)$である．
+$\phi(fg)=f(1,z)g(1,z)+(z^2)=\phi(f)\phi(g)$である．
+$\phi(1)=1+(z^2)=1_B$である．よって$\phi$は環準同型である．
+
+(2)$\phi(x-1)=\phi(y^2)=0$である．
+$f\in \ker \phi$について$f(x,y)=(x-1)g(x,y)+y^2h(y)+ya+b$とできる．
+$\phi(f)=0$より$\phi(f)=az+b=0$すなわち$\mathbb{Q}[z]$のもとで$az+b\in (z^2)$である．
+次数を考えれば$a=b=0$がわかる．よって$\ker \phi=(x-1,y^2)$である．
+
+(3)$\mathbb{Q}[z]$はPIDであるから任意のイデアルは$(p(x))$と書ける．
+自然な全射準同型$\pi\colon \mathbb{Q}[z]\rightarrow B$によってイデアルが対応する．
+$\pi((p(x)))\neq 0$であるためには$(p(x))\supset (z^2)$が必要．したがって$p(x)=1,z$の像のみが$B$の$(0)$でないイデアルである．
+すなわち$B,(z)$が$B$の$(0)$でないイデアルで，$(0),(z),B$が求める相異なるイデアル．
+
+(4)存在すると仮定するとイデアルの対応定理から$0\subsetneq \phi(J)\subsetneq (z)$となる．
+(3)から$\phi(J)=(0),(z),B$のいずれかである．
+このうち$\phi(I)=0\subsetneq \phi(J)\subsetneq (z)=\phi(I+(y))$を満たすものは存在しない．これは矛盾．
+
+\fbox{B}
+(1)$\omega=e^{2\pi i/3}$とする．
+$X^6-8=(X-\sqrt{2})(X-\sqrt{2}\omega)(X-\sqrt{2}\omega^2)(X+\sqrt{2})(X+\sqrt{2}\omega)(X+\sqrt{2}\omega^2)$である．
+
+(2)$\omega=\frac{1}{2}+\frac{\sqrt{-3}}{2}$である．
+よって$F=\mathbb{Q}(\sqrt{-3},\sqrt{2})$である．
+$[\mathbb{Q}(\sqrt{2}):\mathbb{Q}]=2$は明らか．
+$\mathbb{Q}(\sqrt{2})\subset \mathbb{R}$であり，$\sqrt{-3}\notin \mathbb{R}$であるから
+$[\mathbb{Q}(\sqrt{-3},\sqrt{2}):\mathbb{Q}(\sqrt{2})]=2$である．
+よって$[F:\mathbb{Q}]=4$である．
+
+(3)$\mathbb{Q}(\sqrt{2})\cdot\mathbb{Q}(\sqrt{-3})=F,\mathbb{Q}(\sqrt{2})\cap \mathbb{Q}(\sqrt{-3})=\mathbb{Q}$であるから推進定理より
+$\Gal(F/\mathbb{Q})\cong \Gal(\mathbb{Q}(\sqrt{2})/\mathbb{Q})\times \Gal(\mathbb{Q}(\sqrt{-3})/\mathbb{Q})\cong \mathbb{Z}/2\mathbb{Z}\times \mathbb{Z}/2\mathbb{Z}$である．
+
+(4)$F,\mathbb{Q}$以外の中間体は$\Gal(F/\mathbb{Q})$の真部分群に対応する．したがって$3$個あり，$\mathbb{Q}(\sqrt{2}),\mathbb{Q}(\sqrt{-3}),\mathbb{Q}(\sqrt{2}\sqrt{-3})=\mathbb{Q}(\sqrt{-6})$である．
+
+\end{document}

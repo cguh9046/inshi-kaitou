@@ -1,0 +1,88 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{H27数学選択}
+\fbox{1}
+(1)略．
+
+(2)$\frac{1}{a+b\sqrt{5}}=\frac{a-b\sqrt{5}}{a^2-5b^2}$より$a^2-5b^2=\pm{1}$なら逆元を持つ．
+$(2-\sqrt{5})(2+\sqrt{5})=-1$である．
+$a_n+b_n\sqrt{5}=(2+\sqrt{5})^n$とする．$\sigma(a+b\sqrt{5})=a-b\sqrt{5}$は$A$上の同型射像であるから$(2-\sqrt{5})^n=\sigma((2+\sqrt{5})^n)=a_n-b_n\sqrt{5}$である．
+よって$a_n^2-5b_n^2=(a_n+b_n\sqrt{5})(a_n-b_n\sqrt{5})=(2+\sqrt{5})^n(2-\sqrt{5})^2=(-1)^n$より$A^\times$は無限群．
+
+(3)
+\begin{tabular}{l|rrrr} \hline
+    加法 & 0 & 1 & $\sqrt{5}$ & $1+\sqrt{5}$\\ \hline
+    0    & 0 & 1 & $\sqrt{5}$ & $1+\sqrt{5}$\\ 
+    1    & 1 & 0 & $1+\sqrt{5}$ & $\sqrt{5}$\\ 
+    $\sqrt{5}$ &$\sqrt{5}$ & $1+\sqrt{5}$ & $0$ & $1$\\
+    $1+\sqrt{5}$ &$1+\sqrt{5}$ & $\sqrt{5}$ & $1$ & $0$\\ \hline
+ \end{tabular}
+ \begin{tabular}{l|cccc}
+    \hline
+    乗法 & $[0]$ & $[1]$ & $[\sqrt{5}]$ & $[1+\sqrt{5}]$ \\
+    \hline
+    $[0]$ & $[0]$ & $[0]$ & $[0]$ & $[0]$ \\
+    $[1]$ & $[0]$ & $[1]$ & $[\sqrt{5}]$ & $[1+\sqrt{5}]$ \\
+    $[\sqrt{5}]$ & $[0]$ & $[\sqrt{5}]$ & $ [1]$ & $ [1+\sqrt{5}]$ \\
+    $[1+\sqrt{5}]$ & $[0]$ & $[1+\sqrt{5}]$ & $ [1+\sqrt{5}]$ & $[0]$ \\
+    \hline
+    \end{tabular}
+$(1+\sqrt{5})^2=0$より整域でない．
+(4)$a+b\sqrt{5}\in A/J$が逆元を持つ$\Leftrightarrow$ $a^2-5b^2\in   (\mathbb{Z}/7 \mathbb{Z})^\times $である．
+
+\begin{tabular}{l|cc}
+    \hline
+     $a$ & $a^2 \pmod{7}$ & $5a^2 \pmod{7}$ \\
+    \hline
+    $0$ & $0$ & $0$ \\
+    $1$ & $1$ & $5$ \\
+    $2$ & $4$ & $6$ \\
+    $3$ & $2$ & $3$ \\
+    $4$ & $2$ & $3$ \\
+    $5$ & $4$ & $6$ \\
+    $6$ & $1$ & $5$ \\
+    \hline
+\end{tabular}
+
+表より$a^2-5b^2=0$となる$(a,b)$は$(a,b)=(0,0)$のみ．よって$(A/J)^\times=(A/J)\setminus\{ 0\}$より$A/J$は体であり，$|A/J|=49$である．
+
+\fbox{B}
+(1)$(x^2-2)^2=3$とすればこれは$\alpha$を根にもつ．
+整理すると$x^4-4x^2+1$である．
+$f(x)=x^4-4x^2+1$とする．
+$f(x)$既約であることと$f(x+1)$が既約であることは同値である．
+$f(x+1)=(x+1)^4-4(x+1)^2+1=x^4+4x^3+2x^2-4x-2$となりこれはアイゼンシュタインの既約判定法から既約である．
+すなわち$f(x)$が$\alpha$の最小多項式である．
+
+(2)$\alpha$の$\mathbb{Q}$上の共役は$f(x)=0$をといて$\pm \sqrt{2\pm\sqrt{3}}$である．
+$\sqrt{2+\sqrt{3}}\sqrt{2-\sqrt{3}}=1$より$\mathbb{Q}(\alpha)\ni \sqrt{2-\sqrt{3}}$より正規拡大．
+$\mathbb{Q}$は完全体であるから$\mathbb{Q}(\alpha)/\mathbb{Q}$はGalois拡大．
+
+(3)$\sigma\in \Gal(\mathbb{Q}(\alpha)/\mathbb{Q})$について$\sigma(\sqrt{2+\sqrt{3}})=\sqrt{2-\sqrt{3}}$とする．
+$\sigma^2(\sqrt{2+\sqrt{3}})=\sigma(\sqrt{2-\sqrt{3}})=\sigma(1/\sqrt{2+\sqrt{3}})=\sqrt{2+\sqrt{3}}$より$\sigma^2=\id$である．
+$\tau(\sqrt{2+\sqrt{3}})=-\sqrt{2+\sqrt{3}}$も$\tau^2=\id$である．
+
+位数$2$の元が$2$つ以上存在する位数$4$の群は$(\mathbb{Z}/2 \mathbb{Z})^2$のみである．
+
+(4)$\mathbb{Q}(\alpha)$に含まれる$\mathbb{Q}$の$2$次拡大は$(\mathbb{Z}/2 \mathbb{Z})^2$の真部分群に対応する．
+$\langle\sigma\rangle$の固定体は$\mathbb{Q}(\sqrt{2+\sqrt{3}}+\sqrt{2-\sqrt{3}})$である．
+$(\sqrt{2+\sqrt{3}}+\sqrt{2-\sqrt{3}})^2=6$より$\sqrt{2+\sqrt{3}}+\sqrt{2-\sqrt{3}}=\sqrt{6}$である．
+よって$\mathbb{Q}(\sqrt{6})$が$\langle\sigma\rangle$の固定体．
+
+$\langle\tau\rangle$の固定体は$\mathbb{Q}(\alpha^2)=\mathbb{Q}(\sqrt{3})$である．
+
+$\langle\sigma\circ\tau\rangle$の固定体は$\mathbb{Q}(\sqrt{2+\sqrt{3}}-\sqrt{2-\sqrt{3}})$である．
+$(\sqrt{2+\sqrt{3}}-\sqrt{2-\sqrt{3}})^2=2$より$\sqrt{2+\sqrt{3}}+\sqrt{2-\sqrt{3}}=\sqrt{2}$である．
+よって$\mathbb{Q}(\sqrt{2})$が$\langle\sigma\circ\tau\rangle$の固定体．
+
+\end{document}
