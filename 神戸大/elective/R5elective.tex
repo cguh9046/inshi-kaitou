@@ -1,0 +1,87 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R5数学選択}
+\fbox{A}
+(1)
+(a)$K$のイデアル$I$が$a\in K^\times \cap I$をもつなら$1\in I$より$I=K$である．
+よって$K$のイデアルは$(0),K$である．
+
+(b)$\ker \rho=F$なら$\rho|_K=\id$に矛盾．よって$\ker \rho=(0)$より$\rho$は単射である．
+
+$F,F'$は体$K$上の有限次ベクトル空間とみなせる．$\rho:F\rightarrow F'$が$\rho|_K=\id$なら$\rho$はベクトル空間の単射準同型写像である．
+よって$[F:K]=\dim_K F\le \dim_K F'=[F':K]$である．
+
+(2)
+(a)$X^4-25X=X(X^3-25)$である．$X^3-25$の根は$\sqrt[3]{5}^2,\sqrt[3]{5}^2\omega,\sqrt[3]{5}^2\omega^2\quad(\omega=e^{\frac{2\pi i}{3}})$である．
+
+よって$\sqrt[3]{5}^2\omega/\sqrt[3]{5}^2=\omega\in F$である．
+$X^3-25$はアイゼンシュタインの既約判定法から$\mathbb{Z}[X]$上既約である．
+$\mathbb{Z}$はUFDでその商体は$\mathbb{Q}$であり，$X^3-25$は原始多項式であるから$X^3-25$は$\mathbb{Q}[X]$上既約である．
+よって$[\mathbb{Q}(\sqrt[3]{5}^2):\mathbb{Q}]=3$である．
+$\omega\in \mathbb{C}$であり，$\mathbb{Q}(\sqrt[3]{5}^2)\subset \mathbb{R}$であるから$\omega\notin \mathbb{Q}(\sqrt[3]{5}^2)$である．
+$X^2+X+1$が$\omega$の最小多項式であるから$[\mathbb{Q}(\sqrt[3]{5}^2)(\omega):\mathbb{Q}(\sqrt[3]{5}^2)]=2$である．
+よって$[F:\mathbb{Q}]=6$である．
+
+(b)$X^4-14X^2-14$について$t=X^2$とすれば$t^2-14t-14$であり根は$7\pm\sqrt{7^2+14}=7\pm3\sqrt{7}$である．
+よって$P$の根は$\pm \sqrt{7\pm3\sqrt{7}}$である．
+$\sqrt{7+3\sqrt{7}}\sqrt{7-3\sqrt{7}}=\sqrt{-14}\in F$である．
+
+$\sqrt{7+3\sqrt{7}}\in \mathbb{R}$であるから$\sqrt{-14}\notin\mathbb{Q}(\sqrt{7+3\sqrt{7}})$である．
+よって$F=\mathbb{Q}(\sqrt{7+3\sqrt{7}})(\sqrt{-14})$である．
+$P$はアイゼンシュタインの既約判定法から$\mathbb{Q}[X]$上既約である．
+したがって
+$[\mathbb{Q}(\sqrt{7+3\sqrt{7}}):\mathbb{Q}]=4,[\mathbb{Q}(\sqrt{7+3\sqrt{7}})(\sqrt{-14}):\mathbb{Q}(\sqrt{7+3\sqrt{7}})]=2$であるから$[F:\mathbb{Q}]=8$である．
+
+\fbox{B}
+(1)$p$を素元とする．$p=ab$と表せるとき，$ab\in (p)$であり，$(p)$は素イデアルであるから$a\in (p)$または$b\in (p)$である．
+$a\in (p)$として一般性を失わない．
+$a=pc$とかける．よって$p=pcb$である．
+すなわち$p(1-cb)=0$である．$p$は素元であるから$p\neq 0$．よって整域であるから$1-cb=0$より$bc=1$すなわち$b$は単元である．よって$p$は既約元．
+
+(2)$b\neq0$のとき，$I_{a,b}=(x^2+ay^2,bx)=(x^2+ay^2,x)=(ay^2,x)$である．
+$\mathbb{R}[x,y]/I_{a,b}\cong \mathbb{R}[y]/(ay^2)$である．
+$ay^2=ay\cdot y$であるから整域となるのは$a=0$のときのみ．
+
+$b=0$のとき，$I_{a,b}=(x^2+ay^2)$である．
+$a\le0$なら$x^2+ay^2=(x-\sqrt{-a}y)(x+\sqrt{-a}y)$であるから$\mathbb{R}[x,y]/I_{a,b}$は整域でない．
+$a>0$のとき，$(x^2+ay^2)$は$\mathbb{R}[x][y]$上可約なら，係数環がUFDであるからその商体上の多項式間$\mathbb{R}(x)[y]$上可約である．よって$x^2+a(\frac{f(x)}{g(x)})^2=0$となる$f(x),g(x)\in \mathbb{R}[x]$が存在する．
+$g(x_0)\neq 0$なる$x_0\neq 0$について$x_0^2+a(\frac{f(x_0)}{g(x_0)})^2>0$となり矛盾．よって既約である．したがって素イデアル．
+
+\begin{tikzpicture}[scale=1]
+
+	\draw[->,>=stealth,semithick] (-1,0)--(2,0) node[right]{$a$}; %x軸
+	\draw[->,>=stealth,semithick] (0,-2)--(0,2) node[left]{$b$}; %y軸
+	\draw (0,0) node[below left]{O}; %原点
+
+
+	\path node[shape=circle,draw,minimum size=1mm,inner sep=0pt](start) at (0,0) {};
+	\draw[-,red] (start)--(2,0);
+	\draw[-,red] (start)--(0,2);
+	\draw[-,red] (start)--(0,-2);
+\end{tikzpicture}
+
+(3)素イデアル$\mathfrak{p} $が全ての$I_{a,b}$を含むとする．
+$x\in I_{a,1}$であるから$x\in \mathfrak{p}$である．
+また$y^2\in I_{1,1}$であるから$y^2\in \mathfrak{p}$である．
+よって$(x,y^2)\subset \mathfrak{p}$である．
+逆にイデアル$J$について$(x,y^2)\subset J$なら$J$は全ての$I_{a,b}$を含む．
+$(x,y^2)$より大きい素イデアルは$\mathbb{R}[x,y]/(x,y^2)\cong \mathbb{R}[y]/(y^2)$の素イデアルと対応する．
+
+$\mathbb{R}[y]/(y^2)$の非自明なイデアル$J$で$cy+d+(y^2)\in J$とする．
+$c=0$なら$J=\mathbb{R}[y]/(y^2)$であるから$c\neq 0$である．
+よって$y+d +(y^2)\in J$である．$(y+d)(y-d)=y^2-d^2$より$y+d+(y^2)\in J$なら$d^2+(y^2)\in J$であるから，$J$が真のイデアルであるから$d=0$である．
+したがって$J=(y+(y^2))$である．
+
+すなわち$J$の逆像$\mathfrak{p}=(x,y)$が求める素イデアル．
+
+\end{document}

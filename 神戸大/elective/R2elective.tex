@@ -1,0 +1,87 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R2数学選択}
+\fbox{A}
+(1)$R=\mathbb{Z}_{(p)}$である．ただし$\mathbb{Z}_{(p)}$は積閉集合$S=\mathbb{Z}\setminus (p)$による$\mathbb{Z}$の局所化である．
+
+したがって$\mathbb{Q}$の部分環となる．
+
+(2)
+    イデアル$pR\subsetneq J$をとる．
+    $\frac{m}{n}\in J\setminus pR,\frac{m}{n}\notin R^\times$が存在する．
+    しかし$p\nmid m$であるから$\frac{m}{n}\frac{n}{m}=1$となり，$J=R$となる．
+	よって$pR$は極大イデアルである．
+
+    (3)異なる極大イデアル$J$をもてば$J-pR$の元について(2)と同様にして単元であるとわかるので矛盾．
+
+
+\begin{tcolorbox}[blanker,breakable,
+	left=3mm,right=3mm,
+	top=3mm,bottom=3mm,
+	before skip=15pt,after skip=15pt,
+	borderline vertical={1pt}{0pt}{black,dotted}]
+	(3)で局所環であることを示すから$R$の単元全体に着目する．
+    $\frac{m}{n}\in R^\times$とする．
+    ある$\frac{a}{b}$が存在して$\frac{m}{n}\frac{a}{b}=1$となる．
+    よって$ma=nb\in S$である．
+    逆に$ma\in S$なる$a$が存在すれば$\frac{m}{n}\frac{an}{ma}=1$となるから$\frac{m}{n}\in R^\times$である．
+    すなわち$R^\times=\left\{ \frac{m}{n}\relmiddle| ^\exists a, ma\in S\right\}$である．
+
+    $R\setminus pR =\left\{ \frac{m}{n}\relmiddle| p\nmid m \right\}=R^\times$であるから$R$は局所環で極大イデアルは$pR$である．    
+	\end{tcolorbox}
+
+(4)$\mathbb{Z}$はUFDであるから原始多項式$x^2+1$の既約性は$\mathbb{Q}[x]$での既約性と同値である．
+	同様に$\mathbb{Z}_{(p)}$もUFDでその商体は$\mathbb{Q}$であり，既約性が同値になる．
+
+	したがって$x^2+1$は$\mathbb{Z}[x]$上既約であるから$\mathbb{Z}_{(p)}[x]=R[x]$上でも既約である．
+
+(5)$\varphi\colon R\rightarrow R[x]/J$を考えれば$\ker \varphi=R \cap J$である．$R/(R\cap J)=\Im(\varphi)\subset R[x]/J$より整域であるから$R\cap J$は素イデアルである．
+
+$i\colon \mathbb{Z} \rightarrow R$について$i^{-1}(R\cap J)=(q)\quad(q\text{は素数か}0)$である．$0\neq q\neq p$なら$i(q)\in R^\times$となるから$q=0,p$である．
+$q=0$なら$R\cap J=0$である．
+このとき$x^2+1\in J$より$f(x)\in J\setminus (x^2+1)$なら$0\neq ax+b\in J$とできる．
+$(ax+b)(ax-b)=a^2x^2-b^2\in J$より$a^2+b^2\in J$である．
+すなわち$a=b=0$である．よって$J=I$であるが$I$は極大イデアルでないから矛盾．
+
+よって$q=p$である．すなわち$pR[x]\subset J$である．
+
+\fbox{B}
+(1)$Q(\alpha^3)=0$は明らか．
+$P(X)$は$\alpha$の最小多項式である．
+$\alpha^3\in K$なら最小多項式の次数が$3$以下となり矛盾．
+したがって$\alpha^3\notin K$であるから$Q(X)$は既約である．
+
+
+(2)(1)より$[L:K]=2$である．また$[F:K]=6$であるから$[F:L]=3$である．
+
+(3)$L/K$は完全体上の$2$次拡大であるからGalois拡大である．
+
+(2)より$\alpha$の$L$上最小多項式の次数が$3$であるから
+$X^3-\alpha^3$が$L$上の最小多項式である．(最小多項式でなければ拡大次数が2以下となり矛盾する．)
+
+その根は$\alpha,\omega\alpha,\omega^2\alpha$であり，全て$F$に含まれる．
+よって$F/L$はGalois拡大である．
+
+(4)$Q(\beta^3)=\beta^6+a\beta^3+b=c^6 \alpha^{-6}+ac^3\alpha^{-3}+c^3=c^3\alpha^{-6}(c^3+a\alpha^3+\alpha^6)=0$であるから$Q(X)=(X-\alpha^3)(X-\beta^3)$である．
+
+$P(X)$の根は$\alpha,\omega\alpha,\omega^2\alpha,\beta,\omega\beta,\omega^2\beta$であるから全て$F$に含まれる．
+よって$F/K$はGalois拡大である．
+
+$\sigma,\tau\in \Gal(F/K)$について$\sigma(\alpha)=\omega \alpha,\tau(\alpha)=\beta$とする．
+
+$\sigma\circ\tau(\alpha)=\sigma(\beta)=\sigma(c\alpha^{-1})=c \omega^2\alpha^{-1},\tau\circ\sigma(\alpha)=\tau(\omega \alpha)=\omega c \alpha^{-1}$であるから
+$\sigma\circ\tau\neq \tau\circ\sigma$である．
+よって非可換群．
+
+
+\end{document}

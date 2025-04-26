@@ -1,0 +1,58 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R4数学選択}
+\fbox{A}
+(1)$(\alpha_5^2-5)^2=5$である．よって$x^4-10x^2+20=P_5(x)$は$\alpha$を根にもつ．
+アイゼンシュタインの既約判定法から$P_5(x)$は$\mathbb{Z}[x]$上既約であり，$\mathbb{Z}$は$UFD$で$P_5$はモニック多項式であるから$P_5$は$\mathbb{Q}[x]$上既約である．
+
+(2)$P_5$の根は$\pm\sqrt{5\pm\sqrt{5}}$である．
+$\sqrt{5+\sqrt{5}}\sqrt{5-\sqrt{5}}=\sqrt{20}=2\sqrt{5}$であり，$\alpha^2-5=\sqrt{5}\in \mathbb{Q}(\alpha_5)$より$P_5$の根は全て$\mathbb{Q}(\alpha_5)$に属す．
+よって$L_5=\mathbb{Q}(\alpha_5)$である．
+
+(3)$\sigma\in \Gal(L_5/\mathbb{Q})$を$\sigma(\alpha_5)=\sqrt{5-\sqrt{5}}$とする．
+
+$\sigma(\sqrt{5})=\sigma(\alpha_5^2-5)=(\sqrt{5-\sqrt{5}})^2-5=-\sqrt{5}$である．
+よって$\sigma^2(\sqrt{5+\sqrt{5}})=\sigma(\sqrt{5-\sqrt{5}})=\sigma(\frac{2\sqrt{5}}{\alpha_5})=\frac{-2\sqrt{5}}{\sqrt{5-\sqrt{5}}}=-\alpha_5$である．
+
+よって$\sigma$は位数$4$の元であり，$\Gal(L_5/\mathbb{Q})$は位数$4$の群であるから巡回群．
+
+(4)$P_4$の根は$\pm\sqrt{4\pm \sqrt{5}}$である．
+$\sqrt{4+\sqrt{5}}\sqrt{4-\sqrt{5}}=\sqrt{11}\in L_4,\sqrt{4+\sqrt{5}}^2-4=\sqrt{5}\in L_4$である．
+よって$\mathbb{Q}(\sqrt{11},\sqrt{5})\subset L_4$である．
+
+$\sqrt{11}=a+b\sqrt{5}\quad(a,b\in \mathbb{Q})$とする．
+$11=a^2+2ab\sqrt{5}+5b^2$より$2ab\sqrt{5}=a^2+5b^2-11\in \mathbb{Q}$であるから$ab=0$である．
+$a=0$なら$5b^2=11$であるが，これは両辺の$11$の指数を比べれば右辺は奇数であり，左辺は偶数である．
+$b=0$なら$a^2=11$であり，これも$11$の指数を比べれば矛盾すると分かる．
+
+よって$\sqrt{11}\notin \mathbb{Q}(\sqrt{5})$である．
+
+$L_4/\mathbb{Q}$が$4$次巡回拡大なら$\Gal(L_4/\mathbb{Q})\cong mz
+/ 4 \mathbb{Z}$である．
+
+したがって$L_4/\mathbb{Q}$は非自明な異なる中間体$\mathbb{Q}(\sqrt{11}),\mathbb{Q}(\sqrt{5})$をもつが，これは$\Gal(L_4/\mathbb{Q})\cong mz
+/ 4 \mathbb{Z}$ であることに矛盾する．よって$L_4/\mathbb{Q}$が$4$次巡回拡大でない．
+
+\fbox{B}
+(1)$
+    \mathbb{Z}[x]/(p,x^2+ax+b)\cong (\mathbb{Z}[x]/(p))/((p,x^2+ax+b)/(p))\cong \mathbb{F}_p[x]/(x^2+\bar{a}x+\bar{b})
+$
+
+(2)$\mathbb{Z}[x]/(3,x^2+9x-1)\cong \mathbb{F}_3[x]/(x^2-1)$であり，$x^2-1=(x-1)(x-2)\in \mathbb{F}_3[x]$であるから整域でない．
+
+(3)環として同型なら同型写像$\varphi\colon \mathbb{Z}[x]/(x^2+9x-1)\rightarrow \mathbb{Z}[x]/(x^2+9x+3)$がある．$\varphi(3)=3$であるから$(\mathbb{Z}[x]/(x^2+9x-1))/(3)\cong (\mathbb{Z}[x]/(x^2+9x+3))/(3)$である．
+
+$(\mathbb{Z}[x]/(x^2+9x-1))/(3)\cong (\mathbb{Z}[x]/(x^2+9x-1))/((3,x^2+9x+1)/(x^2+9x-1))\cong \mathbb{Z}[x]/(3,x^2+9x-1)\cong \mathbb{F}_3[x]/(x^2-1)\cong \mathbb{F}_3[x]/(x-1)\times \mathbb{F}_3[x]/(x-2)\cong \mathbb{F}_3^2$である．よって零元でないべき零元をもたない．
+$(\mathbb{Z}[x]/(x^2+9x+3))/(3)\cong \mathbb{Z}[x]/(3,x^2+9x+3)\cong \mathbb{F}_3[x]/(x^2)$は$x$が零元でないべき零元である．これは矛盾．よって同型でない．
+
+\end{document}
