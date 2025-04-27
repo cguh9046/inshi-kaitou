@@ -1,0 +1,73 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{R7数学選択}
+\fbox{A}
+(1)(a)$2/(\sqrt{5}+\sqrt{7})=\sqrt{7}-\sqrt{5}$である．
+よって$\sqrt{5}+\sqrt{7}+\sqrt{7}-\sqrt{5}=2\sqrt{7}\in \mathbb{Q}(\sqrt{5}+\sqrt{7})$である．
+よって$\sqrt{7},\sqrt{5}\in \mathbb{Q}(\sqrt{5}+\sqrt{7})$である．
+すなわち$\mathbb{Q}(\sqrt{5}+\sqrt{7})=\mathbb{Q}(\sqrt{5},\sqrt{7})$である．
+$\mathbb{Q}(\sqrt{5},\sqrt{7})=\mathbb{Q}(\sqrt{5})\cdot\mathbb{Q}(\sqrt{7}),\mathbb{Q}(\sqrt{5})\cap\mathbb{Q}(\sqrt{7})=\mathbb{Q}$であるから，
+推進定理より$\Gal(\mathbb{Q}(\sqrt{5},\sqrt{7})/\mathbb{Q})\cong (\mathbb{Z}/2\mathbb{Z})^2$である．
+
+(b)$\sqrt{2+\sqrt{6}}=\alpha$とする．$(\alpha^2-2)^2=6$であるから，
+$p(x)=x^4-4x^2-2$は$\alpha$を根にもつ．アイゼンシュタインの既約判定法から$p(x)$は$\mathbb{Q}$上既約である．よって$\alpha$の$\mathbb{Q}$上の最小多項式である．
+$p(x)$の根は$\pm \sqrt{2+\pm \sqrt{6}}$である．$\sqrt{2-\sqrt{6}}\in \mathbb{C}\setminus \mathbb{R}$であるから，
+$\sqrt{2-\sqrt{6}}\notin \mathbb{Q}(\sqrt{2+\sqrt{6}})\subset \mathbb{R}$である．
+よって$\mathbb{Q}(\sqrt{2+\sqrt{6}})/\mathbb{Q}$は正規拡大でないから，$\mathbb{Q}(\sqrt{2+\sqrt{6}})/\mathbb{Q}$はGalois拡大でない．
+
+(c)$\alpha=\sqrt{3(2+\sqrt{2})}$とする．
+$(\alpha^2-6)^2=18$であるから，
+$p(x)=x^4-12x^2+18$は$\alpha$を根にもつ．素数$2$に着目すればアイゼンシュタインの既約判定法から$p(x)$は$\mathbb{Q}$上既約である．よって$\alpha$の$\mathbb{Q}$上の最小多項式である．
+$p(x)$の根は$\pm \sqrt{3(2\pm \sqrt{2})}$である．
+$\sqrt{3(2+\sqrt{2})}^2=3(2+\sqrt{2})$より$\sqrt{2}\in K_3$である．
+$\frac{1}{\sqrt{3(2+\sqrt{2})}}=\frac{\sqrt{3(2-\sqrt{2})}}{3\sqrt{2}}$であるから$\sqrt{3(2-\sqrt{2})}\in K_3$である．
+よって$p(x)$の根は全て$K_3$に属すので$K_3/\mathbb{Q}$は正規拡大である．すなわち$K_3/\mathbb{Q}$は$4$次Galois拡大である．
+
+$\sigma\in \Gal(K_3/\mathbb{Q})$に対して$\sigma(\sqrt{3(2+\sqrt{2})})=\sqrt{3(2-\sqrt{2})}$なるものが存在する．
+$3(2+\sigma(\sqrt{2}))=\sigma(3(2+\sqrt{2}))=\sqrt{3(2-\sqrt{2})}^2=3(2-\sqrt{2})$であるから，$\sigma(\sqrt{2})=-\sqrt{2}$である．
+
+よって$\sigma^2(\sqrt{3(2+\sqrt{2})})=\sigma(\sqrt{3(2-\sqrt{2})})=\sigma(\frac{3\sqrt{2}}{\sqrt{3(2+\sqrt{2})}})=-\sqrt{3(2+\sqrt{2})}$である．
+よって$\sigma$の位数は$4$である．
+すなわち$\Gal(K_3/\mathbb{Q})\cong \mathbb{Z}/4\mathbb{Z}$である．
+
+(2)$\alpha,\beta$が$\mathbb{Q}$上代数的であるから$[\mathbb{Q}(\alpha):\mathbb{Q}]<\infty$,$[\mathbb{Q}(\beta):\mathbb{Q}]<\infty$である．
+よって$[\mathbb{Q}(\alpha,\beta):\mathbb{Q}]<\infty$である．
+$\mathbb{Q}(\alpha+\beta)\subset \mathbb{Q}(\alpha,\beta)$であるから，
+$[\mathbb{Q}(\alpha+\beta):\mathbb{Q}]=m<\infty$である．
+$\mathbb{Q}$上ベクトル空間$\mathbb{Q}(\alpha+\beta)$について$\{ 1,\alpha+\beta,(\alpha+\beta)^2,\ldots,(\alpha+\beta)^{m}\}$は一次従属であるから，$\sum\limits_{i=0}^m c_i(\alpha+\beta)^i=0$なる$c_i\in \mathbb{Q}$が存在する．
+$c$を$c_i\neq 0$となるような$c_i$で$i$が最大のものとする．
+$p(x)=\sum\limits_{i=0}^m \frac{c_i}{c}x^i$とすれば$p(\alpha+\beta)=0$で$p(x)$はモニック多項式であるから$\alpha+\beta$は$\mathbb{Q}$上代数的である．
+
+\fbox{B}
+(1)$R$は$k$線形空間であるから，和で閉じている．また加法的逆元を持つこともわかる．
+$R$が積で閉じているかどうかは生成系が積で閉じているかどうかを確かめればよい．
+$x^{i_1}y^{j_1} x^{i_2}y^{j_2}=x^{i_1+i_2}y^{j_1+j_2}$である．$j_1\le 5 i_1,j_2\le 5 i_2$より$j_1+j_2\le 5(i_1+i_2)$であるから，$R$は積で閉じている．
+$1=x^0y^0\in R$であるから，$R$は単位元を持つ．
+よって$R$は部分環である．
+
+(2)$k[x,y]/(x)\cong k[y]$であり$k[y]$は整域であるから$(x)$は素イデアルである．
+
+(3)$I\cap R\subsetneq J$なる$R$のイデアル$J$をとる．
+$\sum a_{ij}x^iy^j \in J\setminus I\cap R\quad(a_{ij}\neq 0)$を任意にとる．
+$\sum a_{ij}x^iy^j \notin I$より$i=0$なる項が存在する．
+$j\le 5i=0$よりその項は定数項である．
+よって$\sum a_{ij}x^iy^j= a_{00} +\sum\limits_{i> 0} a_{ij}x^iy^j$とできる．
+このとき$\sum\limits_{i> 0} a_{ij}x^iy^j\in I\setminus J$であるから$0\neq a_{00}\in J$である．
+よって$J=R$となるから$I\cap R$は極大イデアル．
+
+(4)$y^2,y^3\notin R$であるから，$xy^2,xy^3\notin J$である．
+$(xy^2)(xy^3)=x^2y^5=x(xy^5)$であり，$xy^5\in R$より$x(xy^5)\in J$である．
+よって$J$は素イデアルでない．
+
+
+\end{document}
