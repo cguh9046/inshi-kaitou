@@ -1,0 +1,98 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2001基礎}
+\fbox{1}
+(1)$\left\{v_1= \begin{pmatrix}
+1\\-1\\0
+\end{pmatrix},v_2=\begin{pmatrix}
+1\\0\\-1
+\end{pmatrix} \right\}$が基底．
+
+(2)$f(v_1)=\begin{pmatrix}
+	-1 \\0\\ 1
+	\end{pmatrix}=-v_2,f(v_2)=\begin{pmatrix}
+	0\\-1\\1
+	\end{pmatrix}=v_1-v_2$である．
+
+	よって$T=\begin{pmatrix}
+	0 & 1\\
+	-1 &- 1
+	\end{pmatrix}$が表現行列．
+
+\fbox{2}
+(1)$\begin{pmatrix}
+	1 & 1 & a^2\\
+	1 & a & 1 \\
+	1 & 1 & 1
+\end{pmatrix}=\begin{pmatrix}
+	0 & 0 & a^2-1\\
+	0 & a-1 & 0 \\
+	1 & 1 & 1
+\end{pmatrix}$より
+$a\neq \pm1$で$\dim V=3$
+$a=-1$で$\dim V=2$
+$a=1$で$\dim V=1$である．
+
+(2)$\varphi\colon V+W\rightarrow V/(V\cap W);v+w\mapsto[v]$で定める．
+$v+w=v'+w'$なら$w-w'=v'-v\in V\cap W$であるから$[v]=[v+w-w']=[v']$よりwell-definedである．
+$\varphi$は全射準同型であり，$w\in W\subset \ker \varphi$は明らか．
+$\varphi(v+w)=0$なら$v\in V\cap W$より$v+w\in W$である．
+
+よって$(V+W)/W\cong V/(V\cap W)$であるから$\dim (V+W)-\dim W=\dim V-\dim (V\cap W)$である．
+よって$1=\dim V\cap W=\dim V +\dim W -\dim (V+ W)$である．
+$\begin{vmatrix}
+	1&1&1\\
+	1&-1&3\\
+	1&-5&3
+\end{vmatrix}=\begin{vmatrix}
+	1&1&1\\
+	0&-2&2\\
+	0&-6&2
+\end{vmatrix}=\begin{vmatrix}
+	1&1&1\\
+	0&-2&2\\
+	0&0&-4
+\end{vmatrix}=8\neq 0$より$\left\{ v_1,w_1,w_2 \right\}$は一次独立．よって$\dim V+W=3$である．
+よって$\dim V +\dim W -\dim (V+ W)=\dim V -1=1$より$a=-1$．
+
+\fbox{3}
+(1)$-2<a_n<2$のとき，$0<a_{n+1}=\sqrt{a_n+2}<2$である．
+また$0<x<2$なら$(x-2)(x+1)<0$より$x^2<x+2$．すなわち$x<\sqrt{x+2}$である．
+したがって$-2<x<2$で$x<\sqrt{x+2}$が成り立つのは明らか．
+よって$-2<a_1<2$のとき$a_1<a_2<\cdots <2$となるから広義単調増加．
+
+$a_1=2$なら$a_2=2,\cdots ,a_n=2$より広義単調数列．
+
+$a_n>2$なら$a_{n+1}=\sqrt{a_n+2}>2$である．
+$x>2$なら$(x-2)(x+1)>0$より$x>\sqrt{x+2}$である．
+よって$a_1>2$のとき，$a_1>a_2>\cdots >2$となるから広義単調減少．
+
+(2)全ての場合において$\{a_n\}$は有界単調数列であるから収束する．
+したがってその収束値を$\alpha$とおけば$\alpha=\sqrt{\alpha+2}$であるから$\alpha=2$である．
+
+\fbox{4}
+$R_1,R_2>1$とする．
+$\left| \int_{-R_1}^{R_2}\frac{e^{ix}}{x^2+1}dx \right|\le \int_{-R_1}^{R_2}\left| \frac{1}{x^2+1} \right|dx\le \int_{-R_1}^{-1} \frac{1}{x^2}dx+\int_{-1}^1 dx+\int_1^{R_2}\frac{1}{x^2}dx=\left[ \frac{-1}{x} \right]_{-R_1}^{-1}+2+\left[ \frac{-1}{x} \right]_{1}^{R_2}=4-\frac{1}{R_1}-\frac{1}{R_2}\rightarrow 4\quad(R_1,R_2\to \infty)$である．
+よって広義積分は収束する．
+
+$R>10$とする．
+$\mathbb{C}$上の積分経路$D_R$を$C_R=\left\{ Re^{i\theta}\relmiddle| \theta\in[0,\pi]\right\}$と$[-R,R]\subset \mathbb{R}$の和集合とし，反時計回りの向きをとる．
+$\left| \int_{C_R}\frac{e^{iz}}{z^2+1}dz \right|=\int_{0}^\pi \left| \frac{\exp(iRe^{i\theta})}{R^2e^{2i\theta}+1} R e^{i\theta}i\right|d\theta\le \int_0^\pi \frac{R\exp(-R\sin \theta)}{R^2-1}d\theta\le \frac{\pi}{R}\rightarrow 0\quad(R\to \infty)$である．
+
+また$\int_{D_R}\frac{e^{iz}}{z^2+1}dz$は被積分関数の特異点は$\pm i$であり，積分領域内では$i$が唯一の特異点である．留数をもとめると$\Res(\frac{e^{iz}}{z^2+1},i)=\frac{e^{ii}}{i+i}=\frac{e^{-1}}{2i}$である．
+したがって留数定理から$\int_{D_R} \frac{e^{iz}}{z^2+1}dz=\frac{\pi}{e}$である．
+
+以上より$\frac{\pi}{e}=\lim\limits_{R\to \infty}\int_{D_R} \frac{e^{iz}}{z^2+1}dz=\lim\limits_{R\to \infty}( \int_{C_R} \frac{e^{iz}}{z^2+1}dz+\int_{-R}^R \frac{e^{ix}}{x^2+1}dx)=\int_{-\infty}^\infty \frac{e^{ix}}{x^2+1}dx$である．
+
+
+\end{document}

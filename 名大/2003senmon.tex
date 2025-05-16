@@ -1,0 +1,113 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2003専門}
+\fbox{1}
+(1)$V$は$3$次元線形空間であるから$\{ v_1,v_2,v_3\}$が一次独立であることを示せばよい．
+$c_1v_1+c_2v_2+c_3v_3=0$とする．$F(c_1v_1+c_2v_2+c_3v_3)=c_1f(v_1)=0$であり，$F(v_1)\neq 0$より$c_1=0$である．
+よって$c_2v_2+c_3v_3=0$であるが$v_2,v_3$は一次独立であるから$c_2=c_3=0$である．したがって$\{ v_1,v_2,v_3\}$は基底．
+
+(2)$\{ v_1,v_2,v_3\}$が基底であるから$F(v_1)=av_1+bv_2+cv_3$なる$a,b,c\in V$が存在する．
+したがって表現行列は$\begin{pmatrix}
+a&0&0\\
+b&0&0\\
+c&0&0\\
+\end{pmatrix}$である．
+
+(3)
+$F(v_1)\notin U$であるから$a\neq 0$である．
+$u_1=v_1+\frac{b}{a}v_2+\frac{c}{a}v_3$とする．
+$F(u_1)=F(v_1)=a(v_1+\frac{b}{a}v_2+\frac{c}{a}v_3)=au_1$である．
+$\{u_1,v_2,v_3\}$に関する表現行列は対角行列である．
+
+(4)$U$の一次独立な集合$\{F(v_1)\}$を延長して$U$の基底$\{ F(v_1),v_3\}$をとる．
+このとき$\{v_1,F(v_1),v_3\}$に関する表現行列は$\begin{pmatrix}
+0&0&0\\
+1&0&0\\
+0&0&0
+\end{pmatrix}$であり，ジョルダン標準形である．
+
+\fbox{2}
+(1)$U$が開集合$\Leftrightarrow ^\forall x\in U,^\exists r>0,B_r(x)\subset U$である．
+
+(2)((a)$\Rightarrow$(b))
+$U$を$\mathbb{R}^N$の開集合とする．$x\in f^{-1}(U)$を任意にとる．
+$f(x)\in U$より$^\exists r>0,B_r(f(x))\subset U$である．
+したがって$f^{-1}(B_r(f(x)))\subset f^{-1}(U)$がなりたつ．
+いま(a)より$r$に対してある$\delta>0$が存在して$B_\delta(x)=f^{-1}f(B_\delta(x))\subset f^{-1}(B_{r}(f(x)))\subset f^{-1}(U)$である．
+よって$f^{-1}(U)$は開集合である．
+
+((b)$\Rightarrow$(a))
+任意の$a\in \mathbb{R}^N,\varepsilon>0$をとる．$B_{\varepsilon}(f(a))$は開集合であるから
+$a\in f^{-1}(B_{\varepsilon}(f(a)))$も開集合である．
+したがってある$\delta>0$が存在して$B_\delta(a)\subset f^{-1}(B_{\varepsilon}(f(a)))$である．
+$f$で送って$f(B_\delta(a))\subset f(f^{-1}(B_{\varepsilon}(f(a))))\subset B_{\varepsilon}(f(a))$である．
+
+(3)((a)$\Rightarrow $(c))
+任意の$ \varepsilon>0$に対してある$\delta>0$が存在して$f(B_\delta(a))\subset B_\varepsilon(f(a))$である．
+したがってある$N$が存在して$n>N$なら$d(a_n,a)<\delta$すなわち$a_n\in B_\delta(a)$が成り立つ．
+よって$f(a_n)\in B_\varepsilon(f(a))$であるから$d(f(a_n),f(a))<\varepsilon$である．
+これは$\lim f(a_n)=f(a)$を意味する．
+
+((c)$\Rightarrow$(a))
+背理法を用いる．
+ある$a\in \mathbb{R}^N$と$\varepsilon>0$が存在して任意の$\delta>0$に対して
+$f(B_\delta(a))\not\subset B_\varepsilon(f(a))$であると仮定する．
+このとき$\delta=\frac{1}{n}$とすれば$a_n\in B_\delta(a)$で$f(a_n)\not\in B_\varepsilon(f(a))$なるものがとれる．
+これによって数列$\{a_n\}$を作れば$\{a_n\}$は$a$に収束するが$\{ f(a_n)\}$は$f(a)$に収束しない．
+これは矛盾．
+
+\fbox{3}
+(1)$x=r\cos \theta,y=r\sin \theta$とおくとヤコビアンは$r$である．
+よって$I_n=\int_0^{2\pi}\int_0^{\infty}\frac{r^2}{1+r^{2n}}drd\theta$である．
+
+(2)$I_n$の収束性は$\int_0^{\infty}\frac{r^2}{1+r^{2n}}dr$の収束性と同値．
+$[0,1]$では被積分関数が有界であるから$\int_1^\infty\frac{r^2}{1+r^{2n}}dr$の収束性と同値．
+$n\ge 2$のとき，$\int_1^M \frac{r^2}{1+r^{2n}}dr\le \int_1^M r^{2-2n}dr=\left[ \frac{1}{3-2n}r^{3-2n} \right]_1^M =\frac{1}{3-2n}(M^{3-2n}-1)\rightarrow \frac{1}{3n-2}\quad(M\to \infty)$である．
+$n=1$のとき．$r\ge 1$より$r^2\ge 1$であるから$2r^2\ge r^2+1$である．よって
+$\int_1^M\frac{r^2}{1+r^{2}}dr\ge \int_1^M \frac{r^2}{2r^2}dr=\int_1^M \frac{1}{2}dr= \frac{1}{2}M\rightarrow \infty\quad (M\to \infty)$より発散する．
+
+よって求める最小値$a$は$a=2$である．
+
+(3)$\frac{z^k}{1+z^4}$は$z=e^{\frac{\pi i}{4}},e^{\frac{3\pi i}{4}},e^{\frac{5\pi i}{4}},e^{\frac{7\pi i}{4}}$をそれぞれ1位の極として持つ．
+積分路$\Gamma$内の特異点は$z=e^{\frac{\pi i}{4}},e^{\frac{3\pi i}{4}}$である．
+留数は$\Res (\frac{z^k}{1+z^4},e^{\frac{\pi i}{4}})=\left. \left( \frac{z^k}{4z^3} \right) \right|_{z=e^{\frac{\pi i}{4}}}=\frac{1}{4}e^{\frac{(k-3)\pi i}{4}},\Res (\frac{z^k}{1+z^4},e^{\frac{3\pi i}{4}})=\left. \left( \frac{z^k}{4z^3} \right) \right|_{z=e^{\frac{3\pi i}{4}}}=\frac{1}{4}e^{\frac{(3k-1)\pi i}{4}}$である．
+したがって留数定理から$\int_{\Gamma}\frac{z^k}{1+z^4}dz=2\pi i (\frac{1}{4}e^{\frac{(k-3)\pi i}{4}}+\frac{1}{4}e^{\frac{(3k-1)\pi i}{4}})$である．
+
+(4)\begin{align}
+	\left| \int_{C_R} \frac{z^2}{1+z^4}dz \right|&=\left| \int_0^\pi \frac{R^2e^{2i \theta}}{1+R^4e^{4 i\theta}} Rie^{i\theta}d\theta \right|\le \int_0^\pi \left| \frac{R^{3}}{1+R^4e^{4i\theta}} \right|d\theta\le \int_0^\pi \left| \frac{R^{3}}{R^4-1} \right|d\theta=\pi \frac{R^{3}}{R^4-1}\rightarrow 0 \quad(R\to \infty)\\
+	\int_{[-R,R]}\frac{z^2}{1+z^4}dz&=\int_{[-R,0]}\frac{z^2}{1+z^4}dz+\int_{[0,R]}\frac{z^2}{1+z^4}dz=\int_{R}^0 \frac{r^2}{1+r^4}(-1)dr+\int_0^R \frac{r^2}{1+r^4}dr=2\int_0^R \frac{r^2}{1+r^4}dr
+\end{align}
+である．
+よって$\int_{\Gamma} \frac{z^2}{1+z^4}dz= \int_{C_R} \frac{z^2}{1+z^4}dz+2\int_0^R \frac{r^2}{1+r^4}dr$である．$R\to \infty$として$2\pi i (\frac{1}{4}e^{\frac{(2-3)\pi i}{4}}+\frac{1}{4}e^{\frac{(3\cdot2-1)\pi i}{4}})=0+2\int_0^\infty \frac{r^2}{1+r^4}dr$である．
+したがって$\int_0^\infty \frac{r^2}{1+r^4}dr=\frac{\sqrt{2}}{4}\pi$である．
+よって$I_2=\int_0^{2\pi}\frac{\sqrt{2}}{4}\pi d\theta=\frac{\pi^2}{\sqrt{2}}$である．
+
+\fbox{4}
+(1)$\varphi\colon K[X,Y]\rightarrow K[t];x\mapsto t^3,y\mapsto t^2$とする．
+このとき$\ker \varphi\supset (X^2-Y^3)$は明らか．
+$f(X,Y)\in \ker \varphi$とすると，$f(X,Y)=(X^2-Y^3)g(X,Y)+Xh_1(Y)+h_2(Y)$とできる．
+$\varphi$でおくれば$0=t^3h_1(t^2)+h_2(t^2)$である．$t$の次数について，偶数の次数を比較すれば$0=h_2(t^2)$であるから$h_2=0$である．よって$0=t^3h_1(t^2)$より$h_1=0$である．
+すなわち$\ker \varphi=(X^2-Y^3)$である．
+
+よって準同型定理から$R=K[X,Y]/\ker\varphi\cong \Im \varphi=K[t^3,t^2]$である．
+
+$K[t^3,t^2]$は$K[t]$の部分環であるから整域であることは明らか．よって$R$は整域．
+
+(2)$K[t^2,t^3]$の商体は$t^3/t^2=t$より$K(t)$である．
+$K[t^2,t^3][s]\ni s^2-t^2$は$t$を根にもつモニック多項式であるが，$t\notin K[t^2,t^3]$であるから$R$は整閉でない．
+
+
+
+
+
+\end{document}
