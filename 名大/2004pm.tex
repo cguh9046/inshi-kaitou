@@ -1,0 +1,89 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2004午後}
+\fbox{1}
+(1)次元定理より$\dim V=\dim \Im f+\dim \Ker f$である．
+$\ker f=\Im f$より$\dim \ker f=\dim \Im f$であるから，
+$\dim V=2\dim \ker f$である．いま$V\neq{0}$より$\dim V\ge 1$である．
+したがって$\dim \ker f\ge 1$であるから，$\ker f\neq{0}$である．
+よって$\ker f\neq{0}$である．
+また$\dim \Im f=\dim V-\dim \ker f<\dim V$である．
+よって$\Im f\neq V$である．
+
+(2)$c_1v_1+\cdots+c_nv_n+d_1w_1+\cdots+d_n w_n=0$とする．
+$f$で送ると，$v_i\in \Im f=\Ker f$より，$d_1f(w_1)+\cdots+d_nf(w_n)=d_1v_1+\cdots+d_nv_n=0$である．
+$\{v_1,\cdots,v_n\}$は$\Im f$の基底であるから，$d_1=d_2=\cdots=d_n=0$である．
+したがって，$c_1v_1+\cdots+c_nv_n=0$である．
+$\{v_1,\cdots,v_n\}$は$\Ker f$の基底であるから，$c_1=c_2=\cdots=c_n=0$である．
+よって$\{v_1,\cdots,v_n,w_1,\cdots,w_n\}$は一次独立である．
+
+(3)$\dim \Im f=n$である．よって$\dim V=2\dim \Im f=2n$である．
+よって$2n$個の一次独立なベクトルからなる$\{v_1,\cdots,v_n,w_1,\cdots,w_n\}$は$V$の基底である．
+
+(4)表現行列は$\begin{pmatrix}
+O& E_n\\
+O& O
+\end{pmatrix}$である．ただし$E_n$は$n$次単位行列であり，
+$O$は$n$次零行列である．
+
+\fbox{2}
+(1)$t>0$より$f'(x)=3x^2+t^4>0$であるから，$f$は狭義単調増加である．
+$f$は$3$次関数であるから解を必ずもち，狭義単調増加であるから解はただ一つである．
+
+$f(0)=-t^3<0,f(t)=t^5>0$であるから$0<\alpha(t)<t$である．
+$f(\frac{1}{t})=\frac{1}{t^3}>0$であるから，$0<\alpha(t)<\frac{1}{t}$である．
+
+(2)$F(x,t)=x^3+t^4x-t^3$とする．
+$F(x,t)$は$C^\infty$級である．
+任意の$t>0$に対して$F(\alpha(t),t)=0$であり，$\frac{\partial F}{\partial x}(\alpha(t),t)=3\alpha(t)^2+t^4>0$であるから，陰関数定理より，$\alpha(t)$は$C^\infty$級である．
+したがって$\frac{d\alpha(t)}{dt}$は存在して，
+$0=\frac{\partial F}{\partial x}(\alpha(t),t)\frac{d\alpha(t)}{dt}+\frac{\partial F}{\partial t}(\alpha(t),t)=(3\alpha(t)^2+t^4)\frac{d\alpha(t)}{dt}+(4t^3\alpha(t)-3t^2)$
+より$\frac{d\alpha(t)}{dt}=\frac{-4t^3\alpha(t)+3t^2}{3\alpha(t)^2+t^4}$である．
+
+(3)$\frac{d\alpha(t)}{dt}=0$とすると，$-4t^3\alpha(t)+3t^2=0$であるから$\alpha(t)=\frac{3}{4t}$である．
+すなわち$f(\frac{3}{4t})=(\frac{3}{4t})^3+t^4(\frac{3}{4t})-t^3=0$である．
+これを解くと$t^6=\frac{27}{16}$より$t=\frac{\sqrt{3}}{\sqrt[3]{4}}$である．
+$t_0=\frac{\sqrt{3}}{\sqrt[3]{4}}$とすると，$t<t_0$のとき$\frac{d\alpha(t)}{dt}>0$で$t>t_0$のとき$\frac{d\alpha(t)}{dt}<0$であるから$\alpha(t)$は$t=\frac{\sqrt{3}}{\sqrt[3]{4}}$で最大値をもち，$\alpha(\frac{\sqrt{3}}{\sqrt[3]{4}})=\frac{3}{4t_0}=\frac{\sqrt{3}}{2\sqrt[3]{2}}$である．
+
+\fbox{3}
+(1)\begin{align}
+    \int_{\ell_2}\frac{z}{1+z^3}dz=\int_0^R \frac{e^{\frac{i2\pi}{3}}t}{1+(e^{\frac{i2\pi}{3}}t)^3}e^{\frac{i2\pi}{3}}dt=e^{\frac{i4\pi}{3}}\int_0^R \frac{t}{1+t^3}dt=e^{\frac{i4\pi}{3}}\int_{\ell_1}\frac{z}{1+z^3}dz
+\end{align}
+
+(2)\begin{align}
+    \left| \int_{C_R} \frac{z}{1+z^3}dz\right|=\left| \int_0^{\frac{2\pi}{3}}\frac{Re^{i\theta}}{1+(Re^{i\theta})^3}Rie^{i\theta}d\theta \right|\le \int_0^{\frac{2\pi}{3}}\frac{R^2}{R^3-1}d\theta=\frac{2\pi}{3}\frac{R^2}{R^3-1}\rightarrow 0 \quad (R\to \infty)
+\end{align}
+
+(3)$\ell_1+C_R-\ell_2$で定まる積分曲線を$C$とする．
+$f(z)=\frac{z}{1+z^3}$は$z=e^{\frac{i\pi}{3}},-1,e^{\frac{5i\pi}{3}}$を$\mathbb{C}$上で孤立特異点としてもち，それ以外の点では正則である．
+したがって$C$を含むある有界領域$D$で$z=e^{\frac{i\pi}{3}}$を除いて$D$上で$f$は正則である．
+$\Res(f,e^{\frac{i\pi}{3}})=e^{\frac{i\pi}{3}}\frac{1}{3(e^{\frac{i\pi}{3}})^2}=\frac{1}{3}e^{-\frac{i\pi}{3}}$であるから，
+留数定理より$\int_C f(z)dz=2\pi i \Res(f,e^{\frac{i\pi}{3}})=\frac{2\pi i}{3}e^{-\frac{i\pi}{3}}$である．
+
+また$\int_C f(z)dz=\int_{\ell_1}f(z)dz+\int_{C_R}f(z)dz-\int_{\ell_2}f(z)dz=(1-e^{\frac{i4\pi}{3}})\int_{\ell_1}f(z)dz+\int_{C_R}f(z)dz$である．
+$R\to\infty$として$\frac{2\pi i}{3}e^{-\frac{i\pi}{3}}=(1-e^{\frac{i4\pi}{3}})\int_0^\infty \frac{t}{1+t^3}dt$より，
+$\int_0^\infty \frac{t}{1+t^3}dt=\frac{2\pi}{9}$である．
+
+\fbox{4}
+(1)任意の$\varepsilon>0$をとる．(b)よりある$N$が存在して，$n\ge N$のとき$a_n\in B_{\varepsilon}(x)$である．
+$\{a_n\}$は$A$の点列であるから$a_N\in A$である．
+したがって，$a_N\in B_{\varepsilon}(x)\cap A$である．
+すなわち，$B_{\varepsilon}(x)\cap A\neq \emptyset$である．
+
+(2)任意の$n$に対して$B_{\frac{1}{n}}(x)\cap A\neq \emptyset$であるから，$a_n \in B_{\frac{1}{n}}(x)\cap A$と定める．
+このとき任意の$\varepsilon>0$に対して$\varepsilon>\frac{1}{N}$となる$N$が存在して，$n\ge N$のとき$a_n \in B_{\frac{1}{n}}(x)\cap A\subset B_{\varepsilon}(x)\cap A$である．
+よって(b)が成り立つ．
+
+(3)ある$\varepsilon>0$が存在して，任意の$N$に対して，ある$n\ge N$が存在して，$a_n \notin B_{\varepsilon}(x)$である．
+
+\end{document}

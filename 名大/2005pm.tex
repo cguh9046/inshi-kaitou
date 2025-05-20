@@ -1,0 +1,169 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2005午後}
+\fbox{1}
+(1)$V$の基底として$\left\{ 1,t,t^2 \right\}$がとれる．この基底のもとでベクトルを並べてできる行列は$A=\begin{pmatrix}
+1&0&1\\
+-2&0&2\\
+1&1&1
+\end{pmatrix}$であり，$\det A=-4$であるから一次独立である．よって基底．
+
+(2)$\phi_a(1)=a,\phi(t)=(a+1)t-1,\phi(t^2)=(a+2)t^2+2$である．
+よって$A=\begin{pmatrix}
+a&-1&2\\
+0&a+1&0\\
+0&0&a+2
+\end{pmatrix}$である．
+
+(3)$\phi_a$が全射であることが必要十分．有限次元ベクトル空間の自己準同型は全射なら同型であるから，$A$が正則であることが必要十分．
+$\det A=a(a+1)(a+2)$より$a\neq 0,-1,-2$が必要十分．
+
+(4)$A\begin{pmatrix}
+x_1\\x_2\\x_3
+\end{pmatrix}=\begin{pmatrix}
+2\\0\\1
+\end{pmatrix}=b$が解を持つ必要十分条件は$[A:b]$で拡大係数行列を表すとすると，$\rank [A:b]=\rank A$である．
+$[A:b]=\begin{pmatrix}
+a&-1&2&2\\
+0&a+1&0&0\\
+0&0&a+2&1
+\end{pmatrix}$である．$a\neq 0,-1,-2$なら$\rank [A:b]=\rank A$である．
+$a=0$のとき，$\rank [A:b]=3$であるから解を持たない．
+$a=-1$のとき，$\rank [A:b]=2$であるから解を持つ．
+$a=-2$のとき，$\rank [A:b]=3$であるから解を持たない．
+
+\fbox{2}
+(1)$a_3=-9a_1+6a_2$である．
+よって
+$\begin{pmatrix}
+a_2\\a_3
+\end{pmatrix}=\begin{pmatrix}
+0&1\\
+-9&6
+\end{pmatrix}\begin{pmatrix}
+a_1\\a_2
+\end{pmatrix}$である．
+すなわち与えられた写像は線形写像で表現行列は$A=\begin{pmatrix}
+0&1\\
+-9&6
+\end{pmatrix}$である．
+
+(2)$A$の固有多項式は$g_A(t)=\begin{vmatrix}
+-t&1\\
+-9&6-t
+\end{vmatrix}=(t-3)^2$である．
+固有ベクトルは$\begin{pmatrix}
+-3&1\\
+-9&3
+\end{pmatrix}$より$v=\begin{pmatrix}
+1\\3
+\end{pmatrix}$である．
+よって固有空間の次元が固有方程式の重複度と一致しないため対角化不可能．
+$(A-3E)v=\begin{pmatrix}
+1\\3
+\end{pmatrix}$をとくと，$v=\begin{pmatrix}
+0\\1
+\end{pmatrix}$である．
+$P=\begin{pmatrix}
+1&0\\
+3&1
+\end{pmatrix}$とすれば$P^{-1}AP=\begin{pmatrix}
+3&1\\
+0&3
+\end{pmatrix}$である．
+
+(3)$\begin{pmatrix}
+a_{n-1}\\a_n
+\end{pmatrix}=A\begin{pmatrix}
+a_{n-2}\\a_{n-1}
+\end{pmatrix}=\cdots=A^{n-2}\begin{pmatrix}
+a_1\\a_2
+\end{pmatrix}$である．
+$A^{n-2}=P(P^{-1}AP)^{n-2}P^{-1}=\begin{pmatrix}
+1&0\\
+3&1
+\end{pmatrix}\begin{pmatrix}
+3&1\\
+0&3
+\end{pmatrix}^{n-2}\begin{pmatrix}
+1&0\\
+-3&1
+\end{pmatrix}=\begin{pmatrix}
+1&0\\
+3&1
+\end{pmatrix}\begin{pmatrix}
+3^{n-2}&(n-2)3^{n-3}\\
+0&3^{n-2}
+\end{pmatrix}\begin{pmatrix}
+1&0\\
+-3&1
+\end{pmatrix}=\begin{pmatrix}
+3^{n-2}&(n-2)3^{n-3}\\
+3^{n-1}&(n-1)3^{n-2}
+\end{pmatrix}\begin{pmatrix}
+1&0\\
+-3&1
+\end{pmatrix}=\begin{pmatrix}
+(3-n)3^{n-2}&(n-2)3^{n-3}\\
+(2-n)3^{n-1}&(n-1)3^{n-2}
+\end{pmatrix}$である．
+よって$\begin{pmatrix}
+(3-n)3^{n-2}&(n-2)3^{n-3}\\
+(2-n)3^{n-1}&(n-1)3^{n-2}
+\end{pmatrix}\begin{pmatrix}
+1\\0
+\end{pmatrix}=\begin{pmatrix}
+(3-n)3^{n-2}\\(2-n)3^{n-21}
+\end{pmatrix}$より$a_n=(2-n)3^{n-1}$である．
+
+\fbox{3}
+(1)$C$を原点中心の半径$1$の円を反時計回りに回る閉曲線とする．
+$2\cos \theta=e^{i\theta}+e^{-i\theta}$である．
+よって \begin{align}
+	\int_0^{2\pi}f(e^{i\theta})\frac{e^{i\theta}+e^{-i\theta}}{2}d\theta=\int_C f(z)\frac{z+\frac{1}{z}}{2iz}dz=\int_C \frac{f(z)}{2i}dz+\int_C \frac{f(z)}{2iz^2}dz
+\end{align}とできる．$f$は$C$を含む領域で正則であるから$\int_C \frac{f(z)}{2i}dz=0$である．
+$\frac{f(z)}{z^2}$は原点を2位の極に持つ．$\Res(\frac{f(z)}{z^2},0)=f'(0)$であるから留数定理より$\int_C \frac{f(z)}{2iz^2}dz=\pi f'(0)$である．
+よって$\int_0^{2\pi}f(e^{i\theta})\cos \theta d\theta=\pi f'(0)$である．
+
+(2)$2^n\cos^n \theta=(e^{i\theta}+e^{-i\theta})^n$であるから 
+\begin{align}
+	\int_0^{2\pi}f(e^{i\theta})\cos^n \theta d\theta=\frac{1}{2^n}\int_C f(z)(z+\frac{1}{z})^n\frac{1}{iz}dz=\frac{1}{i2^n}\int_C f(z)\sum_{k=0}^n \binom{n}{k}z^{2k-n-1}dz
+\end{align}
+である．$2k-n-1\ge 0$のとき$f(z) \binom{n}{k}z^{2k-n-1}$は$C$を含む領域で正則であるから$\int_C f(z) \binom{n}{k}z^{2k-n-1}dz=0$である．
+$2k-n-1<0$のとき$\Res(f(z) \binom{n}{k}z^{2k-n-1},0)=\binom{n}{k}\frac{1}{(n-2k)!}f^{(n-2k)}(0)$である．
+よって$\int_C f(z) \binom{n}{k}z^{2k-n-1}dz=\frac{1}{i2^n}2\pi i\sum\limits_{k=0}^{\lfloor\frac{n}{2}\rfloor}\binom{n}{k}\frac{1}{(n-2k)!}f^{(n-2k)}(0)=\frac{\pi}{2^{n-1}}\sum\limits_{k=0}^{\lfloor\frac{n}{2}\rfloor}\binom{n}{k}\frac{1}{(n-2k)!}f^{(n-2k)}(0)$である．
+
+(3)$f(z)=z^n$とする．$f^{(n-2k)}(0)=0\quad(k>0),f^{(n)}(0)=n!$であるから，
+$\int_0^{2\pi}f(z)\cos^n \theta d\theta=\frac{\pi}{2^{n-1}}\sum\limits_{k=0}^{\lfloor\frac{n}{2}\rfloor}\binom{n}{k}\frac{1}{(n-2k)!}f^{(n-2k)}(0)=\frac{\pi}{2^{n-1}}\binom{n}{0}=\frac{\pi}{2^{n-1}}$である．
+これの実部が$\int_0^{2\pi}\cos(n\theta)\cos^n \theta d\theta$であるから，
+$\int_0^{2\pi}\cos(n\theta)\cos^n \theta d\theta=\frac{\pi}{2^{n-1}}$である．
+
+\fbox{4}
+(1)$\{ x_n\}_{n\in \mathbb{N}}$が$y$に収束するとは，任意の$\varepsilon>0$に対してある$N$が存在して，任意の$n\ge N$に対して，$d(x_n,y)<\varepsilon$であることをいう．
+
+(2)任意の$\varepsilon>0$に対してある$N$が存在して，任意の$n\ge N$に対して，$d(x_n,y)<\varepsilon$である．ここで$n(m)\ge m$であるから，任意の$m\ge N$に対して$d(x_{n(m)},y)<\varepsilon$である．
+よって部分列も$y$に収束する．
+
+(3)$\{x_n\}_{n\in \mathbb{N}}$が$y$に収束しないとする．すなわちある$\varepsilon>0$が存在して，任意の$N$に対して，ある$n\ge N$が存在して$d(x_n,y)\ge\varepsilon$である．
+
+狭義単調数列$n(m)$を$n(1)=1$とし，$n(m-1)$に対して$n(m)$を$n(m)> n(m-1)$で$d(x_{n(m)},y)\ge \varepsilon$を満たすもの数として定めることで，数列$n(m)$を定める．
+
+このとき$\{x_{n(m)}\}_{m\in \mathbb{N}}$は部分列であるから$y$に収束する部分列$\{x_{n(m(\ell))}\}_{\ell\in \mathbb{N}}$が存在する．このとき$d(x_{n(m(\ell))},y)<\varepsilon$となる$\ell_1$が存在する．
+これは$d(x_{n(m(\ell_1))},y)\ge \varepsilon$として$n(m(\ell_1))$を定めたことに矛盾する．
+よって$\{x_n\}_{n\in \mathbb{N}}$は$y$に収束する．
+
+
+
+
+
+\end{document}
