@@ -1,0 +1,102 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2007午前}
+\fbox{1}
+(1)$A$を簡約化すると，$A\rightarrow \begin{pmatrix}
+1&-1&-1\\
+0&2&0\\
+0&-2&0
+\end{pmatrix}$より$\rank A=2$である．
+
+(2)$\det (A-\lambda E)=\begin{vmatrix}
+    -1-\lambda&1&1\\
+    1&1-\lambda&-1\\
+    -2&0&2-\lambda
+\end{vmatrix}=\begin{vmatrix}
+    -1-\lambda&1&0\\
+    1&1-\lambda&\lambda-2\\
+    -2&0&2-\lambda
+\end{vmatrix}=(-1-\lambda)(1-\lambda)(2-\lambda)-\begin{vmatrix}
+1&\lambda-2\\
+-2&2-\lambda
+\end{vmatrix}=(\lambda-1)(\lambda+1)(2-\lambda)-((2-\lambda)+2(\lambda-2))=(\lambda-1)(\lambda+1)(2-\lambda)-(\lambda-2)=(2-\lambda)\lambda^2$である．
+よって固有方程式は$\lambda^2(2-\lambda)=0$である．
+
+(3)固有値$\lambda=0$の固有空間は$A$の$\rank$が$2$であることから$1$次元である．
+したがって重複度と一致しないため，対角化不可能．
+
+\fbox{2}
+(1)$\phi_r(kA+B)=(kA+B)+r(^t\!(kA+B))=(kA+B)+rk^t\!A+r^t\!B=\phi_r(kA)+\phi_r(B)$である．
+よって線形変換．
+
+(2)$E_{ij}$を$(i,j)$成分が$1$でそれ以外が$0$の行列とする．
+このとき，$\left\{ E_{11},E_{12},E_{21},E_{22} \right\}$は$V$の基底である．
+$\phi_r(E_{ij})=E_{ij}+rE_{ji}$であるから$\phi_r$の表現行列は
+$X=\begin{pmatrix}
+1+r&0&0&0\\
+0&1&r&0\\
+0&r&1&0\\
+0&0&0&1+r
+\end{pmatrix}$である．
+
+$X$を簡約化すると，$X\rightarrow \begin{pmatrix}
+1+r&0&0&0\\
+0&1&r&0\\
+0&0&1-r^2&0\\
+0&0&0&1+r
+\end{pmatrix}$である．
+
+よって$r\neq \pm 1$のとき$\rank X=4$より$\dim \ker \phi_r=0$である．
+$r=1$のとき，$\rank X=3$より$\dim \ker \phi_y=1$である．
+$r=-1$のとき，$\rank X=1$より$\dim \ker \phi_r=3$である．
+
+(3)$\dim V-\dim \ker \phi_r=\dim \Im \phi_r$である．
+よって$r\neq \pm 1$のとき$\dim \ker \Im_r=4$である．
+$r=1$のとき，$\dim \Im \phi_r=3$である．
+$r=-1$のとき，$\dim \Im \phi_r=1$である．
+
+\fbox{3}
+(1)$x=\frac{s+t}{2},y=\frac{s-t}{2}$より$R'=\left\{ (s,t)\relmiddle|a\le s\le b,\frac{s+t}{2}\ge 0,\frac{s-t}{2}\ge 0 \right\}$にうつる．またヤコビ行列の行列式は$-\frac{1}{2}$である．
+\begin{align}
+    \iint_R \frac{x^2+y^2}{(x+y)^3}dxxy&=\iint_{R'} \frac{\frac{s^2+t^2}{2}}{s^3}\frac{1}{2}dsdt=\frac{1}{4}\int_a^b\int_{-s}^s \frac{s^2+t^2}{s^3}dtds=\frac{1}{4}\int_a^b \frac{1}{s^3}\left( \left[s^2t+ \frac{1}{3}t^3 \right]_{-s}^s \right)ds\\
+    &=\frac{1}{4}\int_a^b\frac{8}{3}ds=\frac{2}{3}(b-a)
+\end{align}
+
+(2)
+\begin{align}
+    \frac{\partial }{\partial s}&=\frac{\partial}{\partial x}\frac{1}{2}+\frac{\partial}{\partial y}\frac{1}{2}\\
+    \frac{\partial }{\partial t}&=\frac{\partial}{\partial x}\frac{1}{2}+\frac{\partial}{\partial y}\frac{-1}{2}
+\end{align}
+である．よって$\left( \frac{\partial^2}{\partial x^2}-\frac{\partial^2}{\partial y^2} \right)=4\frac{\partial}{\partial s}\frac{\partial}{\partial t}$である．
+すなわち$\frac{\partial^2}{\partial s\partial t} g=0$が成り立つ．
+
+よって$\frac{\partial}{\partial t}g$は$s$についての定数関数である．
+したがって$\frac{\partial}{\partial t}g(s,t)=g_2(t)$なる関数$g_2$が存在する．
+$t$について積分すれば$g(s,t)=f_1(s)+f_2(t)$とできる．ここで$f_2$は$g_2$の不定積分の一つであり，$f_1$は積分定数である．
+よって$f(x,y)=f_1(x+y)+f_2(x-y)$と表せる．
+
+\fbox{4}
+(1)$u(x)$は$v(x)$が正値関数のため，狭義単調増加な連続関数であり極限が無限大に発散するから
+$u$は全単射である．
+$u(x)=t$で変数変換できて，$dt=u'(x)dx=v(x)dx$である．
+したがって$\int_1^R u(x)^{\alpha}v(x)dx=\int_{u(1)}^{u(R)} t^\alpha dt=\begin{cases}
+    \frac{1}{\alpha+1}\left[ x^{\alpha+1} \right]_{u(1)}^{u(R)} &(\alpha\neq -1)\\
+    \left[ \log t \right]_{u(1)}^{u(R)}& (\alpha=-1)
+\end{cases}=\begin{cases}
+    \frac{1}{\alpha+1}({u(R)}^{\alpha+1}-{u(1)}^{\alpha+1}) &(\alpha\neq -1)\\
+    \log u(R)-\log u(1)& (\alpha=-1)
+\end{cases}$
+である．よって$\alpha+1<0$のときのみ，$u(R)\rightarrow \infty$で収束する．それ以外では発散する．
+すなわち$\alpha<-1$のときのみ$R\to \infty$で収束し，それ以外では発散する．
+
+\end{document}

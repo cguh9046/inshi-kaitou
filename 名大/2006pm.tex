@@ -1,0 +1,120 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2006午後}
+\fbox{1}
+(1)$D(t^ke^t)=kt^{k-1}e^t+t^ke^t$である．
+よって表現行列は$\begin{pmatrix}
+1&1&0&\cdots&0\\
+0&1&2&\cdots&0\\
+\vdots&\ddots&\ddots&\ddots&0\\
+\vdots&\ddots&\ddots&\ddots&n-1\\
+0&\cdots&\cdots&0&1\\
+\end{pmatrix}$である．
+
+(2)$y'(t)=(n-1)t^{n-2}e^t+t^{n-1}e^t,y''(t)=(n-1)(n-2)t^{n-3}e^t+(n-1)t^{n-2}e^t+(n-1)t^{n-2}e^t+t^{n-1}e^t=(n-1)(n-2)t^{n-3}e^t+2(n-1)t^{n-2}e^t+t^{n-1}e^t$である．
+
+$D^ky=(n-1)(n-2)\cdots(n-k)t^{n-k-1}e^t+a_{k,n-k}t^{n-k}e^t+\cdots+t^{n-1}e^t$とかける．ただし$(a_{k,n-k},a_{k,n-k+1},\cdots,a_{k,n-1}=1\in \mathbb{R})$．
+すなわち$\mathcal{B}$による表示は$\begin{pmatrix}
+0&\cdots&0&(n-1)!\\
+0&\cdots&(n-1)!/1&*\\
+\vdots&\text{\rotatebox[origin=bl]{80}{$\ddots$}}&\text{\rotatebox[origin=bl]{80}{$\ddots$}}&\vdots\\
+1&*&\cdots&*
+\end{pmatrix}$となる行列式は$1\cdot (n-1)\cdot \dots \cdot (n-1)!\neq 0$より$\mathcal{C}$は$V$の基底である．
+
+(3)
+$(D-I)^n (y(t))=(n-1)(D-I)^{n-1}(t^{n-2}e^t)=\cdots=(n-1)!(D-I)(e^t)=0$
+
+(4)$D y^{(k)}(t)=y^{(k+1)}(t)\quad(k=0,1,\cdots,n-2)$であり，
+$Dy^{(n-1)}(t)=D^{(n)}(t)=(D-I)^{(n)}(t)-\sum\limits_{k=0}^{n-1} \binom{n}{k}D^{(k)}(-1)^{n-k}y(t)=\sum\limits_{k=0}^{n-1} (-1)^{n-k+1}\binom{n}{k}D^{k}y(t)$である．
+よって$\mathcal{C}$に関する表現行列は$\begin{pmatrix}
+0&\cdots&0&(-1)^{n-0+1}\binom{n}{0}\\
+1&\cdots&0&(-1)^{n-1+1}\binom{n}{1}\\
+\vdots&\ddots&\vdots&*\\
+0&\cdots &1&\binom{n}{n-1}
+\end{pmatrix}$である．ただし$(k,n-1)$成分は$(-1)^{n-k+1}\binom{n}{k}$である．
+
+\fbox{2}
+(1)$\varphi\in V^*$を任意にとる．
+$\varphi=\varphi(e_1)\varphi_1+\cdots \varphi(e_n)\varphi_n$と表せる．すなわち$V^*$を生成する．
+$\sum c_i \varphi_i=0$とする．$(\sum c_i\varphi_i)(e_j)=c_j=0(e_j)=0$．これが任意の$j$で成り立つから$c_j=0\quad(j=1,\cdots n)$である．
+よって一次独立．すなわち基底．
+
+(2)$f,g\in W^{\circ},k\in \mathbb{R}$について，$(f+g)(w)=f(w)+g(w)=0,(kf)(w)=kf(w)=0$より$W^{\circ}$はベクトル空間．
+$W$の基底$\left\{ w_1,\cdots,w_m \right\}$をとり，$V$の基底$\left\{ w_1,\cdots,w_m,w_{m+1},\cdots,w_n \right\}$へと延長する．
+(1)の手法で$\psi_k(w_i)=\delta_{k,i}$を定める．$\delta$はクロネッカーのデルタ．
+
+$\left\{ \psi_{m+1},\cdots,\psi_n \right\}$は$W^{\circ}$の基底である．
+これは$f\in W^{\circ}$は$f=\sum\limits_{i=1}^n f(w_i)\psi_i=\sum\limits_{i=m+1}^n f(w_i)\psi_i$より分かる．
+よって$\dim W^{\circ}=n-\dim W$である．
+
+(3)$f\in (W_1+W_2)^{\circ}$とする．任意の$w_1\in W_1,w_2\in W_2$について$f(w_1+w_2)=0$であるから，特に$w_1=0$のとき$f(w_2)=0$，$w_2=0$のとき$f(w_1)=0$である．
+したがって$f\in W_1^{\circ}\cap W_2^{\circ}$より$(W_1+W_2)^{\circ}\subset W_1^{\circ}\cap W_2^{\circ}$である．
+
+逆に$f\in W_1^{\circ}\cap W_2^{\circ}$をとると，任意の$w_1\in W_1,w_2\in W_2$について$f(w_1+w_2)=f(w_1)+f(w_2)=0$であるから，$f\in (W_1+W_2)^{\circ}$である．よって$(W_1+W_2)^{\circ}= W_1^{\circ}\cap W_2^{\circ}$である．
+
+\fbox{3}
+(1)$f$は1位の極$z=c$を除いて$\mathbb{C}$上で正則である．
+$\Res(f,c)=e^{i\xi c}$である．
+$\Im c>0$のとき，$f$の特異点は$\gamma_R^+$の内部にあり，$\Im c<0$のとき，$f$の特異点は$\gamma_R^-$の内部にある．
+したがって$\gamma_R^-$が時計回りであることに注意すれば$\int_{\gamma_R^+}f(z)dz=\begin{cases}
+	2\pi i e^{i\xi c}&(\Im c>0)\\
+	0&(\Im c<0)
+\end{cases},\int_{\gamma_R^-}f(z)dz=\begin{cases}
+	0&(\Im c>0)\\
+	-2\pi i e^{i\xi c}&(\Im c<0)
+\end{cases}$である．
+
+(2)$\xi>0$のとき，$\gamma_{R^+}$上の積分を考える．
+$[0,\frac{\pi}{2}]$上で$\frac{2}{\pi}\theta\le\sin \theta$であるから，
+\begin{align}
+	\left| \int_{C_R^+}f(z)dz \right|&=\left| \int_{0}^{\pi} \frac{\exp(i\xi Re^{i\theta})}{Re^{i\theta}-c}Rie^{i\theta} d\theta\right|\le \int_0^\pi\left| \frac{e^{-\xi R\sin \theta}}{Re^{i\theta}-c}R \right|d\theta\le \frac{R}{R-|c|}\int_0^\pi e^{-\xi R\sin \theta}d\theta=\frac{2R}{R-|c|}\int_0^{\pi/2} e^{-\xi R\sin \theta}d\theta\\
+	\int_0^{\pi/2} e^{-\xi R\sin \theta}d\theta&\le \int_0^{\frac{\pi}{2}}e^{-\xi R \frac{2}{\pi}\theta}d\theta=\left[ \frac{\pi}{-\xi R 2}e^{-\xi R \frac{2}{\pi}\theta} \right]_0^{\frac{\pi}{2}}=\frac{\pi}{2R\xi}(1-e^{-R\xi})\\
+	\left| \int_{C_R^+}f(z)dz \right|&\le \frac{2R}{R-|c|}\frac{\pi}{2R\xi}(e^{-R\xi}-1)\rightarrow 0\quad(R\to \infty)
+\end{align}である．
+したがって$\lim\limits_{R\to \infty} \int_{-R}^R f(z)dz=\lim\limits_{R\to \infty} \int_{\gamma_R^+} f(z)dz-\int_{C_R^+}f(z)dz=\int_{\gamma_R^+} f(z)dz=\begin{cases}
+	2\pi i e^{i\xi c}&(\Im c>0,\xi>0)\\
+	0&(\Im c<0,\xi>0)
+\end{cases}$である．
+
+$\xi<0$のときは，$\gamma_R^-$上の積分を考える．
+\begin{align}
+	\left| \int_{C_R^-}f(z)dz \right|&=\left| \int_{0}^{-\pi} \frac{\exp(i\xi Re^{i\theta})}{Re^{i\theta}-c}Rie^{i\theta} d\theta\right|\le \int_0^{-\pi}\left| \frac{e^{-\xi R\sin \theta}}{Re^{i\theta}-c}R \right|d\theta\le \frac{R}{R-|c|}\int_0^{-\pi} e^{-\xi R\sin \theta}d\theta=\frac{2R}{R-|c|}\int_0^{\pi/2} e^{\xi R\sin \theta}d\theta\\
+	\int_0^{\pi/2} e^{\xi R\sin \theta}d\theta&\le \int_0^{\frac{\pi}{2}}e^{\xi R \frac{2}{\pi}\theta}d\theta=\left[ \frac{\pi}{\xi R 2}e^{\xi R \frac{2}{\pi}\theta} \right]_0^{\frac{\pi}{2}}=\frac{\pi}{2R\xi}(e^{R\xi}-1)\\
+	\left| \int_{C_R^+}f(z)dz \right|&\le \frac{2R}{R-|c|}\frac{\pi}{2R\xi}(e^{R\xi}-1)\rightarrow 0\quad(R\to \infty)
+\end{align}である．
+したがって$\lim\limits_{R\to \infty} \int_{-R}^R f(z)dz=\lim\limits_{R\to \infty} \int_{\gamma_R^-} f(z)dz+\int_{C_R^-}f(z)dz=\int_{\gamma_R^-} f(z)dz=\begin{cases}
+	0&(\Im c>0,\xi<0)\\
+	-2\pi i e^{i\xi c}&(\Im c<0,\xi<0)
+\end{cases}$である．
+
+\fbox{4}
+(1)$U$が開集合であるとは，任意の点$x\in U$についてある$\varepsilon>0$が存在して，$B_\varepsilon(x)\subset U$となることである．
+
+(2)$(\Rightarrow)$
+$x\in f^{-1}(U)$について$f(x)\in U$よりある$\varepsilon>0$が存在して$B_\varepsilon(f(x))\subset U$である．このときある$\delta>0$が存在して$f(B_\delta(x))\subset U$である．
+よって$B_{\delta}(x)\subset f^{-1}f(B_{\delta}(x))\subset f^{-1}(U)$より$f^{-1}(U)$は開集合である．
+
+$(\Leftarrow)$
+任意の$x\in \mathbb{R}^n$と任意の$\varepsilon>0$について，$B_\varepsilon(f(x))$は開集合であるから，
+$f^{-1}(B_\varepsilon(f(x)))$は開集合．したがってある$\delta>0$が存在して$B_\delta(x)\subset f^{-1}(B_\varepsilon(f(x)))$が成り立つ．よって$f(B_\delta(x))\subset f(f^{-1}(B_\varepsilon(f(x)))) \subset B_\varepsilon(f(x))$である．
+
+(3)$f(A)\subset U\cup V,U\cap V\cap A=\emptyset$なる開集合$U,V$を任意にとる．
+$A\subset f^{-1}(f(A))\subset f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V),f^{-1}(U)\cap f^{-1}(V)\cap A\subset f^{-1}(U\cap V\cap f(A))=\emptyset$である．
+したがって$f^{-1}(U)\cap A=\emptyset$または$f^{-1}(V)\cap A=\emptyset$が成り立つ．
+$f^{-1}(U)\cap A=\emptyset$のとき．$y\in f(A)\cap U$とすると，ある$x\in A$について$f(x)=y$である．
+この$x$について$f(x)\in U$より$x\in f^{-1}(U)$であるが，これは$f^{-1}(U)\cap A$に矛盾．
+よって$f(A)\cap U=\emptyset$である．
+$f^{-1}(V)\cap A=\emptyset$のときも同様．よって$f(A)$は連結．
+
+\end{document}
+

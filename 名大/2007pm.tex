@@ -1,0 +1,87 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2007午後}
+\fbox{1}
+(1)$P(D)e^{^\lambda t}=\lambda^2e^{\lambda t}+a\lambda e^{\lambda t}+be^{\lambda t}=(\lambda^2+a\lambda+b)e^{\lambda t}=0$である．
+
+$P(z)$が重解$\lambda$をもつから$P(D)=(D-\lambda)^2=D^2-2\lambda D+\lambda^2$である．
+よって
+$D^2v(t)=D(-\lambda e^{-\lambda t}u(t)+e^{-\lambda t}Du(t))=-\lambda(-\lambda e^{-\lambda t}u(t)+e^{-\lambda t}Du(t))-\lambda e^{-\lambda t}Du(t)+e^{-\lambda t}D^2 u(t)=e^{-\lambda t}(\lambda^2-2\lambda Du+D^2 u)=e^{-\lambda t}P(D)u=0$である．
+
+したがって$Dv$は定数関数であり，$v$は$t$の高々1次式である．
+
+(2)(1)の逆，すなわち任意の1次式$v(t)=ct+d$について$u=ve^{\lambda t}$は$P(D)u=0$を満たす．
+したがって$V=\left\{ v e^{\lambda t}\relmiddle|c,d\in \mathbb{R}, v=ct+d\right\}$である．
+よってベクトル空間であることは明らかで基底は$e^{\lambda t},te^{\lambda t}$である．
+
+(3)$(ct+d)e^{\lambda t}$が有界にとどまるから$\lambda<0$である．よって$a=-2\lambda>0$．
+
+\fbox{2}
+(1)$\Ker f/(\Ker f\cap \Im f)\cong  (\Ker f+\Im f)/\Im f$である．
+よって$\dim \Ker f-\dim(\Ker f\cap \Im f)=\dim (\Ker f+\Im f)-\dim \Im f$である．
+また次元定理より$\dim \Ker f+\dim \Im f=\dim V$である．
+よって$\dim V-\dim(\Ker f\cap \Im f)=\dim (\Ker f+\Im f)$である．
+すなわち$\Ker f\cap \Im f=\left\{ 0 \right\}\Leftrightarrow\dim \Ker f\cap \Im f=0\Leftrightarrow \dim V= \dim(\Ker f+\Im f)\Leftrightarrow=V=\Ker f+\Im f$である．
+
+(2)$x\in \Ker f^i$について$f^{i+1}(x)=f(f^{i}(x))=f(0)=0$であるから$\Ker f^i\subset \Ker f^{i+1}\quad(i=1,2,\cdots)$である．
+
+$y\in \Im f^j$とする．すなわちある$x\in V$が存在して$f^j (x)=y$である．
+このとき，$f^{j-1}(f(x))=y$であるから$y\in \Im f^{j-1}$である．
+よって$\Im f^{j-1}\supset \Im f^j\quad(j=1,2\cdots)$である．
+
+(3)$V$が有限次元であるから上昇列$\Ker f\subset \Ker f^2\subset \cdots$はある$N_1$が存在して$n\ge N_1$なら$\Ker f^n=\Ker f^{N_1}$となる．
+
+同様に下降列$\Im f\supset \Im f^2\supset \cdots$もある$N_2$が存在して$n\ge N_2$なら$\Im f^{n}=\Im f^{N_2}$となる．
+
+$N=N_1+N_2$とする．$y\in \Ker f^N\cap \Im f^N$とすれば$f^N(y)=0$であり，$f^N\mid_{\Im f^N}\colon \Im f^N\rightarrow \Im f^{2N}$は全射な自己準同型であるから同型である．
+よって$f^N(y)=0$なら$y=0$である．
+すなわち$\Ker f^N\cap \Im f^N=\left\{ 0 \right\}$が言えたから(1)より$\Ker f^N+\Im f^N=V$である．
+
+\fbox{3}
+(1)$\frac{1}{|x-a|^p|x-b|^q}/\frac{1}{|x|^{p+q}}=\frac{1}{|1-\frac{a}{x}|^p|1-\frac{b}{x}|^q}\rightarrow 1\quad(x\to \pm\infty)$である．
+よって十分大きな$M>b$があって$|x|>M$なら$\frac{1}{2|x|^{p+q}}<\frac{1}{|x-a|^p|x-b|^q}<\frac{3}{2|x|^{p+q}}$である．
+したがって$\int_M^\infty \frac{1}{|x-a|^p|x-b|^q} dx,\int_{-\infty}^{-M} \frac{1}{|x-a|^p|x-b|^q}dx$の収束性は$\int_M^\infty\frac{1}{|x|^{p+q}}dx$の収束性と等しい．
+$\int_M^n \frac{1}{|x|^{p+q}}dx=\begin{cases}
+    \frac{1}{-p-q+1}\left[ \frac{1}{|x|^{p+q-1}} \right]_M^n &(p+q\neq 1)\\
+    \left[ \log x \right]_M^n &(p+q=1)
+\end{cases}$でこれは$p+q-1>0$のとき$n\to \infty$で収束する．
+
+$\frac{1}{|x-a|^p|x-b|^q}/\frac{1}{|x-a|^{p}}=\frac{1}{|x-b|^q}\rightarrow \frac{1}{|a-b|^q}\quad(x\to a)$である．
+よって十分小さな$\varepsilon$があって$|x-a|<\varepsilon$なら$\frac{1}{2|a-b|^q|x-a|^p}<\frac{1}{|x-a|^p|x-b|^q}<\frac{3}{2|a-b|^q|x-a|^p}$である．
+よって$\int_{a-\varepsilon}^a \frac{1}{|x-a|^p|x-b|^q}dx,\int_a^{a+\varepsilon}\frac{1}{|x-a|^p|x-b|^q}dx$の収束性は$\int_a^{a+\varepsilon}\frac{1}{|x-a|^p}dx$の収束性と等しい．
+
+$\int_{a+\delta}^{a+\varepsilon}\frac{1}{|x-a|^p}dx=\begin{cases}
+    \frac{1}{1-p}\left[ |x-a|^{1-p} \right]_{a+\delta}^{a+\varepsilon}&(p\neq 1)\\
+    \left[ \log x \right]_{a+\delta}^{a+\varepsilon}&(p=1)
+\end{cases}$
+でこれは$1-p>0$のとき$\delta\rightarrow +0$で収束する．
+
+$x=b$近くでも同様にして$1-q>0$で収束すると分かる．
+$x=a,b,\pm\infty$付近以外では有界区間の有界関数の積分であるから有限値をとる．
+よって$\left\{ (p,q)\relmiddle|p+q>1,p<1,q<1 \right\}$で収束する．
+
+(2)$\frac{x-a}{a-b}=y$と変数変換すると$\frac{1}{a-b}dx=dy$であり，
+$\int_{-\infty}^\infty \frac{1}{|x-a|^p|x-b|^q}dx=\int_{\infty}^{-\infty} \frac{1}{|y|^p|a-b|^p|y+1|^q|a-b|^q}{a-b}dy=\frac{1}{|a-b|^{p+q-1}}\int_{-\infty}^\infty \frac{1}{|y|^p|y+1|^q}dy$である．
+
+(1)で$a=-1,b=0$とすれば$\int_{-\infty}^\infty \frac{1}{|y|^p|y+1|^q}dy$が収束することが分かる．収束値を$C$とおけば$\int_{-\infty}^\infty \frac{1}{|x-a|^p|x-b|^q}dx=\frac{C}{|a-b|^{p+q-1}}$である．
+
+\fbox{4}
+(1)$X,Y\subset B$に対して$g(X)=g(Y)$とする．$f$が全射であるから任意の$b\in X$に対してある$a\in g(X)$が存在して$f(a)=b$である．
+よって$a\in g(Y)=f^{-1}(Y)$より$f(a)=b\in Y$である．よって$X\subset Y$がいえる．同様にして$Y\subset X$も言えるから$X=Y$．よって$g$は単射．
+
+(2)$A$の部分集合$X$を任意にとる．このとき$f(X)=Y$とすると，$X\subset f^{-1}(Y)=g(Y)$は明らか．
+任意の$a\in f^{-1}(Y)$について$f(a)=b\in Y$である．$f(X)=Y$よりある$x\in X$が存在して$f(x)=b$とできる．
+$f$の単射性から$a=x\in X$である．したがって$g(Y)=f^{-1}(Y)=X$より$g$は全射．
+
+
+\end{document}
