@@ -1,0 +1,119 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2009午後}
+\fbox{1}
+(1)$cv+c'F(v)=0$とする．$F(F(v))=-v\neq 0$より$F(v)\neq 0$であるから$c=0$なら$c'=0$である．
+$c\ne 0$のとき，$v=-\frac{c'}{c}F(v)$である．
+このとき$F(v)=\frac{c'}{c}v$より$v=-\frac{c'^2}{c^2}v$であるから$-\frac{c'^2}{c^2}=1$である．
+$c',c\in \mathbb{R}$より$-\frac{c'^2}{c^2}\le 0$であるからこれは矛盾．
+よって$c=c'=0$より$v,F(v)$は線形独立．
+
+(2)線形独立でないと仮定すると，$F(v_{k+1})=\sum\limits_{i=0}^k \left( a_iv_i+b_iF(v_i) \right)+cv_{k+1}$とできる．
+$-v_{k+1}=\sum\limits_{i=0}^k \left( a_iF(v_i)-b_iv_i \right)+cF(v_{k+1})=\sum\limits_{i=0}^k \left( a_iF(v_i)-b_iv_i \right)+c\left( \sum\limits_{i=0}^k \left( a_iv_i+b_iF(v_i) \right)+cv_{k+1} \right)=\sum\limits_{i=0}^k \left( (ca_i-b_i)v_i+(cb_i+a_i)F(v_i) \right)+c^2v_{k+1}$である．
+よって線形独立であるから$c^2+1=0$であるが，これをみたす$c\in \mathbb{R}$は存在しない．
+したがって矛盾するから線形独立．
+
+(3)基底でないとする．$v_1,\dots,v_m,F(v_1),\dots,F(v_m),v_{m+1}$が線形独立であるように$v_{m+1}$が定まる．このとき(2)から$v_1,\dots,v_m,F(v_1),\dots,F(v_m),v_{m+1},F(v_{m+1})$も線形独立であるが，これは$m$の最大性に矛盾．よって基底．
+
+(4)0行列を$O$，単位行列を$E$とすると，$\begin{pmatrix}
+O&-E\\
+E&O
+\end{pmatrix}$が表現行列である．
+
+\fbox{2}
+(1)$\det A-\lambda E=\begin{vmatrix}
+4-\lambda &0&-3\\
+a-5&a-\lambda&4\\
+6&0&-5-\lambda
+\end{vmatrix}=(a-\lambda)\left( (\lambda-4)(\lambda+5)+18 \right)=(a-\lambda)(\lambda+2)(\lambda-1)$である．
+よって固有値は$a,-2,1$である．
+
+$a=-2$のとき，$\rank (A+2E)=2$より固有空間の次元は$1$である．固有多項式の根の重複度と一致しないから対角化不可能でジョルダン標準形は$J=\begin{pmatrix}
+-2&1&0\\
+0&-2&0\\
+0&0&1
+\end{pmatrix}$である．
+
+$a=1$のとき，$\rank (A-E)=1$より固有空間の次元は$2$である．固有多項式の根の重複度と一致するから対角化可能．
+
+$a\neq 1,-2$なら固有値が相異なるから対角化可能．
+
+(2)固有値$1$の固有空間の基底は$\begin{pmatrix}
+1\\-1\\1
+\end{pmatrix}$である．
+固有$-2$の固有空間の基底は$v_1=\begin{pmatrix}
+0\\1\\0
+\end{pmatrix}$である．
+$(A+2E)v_2=v_1$とすれば$v_2=\begin{pmatrix}
+1\\0\\2
+\end{pmatrix}$ととれる．
+よって$P=\begin{pmatrix}
+0&1&1\\
+1&0&-1\\
+0&2&1
+\end{pmatrix}$とすれば$P^{-1}AP=J$である．
+
+$Ax=x'$であるとき，$x=Py$とすると，$APy=x'=Py'$より$Jy=P^{-1}Apy=y'$である．
+$Jy=y'$を解く．
+$y_3'=y_3,y_2'=-2y_2$より$y_3=k_3e^{t},y_2=k_2e^{-2t}$である．
+$y_1'=-2y_1+y_2=-2y_1+k_2e^{-2t}$である．
+これを解くと$y_1(t)=(k_2t+k_1)e^{-2t}$である．
+よって$x=Py=\begin{pmatrix}
+k_2e^{-2t}+k_3e^t\\(k_2t+k_1)e^{-2t}-k_3e^t\\ 2k_2e^{-2t}+k_3e^t
+\end{pmatrix}$である．
+
+(3)$|x(t)|^2=(k_2e^{-2t}+k_3e^t)^2+((k_2t+k_1)e^{-2t}-k_3e^t)^2+(2k_2e^{-2t}+k_3e^t)^2=3k_3^2e^{2t}+o(1)$である．
+よって$k_3=0$が$|x(t)|\to 0$の必要十分条件で，$x(t)=\begin{pmatrix}
+k_2e^{-2t}\\(k_2t+k_1)e^{-2t}\\ 2k_2e^{-2t}
+\end{pmatrix}$が求める解のすべて．
+
+
+
+\fbox{3}
+(1)分枝の取り方を$-\frac{\pi}{2}\le \arg z\le \frac{3\pi}{2}$に変えることで，$C_{R,r}$を含む有界単連結開集合上で
+$f$は$z= ia$を除いて正則である．上半平面上の点を考えるうちは分枝の取り方を変える前と変えた後で$f$の値は変わらない．
+すなわち上半平面上での積分はどちらの分枝でも値は変わらない．
+
+$z=ia$における留数は$\Res(f,ia)=\frac{\log (ia)}{2ia}=\frac{\log a+\frac{\pi}{2}i}{2ia}$である．
+留数定理より$\int_{C_{R,r}}f(z)dz=\frac{\pi\log a+\frac{\pi^2}{2}i}{a}$である．
+
+(2)\begin{align}
+	\left| \int_{C_R}f(z)dz \right|\le \int_0^\pi\left|  \frac{\log R+i\theta}{R^2e^{2i\theta}+a^2}Rie^{ i\theta} \right|d\theta\le \left| \frac{2R\log R}{R^2-a^2} \right|\rightarrow 0\quad(R\to \infty)
+\end{align}
+である．
+
+$\left| f(z) \right|/|\log z|\rightarrow\frac{1}{a^2}\quad(z\to 0)$である．
+したがって十分小さい$r_0$が存在して$r\le r_0$なら$|z|\le r$で $\left| \frac{\log z}{2a^2} \right|\le \left| f(z) \right|\le \left| \frac{3\log z}{2a^2} \right|$である．
+よって\begin{align}
+	\left| \int_{C_r} f(z)dz \right|\le \int_{C_r} \left| \frac{3\log z}{2a^2} \right|dz=\frac{3}{2a^2}\int_0^\pi r|\log r+i\theta |d\theta\le \frac{3(r\log r+\theta r)}{2a^2}\rightarrow 0\quad(r \to 0)
+\end{align}である．
+
+(3)$\int_{-R}^{-r}f(z)dz=\int_{r}^R f(-x)dx=\int_r^R \frac{\log x+i\pi}{x^2+a^2}dx=\int_r^R f(z)dz+i\pi\int_r^R\frac{1}{x^2+a^2}dx$である．
+
+(4)$\frac{\pi\log a+\frac{\pi^2}{2}i}{a}=\int_r^R f(z)dz+\int_{C_r}f(z)dz+\int_{-R}^{-r}f(z)dz-\int_{C_r}f(z)dz=2\int_r^R f(x)dx+i\pi \int_r^R \frac{1}{x^2+a^2}dx+\int_{C_R}f(z)dz-\int_{C_r}f(z)dz\rightarrow 2\int_0^\infty f(x)dx+i\pi\int_0^\infty \frac{1}{x^2+a^2}dx\quad(r\to 0,R\to \infty)$である．
+したがって$\int_0^\infty \frac{\log x}{x^2+a^2}dx=\frac{\pi \log a}{2a}$である．
+
+\fbox{4}
+(1)$\{a_n\}_{n=1}^\infty$が$a$に収束するとは，任意の$\varepsilon>0$に対して，ある$N\in \mathbb{N}$が存在して，任意の$n \ge N$に対して$|a_n-a|<\varepsilon$が成り立つことをいう．
+
+(2)$a$に収束する任意の点列$\{ a_n\}_{n=1}^\infty$をとる．
+任意の$\varepsilon>0$に対して，ある$\delta>0$が存在して，$|a_n-a|<\delta$なら$|f(a_n)-f(a)|<\varepsilon$が成り立つ．
+この$\delta$に対してある$N$が存在して$n\ge N$なら$|a_n-a|<\delta$である．
+したがって$n\ge N$なら$|f(a_n)-f(a)|<\varepsilon$より$\{f(a_n)\}_{n=1}^\infty$は$f(a)$に収束する．
+
+(3)ある$\varepsilon>0$が存在して，任意の$\delta>0$に対して，$|x-a|<\delta$なる$x$で$|f(x)-f(a)|\ge \varepsilon$が成り立つような$x$が存在する．
+
+(4)(A)が成り立たないとする．このとき任意の$\frac{1}{n}>0$に対して$|a_n-a|<\frac{1}{n},|f(a_n)-f(a)|\ge \varepsilon$となる$a_n$がとれる．
+このとき$\{ a_n\}_{n=1}^\infty$は$a$に収束するが，$|f(a_n)-f(a)|< \varepsilon$なる$n$が存在しないので$\{ f(a_n)\}_{n=1}^\infty$は$f(a)$に収束しない．よって(B)も成り立たない．対偶が示されたので(B)ならば(A)も真である．
+
+\end{document}

@@ -1,0 +1,147 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2008午後}
+\fbox{1}
+(1)$F(x)=0$とすると，$x=G\circ F(x)=G(0)=0$より$\Ker F=\{ 0\}$であるから$F$は単射．
+
+任意の$y\in V$について$G\circ F(y)=y$より$G$は全射．
+
+(2)$y\in \Im F\cap \Ker G$とする．ある$x\in V$が存在して$y=F(x)$である．
+$0=G(y)=G\circ F(x)=x$より$x=0$である．よって$\Im F\cap \Ker G=\{ 0\}$．
+
+(3)$w\in W$を任意に定める．$G(w-F\circ G(w))=G(w)-G(w)=0$であり，$F\circ G(w)\in \Im F$より
+$W=\Im F+\Ker G$である．(2)より$\Im F\cap \Ker G=\{ 0\}$であるから$W=\Im F \oplus \Ker G$である．
+
+(4)$V$の基底を$\{ v_1,\cdots ,v_n\}$として一つ定める．
+$w_i=F(v_i)$として$w_i$を定めたとき$\left\{ w_1,\cdots,w_n \right\}$は$\Im F$の基底であることは$F$が単射であることからわかる．
+$\Ker G$の基底を$\{ w_{n+1},\cdots w_m\}$として一つとる．
+このとき(3)より$\left\{  w_1,\cdots,w_m \right\}$は$W$の基底である．
+
+$1\le i\le n$なら$F(v_i)=w_i,G(w_i)=G(F(v_i))=v_i$で$n+1\le i$なら$G(w_i)=0$であるから表現行列は指定された形となっている．
+
+\fbox{2}
+(1)固有多項式は$g_A(t)=\begin{vmatrix}
+2-t&-1&1\\
+-1&2-t&-1\\
+1&-1&2-t
+\end{vmatrix}=\begin{vmatrix}
+2-t&1-t&1\\
+-1&1-t&-1\\
+1&0&2-t
+\end{vmatrix}=\begin{vmatrix}
+3-t&0&2\\
+-1&1-t&-1\\
+1&0&2-t
+\end{vmatrix}=(1-t)\begin{vmatrix}
+	3-t&2\\
+	1&2-t
+\end{vmatrix}=-(t-1)^2(t-4)=0$である．
+
+よって固有値は$1,4$である．
+固有値$1$に対応する固有ベクトル空間の基底は$\left\{ \begin{pmatrix}
+1\\1\\0
+\end{pmatrix},\begin{pmatrix}
+-1\\0\\1
+\end{pmatrix} \right\}$である．正規直交化すると，$\left\{ \begin{pmatrix}
+\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{2}}\\0
+\end{pmatrix},\begin{pmatrix}
+-\frac{1}{\sqrt{6}}\\\frac{1}{\sqrt{6}}\\\frac{2}{\sqrt{6}}
+\end{pmatrix} \right\}$である．
+
+固有値$4$に対応する固有ベクトル空間の基底は$\left\{ \begin{pmatrix}
+1\\-1\\1
+\end{pmatrix} \right\}$である．正規化すれば$\left\{ \begin{pmatrix}
+\frac{1}{\sqrt{3}}\\-\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}
+\end{pmatrix} \right\}$である．
+
+よって$P=\begin{pmatrix}
+\frac{1}{\sqrt{2}}&-\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{3}}\\
+\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{6}}&-\frac{1}{\sqrt{3}}\\
+0&\frac{2}{\sqrt{6}}&\frac{1}{\sqrt{3}}
+\end{pmatrix}$とすれば$^t\!PAP=\begin{pmatrix}
+1&0&0\\
+0&1&0\\
+0&0&4
+\end{pmatrix}$である．
+
+(2)$P\begin{pmatrix}
+x'\\y'\\z'
+\end{pmatrix}=\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}$で変数変換すると，ヤコビアンは$\det p=1$である．
+また$Q(x,y,z)= \begin{pmatrix}
+x&y&z
+\end{pmatrix}A\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}=\begin{pmatrix}
+x'&y'&z'
+\end{pmatrix}^t\!PAP\begin{pmatrix}
+x'\\y'\\z'
+\end{pmatrix}=x^2+y^2+4z^2$である．
+\begin{align}
+	\iiint_{\mathbb{R}^3}e^{-Q(x,y,z)}dxdydz&=\iiint_{\mathbb{R}^3} e^{-x'^2-y'^2-4z'^2}dx'dy'dz'=\int_{-\infty}^\infty e^{-x'^2}dx\int_{-\infty}^\infty e^{-y'^2}dy\int_{-\infty}^\infty e^{-4z'^2}dz\\
+	&=\pi\int_{-\infty}^\infty e^{-z''^2}\frac{1}{2}dz''=\frac{\pi\sqrt{\pi}}{2}
+\end{align}
+
+(3)$P\begin{pmatrix}
+x'\\y'\\z'
+\end{pmatrix}=\begin{pmatrix}
+x\\y\\z
+\end{pmatrix}$で変数変換する．
+\begin{align}
+	&\iiint_{\mathbb{R}^3}(x^2+y^2+z^2)e^{-Q(x,y,z)}dxdydz=\iiint_{\mathbb{R}^3}(x'^2+y'^2+z'^2)e^{-(x'^2+y'^2+4z'^2)}dx'dy'dz'\\
+	&\int_{-\infty}^\infty t^2e^{-t^2}dt=\left[ t \frac{e^{-t^2}}{-2} \right]_{-\infty}^\infty-\int_{-\infty}^\infty -\frac{e^{-t^2}}{2}dt=\frac{\sqrt{\pi}}{2},\int_{-\infty}^\infty t^2e^{-4t^2}dt=\frac{1}{8}\int_{-\infty}^\infty t'^2e^{-t'^2}dt'=\frac{\sqrt{\pi}}{16}\\
+	&\iiint_{\mathbb{R}^3}x'^2e^{-(x'^2+y'^2+4z'^2)}dx'dy'dz'=\frac{\sqrt{\pi}}{2}\sqrt{\pi}\frac{\sqrt{\pi}}{2}=\frac{\pi\sqrt{\pi}}{4}=\iiint_{\mathbb{R}^3}y'^2e^{-(x'^2+y'^2+4z'^2)}dx'dy'dz'\\
+	&\iiint_{\mathbb{R}^3} z'^2e^{-(x'^2+y'^2+4z'^2)}dx'dy'dz'=\sqrt{\pi}\sqrt{\pi}\frac{\sqrt{\pi}}{16}=\frac{\pi\sqrt{\pi}}{16}
+\end{align}
+である．
+よって$\iiint_{\mathbb{R}^3}(x^2+y^2+z^2)e^{-Q(x,y,z)}dxdydz=2\frac{\pi\sqrt{\pi}}{4}+\frac{\pi\sqrt{\pi}}{16}=\frac{9\pi\sqrt{\pi}}{16}$である．
+
+\fbox{3}
+(1)$e^{2iz}=\sum\limits_{n=0}^\infty \frac{1}{n!}(2iz)^n$である．
+よって$f(z)=\frac{1-\sum\limits_{n=0}^\infty \frac{1}{n!}(2iz)^n}{z^2}=\sum\limits_{n=1}^\infty \frac{2^n i^{n-2}}{n!}z^{n-2}$が原点におけるローラン展開．
+
+(2)\begin{align}
+	\left| \int_{C_R} \frac{1-e^{2iz}}{z^2}dz \right|\le\int_0^{\pi} \left| \frac{1-\exp(2iRe^{i\theta})}{R^2e^{2i\theta}}Rie^{i\theta} \right|d\theta\le \int_0^{\pi} \frac{1+e^{-2R\sin \theta}}{R}d\theta\le \int_0^\pi \frac{2}{R}d\theta\rightarrow 0\quad(R\to \infty)
+\end{align}
+
+(3)$f(z)$のローラン展開を考えると，$\sum\limits_{n=2}^\infty \frac{2^n i^{n-2}}{n!}z^{n-2}$の部分は原点近傍で正則であるから有界．
+したがって$\lim\limits_{r\to 0} \int_{\Gamma_r}\sum\limits_{n=1}^\infty \frac{2^n i^{n-2}}{n!}z^{n-2}dz=0$である．
+$\int_{\Gamma_r}\frac{2}{iz}dz=\int_{\pi}^{2\pi} \frac{2}{i re^{i\theta}}rie^{i\theta}d\theta=2\pi$である．
+よって$\lim\limits_{r\to 0}\int_{\Gamma_r} f(z)dz=2\pi$．
+
+(4)区間$[r,R],C_R,[-R,-r],\Gamma_r$により定まる閉曲線に反時計回りの向きを入れた積分経路を$C$とする．
+留数定理より$\int_C f(z)dz=4\pi$である．
+
+$\int_r^R f(z)dz=\int_r^R \frac{1-e^{2ix}}{x^2}dx=\int_r^R \frac{1-\cos 2x}{x^2}dx+i\int_r^R \frac{-\sin 2x}{x^2}dx=2\int_r^R \frac{\sin^2 x}{x^2}dx+i\int_r^R \frac{-\sin 2x}{x^2}dx$である．
+
+$\int_{-R}^{-r} f(z)dz=\int_{-R}^{-r}f(x)dx=\int_r^R f(-x)dx=2\int_r^R \frac{\sin^2 x}{x^2}dx+i\int_r^R \frac{\sin (2x)}{x^2}dx$である．
+
+よって$4\pi=\int_r^R f(z)dz+\int_{C_R}f(z)dz+\int_{-R}^{-r}f(z)dz+\int_{\Gamma_r}f(z)dz=4\int_r^R  \frac{\sin^2 x}{x^2}dx+\int_{C_R}f(z)dz+\int_{\Gamma_r}f(z)dz\rightarrow 4\int_0^\infty \frac{\sin^2 x}{x^2}dx+2\pi\quad(R\to\infty,r\to 0)$より$\int_0^\infty \frac{\sin^2 x}{x^2}dx=\frac{\pi}{2}$である．
+
+\fbox{4}
+(A)$\overline{(x,y)}=\overline{(x',y')}$とする．すなわち$(x-x'),(y-y')\in \mathbb{Z}$である．
+$f(\overline{(x,y)})=\overline{(ax+by,cx+dy)},f(\overline{(x',y')})=\overline{(ax'+by',cx'+dy')}$である．
+
+$(ax+by)-(ax'+by')=a(x-x')+b(y-y')\in \mathbb{Z},(cx+dy)-(cx'+dy')=c(x-x')+d(y-y')\in \mathbb{Z}$より$f(\overline{(x,y)})=f(\overline{(x',y')})$である．
+よって$f$はwell-definedである．
+
+(B)(1)$f$が連続$\Leftrightarrow$任意の$Y$の開集合$U$について$f^{-1}(U)$が$X$の開集合である．
+
+(2)$Y$の任意の開被覆$S=\left\{ U_{\lambda}\relmiddle|\lambda\in \Lambda \right\}$をとる．$T=\left\{ f^{-1}(U_\lambda)\relmiddle|\lambda\in \Lambda \right\}$とすれば$T$は$X$の開被覆．よってコンパクト性から有限部分集合$\Lambda'\subset \Lambda$が存在して$T'=\left\{ f^{-1}(U_\lambda)\relmiddle| \lambda\in \Lambda'\right\}\subset T$が開被覆．
+$f$の全射性から$f(f^{-1}(U))=U$である．
+よって$S'=\left\{ U_{\lambda}\relmiddle| \lambda\in \Lambda'\right\}=\left\{ f(f^{-1}(U_\lambda))\relmiddle| \lambda\in \lambda'\right\}\subset S$は$Y$の有限開被覆．
+
+よって$Y$はコンパクト．
+
+\end{document}

@@ -1,0 +1,214 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2009午前}
+\fbox{1}
+(1)$S(1)=1,S(t)=1+2t,S(t^2)=(1+2t)^2=4t^2+4t+1$より$S$の表現行列は$\begin{pmatrix}
+1&1&1\\
+0&2&4\\
+0&0&4
+\end{pmatrix}$である．
+固有値は$1,2,4$である．
+
+固有値$1$に対応する固有ベクトルは$\begin{pmatrix}
+1\\0\\0
+\end{pmatrix}$である．
+
+固有値$2$に対応する固有ベクトルは$\begin{pmatrix}
+1\\1\\0
+\end{pmatrix}$である．
+
+固有値$4$に対応する固有ベクトルは$\begin{pmatrix}
+1\\2\\1
+\end{pmatrix}$である．
+
+(2)$2T(1)=T(1+t+1-t)=2(1+t^2)$より，$T(1)=1+t^2$である．$T(t)=T(t+1)-T(1)=2t,T(t^2)=1+t^2$より基底$\left\{ 1,t,t^2 \right\}$に関する表現行列は$\begin{pmatrix}
+1&0&1\\
+0&2&0\\
+1&0&1
+\end{pmatrix}$である．
+したがって$T$の像は$\left\{ 1+t^2,2t \right\}$により生成される部分空間である．
+よって$a=c$が必要十分条件．
+$f_0(t)= a+\frac{b}{2} t$とすると$T(f_0)=g$である．
+$\ker T= \left\{ k(1-t^2)\relmiddle| k\in \mathbb{C}\right\}$である．
+よって$\left\{ k(1-t^2)+f_0 \relmiddle|k\in \mathbb{C} \right\}$が求める$f$全体．
+
+\fbox{2}
+$A= \begin{pmatrix}
+2&q-2&-4&-(p+3)&2\\
+0&p+1&2q&p+1&q\\
+6&p+3q-5&q-12&-(2p+8)&q+6
+\end{pmatrix} $とすると，$V$は$Ax=0$の解空間である．
+
+$B=\begin{pmatrix}
+2&p+q-1&q-4&-2&q+2\\
+0&p(p+1)&q&p(p+1)&p(p+1)
+\end{pmatrix}$とすれば$W$は$Bx=0$の解空間である．
+
+$A$を簡約化すると，$A\rightarrow\begin{pmatrix}
+2&q-2&-4&-(p+3)&2\\
+0&p+1&2q&p+1&q\\
+0&p+1&q&p+1&q
+\end{pmatrix}\rightarrow \begin{pmatrix}
+2&q-2&-4&-(p+3)&2\\
+0&0&q&0&0\\
+0&p+1&q&p+1&q
+\end{pmatrix}$である．
+
+(1)$V,W$が同型になることは次元が等しいことが必要十分条件．
+$x\mapsto Ax$で定まる線形写像も$A$で表すとすれば$\dim V=\dim \Ker A=\dim \mathbb{R}^5-\dim \Im A=5-\rank A$である．
+同様に$\dim W=5-\rank B$より$\rank A=\rank B$が必要十分条件．
+
+$\rank B\le 2$である．$q\neq 0\Leftrightarrow \rank A=3$であるから$q=0$が必要．
+
+$q=0$のとき$p(p+1)=0\Leftrightarrow\rank B=1$である．
+また$p+1=0 \Leftrightarrow \rank A=1$である．
+したがって$\dim V=\dim W$となるのは$q=0$かつ$p\neq 0$のとき．
+
+(2)$V=W$なら$V\cong W$であるから$q=0$かつ$p\neq 0$は必要である．
+$C=\begin{pmatrix}
+A\\B
+\end{pmatrix}$としたときに$\Ker C=\Ker A\cap \Ker B=V\cap W$である．
+よって$\Ker C=\Ker A$となる$p,q$を求めればよい．
+$\Ker C\subset \Ker A$であるから$\dim \Ker C=\dim \Ker A$が$\Ker C=\Ker A$の必要十分条件．
+すなわち$\rank C=\rank A$が必要十分条件．
+
+$p+1=0$のとき．
+$C$を簡約化すると$C$を簡約化すると，$C\rightarrow \begin{pmatrix}
+2&-2&-4&-2&2\\
+0&0&0&0&0\\
+0&0&0&0&0\\
+2&-2&-4&-2&2\\
+0&0&0&0&0
+\end{pmatrix}$より$\rank C=1=\rank A$である．
+
+$p\neq 0,-1$のとき，
+$C$を簡約化すると，$C\rightarrow \begin{pmatrix}
+2&-2&-4&-(p+3)&2\\
+0&0&0&0&0\\
+0&p+1&0&p+1&0\\
+2&p-1&-4&-2&2\\
+0&p(p+1)&0&p(p+1)&p(p+1)
+\end{pmatrix}\rightarrow \begin{pmatrix}
+2&-2&-4&-(p+3)&2\\
+0&0&0&0&0\\
+0&p+1&0&p+1&0\\
+0&p+1&0&p+1&0\\
+0&p(p+1)&0&p(p+1)&p(p+1)
+\end{pmatrix}\rightarrow\begin{pmatrix}
+2&-2&-4&-(p+3)&2\\
+0&0&0&0&0\\
+0&p+1&0&p+1&0\\
+0&0&0&0&0\\,
+0&0&0&0&p(p+1)
+\end{pmatrix}$より$\rank C=3\neq 2=\rank A$である．
+
+以上より$(p,q)=(-1,0)$が$V=W$に必要十分条件．
+このとき$V$の基底は$\left\{ \begin{pmatrix}
+1\\1\\0\\0\\0
+\end{pmatrix}, \begin{pmatrix}
+2\\0\\1\\0\\0
+\end{pmatrix}, \begin{pmatrix}
+1\\0\\0\\1\\0
+\end{pmatrix}, \begin{pmatrix}
+-1\\0\\0\\0\\1
+\end{pmatrix} \right\}$である．
+
+(3)$5-\rank A=\dim V< \dim W=5-\rank B$が必要．すなわち$\rank B<\rank A$が必要である．
+したがって$q\neq 0$または，$q=p=0$が必要である．
+
+$\Ker C=\Ker A\cap \Ker B=\Ker A \Leftrightarrow V\subset W$である．
+よって$\Ker C=\Ker A$かつ$\rank B<\rank A$は$V\subsetneq W$の必要十分条件．
+
+$p=q=0$のとき，$C$を簡約化すると$C\rightarrow \begin{pmatrix}
+2&-2&-4&-3&2\\
+0&0&0&0&0\\
+0&1&0&1&0\\
+2&-1&-4&-2&2\\
+0&0&0&0&0\end{pmatrix}$より$\rank C=2=\rank A$であるから$\Ker C=\Ker A$である．よって$V\subsetneq W$．
+
+$q\neq 0$のとき，$C$を簡約化すると
+$C\rightarrow\begin{pmatrix}
+2&q-2&-4&-(p+3)&2\\
+0&0&q&0&0\\
+0&p+1&q&p+1&q\\
+2&p+q-1&q-4&-2&q+2\\
+0&p(p+1)&q&p(p+1)&p(p+1)
+\end{pmatrix}\rightarrow\begin{pmatrix}
+2&q-2&-4&-(p+3)&2\\
+0&0&q&0&0\\
+0&p+1&q&p+1&q\\
+0&p+1&q&p+1&q\\
+0&p(p+1)&q&p(p+1)&p(p+1)
+\end{pmatrix}\rightarrow\begin{pmatrix}
+2&q-2&0&-(p+3)&2\\
+0&0  &q&0     &0\\
+0&p+1&0&p+1   &q\\
+0&0  &0&0     &0\\
+0&0  &0&0     &p(p-q+1)
+\end{pmatrix}$である．よって$[p(p-q+1)=0]\vee [p+1=0\wedge q=p(p-q+1) ]\Leftrightarrow \rank C=3$である．
+
+以上より$(p,q)=0$または$q\neq 0$かつ$p=0,-1,q-1$で$V\subsetneq W$が成り立つ．
+
+$p=q=0$なら$\dim V=3,\dim W=4$である．
+$q\neq 0,p=0,-1,q-1$なら$\dim V=2,\dim W=3$である．
+
+\fbox{3}
+(1)$
+	\frac{\partial g}{\partial \varphi}=\frac{\partial f}{\partial x}(e^\varphi \cos \theta)+\frac{\partial f}{\partial y}(e^\varphi \sin \theta),
+	\frac{\partial g}{\partial \theta}=\frac{\partial f}{\partial x}(-e^\varphi \sin \theta)+\frac{\partial f}{\partial y}(e^\varphi \cos \theta)
+	$
+	である．
+	よって$\frac{\partial f}{\partial x}=\frac{\partial g}{\partial \varphi} e^{-\varphi}\cos \theta-\frac{\partial g}{\partial \theta}e^{-\varphi}\sin \theta,\frac{\partial f}{\partial y}=\frac{\partial g}{\partial \varphi}e^{-\varphi}\sin \theta+\frac{\partial g}{\partial \theta}e^{-\varphi}\cos \theta$である．
+
+	(2)\begin{align}
+		\int_{\varepsilon}^1 \frac{\log x}{x^\alpha}dx&=\left[ \frac{1}{-\alpha+1}x^{1-\alpha}\log x \right]_\varepsilon^1 -\int_{\varepsilon}^1 \frac{1}{-\alpha+1}x^{-\alpha}dx=\frac{1}{\alpha-1}\varepsilon^{1-\alpha}\log \varepsilon -\left[ \frac{1}{(1-\alpha)^2}x^{1-\alpha} \right]_{\varepsilon}^1\\&=\frac{1}{\alpha-1}\varepsilon^{1-\alpha}\log \varepsilon -\frac{1}{(1-\alpha)^2}+\frac{1}{(1-\alpha)^2}\varepsilon^{1-\alpha}
+	\end{align}
+	である．
+	$1-\alpha>0$のとき$\varepsilon^{1-\alpha}\rightarrow 0\quad(\varepsilon\rightarrow 0+)$である．
+	$\frac{\log \varepsilon}{-\varepsilon^{\alpha-1}}$は分母分子が共に$-\infty$へ発散する．
+	$\frac{\frac{1}{\varepsilon}}{-(\alpha-1)\varepsilon^{\alpha-2}}=\frac{1}{-(\alpha-1)}\varepsilon^{1-\alpha}\rightarrow 0\quad(\varepsilon\rightarrow 0)$となるのでロピタルの定理から$\frac{\log \varepsilon}{-\varepsilon^{\alpha-1}}$は収束する．よって広義積分は収束する．
+
+	$1-\alpha=0$なら$\log \varepsilon$が発散するから収束しない．
+
+	$1-\alpha<0$なら$\log \varepsilon,-\varepsilon^{1-\alpha}$が共に$-\infty$へ発散するから広義積分は収束しない．
+
+	よって$1>\alpha$のとき収束し，そのとき$\int_0^1 \frac{\log x}{x^\alpha}dx=-\frac{1}{(1-\alpha)^2}$である．
+
+	(3)\begin{align}
+		\iint_D ye^{x^3}dxdy=\int_0^2e^{x^3}\int_0^x ydydx=\frac{1}{2}\int_0^2x^2e^{x^3}dx=\frac{1}{6}\left[ e^{x^3} \right]_0^2=\frac{e^8-1}{6}
+	\end{align}である．
+
+	\fbox{4}
+	(1)$n=0$のとき左辺は$e^x$であり，右辺は$\sum\limits_{j=0}^0 \frac{x^j}{j!}+\int_0^xe^tdt=1+e^x-1=e^x$であるから成立．
+	$n$以下で成立したとする．
+	\begin{align}
+		\int_0^xe^t(x-t)^{n+1}dt=\left[ e^t(x-t)^{n+1} \right]_0^x+\int_0^x e^t (n+1)(x-t)^ndt=-x^{n+1}+(n+1)\int_0^x e^t(x-t)^ndt\\
+	\end{align}
+	\begin{align}
+		\sum_{j=0}^{n+1}\frac{x^j}{j!}+\frac{1}{(n+1)!}\int_0^xe^t(x-t)^{n+1}dt&=\sum_{j=0}^{n}\frac{x^j}{j!}+\frac{x^{n+1}}{(n+1)!}+\frac{1}{(n+1)!}\left( -x^{n+1}+(n+1)\int_0^x e^t(x-t)^ndt \right)\\
+		 &=\sum_{j=0}^{n}\frac{x^j}{j!}+\frac{1}{n!}\int_0^xe^t(x-t)^{n}dt=e^x
+	\end{align}
+	である．
+
+	(2)$x\ge 0$なら$0\le t\le x$について$1\le e^t\le e^x$である．
+	したがって$\int_0^x (x-t)^ndt=-\frac{1}{n+1}\left[ (x-t)^{n+1} \right]_0^x=\frac{x^{n+1}}{n+1}$である．
+	よって$\frac{x^{n+1}}{n+1}=\int_0^x (x-t)^ndt\le \int_0^x e^t(x-t)^ndt\le \int_0^x e^x(x-t)^ndt=e^x\frac{x^{n+1}}{n+1}$である．
+
+	(3)(1)より$e-\sum\limits_{j=0}^n\frac{x^j}{j!}=\frac{1}{n!}\int_0^1e^t(1-t)^ndt$である．
+	よって(2)から$\frac{1}{(n+1)!}\le e-\sum\limits_{j=0}^n\frac{x^j}{j!}\le\frac{e}{(n+1)!}$である．
+	$n=4$のとき，$\frac{1}{200}<\frac{1}{120}=\frac{1}{5!}\le e-\sum\limits_{j=0}^4\frac{x^j}{j!}$である．
+	$n=5$のとき，$e-\sum\limits_{j=0}^5\frac{x^j}{j!}\le\frac{e}{6!}<\frac{3}{720}\le\frac{1}{240}<\frac{1}{200}$である．
+	$n\ge 5$なら$e-\sum\limits_{j=0}^n\frac{x^j}{j!}\le\frac{e}{(n+1)!}\le \frac{e}{6!}<\frac{1}{200}$である．
+	よって$N=5$である．
+\end{document}
+

@@ -1,0 +1,120 @@
+\documentclass[
+		book,
+		head_space=20mm,
+		foot_space=20mm,
+		gutter=10mm,
+		line_length=190mm
+]{jlreq}
+\input {preamble.tex}
+\usepackage{docmute} %ファイル分割
+\begin{document}
+
+%\chapter{章のタイトル}
+\section{2008午前}
+\fbox{1}
+(1)
+$A$を簡約化すると，$A\rightarrow \begin{pmatrix}
+1&-2&1&1\\
+0&1&0&-1\\
+0&2&0&-2
+\end{pmatrix}\rightarrow \begin{pmatrix}
+1&0&1&-1\\
+0&1&0&-1\\
+0&0&0&0
+\end{pmatrix}$である．
+
+よって$U$の基底は$\left\{ \begin{pmatrix}
+1\\1\\3
+\end{pmatrix},\begin{pmatrix}
+-2\\-1\\-4
+\end{pmatrix} \right\}$である．
+
+$W$の基底は$\left\{ w_1=\begin{pmatrix}
+-1\\0\\1\\0
+\end{pmatrix},w_2=\begin{pmatrix}
+1\\1\\0\\1
+\end{pmatrix} \right\}$である．
+
+(2)$b=x_1w_1+x_2w_2$とする．
+$\langle a-b,w_i\rangle=0\quad(i=1,2)$である．
+$\langle a-b,w_i\rangle=\langle a,w_i\rangle-x_1\langle w_1,w_i\rangle-x_2\langle w_2,w_i\rangle$であるから，
+$\langle a,w_1\rangle-x_1\langle w_1,w_1\rangle-x_2\langle w_2,w_1\rangle=-3-2x_1+x_2=0,\langle a,w_2\rangle-x_1\langle w_1,w_2\rangle-x_2\langle w_2,w_2\rangle=4+x_1-3x_2=0$を解いて$x_1=-1,x_2=1$である．
+よって$b=-w_1+w_2=\begin{pmatrix}
+2\\1\\-1\\1
+\end{pmatrix},c=a-b=\begin{pmatrix}
+2\\-3\\2\\1
+\end{pmatrix}$である．
+
+(3)$\norm{a-w}^2=\langle b+c-w,b+c-w\rangle=\langle b-w,b-w\rangle+2\langle c,b-w\rangle+\langle c,c\rangle=\norm{b-w}^2+\norm{c}^2$である．
+したがって$w=b$のときが最小で最小値は$\norm{c}=\sqrt{18}=3\sqrt{2}$である．
+
+\fbox{2}
+(1)$\frac{d}{dt}\norm{x(t)}=\frac{1}{2}\frac{2x_1x_1'+2x_2x_2'+2x_3x_3'}{\sqrt{x_1^2+x_2^2+x_3^2}}=\frac{\langle x(t),x'(t)\rangle}{\norm{x(t)}}$である．
+
+$\langle x(t),x'(t)\rangle=\langle x(t),Ax(t)\rangle=\langle ^t\!A x(t),x(t)\rangle=-\langle Ax(t),x(t)\rangle=-\langle x(t),Ax(t)\rangle$より$2\langle x(t),Ax(t)\rangle=0$である．よって$\langle x(t),x'(t)\rangle=\langle x(t),Ax(t)\rangle=0$．
+すなわち$\frac{d}{dt}\norm{x(t)}=0$であるから$\norm{x(t)}$は$t$に依らず一定．
+
+(2)$\det A=\det ^t\!A=\det (-A)=(-1)^3\det A$より$\det A=0$である．
+よって$0$を固有値として持つ．
+
+(3)$\frac{d}{dt}\langle x(t),v\rangle=\langle Ax(t),v\rangle=\langle x(t),^t\!A v\rangle=\langle x(t),-A v\rangle=-\langle x(t),0\rangle=0$である．
+
+よって$\langle x(t),v\rangle$は$t$に依らず一定．
+
+(4)任意の$t$で$\langle x(t)-x(0),v\rangle=0$であるから，任意の$t$が$x(t)-x(0)$は$v$と直交するため，$x(t)-x(0)$は原点を通るある平面上にある．よって$x(t)$はその平面を$x(0)$平行移動させた平面上の点であり，加えて半径$\norm{x(t)}$の球上の点であるから$x(t)$は半径$\norm{x(t)}$の球と平面の共通部分上にある．すなわちある定円周上にある．
+
+\fbox{3}
+(1)$(a_{n+1}+1)^2\ge 0$であるから$(a_n-1)^2\le2$である．したがって$1-\sqrt{2}\le a_n\le 1+\sqrt{2}$である．
+
+(2)$(a_{n+1}+1)^2+(a_n-1)^2\le 2$より$a_{n+1}^2+a_n^2+2a_{n+1}-2a_n\le 0$である．
+よって$0\le a_{n+1}^2+a_n^2\le 2(a_n-a_{n-1})$より$a_{n-1}\le a_n$である．
+よって$a_1,a_2,\cdots$は単調減少数列であるから$\lim\limits_{n\to \infty}a_n$は存在する．
+$a_{-1},a_{-2},\cdots$は単調増加数列であるから$\lim\limits_{n\to -\infty}a_n$は存在する．
+
+(3)$\lim\limits_{n\to \infty}a_n=\alpha$とすると，$(\alpha+1)^2+(\alpha-1)^2\le 2$より$2\alpha^2\le 0$であるから$\alpha=0$である．
+また$\lim\limits_{n\to -\infty}a_n=\beta$とすると，$(\beta+1)^2+(\beta-1)^2\le 2$より$2\beta^2\le 0$であるから$\beta=0$である．
+
+$\left\{ a_n \right\}$の単調性から$^\forall n\in \mathbb{Z},a_n=0$である．
+
+\fbox{4}
+(1)$e^{2x+3y}$の原点におけるテイラー展開は$e^{2x+3y}=1+2x+3y+\frac{4}{2}x^2+\frac{6}{2}2xy+\frac{9}{2}y^2+o(x^2+y^2)$である．よって$g(x,y)=1+2x+3y+2x^2+6xy+\frac{9}{2}y^2$である．
+
+(2)$(\Rightarrow)$
+\begin{align}
+	&\frac{\partial f}{\partial x}=\frac{\partial g}{\partial t}y,\frac{\partial f}{\partial y}=\frac{\partial g}{\partial t}x\\
+	&x\frac{\partial f}{\partial x}-y\frac{\partial f}{\partial y}=xy\frac{\partial g}{\partial t}-xy\frac{\partial g}{\partial t}=0
+\end{align}
+
+$(\Leftarrow)$
+$h(s,t)=h(x,xy)=f(x,y)=f(s,\frac{t}{s})$で$h$を定める．
+$\frac{\partial h}{\partial s}=\frac{\partial f}{\partial x}+\frac{\partial f}{\partial y}\frac{-t}{s^2}=\frac{1}{x}\left( \frac{\partial f}{\partial x}x-\frac{\partial f}{\partial y}y \right)=0$より$f(x,y)=h(s,t)=h(t)=h(xy)$と表せる．
+
+(3)$\frac{r^{2b}}{1+r^{2a}}/r^{2b}=\frac{1}{1+r^{2a}}\rightarrow 1\quad(r\to 0)$である．
+したがって十分小さい$r_0$に対して任意の$r\le r_0$で$\frac{1}{2}r^{2b}<\frac{r^{2b}}{1+r^{2a}}<\frac{3}{2}r^{2b}$である．
+
+よって$\int_0^{r_0}\frac{r^{2b}}{1+r^{2a}}dr$の収束性は$\int_{0}^{r_0}r^{2b}dr$の収束性と等しい．
+$\int_{\varepsilon}^{r_0} r^{2b}dr=\left[ \frac{1}{2b+1}r^{2b+1} \right]_{\varepsilon}^{r_0}=\frac{1}{2b+1}(r_0^{2b+1}-\varepsilon^{2b+1})$は$\varepsilon\rightarrow 0$で収束する．
+
+$\frac{r^{2b}}{1+r^{2a}}/r^{2b-2a}=\frac{1}{1+r^{-2a}}\rightarrow 1\quad(r\to \infty)$である．
+したがって十分大きい$R_0$に対して任意の$r\ge R_0$で$\frac{1}{2}r^{2b-2a}<\frac{r^{2b}}{1+r^{2a}}<\frac{3}{2}r^{2b-2a}$である．
+
+よって$\int_{R_0}^{\infty}\frac{r^{2b}}{1+r^{2a}}dr$の収束性は$\int_{R_0}^{\infty}r^{2b-2a}dr$の収束性と等しい．
+$\int_{R_0}^{M} r^{2b-2a}dr=\begin{cases}
+	\frac{1}{2b-2a+1}\left[ r^{2b-2a+1} \right]_{R_0}^M&(2b-2a\neq -1)\\
+	\left[ \log r \right]_{R_0}^M &(2b-2a=-1)
+\end{cases}$は$2b-2a+1<0$のときのみ$M\to\infty$で収束する．
+
+以上より$\int_0^{\infty}\frac{r^{2b}}{1+r^{2a}}dr$が収束する条件は$2b-2a+1<0$である．
+
+(4)$x=r\cos \theta,y=r\sin \theta$と極座標変換すればヤコビアンは$r$である．
+$0\le \theta\le \frac{\pi}{2}$のとき，$ \cos^{2a}\theta+\sin^{2a}\theta<2$である．
+\begin{align}
+	\int\int_D \frac{x^{2b}+y^{2b}}{1+x^{2a}+y^{2a}}dxdy=\int_0^{\frac{\pi}{2}}\int_0^\infty\frac{r^{2b+1}(\cos^{2b}\theta+\sin^{2b}\theta)}{1+r^{2a}(\cos^{2a}\theta+\sin^{2a}\theta)}dr d\theta=\int_0^{\frac{\pi}{2}}(\cos^{2b}\theta+\sin^{2b}\theta)\int_0^\infty\frac{r^{2b+1}}{1+r^{2a}(\cos^{2a}\theta+\sin^{2a}\theta)}dr d\theta
+\end{align}
+内側の積分を考える．
+$\frac{r^{2b+1}}{1+r^{2a}(\cos^{2a}\theta+\sin^{2a}\theta)}/r^{2b+1-2a}\rightarrow \frac{1}{\cos^{2a}\theta+\sin^{2a}}>\frac{1}{2}>0 \quad(r\to \infty)$である．(3)から$2b+1-2a+1<0$すなわち$b-a+1<0$で収束する．
+このとき$\theta$に関する積分も有界関数の有界領域上の積分であるから収束する．
+したがって$b-a+1<0$で$\int\int_D \frac{x^{2b}+y^{2b}}{1+x^{2a}+y^{2a}}dxdy$は収束する．
+
+
+\end{document}
